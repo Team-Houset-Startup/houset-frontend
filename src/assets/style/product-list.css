@@ -1,0 +1,113 @@
+.preview-container {
+	display: flex;
+  	flex-direction: column;
+  	margin-top: 50px;
+}
+
+.head-product {
+	/* Make the element inside div 2 column */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	margin: 40px 0px 20px 0px;
+}
+
+.list-title {
+	font-weight: 600;
+	margin-bottom: 0;
+	font-size: 24px;
+
+	text-align: left;
+	color: #012231;
+}
+
+.see-more-link {
+	/* untuk lihat semua */
+	font-weight: 600;
+	font-size: 16px;
+	
+	text-align: right;
+	color: #055053;
+	text-decoration: none;
+}
+
+.see-more-link:hover {
+	color: #012231;
+}
+
+.best-product {
+	column-count: 4;
+	column-gap: 10%;
+	/* column-width: 10%; */
+}
+
+.product-pict {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 18px;
+	margin-left: auto;
+	margin-right: auto;
+
+	width: 255px;
+	height: 280px;
+	background: #f6fbf8;
+	box-shadow: 0px 4px 11px rgba(5, 80, 83, 0.1);
+	border-radius: 30px;
+	border: none;
+}
+
+.product-pict img {
+	width: 167px;
+	height: 167px;
+}
+
+.product-item a {
+	text-decoration: none;
+}
+
+.product-item p {
+	margin-left: 15%;
+}
+
+.item-type {
+	margin-bottom: 0px;
+
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10px;
+	line-height: 150%;
+
+	color: #898989;
+}
+
+.item-name {
+	margin-bottom: 9px;
+	width: 255px;
+
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 22px;
+	color: #055053;
+}
+
+.item-price {
+	margin-bottom: 0px;
+
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+
+	text-decoration-line: line-through;
+	color: #e13b11;
+}
+
+.item-price-discounted {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 17px;
+
+	color: #055053;
+}

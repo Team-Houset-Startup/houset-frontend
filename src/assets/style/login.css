@@ -1,0 +1,32 @@
+
+
+.logo-houset {
+	width: 140px;
+	margin: 10px 0px 0px 40px;
+}
+
+.container-form form p {
+	color: #055053;
+}
+
+.forget-pass {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px;
+	text-decoration: none;
+	color: #055053;
+
+	float: right;
+}
+
+.forget-pass:hover {
+	color: #012231;
+}
+
+.google {
+	position: absolute;
+	width: 100px;
+	height: 50px;
+	left: 0px;
+	top: 0px;
+}
