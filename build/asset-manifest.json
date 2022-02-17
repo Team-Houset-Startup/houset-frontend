@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.835f36c5.css",
+    "main.js": "/static/js/main.f1569974.js",
+    "static/js/787.c801656d.chunk.js": "/static/js/787.c801656d.chunk.js",
+    "static/media/sample-room.png": "/static/media/sample-room.773b4e1904ae6ed86711.png",
+    "static/media/background-login.png": "/static/media/background-login.f0bf5666b4f8004663b0.png",
+    "static/media/room-scrollable.png": "/static/media/room-scrollable.ca6892e7b6a1224e05a0.png",
+    "static/media/furniture-header.png": "/static/media/furniture-header.230eb7ba5744648d6df6.png",
+    "static/media/kursi.png": "/static/media/kursi.1fc47a3b75cf50900ea7.png",
+    "static/media/houset-logo.png": "/static/media/houset-logo.50825b5024eb6fd67bb7.png",
+    "static/media/houset-logo2.png": "/static/media/houset-logo2.9fc2893845f411ae3e26.png",
+    "index.html": "/index.html",
+    "main.835f36c5.css.map": "/static/css/main.835f36c5.css.map",
+    "main.f1569974.js.map": "/static/js/main.f1569974.js.map",
+    "787.c801656d.chunk.js.map": "/static/js/787.c801656d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.835f36c5.css",
+    "static/js/main.f1569974.js"
+  ]
+}
