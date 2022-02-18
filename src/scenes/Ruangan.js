@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import "../assets/style/furniture.css";
 import NavigationBar from "../parts/NavigationBar";
@@ -12,7 +12,7 @@ import StartDesignBanner from "../parts/StartDesignBanner";
 
 function Ruangan() {
     return (
-        <>
+        <div className="product-page">
             <NavigationBar />
             <section className="section1">
                 <StartDesignBanner />
@@ -32,7 +32,7 @@ function Ruangan() {
             </section>
 
             <Footer />
-        </>
+        </div>
     )
 }
 

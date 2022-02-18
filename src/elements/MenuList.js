@@ -1,10 +1,5 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom';
-import Login from '../scenes/Login';
-import Furniture from '../scenes/Furniture';
-import Kanvas from '../scenes/Kanvas';
-import Ruangan from '../scenes/Ruangan';
-import Penawaran from '../scenes/Penawaran';
 
 function MenuOption(props) {
     var path = '../scenes/' + props.pathname;

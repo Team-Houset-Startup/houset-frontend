@@ -1,6 +1,6 @@
 import React from 'react'
-import { useNavigate, useParams, Link } from 'react-router-dom';
-// import PageListNumber from '../elements/PageListNumber'
+import { Link } from 'react-router-dom';
+// import { useNavigate, useParams } from 'react-router-dom';
 import "../assets/style/page-list-navigator.css"
 
 

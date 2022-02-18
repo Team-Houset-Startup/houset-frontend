@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import React from 'react';
+// import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import NavigationBar from '../parts/NavigationBar';
 import Footer from '../parts/Footer';
-import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ProductLists from '../parts/ProductLists';
@@ -29,7 +29,7 @@ function Homepage() {
                             Manjakan tampilan ruangan mu dengan membeli kursi
                             dari edisi terbaru Shabby Chic yang tentunya akan menambah desain manis dan elegant.
                         </p>
-                        <a href="#"><button className="buy-now">Belanja Sekarang</button></a>
+                        <Link to="/"> <button className="buy-now"> Belanja Sekarang </button> </Link>
                     </div>
                     
                 </div>

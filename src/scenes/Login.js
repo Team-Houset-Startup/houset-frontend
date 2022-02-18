@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import propTypes from 'prop-types';
-import axios from 'axios';
+// import axios from 'axios';
 
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import NavbarLoginRegister from '../parts/NavbarLoginRegister';
 import AlternateLogin from '../parts/AlternateLogin'
 
@@ -21,34 +21,6 @@ async function doLogin(credentials) {
 }
 
 function Login(props, setToken) {
-    /* const [user, setUser] = useState({ Email: '', Username: ''});
-    const apiUrl = "https://jsonplaceholder.typicode.com/users";
-
-    const handleSubmit = e => {
-        e.preventDefault();
-        const data = { email: user.Email, username: user.Username };
-        axios.post(apiUrl, data)
-        .then((result) => {
-            // console.log(result.data);   // delete later
-            const serializedState = JSON.stringify(result.data.userDetails);
-            var temp = localStorage.setItem('LoginData', serializedState);
-
-            const userData = result.data.userDetails;
-            
-            if (result.data.status == '200'){
-                alert('Login Successful');          // delete later
-                // props.history.push('/Homepage')
-            } else {
-                console.log (result.data.status);   // delete later
-                alert('Invalid User');
-            }
-        });
-    }
-        
-    const onChange = (e) => {
-        e.persist();
-        setUser({...user, [e.target.name]: e.target.value})
-    } */
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

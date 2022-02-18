@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import SampleRoom from '../assets/image/sample-room.png';
-import Love from "../assets/image/love.png";
 import "../assets/style/room-list.css";
 
 class RoomList extends Component {
@@ -16,7 +14,6 @@ class RoomList extends Component {
         
         componentDidMount() {
             fetch("https://jsonplaceholder.typicode.com/users/")
-            // fetch("https://randomuser.me/api/?results=8")
             .then(res => res.json())
             .then(parsedJSON => parsedJSON.map(data => (
                 {
@@ -37,24 +34,10 @@ class RoomList extends Component {
                 isLoaded: false
             }))
             .catch(error => console.log('parsing data failed', error))
-/*
-        fetch("https://jsonplaceholder.typicode.com/users/?results=8")
-            .then(res => res.json())
-            .then(parsedJSON => parsedJSON.results.map(data => (
-                {
-                    thumbnail: `${data.picture.large}`,
-                }
-            )))
-            .then(thumbnails => this.setState({
-                thumbnails,
-                isLoaded: false
-            }))
-            .catch(error => console.log('parsing image failed', error)); */
     }
 
     render() {
         const { items } = this.state;
-        // console.log(items)
         return (
             <div className="preview-container">
                 <div className="head-room"> 
@@ -62,13 +45,12 @@ class RoomList extends Component {
                     <Link to = "/ruangan" className="see-more-link"> Lihat semua {'>'} </Link>
                 </div>
                 
-                {/* <Link to = "/ruangan" className="see-more-link"> Lihat semua {'>'} </Link> */}
                 <div className="best-product">
                     {
                         items.length > 0 ? items.slice(0,4).map(item => {
                             const { id, itemType, itemName, itemPrice, itemDiscount, itemThumbnail} = item;
                             return (
-                                <div className="product-item">
+                                <div className="product-item" key={id}>
                                     <a href="/furnitur">
                                         <div className="product-pict"> <img src={itemThumbnail} alt="" /> </div>
                                         <p className="item-type"> {itemType} </p>

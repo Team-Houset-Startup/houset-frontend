@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import NavbarLoginRegister from '../parts/NavbarLoginRegister';
 import AlternateLogin from '../parts/AlternateLogin';
 

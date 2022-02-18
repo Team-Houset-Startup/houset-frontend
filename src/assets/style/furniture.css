@@ -7,6 +7,11 @@ ul {
   list-style: none;
 }
 
+.product-page {
+  /* div in mid */
+  width: 100%;
+}
+
 .section1 {
   margin-top: 65px;
   background-image: url("../image/furniture-header.png");
@@ -14,6 +19,7 @@ ul {
   background-position-x: center;
   background-size:contain;
   height: 386px;
+  width: 100%;
 }
 
 .start-here p {
@@ -58,65 +64,6 @@ ul {
 
 .template-container {
   height: 200px;
-}
-
-.find-fav-text {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
-  
-  text-align: center;
-  
-  color: #012231;
-}
-
-.container-for-scrollable {
-  width: auto;
-  overflow: auto;
-  margin-bottom: 60px;
-  
-}
-
-.container-scrollable {
-  white-space: normal;
-  width: max-content;
-  height: 200px;
-  margin: 32px 40px 0px 40px;
-}
-
-.container-scrollable a {
-  position: relative;
-  display: inline-block;
-  text-decoration: none;
-  margin-right: 20px;
-}
-
-.container-scrollable img {
-  width: 355px;
-  filter: drop-shadow(0px 4px 11px rgba(0, 0, 0, 0.25));
-  
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 30px;
-  border: none;
-}
-
-.container-scrollable p {
-  position: absolute;
-  top: 15px;
-  left: 10px;
-
-  width: 108px;
-  height: 28px;
-  text-align: center;
-
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 30px;
-  color: #FFFFFF;
-  
-  background: #055053;
-  border-radius: 30px;
 }
 
 .search-form form {

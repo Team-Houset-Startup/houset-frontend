@@ -1,11 +1,11 @@
 import React from 'react';
-import LogoHouset from "../assets/image/houset-logo2.png";
 import { Link } from 'react-router-dom';
+import HousetLogo from "../assets/image/houset-logo2.png";
 
 function NavbarLoginRegister() {
     return (
         <nav>
-            <Link to='/'> <img src={LogoHouset} className="logo-houset" /> </Link>
+            <Link to='/'> <img src={HousetLogo} className="logo-houset" alt="error image not found"/> </Link>
         </nav>
     )
 }
