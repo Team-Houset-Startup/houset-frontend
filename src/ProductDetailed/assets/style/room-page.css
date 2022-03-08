@@ -1,0 +1,185 @@
+.product-container-left {
+	display: flex;
+	flex-direction: column;
+	padding-top: 105px;
+	padding-left: 160px;
+
+	background: #f6fbf8;
+	height: 575px;
+	width: 610px;
+
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+/* product-info */
+
+.product-info-category {
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 150%;
+
+	color: #667085;
+}
+
+.product-info-name {
+	font-weight: bold;
+	font-size: 48px;
+	line-height: 58px;
+
+	color: #055053;
+}
+
+.product-info-review {
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+	/* identical to box height, or 125% */
+
+	color: #667085;
+}
+
+/* product-price */
+
+.product-price-normal {
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+	text-decoration-line: line-through;
+
+	color: #e13b11;
+}
+
+.product-price-disc {
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 34px;
+
+	color: #055053;
+}
+
+/* product-type */
+
+.product-type {
+	margin-top: 1rem;
+
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 30px;
+
+	color: #055053;
+}
+
+.product-type-color,
+.product-type-qty {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.product-type-qty button {
+	border: 1px solid #055053;
+	border-radius: 6px;
+	background-color: #ffffff;
+	height: 24px;
+	width: 24px;
+	border-radius: 6px;
+
+	/* Make the inside in middle */
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+.product-type-qty span {
+	margin: 0px 12px 0px 12px;
+}
+
+.product-type-color p,
+.product-type-qty p {
+	margin-right: 100px;
+}
+
+/* buy-product */
+
+.buy-product {
+	/* Must make the button side-to-side */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.buy-product button {
+	/* Button Box */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 186px;
+	height: 44px;
+
+	/* Button Text */
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.add-to-cart-button {
+	margin-right: 24px;
+
+	/* Button box "Masukkan Keranjang" */
+	background: #c8f6e9;
+	border-radius: 8px;
+	border-style: none;
+
+	/* Button Text "Masukkan Keranjang" */
+	color: #055053;
+}
+
+.buy-now-button {
+	/* Button box "Beli Sekarang" */
+	background: #055053;
+	border-radius: 8px;
+	border-style: none;
+
+	/* Button Text "Beli Sekarang" */
+	color: #ffffff;
+}
+
+/* product-description */
+
+.product-description {
+    /* Center the div */
+    margin: 0 auto;
+    margin-top: 56px;
+    width: 78%;
+    height: 308px;
+}
+
+.product-desc-tab {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    
+    color: #24334e;
+
+    text-decoration: none;
+}
+
+.product-desc-title {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.02em;
+
+    color: #2B9692;
+}
+
+.product-desc-text {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    
+    color: #012231;
+}

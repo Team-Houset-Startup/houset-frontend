@@ -4,13 +4,14 @@ import ReactDOM from 'react-dom';
 
 import reportWebVitals from './reportWebVitals';
 
-import StartPage from './scenes/StartPage';
+import RoutingPage from './context/RoutingPage';
 
 import './assets/style/style.css';
+// import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <StartPage />
+    <RoutingPage />
   </React.StrictMode>,
   document.getElementById('root')
 );

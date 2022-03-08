@@ -2,6 +2,7 @@
 
 body {
   margin: 0;
+  padding: 0;
 }
 
 * {
@@ -11,4 +12,13 @@ body {
 
 a {
   text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.homepage-body {
+  /* For removing gap on every right-side of page */
+  overflow: hidden;
 }

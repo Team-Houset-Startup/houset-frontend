@@ -1,0 +1,13 @@
+.see-more-link {
+	/* untuk lihat semua */
+	font-weight: 600;
+	font-size: 16px;
+	
+	text-align: right;
+	color: #055053;
+	text-decoration: none;
+}
+
+.see-more-link:hover {
+	color: #012231;
+}
