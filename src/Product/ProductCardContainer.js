@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductCard from './ProductCard';
+import ProductCard from '../Components/ProductCard';
 
 import "./assets/style/product-card-container.css";
 

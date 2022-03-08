@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import LinkSeeMore from '../Components/LinkSeeMore';
 
 import "./assets/style/room-list.css";
 
@@ -42,7 +43,7 @@ class RoomList extends Component {
             <div className="preview-container">
                 <div className="head-room"> 
                     <p className="list-title"> Desain Interior Ruangan </p>
-                    <Link to = "/ruangan" className="see-more-link"> Lihat semua {'>'} </Link>
+                    <LinkSeeMore links="/ruangan" text="Lihat Semua"/>
                 </div>
                 
                 <div className="best-product">
