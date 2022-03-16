@@ -12,6 +12,7 @@ import SampleRoom from './assets/image/sample-room.png'
 import StepDesign from './StepDesign';
 
 import "./assets/style/homepage.css";
+import Button from '../Components/Button';
 
 // import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
@@ -29,7 +30,7 @@ function Homepage() {
                             Manjakan tampilan ruangan mu dengan membeli kursi
                             dari edisi terbaru Shabby Chic yang tentunya akan menambah desain manis dan elegant.
                         </p>
-                        <Link to="/"> <button className="buy-now"> Belanja Sekarang </button> </Link>
+                        <Link to="/furnitur"> <Button text="Belanja Sekarang" type="primary-button" /> </Link>
                     </div>
 
                 </div>

@@ -4,6 +4,9 @@ import "./assets/style/see-more.css";
 
 export default function LinkSeeMore(props) {
   return (
-    <Link to = {props.links} className="see-more-link"> {props.text} {'>'} </Link>
+    <div className="see-more-container">
+      <p className="see-more-title"> {props.title} </p>
+      <Link to = {props.links} className="see-more-link"> {props.text} {'>'} </Link>
+    </div>
   )
 }

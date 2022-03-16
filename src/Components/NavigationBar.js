@@ -3,7 +3,8 @@ import { Nav, Navbar, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import HousetLogo from "../assets/image/houset-logo2.png";
 
-import "../assets/style/navigation-bar.css";
+import "./assets/style/navigation-bar.css";
+import Button from './Button';
 
 function NavigationBar() {
 
@@ -36,8 +37,8 @@ function NavigationBar() {
                 </ul>
             </div>
             <div className="login-register">
-                <Link to="/register"> <button className="register-button"> Register </button> </Link>
-                <Link to="/login"> <button className="login-button"> Login </button> </Link>
+                <Link to="/register"> <Button text="Register" type="secondary-button" /> </Link>
+                <Link to="/login"> <Button text="Login" type="primary-button" /> </Link>
             </div>
         </nav>
     );

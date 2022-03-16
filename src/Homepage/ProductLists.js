@@ -35,10 +35,9 @@ class ProductList extends Component {
         const { items } = this.state;
         return (
             <div className="preview-container">
-                <div className="head-product"> 
-                    <p className="list-title"> Produk Terbaik </p>
-                    <LinkSeeMore links="/furnitur" text="Lihat Semua"/>
-                </div>
+                
+                <LinkSeeMore title="Produk Terbaik" links="/furnitur" text="Lihat Semua"/>
+                
                 <div className="best-product">
                     {
                         items.length > 0 ? items.slice(0,4).map(item => {

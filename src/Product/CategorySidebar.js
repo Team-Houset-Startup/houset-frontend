@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "../assets/style/category-sidebar.css";
+import "./assets/style/category-sidebar.css";
 
 // Opsi kategori yang ada di samping kiri
 

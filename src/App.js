@@ -10,6 +10,7 @@ import Ruangan from './Product/Ruangan';
 import Kanvas from './Canvas/Kanvas';
 import Penawaran from './Offer/Penawaran';
 import ProductDetailed from './ProductDetailed/ProductDetailed';
+import Cart from './Cart/Cart';
 
 import useToken from './context/useToken';
 import ScrollToTop from './Components/ScrollToTop';
@@ -41,6 +42,8 @@ export default function App(params) {
             {/* <Route path="/furnitur/product-page" element={<RoomPage />} /> */}
             <Route path="/kanvas" element={<Kanvas />} />
             <Route path="/penawaran" element={<Penawaran />} />
+
+            <Route path="/cart" element={<Cart />} />
           </Routes>
 
         </Router>

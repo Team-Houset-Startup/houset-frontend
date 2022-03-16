@@ -8,7 +8,7 @@ import LinkSeeMore from '../Components/LinkSeeMore';
 
 const ProductList = () => {
     let Products = [];
-    let row = 2;
+    let row = 1;
     let col = 4;
     for (var i = 0; i < row; i++) {
         Products.push(
@@ -38,11 +38,11 @@ const ProductList = () => {
     )
 };
 
-export default function Recommendation() {
+export default function ProductLastSeen() {
     return (
         <div className="product-recommendation">
             
-            <LinkSeeMore title="Produk yang mungkin Anda suka" links="/furnitur" text="Lihat Semua"/>
+            <LinkSeeMore title="Produk yang terakhir Anda lihat" links="/furnitur" text="Lihat Semua"/>
 
             <Container className="product-recommend-container">
 
