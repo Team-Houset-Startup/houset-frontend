@@ -31,7 +31,8 @@ function Login(props, setToken) {
             email,
             password
         });
-        
+        // console log status
+        console.log("ini token");
         setToken(token);
     }
 

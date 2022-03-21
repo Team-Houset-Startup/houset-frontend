@@ -1,0 +1,51 @@
+.cart-container {
+    padding: 0;
+}
+
+.cart-container-header {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    
+    color: #055053;
+}
+
+.cart-container-info {
+    /* vertical center */
+    display: flex;
+    align-items: center;
+    /* horizontal center */
+    justify-content: center;
+}
+
+.cart-container-elm {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    
+    color: #055053;
+    border-bottom: 1px solid #E4E7EC;
+    margin-top: 18px;
+}
+
+.delete-from-cart {
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 150%;
+    text-align: right;
+    margin-bottom: 0px;
+
+    /* element in the right */
+    margin-right: 0;
+    width: fit-content;
+    position: relative;
+    
+    text-decoration-line: underline;    
+    color: #E13B11;
+}
+
+.delete-from-cart:hover {
+    cursor: pointer;
+}

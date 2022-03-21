@@ -1,11 +1,15 @@
-.product-cart-pict {
+.cart-item-container {
+    padding-left: 12px;
+}
+
+.cart-item-pict {
     width: 79px;
     box-shadow: 0px 4px 11px rgba(5, 80, 83, 0.1);
     border-radius: 6px;
     margin-bottom: 15px;
 }
 
-.product-cart-type {
+.cart-item-type {
     font-weight: 400;
     font-size: 12px;
     line-height: 150%;
@@ -15,7 +19,7 @@
     width: max-content;
 }
 
-.product-cart-name {
+.cart-item-name {
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;

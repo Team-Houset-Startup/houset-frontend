@@ -73,12 +73,10 @@ button[disabled] {
 
 	/* Make the inside in middle */
 	padding: 0;
+	margin-left: 12px;
+	margin-right: 12px;
 }
 
 .button-operator:disabled {
 	background-color: #e6e6e6;
-}
-
-.button-operator svg {
-	/* margin-bottom: 10px; */
 }

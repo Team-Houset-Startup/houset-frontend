@@ -10,7 +10,8 @@ import Ruangan from './Product/Ruangan';
 import Kanvas from './Canvas/Kanvas';
 import Penawaran from './Offer/Penawaran';
 import ProductDetailed from './ProductDetailed/ProductDetailed';
-import Cart from './Cart/Cart';
+import Cart from './Transaction/Cart';
+import Checkout from './Transaction/Checkout';
 
 import useToken from './context/useToken';
 import ScrollToTop from './Components/ScrollToTop';
@@ -44,6 +45,7 @@ export default function App(params) {
             <Route path="/penawaran" element={<Penawaran />} />
 
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
 
         </Router>
@@ -52,6 +54,35 @@ export default function App(params) {
   }
 
   return (
-    <h1> Logged In </h1>
+    <Router>
+      <div className='homepage-body'>
+        <Router>
+          <ScrollToTop />
+          <Link to="/"> </Link>
+
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login setToken={setToken} />} />
+          </Routes>
+
+          <Routes>
+            <Route path="/furnitur" element={<Furniture />} />
+            <Route path="/furnitur/product-page" element={<ProductDetailed />} />
+
+            <Route path="/ruangan" element={<Ruangan />} />
+            <Route path="/ruangan/room-page" element={<ProductDetailed />} />
+
+            {/* <Route path="/furnitur/product-page" element={<RoomPage />} /> */}
+            <Route path="/kanvas" element={<Kanvas />} />
+            <Route path="/penawaran" element={<Penawaran />} />
+
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+          </Routes>
+
+        </Router>
+      </div>
+    </Router>
   )
 }

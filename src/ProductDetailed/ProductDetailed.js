@@ -7,8 +7,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import NavigationBar from '../Components/NavigationBar';
 import Footer from '../Components/Footer';
-import Recommendation from './Recommendation';
-import ProductLastSeen from './ProductLastSeen';
+import Recommendation from '../Components/Recommendation';
+import ProductLastSeen from '../Components/ProductLastSeen';
 import Button from '../Components/Button';
 
 import ProductThumbnail from './ProductThumbnail';
@@ -200,7 +200,7 @@ export default function ProductDetailed() {
 
             <hr />
 
-            <Recommendation />
+            <Recommendation count="2"/>
 
             <ProductLastSeen />
 

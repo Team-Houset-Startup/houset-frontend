@@ -1,11 +1,15 @@
 import React from 'react'
 import propTypes from 'prop-types'
+import { Link, useNavigate } from 'react-router-dom'
 
 import "./assets/style/button.css"
 
 export default function Button(props) {
+  const navigate = useNavigate();
+  const redirectPage = () => navigate(props.toPage, { replace: true });
+
   return (
-    <button className={props.type} onClick={props.click} disabled={props.isDisabled}> {props.text} </button>
+    <button className={props.type} onClick={() => redirectPage()} disabled={props.isDisabled}> {props.text} </button>
   )
 }
 

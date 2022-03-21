@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import ProductCard from '../Components/ProductCard';
+import ProductCard from './ProductCard';
 
 import "./assets/style/recommendation.css";
-import LinkSeeMore from '../Components/LinkSeeMore';
+import LinkSeeMore from './LinkSeeMore';
 
-const ProductList = () => {
+const ProductList = (count) => {
     let Products = [];
-    let row = 2;
+    let row = count;
     let col = 4;
     for (var i = 0; i < row; i++) {
         Products.push(
@@ -38,30 +38,18 @@ const ProductList = () => {
     )
 };
 
-export default function Recommendation() {
+export default function Recommendation(props) {
     return (
-        <div className="product-recommendation">
+        <Container className="product-recommendation">
             
             <LinkSeeMore title="Produk yang mungkin Anda suka" links="/furnitur" text="Lihat Semua"/>
 
             <Container className="product-recommend-container">
 
-                <Row>
-                    {ProductList()}
-                    {/* <Col xl={3}>
-                        <ProductCard />
-                    </Col>
-                    <Col xl={3}>
-                        <ProductCard />
-                    </Col>
-                    <Col xl={3}>
-                        <ProductCard />
-                    </Col>
-                    <Col xl={3}>
-                        <ProductCard />
-                    </Col> */}
+                <Row xl={12}>
+                    {ProductList(props.count)}
                 </Row>
             </Container>
-        </div>
+        </Container>
     )
 }

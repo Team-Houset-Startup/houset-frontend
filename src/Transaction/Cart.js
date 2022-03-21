@@ -1,38 +1,47 @@
 import React, { useState } from 'react'
 import { Col, Container, Row, Table } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
 import Footer from '../Components/Footer'
 import NavigationBar from '../Components/NavigationBar'
-import ProductCart from './ProductCart'
-
+import CartItem from './CartItem'
 import "./assets/style/cart.css"
 import { product } from "../db/product"
 import Button, { Plus, Minus } from '../Components/Button'
+import Recommendation from '../Components/Recommendation'
+import CartContainer from './CartContainer'
 
 export default function Carts() {
     const [qty, setQty] = useState(1);
     const [price, setPrice] = useState(35000);
     const [subPrice, setSubPrice] = useState(qty * price);
-    const [totalPrice, setTotalPrice] = useState(0);
+    // const [totalPrice, setTotalPrice] = useState(0);
 
-    let priceSum = 0;
+    const navigate = useNavigate();
+    const goToCheckout = () => navigate("/checkout", { replace: true });
 
-    const didDelete = (e) => {
-        e.preventDefault();
-        alert("Produk berhasil dihapus");
-        // const navigate = useNavigate();
-        // navigate("/cart");
+    function countTotalPrice() {
+        let price = 0;
+        product.map((item) => {
+            price += item.subPrice
+        })
+        return price;
+        // return (
+        //     <p> 10 </p>
+        // )
     }
 
     return (
         <>
             <NavigationBar />
-
-            <Container className="cart-container-main" responsive>
+            
+            <Container className="transaction-container-main" responsive>
                 <Row xl={12} lg={12} className="justify-content-md-center">
-                    <p className="cart-title"> Keranjang </p>
-                    <Col xl={8} lg={7}>
-                        <Table borderless className="cart-table">
+                    <p className="transaction-title"> Keranjang </p>
+
+                    <Col>
+                        <CartContainer />
+                        {/* <Table borderless className="cart-table">
                             <thead className="cart-table-header">
                                 <tr>
                                     <th style={{ textAlign: "left", width: "300px" }}> Produk </th>
@@ -42,20 +51,20 @@ export default function Carts() {
                                 </tr>
                             </thead>
                             <tbody className="cart-table-body">
-                                {/* Show the product added to cart with tables*/}
 
                                 {product.map((item, key) => {
-                                    // setTotalPrice(item.subPrice + this.totalPrice);
                                     priceSum += item.subPrice
                                     return (
                                         <tr>
                                             <td style={{ textAlign: "left", width: "auto" }}>
 
                                                 <input type="checkbox" />
-                                                <ProductCart type={item.type} name={item.name} />
+                                                <CartItem type={item.type} name={item.name} />
 
                                             </td>
-                                            <td> Rp {item.price} </td>
+                                            <td> 
+                                                <p className="align-items-center"> Rp {item.price} </p> 
+                                            </td>
                                             <td>
                                                 <Minus />
                                                 {item.qty}
@@ -70,7 +79,7 @@ export default function Carts() {
                                 })
                                 }
                             </tbody>
-                        </Table>
+                        </Table> */}
                     </Col>
 
                     <Col xl={4} lg={5}>
@@ -93,16 +102,17 @@ export default function Carts() {
                                         </Row>
                                     )
                                 })}
+                                <hr />
                                 <Row xs={2} className="cart-total-price">
                                     <Col xl>
                                         <p> Total </p>
                                     </Col>
-                                    <Col xl style={ {textAlign: "right"} }>
-                                        <p> Rp {priceSum} </p>
+                                    <Col xl style={{ textAlign: "right" }}>
+                                        <p> Rp {countTotalPrice()} </p>
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Button type="primary-button" text="Checkout" />
+                                    <Button type="primary-button" text="Checkout" toPage="/checkout" />
                                 </Row>
                             </Container>
                         </div>
@@ -110,15 +120,15 @@ export default function Carts() {
                 </Row>
 
                 <Row xl={12} md={8}>
-                    <Col xl={ {span: 2} }  style={ {margin:0} }>
-                        <Button type="secondary-button" text="Hapus semua" isDisabled={true}/>
+                    <Col xl={{ span: 2 }} style={{ margin: 0 }}>
+                        <Button type="secondary-button" text="Hapus semua" isDisabled={true} />
                     </Col>
 
-                    <Col xl={ {span: 2} }>
+                    <Col xl={{ span: 2 }}>
                         <Button type="primary-button" text="Lanjut Belanja" />
                     </Col>
-                    <Col xl={ {span: 3, offset:2} }>
-                        <p className="cart-subtotal"> Subtotal Rp {priceSum} </p>
+                    <Col xl={{ span: 3, offset: 2 }}>
+                        <p className="cart-subtotal"> Subtotal Rp {countTotalPrice()} </p>
                     </Col>
                 </Row>
                 {/* <div>
@@ -126,6 +136,8 @@ export default function Carts() {
                     <Button type="primary-button" text="Lanjut Belanja" />
                 </div> */}
             </Container>
+
+            <Recommendation count="1" />
 
             <Footer />
         </>

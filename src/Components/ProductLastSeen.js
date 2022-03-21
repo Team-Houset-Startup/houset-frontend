@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import ProductCard from '../Components/ProductCard';
+import ProductCard from './ProductCard';
 
 import "./assets/style/recommendation.css";
-import LinkSeeMore from '../Components/LinkSeeMore';
+import LinkSeeMore from './LinkSeeMore';
 
 const ProductList = () => {
     let Products = [];
@@ -48,18 +48,6 @@ export default function ProductLastSeen() {
 
                 <Row>
                     {ProductList()}
-                    {/* <Col xl={3}>
-                        <ProductCard />
-                    </Col>
-                    <Col xl={3}>
-                        <ProductCard />
-                    </Col>
-                    <Col xl={3}>
-                        <ProductCard />
-                    </Col>
-                    <Col xl={3}>
-                        <ProductCard />
-                    </Col> */}
                 </Row>
             </Container>
         </div>
