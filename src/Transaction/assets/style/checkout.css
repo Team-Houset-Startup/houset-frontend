@@ -1,0 +1,40 @@
+.checkout-subtitle {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+
+    color: #667085;
+}
+
+.checkout-loc {
+    margin-top: 32px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #012231;
+}
+
+.checkout-details {
+    border-top: 2px solid #E4E7EC;
+    border-bottom: 2px solid #E4E7EC;
+    width: max-content;
+    margin: 10px 0px 20px 0px;
+    padding: 20px 0px 10px 0px;
+}
+
+.checkout-details div {
+    padding: 0px;
+}
+
+.checkout-details-text {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    
+    color: #012231;    
+}
+
+.checkout-details-edit button {
+    margin-right: 0;
+}

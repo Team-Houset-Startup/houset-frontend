@@ -7,7 +7,7 @@ import Register from './LoginReg/Register';
 import Login from './LoginReg/Login';
 import Furniture from './Product/Furniture';
 import Ruangan from './Product/Ruangan';
-import Kanvas from './Canvas/Kanvas';
+import Canvas from './Canvas/Canvas';
 import Penawaran from './Offer/Penawaran';
 import ProductDetailed from './ProductDetailed/ProductDetailed';
 import Cart from './Transaction/Cart';
@@ -41,7 +41,7 @@ export default function App(params) {
             <Route path="/ruangan/room-page" element={<ProductDetailed />} />
 
             {/* <Route path="/furnitur/product-page" element={<RoomPage />} /> */}
-            <Route path="/kanvas" element={<Kanvas />} />
+            <Route path="/Canvas" element={<Canvas />} />
             <Route path="/penawaran" element={<Penawaran />} />
 
             <Route path="/cart" element={<Cart />} />
@@ -74,7 +74,7 @@ export default function App(params) {
             <Route path="/ruangan/room-page" element={<ProductDetailed />} />
 
             {/* <Route path="/furnitur/product-page" element={<RoomPage />} /> */}
-            <Route path="/kanvas" element={<Kanvas />} />
+            <Route path="/canvas" element={<Canvas />} />
             <Route path="/penawaran" element={<Penawaran />} />
 
             <Route path="/cart" element={<Cart />} />

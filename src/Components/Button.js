@@ -6,7 +6,7 @@ import "./assets/style/button.css"
 
 export default function Button(props) {
   const navigate = useNavigate();
-  const redirectPage = () => navigate(props.toPage, { replace: true });
+  const redirectPage = () => navigate(props.toPage);
 
   return (
     <button className={props.type} onClick={() => redirectPage()} disabled={props.isDisabled}> {props.text} </button>
@@ -14,28 +14,10 @@ export default function Button(props) {
 }
 
 Button.propTypes = {
-  type: propTypes.oneOf(['primary-button', 'secondary-button']),
-  click: propTypes.func,
+  type: propTypes.oneOf(['primary-button', 'secondary-button', 'action-button']),
   text: propTypes.string,
+  onClick: propTypes.string,
   isDisabled: propTypes.bool
 };
 
-export function Plus() {
-  return (
-    <button className="button-operator" >
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M13 8H8V13C8 13.55 7.55 14 7 14C6.45 14 6 13.55 6 13V8H1C0.45 8 0 7.55 0 7C0 6.45 0.45 6 1 6H6V1C6 0.45 6.45 0 7 0C7.55 0 8 0.45 8 1V6H13C13.55 6 14 6.45 14 7C14 7.55 13.55 8 13 8Z" fill="#055053" />
-      </svg>
-    </button>
-  )
-}
 
-export function Minus() {
-  return (
-    <button className="button-operator" >
-      <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M13 2H1C0.45 2 0 1.55 0 1C0 0.45 0.45 0 1 0H13C13.55 0 14 0.45 14 1C14 1.55 13.55 2 13 2Z" fill="#055053" />
-      </svg>
-    </button>
-  );
-}

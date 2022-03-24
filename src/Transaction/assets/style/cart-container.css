@@ -1,5 +1,5 @@
 .cart-container {
-    padding: 0;
+    
 }
 
 .cart-container-header {
@@ -48,4 +48,9 @@
 
 .delete-from-cart:hover {
     cursor: pointer;
+}
+
+.cart-subtotal {
+    margin-top: 32px;
+    text-align: right;
 }

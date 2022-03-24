@@ -1,0 +1,76 @@
+.navbar-canvas {
+    overflow: hidden;
+	position: fixed;
+	width: 100%;
+    height: 72px;
+    left: 0px;
+    top: 0px;
+    
+    background: #055053;
+}
+
+.navbar-canvas-logo {
+    margin-left: 42px;
+    width: 42px;
+}
+
+.navbar-collapse {
+    width: 1rem;
+}
+
+.navbar-button {
+    margin-right: 42px;
+    margin-left: 24px;
+    width: 78px;
+    height: 44px;
+    background: #C8F6E9;
+    border-radius: 8px;
+    border: none;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #055053;
+}
+
+.canvas-name {
+    width: 374px;
+    height: 44px;
+    
+    background: rgba(152, 162, 179, 0.3);
+    border-radius: 8px;
+    border: none;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;    
+    text-align: center;
+    color: #FFFFFF;    
+
+}
+
+.canvas-name::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.canvas-name:focus {
+    outline: none;
+}
+
+.canvas-download-icon {
+    width: 44px;
+    height: 44px;
+    
+    background: rgba(152, 162, 179, 0.3);
+    border-radius: 8px;
+    border-style: none;
+}
+
+.canvas-download-icon svg {
+    /* div center */
+    position: relative;
+    top: 41%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
