@@ -46,7 +46,7 @@ export default function Carts() {
                     </Col>
 
                     <Col xl={4} lg={5}>
-                        <CartSummary total={countTotalPrice()}/>
+                        <CartSummary total={countTotalPrice()} toPage="/checkout"/>
                         {/* <input type="text" className="input-promotion-code" placeholder='Masukkan Kode Promo' />
                         <div className="cart-summary">
                             <Container className="cart-container-summary">

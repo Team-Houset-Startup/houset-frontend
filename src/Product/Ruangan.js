@@ -3,7 +3,7 @@ import React from "react";
 
 import "./assets/style/furniture.css";
 import NavigationBar from "../Components/NavigationBar";
-import ProductCardContainer from "./ProductCardContainer";
+import RoomCardContainer from "./RoomCardContainer";
 import SelectionRoomContainer from "./SelectionRoomContainer";
 import CategorySidebar from "./CategorySidebar";
 import Search from "./Search";
@@ -28,7 +28,7 @@ function Ruangan() {
             <section className="section3">
                 <CategorySidebar />
 
-                <ProductCardContainer />
+                <RoomCardContainer />
             </section>
 
             <Footer />

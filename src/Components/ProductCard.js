@@ -5,7 +5,7 @@ import KursiPreview from "./assets/image/kursi.png";
 export default function ProductCard() {
     return (
         <div className="product-item">
-            <Link to="/furnitur/product-page">
+            <Link to="/product/product-page">
                 <div className="product-pict"> <img src={KursiPreview} alt="" /> </div>
                 <p className="item-type"> Kursi Tamu </p>
                 <p className="item-name"> Kursi Stacy </p>

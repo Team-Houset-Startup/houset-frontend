@@ -5,16 +5,18 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Homepage from './Homepage/Homepage';
 import Register from './LoginReg/Register';
 import Login from './LoginReg/Login';
-import Furniture from './Product/Furniture';
+import Product from './Product/Product';
 import Ruangan from './Product/Ruangan';
 import Canvas from './Canvas/Canvas';
 import Penawaran from './Offer/Penawaran';
 import ProductDetailed from './ProductDetailed/ProductDetailed';
+import RoomDetailed from './RoomDetailed/RoomDetailed';
 import Cart from './Transaction/Cart';
 import Checkout from './Transaction/Checkout';
-
+import Invoice from './Transaction/Invoice';
 import useToken from './context/useToken';
 import ScrollToTop from './Components/ScrollToTop';
+
 
 export default function App(params) {
   const { token, setToken } = useToken()
@@ -34,18 +36,20 @@ export default function App(params) {
           </Routes>
 
           <Routes>
-            <Route path="/furnitur" element={<Furniture />} />
-            <Route path="/furnitur/product-page" element={<ProductDetailed />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/product/product-page" element={<ProductDetailed />} />
+            <Route path="/product/room-page" element={<RoomDetailed />} />
 
             <Route path="/ruangan" element={<Ruangan />} />
-            <Route path="/ruangan/room-page" element={<ProductDetailed />} />
 
             {/* <Route path="/furnitur/product-page" element={<RoomPage />} /> */}
-            <Route path="/Canvas" element={<Canvas />} />
+            <Route path="/canvas" element={<Canvas />} />
             <Route path="/penawaran" element={<Penawaran />} />
 
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
+
+            <Route path="/invoice" element={<Invoice />} />
           </Routes>
 
         </Router>
@@ -67,8 +71,8 @@ export default function App(params) {
           </Routes>
 
           <Routes>
-            <Route path="/furnitur" element={<Furniture />} />
-            <Route path="/furnitur/product-page" element={<ProductDetailed />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/product/product-page" element={<ProductDetailed />} />
 
             <Route path="/ruangan" element={<Ruangan />} />
             <Route path="/ruangan/room-page" element={<ProductDetailed />} />
@@ -79,6 +83,8 @@ export default function App(params) {
 
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
+
+            <Route path="/invoice" element={<Invoice />} />
           </Routes>
 
         </Router>

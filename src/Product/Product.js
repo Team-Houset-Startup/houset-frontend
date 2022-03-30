@@ -11,7 +11,7 @@ import PageListNavigator from "./PageListNavigator";
 import Footer from "../Components/Footer";
 import StartDesignBanner from "./StartDesignBanner";
 
-function Furniture() {
+function Product() {
     // let navigate = useNavigate();
     // let { page } = useParams();
     return (
@@ -43,4 +43,4 @@ function Furniture() {
     )
 }
 
-export default Furniture
+export default Product

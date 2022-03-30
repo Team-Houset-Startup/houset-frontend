@@ -18,7 +18,7 @@ export const product= [
     {
         "name": "Sofa Softyain",
         "type": "Sofa Tamu",
-        "price": "350.000",
+        "price": 350000,
         "qty": 2,
         "subPrice": 700000
     }

@@ -30,9 +30,9 @@ function NavigationBar() {
             <div className="navbar-div">
                 <Link to="/"> <img src={HousetLogo} className="houset-logo" alt="image not found" /> </Link>
                 <ul className="navbar-ul">
-                    <li> <Link to="/furnitur"> Furniture </Link> </li>
+                    <li> <Link to="/product"> Furniture </Link> </li>
                     <li> <Link to="/ruangan"> Ruangan </Link> </li>
-                    {/* <li> <Link to="/kanvas"> Kanvas Desain </Link> </li> */}
+                    {/* <li> <Link to="/canvas"> Kanvas Desain </Link> </li> */}
                     <li> <Link to="/penawaran"> Penawaran </Link> </li>
                 </ul>
             </div>

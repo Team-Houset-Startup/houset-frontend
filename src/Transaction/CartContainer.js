@@ -67,6 +67,7 @@ export default function CartContainer(props) {
             </Row>
 
             {product.map((item, key) => {
+
                 return (props.feature == "cart") ? (
                     <Row className="cart-container-elm">
                         <Col xl={{ order: 1, span: 5 }} lg={{ order: 1, span: 6 }} style={{ width: "300px" }} >
@@ -86,7 +87,7 @@ export default function CartContainer(props) {
 
                         <Col xl={{ order: 4 }} lg={{ order: 4 }} className="cart-container-info">
                             <Row xl={2}>
-                                Rp {item.subPrice}
+                                Rp {qty * item.price}
                             </Row>
                             <Row>
                                 <p className="delete-from-cart" onClick={didDelete}> hapus </p>

@@ -102,7 +102,7 @@ export default function Checkout() {
                     </Col>
 
                     <Col xl={{ span: 3, offset: 1 }} sm={{ span: 10 }}>
-                        <CartSummary total={countTotalPrice()}/>
+                        <CartSummary total={countTotalPrice()} toPage="/invoice"/>
                     </Col>
                     {/* <hr /> */}
                 </Row>

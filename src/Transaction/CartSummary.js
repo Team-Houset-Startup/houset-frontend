@@ -46,7 +46,7 @@ export default function CartSummary(props) {
                         </Col>
                     </Row>
                     <Row>
-                        <Button type="primary-button" text="Checkout" toPage="/checkout" />
+                        <Button type="primary-button" text="Checkout" toPage={props.toPage} />
                     </Row>
                 </Container>
             </div>
