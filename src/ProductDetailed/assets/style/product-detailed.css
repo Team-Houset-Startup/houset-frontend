@@ -126,38 +126,8 @@
 }
 
 /* product-description */
-
-.product-description {
-    /* Center the div */
-    margin: 0 auto;
-    margin-top: 56px;
-    width: 78%;
-    height: 308px;
-}
-
-.product-desc-tab {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 32px;
-    
-    color: #24334e;
-
-    text-decoration: none;
-}
-
-.product-tab-subtitle {
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 32px;
-    letter-spacing: 0.02em;
-
-    color: #2B9692;
-}
-
-.product-tab-information {
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 28px;
-    
-    color: #012231;
+.product-desc-col {
+	/* column of item description section */
+	/* center the div */
+	margin: 0 auto;
 }

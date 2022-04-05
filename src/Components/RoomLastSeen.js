@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import ProductCard from './ProductCard';
+import RoomCard from './RoomCard';
 
 import "./assets/style/auto-suggest-item.css";
 import LinkSeeMore from './LinkSeeMore';
@@ -17,7 +17,7 @@ const ProductList = () => {
                     [...Array(col)].map((e, index) => {
                         return (
                             <Col xl={3} key={index}>
-                                <ProductCard />
+                                <RoomCard />
                             </Col>
                         )
                     })
@@ -41,12 +41,12 @@ const ProductList = () => {
 export default function ProductLastSeen() {
     return (
         <Container className="product-auto-suggest">
-            <Row>
-                <LinkSeeMore title="Produk yang terakhir Anda lihat" links="/furnitur" text="Lihat Semua" />
-            </Row>
-            <Row xl={12} className="product-auto-list">
-                {ProductList()}
-            </Row>
-        </Container>
+        <Row>
+            <LinkSeeMore title="Desain ruangan terakhir Anda lihat" links="/ruangan" text="Lihat Semua" />
+        </Row>
+        <Row xl={12} className="product-auto-list">
+            {ProductList()}
+        </Row>
+    </Container>
     )
 }

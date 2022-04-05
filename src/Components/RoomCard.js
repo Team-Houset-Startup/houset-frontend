@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import RoomPreview from "./assets/image/room.png";
+import RoomModals from '../RoomDetailed/RoomDetailed';
+
+import Button from '../Components/Button';
+import { Modal } from 'bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+// import RoomPhoto from "../RoomModals/assets/image/room-photo.png";
 
 import "./assets/style/room-card.css";
 
@@ -19,14 +25,46 @@ import "./assets/style/room-card.css";
 // }
 
 export default function RoomCard() {
-        return (
-            <div className="product-item">
-                <Link to="/product/room-page">
-                    <div className="room-pict"> <img src={RoomPreview} alt="" /> </div>
-                    <p className="room-type"> Shabby Chic </p>
-                    <p className="room-name"> Sweet Rosie </p>
-                    {/* <LikeIcon /> */}
-                </Link>
-            </div>
-        )
+    const [showRoom, setShowRoom] = useState(false);
+    const [show, setShow] = useState(false);
+
+    function handleModal() {
+        setShowRoom(true);
     }
+
+    return (
+        <>
+        
+        <div className="product-item">
+            {/* <button className="room-modals-btn" onClick={() => {this.handleModal()}}> */}
+                <div className="room-pict"> <img src={RoomPreview} alt="" /> </div>
+                <p className="room-type"> Shabby Chic </p>
+                <p className="room-name"> Sweet Rosie </p>
+                {/* <LikeIcon /> */}
+            {/* </button> */}
+        </div>
+        {/* <RoomModals showRoom={showRoom} /> */}
+        {/* <Modal show={showRoom}>
+            <Modal.Header> Modal head </Modal.Header>
+            <Modal.Body>
+                <Container fluid className="room-container">
+                    <Row>
+                        <Col>
+                            <p> Ruang Keluarga </p>
+                            <p> Rustic Boho </p>
+                            <p> Rp 60.000 </p>
+                            <p> Desain ruang keluarga minimalis modern dengan detail serta fungsi yang dipikirkan secara matang sehingga terlihat penuh gaya dan fungsional. Selain berperan sebagai ruang keluarga, area ini juga menjadi ruang tamu dan ruang untuk bersantai. </p>
+                            <Row>
+                                <Button type="secondary-button" text="Mulai Design" isDisabled={true} />
+                            </Row>
+                        </Col>
+                        <Col>
+                            <img src={RoomPhoto} alt="room-photo" className="room-photo" />
+                        </Col>
+                    </Row>
+                </Container>
+            </Modal.Body>
+        </Modal> */}
+        </>
+    )
+}

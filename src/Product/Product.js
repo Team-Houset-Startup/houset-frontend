@@ -1,7 +1,6 @@
 import React from "react";
 // import { useNavigate, useParams } from "react-router-dom";
 
-import "./assets/style/furniture.css";
 import NavigationBar from "../Components/NavigationBar";
 import ProductCardContainer from "./ProductCardContainer";
 import SelectionRoomContainer from "./SelectionRoomContainer";
@@ -11,10 +10,13 @@ import PageListNavigator from "./PageListNavigator";
 import Footer from "../Components/Footer";
 import StartDesignBanner from "./StartDesignBanner";
 
+import "./assets/style/furniture.css";
+
 function Product() {
     // let navigate = useNavigate();
     // let { page } = useParams();
     return (
+        <>
         <div className="product-page">
             <NavigationBar />
             <section className="section1">
@@ -40,6 +42,7 @@ function Product() {
 
             <Footer />
         </div>
+        </>
     )
 }
 

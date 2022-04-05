@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import KursiPreview from "./assets/image/kursi.png";
 
+import "./assets/style/product-card.css";
+
 export default function ProductCard() {
     return (
         <div className="product-item">

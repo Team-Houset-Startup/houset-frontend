@@ -6,9 +6,9 @@ import ProductCard from './ProductCard';
 import "./assets/style/auto-suggest-item.css";
 import LinkSeeMore from './LinkSeeMore';
 
-const ProductList = () => {
+const ProductList = (count) => {
     let Products = [];
-    let row = 1;
+    let row = count;
     let col = 4;
     for (var i = 0; i < row; i++) {
         Products.push(
@@ -38,14 +38,14 @@ const ProductList = () => {
     )
 };
 
-export default function ProductLastSeen() {
+export default function Recommendation(props) {
     return (
         <Container className="product-auto-suggest">
             <Row>
-                <LinkSeeMore title="Produk yang terakhir Anda lihat" links="/furnitur" text="Lihat Semua" />
+                <LinkSeeMore title="Produk yang mungkin cocok" links="/furnitur" text="Lihat Semua" />
             </Row>
             <Row xl={12} className="product-auto-list">
-                {ProductList()}
+                {ProductList(props.count)}
             </Row>
         </Container>
     )

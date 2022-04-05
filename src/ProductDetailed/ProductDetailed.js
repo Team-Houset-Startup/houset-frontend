@@ -7,8 +7,9 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import NavigationBar from '../Components/NavigationBar';
 import Footer from '../Components/Footer';
-import Recommendation from '../Components/Recommendation';
+import RecommendationProduct from '../Components/RecommendationProduct';
 import ProductLastSeen from '../Components/ProductLastSeen';
+import ItemDescription from '../Components/ItemDescription';
 import Button from '../Components/Button';
 
 import ProductThumbnail from './ProductThumbnail';
@@ -28,83 +29,6 @@ const Plus = () => {
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M13 8H8V13C8 13.55 7.55 14 7 14C6.45 14 6 13.55 6 13V8H1C0.45 8 0 7.55 0 7C0 6.45 0.45 6 1 6H6V1C6 0.45 6.45 0 7 0C7.55 0 8 0.45 8 1V6H13C13.55 6 14 6.45 14 7C14 7.55 13.55 8 13 8Z" fill="#055053" />
         </svg>
-    )
-}
-
-const Description = () => {
-    return (
-        <div>
-            <h4 className="product-tab-subtitle"> Deskripsi Produk </h4>
-            <p className="product-tab-information"> Nestudio Kursi dapat membuat ruangan Anda tampil cantik. Kerangkanya yang terbuat dari kayu serta desain yang unik dan warna cerah akan memberikan aksen pada ruangan tanpa perlu banyak dekorasi. Letakkan kursi ini di dekat jendela atau berhimpitan dengan tembok dan lihat bagaimana ruangan akan terasa lebih hidup! Bantalan dengan busa empuk dan lapisan per membuat Anda tetap nyaman meski telah duduk berjam-jam. Finishing produk menggunakan veneer berbahan natural sehingga mempertahankan keindahan tekstur serat alami. Didesain ergonomis dengan kemiringan sudut (untuk sofa & kursi) dan dimensi yang telah disesuaikan dengan tinggi dan postur tubuh konsumen Asia.Telah melalui proses pengujian dan tersertifikasi sehingga kualitas dan ketahanannya terjamin.</p>
-        </div>
-    )
-}
-
-const DetailSpecs = () => {
-    const showInfo = () => {
-        var info = [];
-        for (var i = 0; i < 6; i++) {
-            info.push(
-                <Row>
-                    <Col>
-                        Brand
-                    </Col>
-                    <Col>
-                        Nestudio
-                    </Col>
-                </Row>
-            )
-        }
-        return info;
-    }
-
-    return (
-        <Container>
-            <Row xs={1} sm={2}>
-                <Col>
-                    <p className="product-tab-subtitle"> Detail </p>
-                    <Container className="product-tab-information">
-                        {showInfo()}
-                    </Container>
-                </Col>
-                <Col>
-                    <p className="product-tab-subtitle"> Spesifikasi </p>
-                    <Container className="product-tab-information">
-                        <Row>
-                            <Col>
-                                Brand
-                            </Col>
-                            <Col>
-                                Nestudio
-                            </Col>
-                        </Row>
-                    </Container>
-                </Col>
-            </Row>
-        </Container>
-    )
-}
-
-const Gallery = () => {
-    return (
-        <Container>
-            <p className="product-tab-subtitle"> Tampilan Produk </p>
-        </Container>
-    )
-}
-
-const Review = () => {
-    return (
-        <Container>
-            <Row>
-                <Col>
-                    <p className="product-tab-subtitle"> Penilaian Produk </p>
-                </Col>
-                <Col>
-                    <p className="product-tab-subtitle"> Ulasan Pelanggan </p>
-                </Col>
-            </Row>
-        </Container>
     )
 }
 
@@ -178,31 +102,19 @@ export default function ProductDetailed() {
                         <ProductThumbnail />
                     </Col>
                 </Row>
+
+                <Row xl={12}>
+                    <Col xl={10} className="product-desc-col">
+                        <ItemDescription />
+                    </Col>
+                </Row>
+
+                <hr/>
+
+                <RecommendationProduct count="2" />
+
+                <ProductLastSeen />
             </Container>
-
-
-            <div className="product-description">
-                <Tabs defaultActiveKey="description" id="uncontrolled-tab-example" className="mb-3">
-                    <Tab className="product-desc-tab" eventKey="description" title="Deskripsi">
-                        <Description />
-                    </Tab>
-                    <Tab className="product-desc-tab" eventKey="detail" title="Detail dan Spesifikasi">
-                        <DetailSpecs />
-                    </Tab>
-                    <Tab className="product-desc-tab" eventKey="gallery" title="Gallery">
-                        <Gallery />
-                    </Tab>
-                    <Tab className="product-desc-tab" eventKey="review" title="Ulasan">
-                        <Review />
-                    </Tab>
-                </Tabs>
-            </div>
-
-            <hr />
-
-            <Recommendation count="2"/>
-
-            <ProductLastSeen />
 
             <Footer />
         </>

@@ -38,7 +38,7 @@ export default function App(params) {
           <Routes>
             <Route path="/product" element={<Product />} />
             <Route path="/product/product-page" element={<ProductDetailed />} />
-            <Route path="/product/room-page" element={<RoomDetailed />} />
+            <Route path="/product/room-page" element={<RoomDetailed/>} />
 
             <Route path="/ruangan" element={<Ruangan />} />
 
@@ -58,37 +58,8 @@ export default function App(params) {
   }
 
   return (
-    <Router>
-      <div className='homepage-body'>
-        <Router>
-          <ScrollToTop />
-          <Link to="/"> </Link>
-
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login setToken={setToken} />} />
-          </Routes>
-
-          <Routes>
-            <Route path="/product" element={<Product />} />
-            <Route path="/product/product-page" element={<ProductDetailed />} />
-
-            <Route path="/ruangan" element={<Ruangan />} />
-            <Route path="/ruangan/room-page" element={<ProductDetailed />} />
-
-            {/* <Route path="/furnitur/product-page" element={<RoomPage />} /> */}
-            <Route path="/canvas" element={<Canvas />} />
-            <Route path="/penawaran" element={<Penawaran />} />
-
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/checkout" element={<Checkout />} />
-
-            <Route path="/invoice" element={<Invoice />} />
-          </Routes>
-
-        </Router>
-      </div>
-    </Router>
+    <div>
+      Logged in
+    </div>
   )
 }

@@ -7,7 +7,7 @@ import NavigationBar from '../Components/NavigationBar'
 import CartItem from './CartItem'
 import { product } from '../db/product'
 import Button, { Plus, Minus } from '../Components/Button'
-import Recommendation from '../Components/Recommendation'
+import RecommendationProduct from '../Components/RecommendationProduct'
 import CartContainer from './CartContainer'
 import CartSummary from './CartSummary'
 
@@ -98,7 +98,7 @@ export default function Carts() {
                 </div> */}
             </Container>
 
-            <Recommendation count="1" />
+            <RecommendationProduct count="1" />
 
             <Footer />
         </>

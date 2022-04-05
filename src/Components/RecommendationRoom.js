@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import ProductCard from './ProductCard';
+import RoomCard from './RoomCard';
+import ProductRelated from './ProductRelated';
 
-import "./assets/style/recommendation.css";
+import "./assets/style/auto-suggest-item.css";
 import LinkSeeMore from './LinkSeeMore';
 
 const ProductList = (count) => {
@@ -17,7 +18,7 @@ const ProductList = (count) => {
                     [...Array(col)].map((e, index) => {
                         return (
                             <Col xl={3} key={index}>
-                                <ProductCard />
+                                <RoomCard />
                             </Col>
                         )
                     })
@@ -40,16 +41,14 @@ const ProductList = (count) => {
 
 export default function Recommendation(props) {
     return (
-        <Container className="product-recommendation">
+        <Container className="product-auto-suggest">
+            <Row>
+                <LinkSeeMore title="Desain ruangan yang mungkin Anda suka" links="/furnitur" text="Lihat Semua" />
+            </Row>
             
-            <LinkSeeMore title="Produk yang mungkin Anda suka" links="/furnitur" text="Lihat Semua"/>
-
-            <Container className="product-recommend-container">
-
-                <Row xl={12}>
-                    {ProductList(props.count)}
-                </Row>
-            </Container>
+            <Row xl={12} className="product-auto-list">
+                {ProductList(props.count)}
+            </Row>
         </Container>
     )
 }

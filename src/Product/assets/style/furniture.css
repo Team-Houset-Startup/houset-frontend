@@ -123,3 +123,15 @@
   margin-bottom: 100px;
   height: auto;
 }
+
+/* ==============================================    RUANGAN    ==============================================  */
+
+.room-modals {
+  margin-top: 172px;
+}
+
+.room-modals-btn {
+	background: none;
+	color: inherit;
+	border: none;
+}

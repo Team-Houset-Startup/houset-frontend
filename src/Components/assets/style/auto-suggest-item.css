@@ -1,16 +1,15 @@
-.product-recommendation {
+.product-auto-suggest {
     /* Make div in mid */
-    width: 78%;
-    margin: 0 auto;
+    
 }
 
-.product-liked {
+/* .product-liked {
     font-weight: 600;
     font-size: 24px;
     line-height: 29px;
         
     color: #012231;
-}
+} */
 
 .product-recommend-container col {
     
