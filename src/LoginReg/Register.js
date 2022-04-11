@@ -8,7 +8,7 @@ import "./assets/style/register.css";
 import "./assets/style/login.css";
 
 async function doRegister(credentials) {
-    return fetch('https://localhost:9090/api/v1/houset/auth/register', {
+    return fetch('api/v1/houset/auth/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -26,12 +26,12 @@ function Register(props) {
     const [error, setError] = useState("");
 
     // validate password 
-    const validatePassword = (password) => {
+    function validatePassword(password) {
         if (password.length < 8) {
-            setError("Password minimal 8 karakter");
+            // setError("Password minimal 8 karakter");
             return false;
         } else {
-            setPassword(password);
+            return true;
         }
     }
 
@@ -47,26 +47,39 @@ function Register(props) {
             });
             alert("Register berhasil, silahkan login");
         } else {
-            alert("Password harus 8-16 karakter");
+            alert("Password minimal 8 karakter");
         }
     }
-
-
 
     return (
         <div className='login-register-body'>
             <NavbarLoginRegister />
-            <div class="container-form">
-                <h2 class="header-form"> Register </h2>
+            <div className="container-form">
+                <h2 className="header-form"> Register </h2>
                 <form onSubmit={handleSubmit}>
-                    <label class="text-label" for="email"> Nama </label> <br />
-                    <input class="box-input" type="text" name="email" placeholder="Masukkan nama lengkap anda" onChange={e => setNama(e.target.value)} required /> <br />
-                    <label class="text-label" for="email"> Email </label> <br />
-                    <input class="box-input" type="text" name="email" placeholder="Masukkan alamat email anda" onChange={e => setEmail(e.target.value)} required /> <br />
-                    <label class="text-label" for="password"> Password </label> <br />
-                    <input class="box-input" type="password" name="password" placeholder="Masukkan password anda" onChange={validatePassword} required /> <br />
-                    <div class="agreement-box">
-                        <input class="bottom-info" type="checkbox" /> Saya setuju dengan <strong> syarat & ketentuan </strong>
+                    <label className="text-label" for="email"> Nama </label> <br />
+                    <input className="box-input" 
+                        type="text" name="email" 
+                        placeholder="Masukkan nama lengkap anda" 
+                        onChange={e => setNama(e.target.value)} 
+                        required /> 
+                    <br />
+                    <label className="text-label" for="email"> Email </label> <br />
+                    <input className="box-input" 
+                        type="text" name="email" 
+                        placeholder="Masukkan alamat email anda"
+                        onChange={e => setEmail(e.target.value)} 
+                        required /> 
+                    <br />
+                    <label className="text-label" for="password"> Password </label> <br />
+                    <input className="box-input" 
+                        type="password" name="password" 
+                        placeholder="Masukkan password anda" 
+                        onChange={e => setPassword(e.target.value)} 
+                        required /> 
+                    <br />
+                    <div className="agreement-box">
+                        <input className="bottom-info" type="checkbox" /> Saya setuju dengan <strong> syarat & ketentuan </strong>
                         serta <strong>Kebijakan Privasi</strong> di Houset <br />
                     </div>
                     <button type="submit"> Register </button>
@@ -75,8 +88,8 @@ function Register(props) {
                         <AlternateLogin />
                     </div>
 
-                    <div class="form-footer">
-                        <p class="switch-method"> Sudah punya akun? <Link to="/login"> Masuk </Link> </p>
+                    <div className="form-footer">
+                        <p className="switch-method"> Sudah punya akun? <Link to="/login"> Masuk </Link> </p>
                     </div>
                 </form>
             </div>

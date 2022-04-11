@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import axios from 'axios';
 
 import { Link } from 'react-router-dom';
@@ -10,7 +10,8 @@ import "./assets/style/login-register.css"
 import "./assets/style/login.css";
 
 async function doLogin(credentials) {
-    return fetch('https://localhost:9090/api/v1/houset/auth/login', {
+  return fetch('api/v1/houset/auth/login', {
+        // mode: 'no-cors',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -20,7 +21,7 @@ async function doLogin(credentials) {
         .then(data => data.json())
 }
 
-function Login(props, setToken) {
+export default function Login({ setToken }) {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -32,7 +33,7 @@ function Login(props, setToken) {
             password
         });
         // console log status
-        console.log("ini token");
+        console.log(token)
         setToken(token);
     }
 
@@ -42,14 +43,14 @@ function Login(props, setToken) {
             <div className="container-form">
                 <h2 className="header-form"> Login </h2>
                 <form onSubmit={handleSubmit}>
-                    
+
                     <label className="text-label" htmlFor="email"> Email </label> <br />
                     <input className="box-input"
                         type="text"
                         name="email"
                         placeholder="Masukkan alamat email anda"
-                        onChange={e => setEmail(e.target.value)} 
-                        required/>
+                        onChange={e => setEmail(e.target.value)}
+                        required />
                     <br />
 
                     <label className="text-label" htmlFor="password"> Password </label> <br />
@@ -58,8 +59,8 @@ function Login(props, setToken) {
                         name="password"
                         placeholder="Masukkan password anda"
                         onChange={e => setPassword(e.target.value)}
-                        autoComplete = "on" 
-                        required/>
+                        autoComplete="on"
+                        required />
                     <br />
 
                     <p>
@@ -83,7 +84,5 @@ function Login(props, setToken) {
 }
 
 Login.propTypes = {
-    setToken: propTypes.func.isRequired
+    setToken: PropTypes.func.isRequired
 }
-
-export default Login;

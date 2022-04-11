@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 // import NavigationBar from './parts/NavigationBar';
@@ -19,7 +19,7 @@ import ScrollToTop from './Components/ScrollToTop';
 
 
 export default function App(params) {
-  const { token, setToken } = useToken()
+  const { token, setToken } = useToken();
 
   if (!token) {
     return (
