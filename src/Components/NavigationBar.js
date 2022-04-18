@@ -1,30 +1,42 @@
 import React from 'react';
 import { Nav, Navbar, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import HousetLogo from "../assets/image/houset-logo2.png";
+import useToken from '../context/useToken';
+import Button from './Button';
+import ProfilePicture from './assets/image/profile-picture.png';
 
 import "./assets/style/navigation-bar.css";
-import Button from './Button';
 
 function NavigationBar() {
+    const { token, setToken } = useToken();
+    const navigate = useNavigate();
+    let profile = (<> </>)
+
+    const handleLogout = () => {
+        sessionStorage.removeItem('token');
+        setToken(null);
+        navigate("/product");
+    }
+
+    if (!token) {
+        profile = (
+            <div className="login-register">
+                <Button text="Register" type="secondary-button" toPage={"/register"} />
+                <Button text="Login" type="primary-button" toPage={"/login"} />
+            </div>
+        )
+    } else {
+        profile = (
+            <div className="navbar-profile">
+                <button onClick={handleLogout}>
+                    <img src={ProfilePicture} alt="profile-picture" className="profile-picture" />
+                </button>
+            </div>
+        )
+    }
 
     return (
-        // <Navbar className="navbar-nav">
-        //     <Container className="navbar-div">
-        //         <Navbar.Brand to="/"> <img src={HousetLogo} className="houset-logo" alt="image not found" /> </Navbar.Brand>
-        //         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        //         <Navbar.Collapse className="navbar-ul">
-        //             <li> <Nav.Link to="/furnitur"> Furniture </Nav.Link> </li>
-        //             <li> <Nav.Link to="/ruangan"> Ruangan </Nav.Link> </li>
-        //             {/* <li> <Link to="/kanvas"> Kanvas Desain </Link> </li> */}
-        //             <li> <Nav.Link to="/penawaran"> Penawaran </Nav.Link> </li>
-        //         </Navbar.Collapse>
-        //     </Container>
-        //     <div className="login-register">
-        //         <Link to="/register"> <button className="register-button"> Register </button> </Link>
-        //         <Link to="/login"> <button className="login-button"> Login </button> </Link>
-        //     </div>
-        // </Navbar>
 
         <nav className="navbar-nav">
             <div className="navbar-div">
@@ -32,14 +44,19 @@ function NavigationBar() {
                 <ul className="navbar-ul">
                     <li> <Link to="/product"> Furniture </Link> </li>
                     <li> <Link to="/ruangan"> Ruangan </Link> </li>
-                    {/* <li> <Link to="/canvas"> Kanvas Desain </Link> </li> */}
+                    <li> <Link to="/canvas"> Kanvas Desain </Link> </li>
                     <li> <Link to="/penawaran"> Penawaran </Link> </li>
                 </ul>
             </div>
-            <div className="login-register">
-                <Link to="/register"> <Button text="Register" type="secondary-button" /> </Link>
-                <Link to="/login"> <Button text="Login" type="primary-button" /> </Link>
-            </div>
+
+            {/* <p> {console.log(token)} </p> */}
+            {/* { if (!token) {
+                <div className="login-register">
+                    <Button text="Register" type="secondary-button" toPage={"/register"} />
+                    <Button text="Login" type="primary-button" toPage={"/login"} />
+                </div>
+            }} */}
+            {profile}
         </nav>
     );
 }

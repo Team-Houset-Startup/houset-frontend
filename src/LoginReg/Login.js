@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 // import axios from 'axios';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import NavbarLoginRegister from './NavbarLoginRegister';
 import AlternateLogin from './AlternateLogin'
 
@@ -22,7 +22,7 @@ async function doLogin(credentials) {
 }
 
 export default function Login({ setToken }) {
-
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -33,8 +33,9 @@ export default function Login({ setToken }) {
             password
         });
         // console log status
-        console.log(token)
+        // console.log(token)
         setToken(token);
+        navigate('/');
     }
 
     return (

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Row, Col, Container, Navbar } from 'react-bootstrap'
+import Button from '../Components/Button'
 
 import LogoCanvas from './assets/image/logo-houset-canvas.png'
 import "./assets/style/navbar-canvas.css"
@@ -20,7 +21,7 @@ export default function NavbarCanvas() {
             <Container fluid className="navbar-canvas">
                 <Navbar.Collapse>
                     <img src={LogoCanvas} alt="logo" className="navbar-canvas-logo" />
-                    <button className="navbar-button"> Home </button>
+                    <Button text="Home" type="secondary-button" toPage="/"/>
                 </Navbar.Collapse>
 
                 <Navbar.Collapse className="justify-content-center">

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import LinkSeeMore from '../Components/LinkSeeMore';
+import ProductCard from '../Components/FurnitureCard';
 
 import "./assets/style/product-list.css"
 
@@ -18,10 +19,10 @@ class ProductList extends Component {
             .then(res => res.json())
             .then(parsedJSON => parsedJSON.map(data => (
                 {
-                    itemType: `${data.name}`,
-                    itemName: `${data.username}`,
-                    itemPrice: `${data.address.suite}`,
-                    itemDiscount: `${data.address.zipcode}`,
+                    type: `${data.name}`,
+                    name: `${data.username}`,
+                    price: `${data.address.suite}`,
+                    priceDiscounted: `${data.address.zipcode}`,
                 }
             )))
             .then(items => this.setState({
@@ -41,17 +42,18 @@ class ProductList extends Component {
                 <div className="best-product">
                     {
                         items.length > 0 ? items.slice(0,4).map(item => {
-                            const { id, itemType, itemName, itemPrice, itemDiscount, itemThumbnail} = item;
+                            // const { id, itemType, itemName, itemPrice, itemDiscount, itemThumbnail} = item;
                             return (
-                                <div className="product-item" key={id}>
-                                    <Link to="/furnitur">
-                                        <div className="product-pict"> <img src={itemThumbnail} alt="" /> </div>
-                                        <p className="item-type"> {itemType} </p>
-                                        <p className="item-name"> {itemName} </p>
-                                        <p className="item-price"> {itemPrice} </p>
-                                        <p className="item-price-discounted"> {itemDiscount} </p>
-                                    </Link>
-                                </div>
+                                <ProductCard product = {item}/>
+                                // <div className="product-item" key={id}>
+                                //     <Link to="/furnitur">
+                                //         <div className="product-pict"> <img src={itemThumbnail} alt="" /> </div>
+                                //         <p className="item-type"> {itemType} </p>
+                                //         <p className="item-name"> {itemName} </p>
+                                //         <p className="item-price"> {itemPrice} </p>
+                                //         <p className="item-price-discounted"> {itemDiscount} </p>
+                                //     </Link>
+                                // </div>
                             );
                         }) : null
                     }

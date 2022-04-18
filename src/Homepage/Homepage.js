@@ -30,7 +30,7 @@ function Homepage() {
                             Manjakan tampilan ruangan mu dengan membeli kursi
                             dari edisi terbaru Shabby Chic yang tentunya akan menambah desain manis dan elegant.
                         </p>
-                        <Link to="/furnitur"> <Button text="Belanja Sekarang" type="primary-button" /> </Link>
+                        <Link to="/product"> <Button text="Belanja Sekarang" type="primary-button" /> </Link>
                     </div>
 
                 </div>

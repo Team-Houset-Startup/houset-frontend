@@ -6,7 +6,6 @@ import Homepage from './Homepage/Homepage';
 import Register from './LoginReg/Register';
 import Login from './LoginReg/Login';
 import Product from './Product/Product';
-import Ruangan from './Product/Ruangan';
 import Canvas from './Canvas/Canvas';
 import Penawaran from './Offer/Penawaran';
 import ProductDetailed from './ProductDetailed/ProductDetailed';
@@ -20,6 +19,26 @@ import ScrollToTop from './Components/ScrollToTop';
 
 export default function App(params) {
   const { token, setToken } = useToken();
+  /* let loginStatus = (<> </>)
+
+  if (!token) {
+    loginStatus = (
+      <Router>
+        <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login setToken={setToken} />} />
+        </Routes>
+      </Router>
+    )
+  } else {
+    loginStatus = (
+      <Router>
+        <Routes>
+          <Route path="/profile" element={<Register />} />
+        </Routes>
+      </Router>
+    )
+  } */
 
   if (!token) {
     return (
@@ -27,7 +46,6 @@ export default function App(params) {
       <div className='homepage-body'>
         <Router>
           <ScrollToTop />
-          <Link to="/"> </Link>
 
           <Routes>
             <Route path="/" element={<Homepage />} />
@@ -36,11 +54,11 @@ export default function App(params) {
           </Routes>
 
           <Routes>
-            <Route path="/product" element={<Product />} />
+            <Route path="/product" element={<Product variant="furniture"/>} />
             <Route path="/product/product-page" element={<ProductDetailed />} />
-            <Route path="/product/room-page" element={<RoomDetailed/>} />
+            <Route path="/product/room-page" element={<RoomDetailed />} />
 
-            <Route path="/ruangan" element={<Ruangan />} />
+            <Route path="/ruangan" element={<Product variant="room" />} />
 
             {/* <Route path="/furnitur/product-page" element={<RoomPage />} /> */}
             <Route path="/canvas" element={<Canvas />} />
@@ -51,15 +69,39 @@ export default function App(params) {
 
             <Route path="/invoice" element={<Invoice />} />
           </Routes>
-
         </Router>
+        {/* {loginStatus} */}
       </div>
     );
   }
 
   return (
-    <div>
-      Logged in
+    <div className='homepage-body'>
+      <Router>
+        <ScrollToTop />
+
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/profile" />
+        </Routes>
+
+        <Routes>
+          <Route path="/product" element={<Product variant="furniture" />} />
+          <Route path="/product/product-page" element={<ProductDetailed />} />
+          <Route path="/product/room-page" element={<RoomDetailed />} />
+
+          <Route path="/ruangan" element={<Product variant="room" />} />
+
+          {/* <Route path="/furnitur/product-page" element={<RoomPage />} /> */}
+          <Route path="/canvas" element={<Canvas />} />
+          <Route path="/penawaran" element={<Penawaran />} />
+
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+
+          <Route path="/invoice" element={<Invoice />} />
+        </Routes>
+      </Router>
     </div>
   )
 }

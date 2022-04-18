@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import ProductCard from './ProductCard';
+import ProductCard from './FurnitureCard';
 
 import "./assets/style/auto-suggest-item.css";
 import LinkSeeMore from './LinkSeeMore';
