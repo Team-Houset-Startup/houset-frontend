@@ -1,34 +1,32 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
+import { Container, Row, Col } from "react-bootstrap";
 import NavbarCanvas from "./NavbarCanvas";
-import  Unity ,  {  UnityContext  }  from  "react-unity-webgl";
+import Unity, { UnityContext } from "react-unity-webgl";
 
-const  unityContext  =  new  UnityContext ( { 
-  loaderUrl : "build/myunityapp.loader.js" , 
-  dataUrl : "build/myunityapp.data" , 
-  frameworkUrl : "build/myunityapp.framework.js" , 
-  codeUrl : "build/myunityapp.wasm" , 
-} ) ;
+import "./assets/style/canvas.css";
+
+const unityContext = new UnityContext({
+    loaderUrl: "Build/Web.loader.js",
+    dataUrl: "Build/Web.data",
+    frameworkUrl: "Build/Web.framework.js",
+    codeUrl: "Build/Web.wasm",
+});
 
 function Canvas() {
     let navigate = useNavigate();
 
-    function handleClick() {
-        navigate("/");
-    }
-
     return (
         <>
             <NavbarCanvas />
-            <section>
-                <div>
-                    Kanvas desain
-                </div>
-                <button type="button" onClick={handleClick}>
-                    Go home
-                </button>
-            </section>
-            <Unity unityContext = { unityContext }/>
+            <Container fluid>
+                <Row>
+                    <Col>
+                    <Unity unityContext={unityContext} className="canvas-houset" />
+                    </Col>
+                </Row>
+            </Container>
+            {/* <Unity unityContext={unityContext} className="canvas-houset" /> */}
         </>
     )
 }

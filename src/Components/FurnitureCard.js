@@ -6,6 +6,7 @@ import KursiPreview from "./assets/image/kursi.png";
 import "./assets/style/product-card.css";
 
 export default function FurnitureCard( {product} ) {
+    // console.log(product);
     return (
         <div className="product-item">
             <Link to="/product/product-page">
@@ -19,10 +20,10 @@ export default function FurnitureCard( {product} ) {
     )
 }
 
-FurnitureCard.propTypes = {
-    image: propTypes.string,
-    type: propTypes.string,
-    name: propTypes.string,
-    price: propTypes.string,
-    priceDiscounted: propTypes.string
-};
+// FurnitureCard.propTypes = {
+//     image: propTypes.string,
+//     type: propTypes.string,
+//     name: propTypes.string,
+//     price: propTypes.string,
+//     priceDiscounted: propTypes.string
+// };

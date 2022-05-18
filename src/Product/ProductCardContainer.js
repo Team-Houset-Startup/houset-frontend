@@ -15,6 +15,7 @@ export default function ProductCardContainer( {variant, products} ) {
         let tempList = [];
         let item = 0;
         products.forEach((product) => {
+            // console.log(product);
             item += 1;
             tempList.push(
                 <Col>

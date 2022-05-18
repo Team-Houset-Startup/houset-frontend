@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import { useNavigate, useParams } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
 
 import NavigationBar from "../Components/NavigationBar";
 import ProductCardContainer from "./ProductCardContainer";
@@ -15,7 +16,7 @@ import StartDesignBanner from "./StartDesignBanner";
 import "./assets/style/product.css";
 import products from "../db/furniture.json";
 
-function Product( {variant} ) {
+function Product({ variant }) {
     // initiate pagination system
 
     const [currentProducts, setCurrentProducts] = useState(products);
@@ -54,21 +55,29 @@ function Product( {variant} ) {
 
             </section>
 
-            <section className="section3">
-                <CategorySidebar />
+            <Container className="product-list-preview">
+                <Row>
+                    <Col xl={ {span:"2"} }> <CategorySidebar /> </Col>
 
-                <ProductCardContainer variant={variant} products={currentProducts}/>
-                {/* {CardContainer} */}
-                <ReactPaginate
-                    breaklabel="..."
-                    nextLabel=">"
-                    previousLabel="<"
-                    onPageChange={handlePageClick}
-                    // pageRangeDisplayed={16}
-                    pageCount={pageCount}
-                    renderOnZeroPageCount={null}
-                />
-            </section>
+                    <Col xl={ {span:"10"} }> <ProductCardContainer variant={variant} products={currentProducts} /> </Col>
+                    {/* {CardContainer} */}
+                </Row>
+                
+                <Row>
+                    <Col>
+                        <ReactPaginate
+                            breaklabel="..."
+                            nextLabel=">"
+                            previousLabel="<"
+                            onPageChange={handlePageClick}
+                            // pageRangeDisplayed={16}
+                            pageCount={pageCount}
+                            renderOnZeroPageCount={null}
+                            containerClassName="product-pagination"
+                        />
+                    </Col>
+                </Row>
+            </Container>
 
             <Footer />
         </div>

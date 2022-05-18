@@ -110,10 +110,10 @@ export default function ProductDetailed() {
                 </Row>
 
                 <hr/>
+                {/* error below */}
+                <RecommendationProduct count="4" />
 
-                <RecommendationProduct count="2" />
-
-                <ProductLastSeen />
+                {/* <ProductLastSeen /> */}
             </Container>
 
             <Footer />

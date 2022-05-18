@@ -2,36 +2,31 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import ProductCard from './FurnitureCard';
+import LinkSeeMore from './LinkSeeMore';
+
+import products from '../db/furniture.json';
 
 import "./assets/style/auto-suggest-item.css";
-import LinkSeeMore from './LinkSeeMore';
+
 
 const ProductList = (count) => {
     let Products = [];
     let row = count;
     let col = 4;
-    for (var i = 0; i < row; i++) {
-        Products.push(
-            <Row key={i}>
-                {
-                    [...Array(col)].map((e, index) => {
-                        return (
-                            <Col xl={3} key={index}>
-                                <ProductCard />
-                            </Col>
-                        )
-                    })
-                }
-            </Row>
+    let item = 0;
+    let tempList=[];
+    console.log(count);
+    products.slice(0, count).forEach((product) => {
+        tempList.push(
+            <Col xl={3}>
+                <ProductCard product={product} />
+            </Col>
         )
-    }
-    // for (var i = 0; i < col; i++) {
-    //     Products.push(
-    //         <Col xl={3}>
-    //             <ProductCard />
-    //         </Col>
-    //     );
-    // }
+        
+    });
+    Products.push(
+        <Row> {tempList} </Row>
+    )
 
     return (
         Products

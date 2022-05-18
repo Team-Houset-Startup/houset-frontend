@@ -21,6 +21,10 @@
 	text-decoration: none;
 }
 
+.primary-button, .secondary-button, .action-button:hover {
+	cursor: pointer;
+}
+
 /* ========================== primary ========================== */
 
 .primary-button {
