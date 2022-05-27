@@ -1,0 +1,129 @@
+.base-background {
+  position: relative;
+  height: 491px;
+  margin-top: 65px;
+  background-color: #E5FACF;
+}
+
+.container-text {
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: 540px;
+  margin-left: 165px;
+  top: 20px;
+}
+
+.title-text {
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 64px;
+  color: #055053;
+}
+
+.subtitle2 {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0px 0px;
+  color: #475467;
+}
+
+.container-text button {
+  margin-top: 30px;
+}
+
+.container-text a {
+  text-decoration: none;
+}
+
+/* .section1 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+} */
+
+.home-section1 {
+  
+}
+
+.home-sub-section1 {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.start-3d {
+  margin-top: 50px;
+  margin-left: 165px;
+}
+
+.start-3d h2 {
+  left: 165px;
+  margin-bottom: 82px;
+
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 41px;
+  color: #055053;
+}
+
+.start-3d p {
+  width: 521px;
+  
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: #475467;
+}
+
+.home-sub-section1 img {
+  width: auto;
+  height: 312px;
+  margin-right: 0px;
+}
+
+.home-sub-section2 {
+  overflow: visible;
+  position: relative;
+  width: 100%;
+  height: 289px;
+
+  background: #f1fffb;
+}
+
+.home-sub-section2 p {
+  position: relative;
+  top: 42px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+
+  text-align: center;
+
+  color: #012231;
+}
+
+.home-sub-section2 .step-design {
+  /* How to center a div */
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+
+}
+
+.home-section2 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.interior-design {
+  column-count: 4;
+  column-gap: 2%;
+  height: 500px;
+  margin: 0px 12px 0px 12px;
+}
+
+

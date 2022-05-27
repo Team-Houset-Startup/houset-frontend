@@ -48,14 +48,6 @@ function NavigationBar() {
                     <li> <Link to="/penawaran"> Penawaran </Link> </li>
                 </ul>
             </div>
-
-            {/* <p> {console.log(token)} </p> */}
-            {/* { if (!token) {
-                <div className="login-register">
-                    <Button text="Register" type="secondary-button" toPage={"/register"} />
-                    <Button text="Login" type="primary-button" toPage={"/login"} />
-                </div>
-            }} */}
             {profile}
         </nav>
     );

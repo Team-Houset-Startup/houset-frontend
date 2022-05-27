@@ -1,136 +1,101 @@
-.base-background {
-  position: relative;
-  height: 491px;
-  margin-top: 65px;
-  background-color: #E5FACF;
+.homepage-container {
+    margin-top: 72px;
 }
 
-.container-text {
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  width: 540px;
-  margin-left: 165px;
-  top: 20px;
+.homepage-banner {
+    background-image: url("../image/banner.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* width: 100%; */
+    height: 494px;
 }
 
-.title-text {
-  font-weight: 800;
-  font-size: 48px;
-  line-height: 64px;
-  color: #055053;
+.homepage-booking-button button {
+    /* position: absolute; */
+    margin-left: 113px;
+    margin-top: 325px;
 }
 
-.subtitle1 {
-  font-weight: 500px;
-  font-size: 20px;
-  line-height: 24px;
-  color: #389c1a;
+/* ===================================================  */
+
+.homepage-aboutus {
+    margin-top: 50px;
+    width: 900px;
 }
 
-.subtitle2 {
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 28px;
-  margin: 0px 0px;
-  color: #475467;
+.homepage-subtitle, .homepage-au-detail {
+    /* Make the div in mid */
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 50px; 
 }
 
-.container-text button {
-  margin-top: 30px;
+.homepage-subtitle p {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 41px;
+    text-align: center;
+    color: #012231;
 }
 
-.container-text a {
-  text-decoration: none;
+.homepage-long-detail {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    color: #667085;
 }
 
-/* .section1 {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-} */
+/* ===================================================  */
 
-.home-section1 {
-  
+.homepage-step-design {
+    background-color: #F1FFFB;
+    height: 289px;
 }
 
-.home-sub-section1 {
-  width: auto;
-  display: flex;
-  justify-content: space-between;
+.homepage-step-design svg {
+    margin-top: 42px;
+    margin-left: auto;
 }
 
-.start-3d {
-  margin-top: 50px;
-  margin-left: 165px;
+/* ===================================================  */
+
+.homepage-whyus {
+    margin-top: 55px;
+    width: 1200px;
 }
 
-.start-3d h2 {
-  left: 165px;
-  margin-bottom: 82px;
-
-  font-weight: 700;
-  font-size: 34px;
-  line-height: 41px;
-  color: #055053;
+.homepage-superiority svg {
+    margin-left: 100px;
+    height: 130px;
 }
 
-.start-3d p {
-  width: 521px;
-  
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 28px;
-  color: #475467;
+.homepage-superiority h3 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    /* Text */
+    
+    color: #151875;
 }
 
-.home-sub-section1 img {
-  width: auto;
-  height: 312px;
-  margin-right: 0px;
+.homepage-superiority p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    /* or 160% */
+    
+    text-align: center;
+    
+    color: rgba(26, 11, 91, 0.3);
 }
 
-.home-sub-section2 {
-  overflow: visible;
-  position: relative;
-  width: 100%;
-  height: 289px;
-
-  background: #f1fffb;
+.homepage-package-group {
+    width: auto;
+    margin-left: 165px;
+    margin-right: 165px;
 }
-
-.home-sub-section2 p {
-  position: relative;
-  top: 42px;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
-
-  text-align: center;
-
-  color: #012231;
-}
-
-.home-sub-section2 .step-design {
-  /* How to center a div */
-  position: absolute;
-  left: 50%;
-  top: 55%;
-  transform: translate(-50%, -50%);
-
-}
-
-.home-section2 {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-}
-
-.interior-design {
-  column-count: 4;
-  column-gap: 2%;
-  height: 500px;
-  margin: 0px 12px 0px 12px;
-}
-
-

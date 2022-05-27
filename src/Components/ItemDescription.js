@@ -1,6 +1,6 @@
-import { Tab } from 'bootstrap'
+// import { Tab } from 'bootstrap'
 import React from 'react'
-import { Col, Container, Row, Tabs } from 'react-bootstrap'
+import { Col, Container, Row, Tabs, Tab } from 'react-bootstrap'
 
 import "./assets/style/item-description.css"
 
