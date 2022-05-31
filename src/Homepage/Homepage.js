@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import { Link, animateScroll as scroll } from 'react-scroll'
+import { Link } from 'react-router-dom';
+import { animateScroll as scroll } from 'react-scroll'
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 
 import Button from "../Components/Button";
@@ -34,7 +35,7 @@ export default function Homepage() {
             <Container fluid className="homepage-container" id="home">
                 <Row className="homepage-banner">
                     <Col className="homepage-booking-button">
-                        <Button type="primary-button" text="Booking Konsultasi" />
+                        <a href="https://wa.me/6282218585101" target={"_blank"}> <Button type="primary-button" text="Booking Konsultasi" /> </a>
                         {/* <Button variant="primary">Primary</Button>{' '} */}
                     </Col>
                 </Row>
