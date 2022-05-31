@@ -37,7 +37,6 @@ function NavigationBar() {
     }
 
     return (
-
         <nav className="navbar-nav">
             <div className="navbar-div">
                 <Link to="/"> <img src={HousetLogo} className="houset-logo" alt="image not found" /> </Link>

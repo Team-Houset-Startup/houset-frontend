@@ -18,16 +18,17 @@
 
 /* ===================================================  */
 
-.homepage-aboutus {
-    margin-top: 50px;
-    width: 900px;
-}
 
 .homepage-subtitle, .homepage-au-detail {
     /* Make the div in mid */
     margin-left: auto;
     margin-right: auto; 
     margin-top: 50px; 
+}
+
+.homepage-long-detail {
+    width: 1100px;
+    margin-inline: auto;
 }
 
 .homepage-subtitle p {
@@ -38,7 +39,7 @@
     color: #012231;
 }
 
-.homepage-long-detail {
+.homepage-long-detail p {
     font-weight: 400;
     font-size: 18px;
     line-height: 28px;
@@ -49,13 +50,23 @@
 /* ===================================================  */
 
 .homepage-step-design {
-    background-color: #F1FFFB;
     height: 289px;
+    background-color: #F1FFFB;
+    width: 100%;
 }
 
-.homepage-step-design svg {
+.homepage-sd-title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #012231;
+    
     margin-top: 42px;
-    margin-left: auto;
+}
+
+.homepage-sd-part svg {
+    margin-top: 6px;
 }
 
 /* ===================================================  */
@@ -63,6 +74,12 @@
 .homepage-whyus {
     margin-top: 55px;
     width: 1200px;
+    margin-inline: auto;
+}
+
+.homepage-superiority-card {
+    background: #FFFFFF;
+    box-shadow: 0px 8px 40px rgba(49, 32, 138, 0.05);
 }
 
 .homepage-superiority svg {
@@ -74,12 +91,7 @@
     font-weight: 500;
     font-size: 22px;
     line-height: 27px;
-    /* identical to box height */
-    
-    text-align: center;
-    
-    /* Text */
-    
+    text-align: center;    
     color: #151875;
 }
 
@@ -98,4 +110,12 @@
     width: auto;
     margin-left: 165px;
     margin-right: 165px;
+}
+
+/* Portofolio ===================================================  */
+
+.homepage-portofolio-scrollable {
+    padding-right: 0;
+    padding-left: 50px;
+    height: auto;
 }

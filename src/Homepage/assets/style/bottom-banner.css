@@ -1,0 +1,30 @@
+.bottom-banner-container {
+    background-image: url("../image/bottom-banner.png");
+    background-size: cover;
+    height: 258px;
+    margin-top: 50px;
+}
+
+.bottom-banner-title .col h1 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #023F47;
+
+    margin-top: 42px;
+}
+
+.bottom-banner-title .col h2 {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 41px;
+    text-align: center;
+    color: #023F47;
+}
+
+.bottom-banner-button button {
+    /* make the div center */
+    margin: 40px auto 0px auto;
+
+}
