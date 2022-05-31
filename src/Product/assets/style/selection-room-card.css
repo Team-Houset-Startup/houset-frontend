@@ -1,8 +1,6 @@
 .selection-card-scrollable {
-	white-space: normal;
-	width: max-content;
-	height: 200px;
-	margin: 32px 40px 0px 40px;
+	height: 210px;
+	margin: 32px 0px 0px 10px;
 }
 
 .selection-card-scrollable a {
@@ -27,9 +25,10 @@
 	top: 15px;
 	left: 10px;
 
-	width: 108px;
+	width: auto;
 	height: 28px;
 	text-align: center;
+	padding-inline: 16px;
 
 	font-weight: bold;
 	font-size: 14px;

@@ -14,7 +14,9 @@ export default function BottomBanner() {
                 </Col>
             </Row>
             <Row className="bottom-banner-button">
-                <Col> <Button type="primary-button" text="Hubungi Kami Sekarang" /> </Col>
+                <Col> 
+                    <a href="https://wa.me/6282218585101" target={"_blank"}> <Button type="primary-button" text="Hubungi Kami Sekarang" /> </a>
+                </Col>
             </Row>
         </Container>
     )

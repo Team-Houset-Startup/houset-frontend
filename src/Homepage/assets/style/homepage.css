@@ -116,6 +116,6 @@
 
 .homepage-portofolio-scrollable {
     padding-right: 0;
-    padding-left: 50px;
+    margin-left: -10px;
     height: auto;
 }

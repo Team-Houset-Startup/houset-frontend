@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { Link, animateScroll as scroll } from 'react-scroll'
+import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 
 import Button from "../Components/Button";
 import Footer from '../Components/Footer';
@@ -16,6 +17,13 @@ import ConsultOnline from './assets/image/svg/ConsultOnline';
 import ReferenceDesign from "./assets/image/svg/ReferenceDesign"
 import TipsInsight from "./assets/image/svg/TipsInsight"
 import BestPrice from "./assets/image/svg/BestPrice"
+
+import pictures from "../db/pictures.json";
+
+import dapur1 from "../assets/image/dapur-1.png";
+import dapur2 from "../assets/image/dapur-2.png";
+import kamar from "../assets/image/kamar.png";
+import ruangtamu from "../assets/image/ruang-tamu.png";
 
 import "./assets/style/homepage.css"
 
@@ -125,12 +133,19 @@ export default function Homepage() {
                     </Col>
 
                     <Row className="homepage-portofolio-scrollable">
-                        <Col> <SelectionRoomCard /> </Col>
-                        <Col> <SelectionRoomCard /> </Col>
-                        <Col> <SelectionRoomCard /> </Col>
-                        <Col> <SelectionRoomCard /> </Col>
-                        <Col> <SelectionRoomCard /> </Col>
-                        <Col> <SelectionRoomCard /> </Col>
+                        <ScrollMenu>
+                            {/* {pictures.map((picture, index) => (
+                               <SelectionRoomCard picture={picture} /> 
+                            ))} */}
+                            <SelectionRoomCard picture={dapur1} name="Ruang Dapur"/>
+                            <SelectionRoomCard picture={kamar} name="Kamar Tidur"/>
+                            <SelectionRoomCard picture={dapur2} name="Ruang Dapur"/>
+                            <SelectionRoomCard picture={ruangtamu} name="Ruang Keluarga"/>
+                            <SelectionRoomCard picture={dapur1} name="Ruang Dapur"/>
+                            <SelectionRoomCard picture={kamar} name="Kamar Tidur"/>
+                            <SelectionRoomCard picture={dapur2} name="Ruang Dapur"/>
+                            <SelectionRoomCard picture={ruangtamu} name="Ruang Keluarga"/>
+                        </ScrollMenu>
                     </Row>
                     {/* <SelectionRoomContainer /> */}
                 </Row>

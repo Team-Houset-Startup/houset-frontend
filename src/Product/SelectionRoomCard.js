@@ -6,13 +6,14 @@ import "./assets/style/selection-room-card.css";
 
 // Elemen per ruangan yang dapat discroll
 
-export default function SelectionRoomCard(props) {
+export default function SelectionRoomCard( {picture, name} ) {
     return (
         <div className="selection-card-scrollable">
-        <Link to="room-page">
-            <img src={RoomPreview} alt="" />
-            <p> Tradisional </p>
-        </Link>
+            <Link to="room-page">
+                {/* {console.log(picture.path)} */}
+                <img src={picture} alt="" />
+                <p> {name} </p>
+            </Link>
         </div>
     )
 }
