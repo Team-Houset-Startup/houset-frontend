@@ -3,7 +3,8 @@
 	margin: 32px 0px 0px 10px;
 }
 
-.selection-card-scrollable a {
+/* .selection-card-scrollable a { */
+.selection-card-scrollable button {
 	position: relative;
 	display: inline-block;
 	text-decoration: none;

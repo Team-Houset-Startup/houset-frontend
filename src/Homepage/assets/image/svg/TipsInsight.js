@@ -3,7 +3,7 @@ import React from 'react'
 export default function TipsInsight() {
     return (
         <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_3998_19726)">
+            <g clipPath="url(#clip0_3998_19726)">
                 <path d="M15.9447 36.5387L8.104 58.7719L15.9925 58.6951L25.7211 36.5387H15.9447Z" fill="#80AAFF" />
                 <path d="M25.7209 36.5387L19.5986 59.9339L25.7646 65.0003L32.4999 45.2937V36.5387H25.7209Z" fill="#80AAFF" />
                 <path d="M23.5918 36.5387L15.9927 58.6951L18.0669 58.675L19.5991 59.9339L27.6231 36.5387H23.5918Z" fill="#EAF1FF" />

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 // import NavigationBar from './parts/NavigationBar';
-import Homepage from './Homepage/Homepage';
+import Homepage from './Homepage/HomepageConsult';
 import Register from './LoginReg/Register';
 import Login from './LoginReg/Login';
 import Product from './Product/Product';
@@ -58,10 +58,10 @@ export default function App(params) {
             <Route path="/product/product-page" element={<ProductDetailed />} />
             <Route path="/product/room-page" element={<RoomDetailed />} />
 
-            <Route path="/ruangan" element={<Product variant="room" />} />
+            <Route path="/ruangan" element={<Product variant="room" />} /> */}
 
-            {/* <Route path="/furnitur/product-page" element={<RoomPage />} /> 
-            <Route path="/canvas" element={<Canvas />} />
+            {/* <Route path="/furnitur/product-page" element={<RoomPage />} />  */}
+            {/* <Route path="/canvas" element={<Canvas />} />
             <Route path="/penawaran" element={<Penawaran />} />
 
             <Route path="/cart" element={<Cart />} />
