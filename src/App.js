@@ -49,26 +49,26 @@ export default function App(params) {
 
           <Routes>
             <Route path="/" element={<Homepage />} />
-            {/* <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login setToken={setToken} />} /> */}
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login setToken={setToken} />} />
           </Routes>
 
-          {/* <Routes>
+          <Routes>
             <Route path="/product" element={<Product variant="furniture"/>} />
             <Route path="/product/product-page" element={<ProductDetailed />} />
             <Route path="/product/room-page" element={<RoomDetailed />} />
 
-            <Route path="/ruangan" element={<Product variant="room" />} /> */}
+            <Route path="/ruangan" element={<Product variant="room" />} />
 
             {/* <Route path="/furnitur/product-page" element={<RoomPage />} />  */}
-            {/* <Route path="/canvas" element={<Canvas />} />
+            <Route path="/canvas" element={<Canvas />} />
             <Route path="/penawaran" element={<Penawaran />} />
 
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
 
             <Route path="/invoice" element={<Invoice />} />
-          </Routes> */}
+          </Routes>
         </Router>
         {/* {loginStatus} */}
       </div>

@@ -46,14 +46,14 @@ export default function Homepage() {
     //         picture: pict,
     //     });
     // }
-    
+
     // const handleClose = () => {
     //     setShowModal({
     //         show: false,
     //         picture: null,
     //     });
     // }
-    
+
     const SelectionRoomCard = ({ picture, name }) => {
         return (
             <div className="selection-card-scrollable">
@@ -82,7 +82,9 @@ export default function Homepage() {
     return (
         <>
             <HomepageNavbar />
-            <Container fluid className="homepage-container" id="home">
+            <br id="home" />
+
+            <Container fluid className="homepage-container">
                 <Row className="homepage-banner">
                     <Col className="homepage-booking-button">
                         <a href="https://wa.me/6282218585101" target={"_blank"}> <Button type="primary-button" text="Booking Konsultasi" /> </a>
