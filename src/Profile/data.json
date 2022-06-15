@@ -1,0 +1,13 @@
+{
+    "name" : "Muhammad Juno",
+    "img_url": "./assets/image/profile",
+    "email" : "muhammad_juno@gmail.com",
+    "password": "test",
+    "phone" : "082249124912",
+    "gender" : "L",
+    "address" : [
+        {"id":1,"name":"Muhammad Juno","phone":"082249124912","addres": "Perumahan Permata Buah Batu, Blok. C, No. 146, Lengkong, Bojongsoang, Bandung,40287","main":true},
+        {"id":2,"name":"Julia Ghaisani","phone":"082249128412","addres": "Perumahan Permata Buah Batu, Blok. C, No. 146, Lengkong, Bojongsoang, Bandung,40287","main":true},
+        {"id":3,"name":"Julia Ghaisani","phone":"082249124912","addres": "Perumahan Permata Buah Batu, Blok. C, No. 146, Lengkong, Bojongsoang, Bandung,40287","main":true}
+    ]
+}
