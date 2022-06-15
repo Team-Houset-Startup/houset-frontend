@@ -1,0 +1,38 @@
+.profile-sidebar {
+    margin-top: 3em;
+    height: 100%;
+}
+
+
+.profile-sidebar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.profile-sidebar ul li button{
+    display: flex;
+    align-items: center;
+    width: 175px;
+    height: 45px;
+    gap: 0.75em;
+    background-color: transparent;
+    padding: 0.75em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.profile-sidebar ul li.active button {
+    background-color: #C8F6E9;
+}
+
+.profile-sidebar ul li.active button p {
+    color: #055053;
+}
+
+.profile-sidebar ul li p {
+    font-weight: 600;
+    font-size: 1em;
+    margin: 0;
+}
