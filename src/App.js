@@ -71,6 +71,7 @@ export default function App(params) {
             <Route path="/checkout" element={<Checkout />} />
 
             <Route path="/invoice" element={<Invoice />} />
+            <Route path="/profile" element={<Homepage />} />
           </Routes>
           {/* <Footer /> */}
         </Router>
