@@ -10,4 +10,8 @@
 	/* column-width: 10%; */
 }
 
-
+.product-lists-carousel li {
+	/* width: 2000px; */
+	/* make list to the right */
+	display: inline-block;
+}

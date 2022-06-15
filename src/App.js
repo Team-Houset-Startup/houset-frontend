@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 // import NavigationBar from './parts/NavigationBar';
-import Homepage from './Homepage/HomepageConsult';
+import Homepage from './Homepage/Homepage';
 import Register from './LoginReg/Register';
 import Login from './LoginReg/Login';
 import Product from './Product/Product';
@@ -15,6 +15,8 @@ import Checkout from './Transaction/Checkout';
 import Invoice from './Transaction/Invoice';
 import useToken from './context/useToken';
 import ScrollToTop from './Components/ScrollToTop';
+import NavigationBar from './Components/NavigationBar';
+import Footer from './Components/Footer';
 
 
 export default function App(params) {
@@ -46,6 +48,7 @@ export default function App(params) {
       <div className='homepage-body'>
         <Router>
           <ScrollToTop />
+          {/* <NavigationBar /> */}
 
           <Routes>
             <Route path="/" element={<Homepage />} />
@@ -54,7 +57,7 @@ export default function App(params) {
           </Routes>
 
           <Routes>
-            <Route path="/product" element={<Product variant="furniture"/>} />
+            <Route path="/product" element={<Product variant="furniture" />} />
             <Route path="/product/product-page" element={<ProductDetailed />} />
             <Route path="/product/room-page" element={<RoomDetailed />} />
 
@@ -69,8 +72,8 @@ export default function App(params) {
 
             <Route path="/invoice" element={<Invoice />} />
           </Routes>
+          {/* <Footer /> */}
         </Router>
-        {/* {loginStatus} */}
       </div>
     );
   }

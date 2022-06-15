@@ -3,6 +3,7 @@
 	position: fixed;
 	height: 72px;
 	z-index: 100;
+	width: 100%;
 
 	background: #ffffff;
 	box-shadow: 0px 1px 0px #e5e9f2;
