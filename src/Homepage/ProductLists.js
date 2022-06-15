@@ -47,7 +47,6 @@ export default function ProductLists() {
             <FurnitureCard product={product} />
             <FurnitureCard product={product} />
             <FurnitureCard product={product} />
-            <FurnitureCard product={product} />
         </Carousel>
     )
 }
