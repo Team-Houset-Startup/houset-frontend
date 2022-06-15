@@ -6,7 +6,6 @@ import KursiPreview from "./assets/image/kursi.png";
 import "./assets/style/product-card.css";
 
 export default function FurnitureCard( {product} ) {
-    // console.log(product);
     return (
         <div className="product-item">
             <Link to="/product/product-page">
@@ -17,6 +16,7 @@ export default function FurnitureCard( {product} ) {
                 <p className="item-price-discounted"> {product.priceDiscounted} </p>
             </Link>
         </div>
+            
     )
 }
 

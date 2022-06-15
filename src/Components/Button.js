@@ -5,6 +5,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import "./assets/style/button.css"
 
 export default function Button(props) {
+  /* 
+    this button can be used to navigate to another page 
+    using toPage from props
+  */
+
   const navigate = useNavigate();
   const redirectPage = () => navigate(props.toPage);
 
@@ -14,6 +19,9 @@ export default function Button(props) {
 }
 
 Button.propTypes = {
+  // type button primary-button: green background, white font
+  // type button secondary-button: light green background, green font
+  // type button action-button: white background, green font, green border
   type: propTypes.oneOf(['primary-button', 'secondary-button', 'action-button']),
   text: propTypes.string,
   onClick: propTypes.string,

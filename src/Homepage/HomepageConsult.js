@@ -13,7 +13,7 @@ import PackageCard from '../Components/PackageCard';
 import RoomCard from '../Components/RoomCard';
 // import SelectionRoomCard from '../Product/SelectionRoomCard';
 import BottomBanner from './BottomBanner';
-import StepDesign from './StepDesign';
+import StepConsult from './assets/image/svg/StepConsult';
 
 import ConsultOnline from './assets/image/svg/ConsultOnline';
 import ReferenceDesign from "./assets/image/svg/ReferenceDesign"
@@ -113,7 +113,7 @@ export default function Homepage() {
                     <Col xl={"auto"} className="homepage-step-design">
                         <Row className="homepage-sd-part">
                             <p className="homepage-sd-title"> Step Konsultasi Desain Interior </p>
-                            <StepDesign />
+                            <StepConsult />
                         </Row>
                     </Col>
                 </Row>

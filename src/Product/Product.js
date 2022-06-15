@@ -1,20 +1,27 @@
 import React, { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
-import { useNavigate, useParams } from "react-router-dom";
+// import { useNavigate, useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
+import { ScrollMenu } from 'react-horizontal-scrolling-menu';
 
 import NavigationBar from "../Components/NavigationBar";
 import ProductCardContainer from "./ProductCardContainer";
-import RoomCardContainer from "./RoomCardContainer";
-import SelectionRoomContainer from "./SelectionRoomContainer";
+// import RoomCardContainer from "./RoomCardContainer";
+// import SelectionRoomContainer from "./SelectionRoomContainer";
 import CategorySidebar from "./CategorySidebar";
 import Search from "./Search";
-import PageListNavigator from "./PageListNavigator";
+// import PageListNavigator from "./PageListNavigator";
 import Footer from "../Components/Footer";
 import StartDesignBanner from "./StartDesignBanner";
+import SelectionRoomCard from "./SelectionRoomCard";
 
 import "./assets/style/product.css";
 import products from "../db/furniture.json";
+
+import dapur1 from "../assets/image/dapur-1.png";
+import dapur2 from "../assets/image/dapur-2.png";
+import kamar from "../assets/image/kamar.png";
+import ruangtamu from "../assets/image/ruang-tamu.png";
 
 function Product({ variant }) {
     // initiate pagination system
@@ -42,45 +49,59 @@ function Product({ variant }) {
     //     CardContainer = <ProductCardContainer products={currentProducts} />
     // }
     return (
-        <div className="product-page">
+        <>
             <NavigationBar />
-            <section className="section1">
-                <StartDesignBanner />
-            </section>
+            <div className="product-page">
+                <section className="section1">
+                    <StartDesignBanner />
+                </section>
 
-            <section className="section2">
-                <SelectionRoomContainer />
+                <section className="section2">
+                    {/* <SelectionRoomContainer /> */}
+                    {/* {pictures.map((picture, index) => (
+                               <SelectionRoomCard picture={picture} /> 
+                            ))} */}
+                    <ScrollMenu>
+                        <SelectionRoomCard picture={dapur1} name="Ruang Dapur" />
+                        <SelectionRoomCard picture={kamar} name="Kamar Tidur" />
+                        <SelectionRoomCard picture={dapur2} name="Ruang Dapur" />
+                        <SelectionRoomCard picture={ruangtamu} name="Ruang Keluarga" />
+                        <SelectionRoomCard picture={dapur1} name="Ruang Dapur" />
+                        <SelectionRoomCard picture={kamar} name="Kamar Tidur" />
+                        <SelectionRoomCard picture={dapur2} name="Ruang Dapur" />
+                        <SelectionRoomCard picture={ruangtamu} name="Ruang Keluarga" />
+                    </ScrollMenu>
 
-                <Search />
+                    <Search />
 
-            </section>
+                </section>
 
-            <Container className="product-list-preview">
-                <Row>
-                    <Col xl={ {span:"2"} }> <CategorySidebar /> </Col>
+                <Container className="product-list-preview">
+                    <Row>
+                        <Col xl={{ span: "2" }}> <CategorySidebar /> </Col>
 
-                    <Col xl={ {span:"10"} }> <ProductCardContainer variant={variant} products={currentProducts} /> </Col>
-                    {/* {CardContainer} */}
-                </Row>
-                
-                <Row>
-                    <Col>
-                        <ReactPaginate
-                            breaklabel="..."
-                            nextLabel=">"
-                            previousLabel="<"
-                            onPageChange={handlePageClick}
-                            // pageRangeDisplayed={16}
-                            pageCount={pageCount}
-                            renderOnZeroPageCount={null}
-                            containerClassName="product-pagination"
-                        />
-                    </Col>
-                </Row>
-            </Container>
+                        <Col xl={{ span: "10" }}> <ProductCardContainer variant={variant} products={currentProducts} /> </Col>
+                        {/* {CardContainer} */}
+                    </Row>
 
+                    <Row>
+                        <Col>
+                            <ReactPaginate
+                                breaklabel="..."
+                                nextLabel=">"
+                                previousLabel="<"
+                                onPageChange={handlePageClick}
+                                // pageRangeDisplayed={16}
+                                pageCount={pageCount}
+                                renderOnZeroPageCount={null}
+                                containerClassName="product-pagination"
+                            />
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
             <Footer />
-        </div>
+        </>
     )
 }
 

@@ -1,18 +1,19 @@
 import React from 'react';
 // import { useEffect, useState } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import NavigationBar from '../Components/NavigationBar';
-import Footer from '../Components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ProductLists from './ProductLists';
 import RoomLists from './RoomLists';
+import NavigationBar from '../Components/NavigationBar';
+import Footer from '../Components/Footer';
+import StepDesign from './assets/image/svg/StepConsult';
+import Button from '../Components/Button';
 
 import SampleRoom from './assets/image/sample-room.png'
-import StepDesign from './StepDesign';
-
+import PromoPict from './assets/image/promo-pict.png'
 import "./assets/style/homepage.css";
-import Button from '../Components/Button';
 
 // import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
@@ -20,49 +21,52 @@ function Homepage() {
     return (
         <>
             <NavigationBar />
-            <header>
-                <div id="nav-bar"></div>
-                <div className="base-background">
-                    <div className="container-text">
-                        <p className="subtitle1"> Desain Rumah Estetik? </p>
-                        <h1 className="title-text">New Furniture Collection Shabby Chic</h1>
-                        <p className="subtitle2">
+            <Container fluid>
+
+                <Row className="homepage-banner">
+                    {/* <div id="nav-bar"></div> */}
+                    <Col className="homepage-banner-text">
+                        <p className="homepage-banner-subtitle1"> Pilihan terbaik untuk ruangan </p>
+                        <h1 className="homepage-banner-title">New Furniture Collection Shabby Chic</h1>
+                        <p className="homepage-banner-subtitle2">
                             Manjakan tampilan ruangan mu dengan membeli kursi
                             dari edisi terbaru Shabby Chic yang tentunya akan menambah desain manis dan elegant.
                         </p>
-                        <Link to="/product"> <Button text="Belanja Sekarang" type="primary-button" /> </Link>
-                    </div>
+                        <Button text="Belanja Sekarang" type="primary-button" toPage="/product" />
+                    </Col>
+                    <Col className="homepage-banner-pict">
+                        <img src={PromoPict} alt="PromoPict" className="promo-pict" />
+                    </Col>
+                </Row>
 
-                </div>
-            </header>
-
-            <section className="home-section1">
-                <div className="home-sub-section1">
-                    <div className="start-3d">
+                {/* <Row className="homepage-design-container"> */}
+                <Row className="homepage-design-container">
+                    <Col className="homepage-design-text">
                         <h2> Mulai dekorasi dengan 3D </h2>
                         <p>
                             Inovasi teknologi 3D Modeling kini telah hadir di Houset untuk memudahkan visualisasi setiap interior pada ruangan dan menyajikan kesan lebih nyata.
                         </p>
-                    </div>
-                    <img src={SampleRoom} alt="" />
-                </div>
+                        <Button type="primary-button" text="Klik Disini" toPage="/canvas" />
+                    </Col>
+                    <Col className="homepage-design-pict">
+                        <img src={SampleRoom} alt="" />
+                    </Col>
+                </Row>
 
-                <div className="home-sub-section2">
+                <Row className="homepage-step-design">
                     <p> Step untuk mendesain ruangan </p>
-                    <div className="step-design">
-                        <StepDesign />
-                    </div>
-                </div>
+                    <StepDesign />
+                </Row>
+                {/* </Row> */}
 
+                <Row className="homepage-product-lists">
+                    <ProductLists />
+                </Row>
 
-            </section>
-
-            <section className="home-section2">
-                <ProductLists />
-                {/* <hr style="border: 1px solid #E4E7EC;"> </hr> */}
-                <RoomLists />
-            </section>
-
+                <Row className="homepage-room-lists">
+                    <RoomLists />
+                </Row>
+            </Container>
             <Footer />
         </>
     )
