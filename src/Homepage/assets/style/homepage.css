@@ -131,24 +131,18 @@
   height: 0px;
 }
 
-.home-sub-section2 .step-design {
-  /* How to center a div */
-  position: absolute;
-  left: 50%;
-  top: 55%;
-  transform: translate(-50%, -50%);
-
-}
-
 .homepage-product-lists, .homepage-room-lists {
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 1200px;
 }
 
-.interior-design {
-  column-count: 4;
-  column-gap: 2%;
-  height: 500px;
-  margin: 0px 12px 0px 12px;
+.homepage-product-lists {
+  border-bottom: 1px solid #E4E7EC;
+  padding-bottom: 50px;
+}
+
+.homepage-room-lists {
+  margin-top: 20px;
+  margin-bottom: 100px;
 }

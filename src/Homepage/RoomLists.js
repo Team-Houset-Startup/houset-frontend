@@ -1,72 +1,61 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import Carousel from 'react-multi-carousel'
+import FurnitureCard from '../Components/FurnitureCard';
 import LinkSeeMore from '../Components/LinkSeeMore';
+import RoomCard from '../Components/RoomCard';
 
-import "./assets/style/room-list.css";
+import "./assets/style/product-list.css"
 
-class RoomList extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            items: [],
-            isLoaded: false
-        };
-    }        
-        
-        componentDidMount() {
-            fetch("https://jsonplaceholder.typicode.com/users/")
-            .then(res => res.json())
-            .then(parsedJSON => parsedJSON.map(data => (
-                {
-                    itemType: `${data.name}`,
-                    itemName: `${data.username}`,
-                    itemPrice: `${data.address.suite}`,
-                    itemDiscount: `${data.address.zipcode}`,
+export default function ProductLists() {
+    let product =
+    {
+        type: "Kursi",
+        name: "Kursi Kaki 3",
+        price: "Rp. 1.100.000",
+        priceDiscounted: "Rp. 1.000.000",
+        image: "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+    };
+    
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 4,
+            paritialVisibilityGutter: -10,
+            slidesToSlide: 1,
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2,
+            paritialVisibilityGutter: 50
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1,
+            paritialVisibilityGutter: 30
+        }
+    };
 
-                    // itemType: `${data.name.first}`,
-                    // itemName: `${data.name.last}`,
-                    // itemPrice: `${data.location.city}`,
-                    // itemDiscount: `${data.location.postcode}`,
-                    // itemThumbnail: `${data.picture.large}`,
-                }
-            )))
-            .then(items => this.setState({
-                items,
-                isLoaded: false
-            }))
-            .catch(error => console.log('parsing data failed', error))
-    }
+    return (
+        <div className="preview-container">
 
-    render() {
-        const { items } = this.state;
-        return (
-            <div className="preview-container">
-                <div className="head-room"> 
-                    <p className="list-title"> Desain Interior Ruangan </p>
-                    <LinkSeeMore links="/ruangan" text="Lihat Semua"/>
-                </div>
-                
-                <div className="best-product">
-                    {
-                        items.length > 0 ? items.slice(0,4).map(item => {
-                            const { id, itemType, itemName, itemPrice, itemDiscount, itemThumbnail} = item;
-                            return (
-                                <div className="product-item" key={id}>
-                                    <a href="/furnitur">
-                                        <div className="product-pict"> <img src={itemThumbnail} alt="" /> </div>
-                                        <p className="item-type"> {itemType} </p>
-                                        <p className="item-name"> {itemName} </p>
-                                        <p className="item-price"> {itemPrice} </p>
-                                        <p className="item-price-discounted"> {itemDiscount} </p>
-                                    </a>
-                                </div>
-                            );
-                        }) : null
-                    }
-                </div>
-            </div>
-        )
-    }
+            <LinkSeeMore title="Produk Terbaik" links="/furnitur" text="Lihat Semua" />
+            <Carousel
+                responsive={responsive}
+                draggable={false}
+                ssr
+                partialVisible={true}
+                // centerMode={true}
+                className="product-list-carousel"
+            >
+                <RoomCard />
+                <RoomCard />
+                <RoomCard />
+                <RoomCard />
+                <RoomCard />
+                <RoomCard />
+                <RoomCard />
+                <RoomCard />
+            </Carousel>
+        </div>
+    )
 }
-
-export default RoomList;

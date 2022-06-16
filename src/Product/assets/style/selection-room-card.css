@@ -23,8 +23,8 @@
 
 .selection-card-scrollable p {
 	position: absolute;
-	top: 15px;
-	left: 10px;
+	top: 41px;
+	margin-left: 15px;
 
 	width: auto;
 	height: 28px;

@@ -22,7 +22,6 @@ function Homepage() {
         <>
             <NavigationBar />
             <Container fluid>
-
                 <Row className="homepage-banner">
                     {/* <div id="nav-bar"></div> */}
                     <Col className="homepage-banner-text">
@@ -62,6 +61,8 @@ function Homepage() {
                 <Row className="homepage-product-lists">
                     <ProductLists />
                 </Row>
+                
+                {/* <br /> */}
 
                 <Row className="homepage-room-lists">
                     <RoomLists />

@@ -51,10 +51,10 @@ function Product({ variant }) {
     return (
         <>
             <NavigationBar />
-            <div className="product-page">
-                <section className="section1">
+            <Container fluid className="product-page">
+                <div className="section1">
                     <StartDesignBanner />
-                </section>
+                </div>
 
                 <section className="section2">
                     {/* <SelectionRoomContainer /> */}
@@ -99,7 +99,7 @@ function Product({ variant }) {
                         </Col>
                     </Row>
                 </Container>
-            </div>
+            </Container>
             <Footer />
         </>
     )
