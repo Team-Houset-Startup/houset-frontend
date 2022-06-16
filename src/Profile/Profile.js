@@ -7,14 +7,20 @@ import './assets/style/profile.css'
 import ProfileContainer from './ProfileContainer'
 
 function Profile() {
+  // state for set the active sidebar for container
   const [activeSidebar,setActiveSidebar] = useState(0)
+  const [activeDropdown,setActiveDropdown] = useState(0)
   return (
     <>
         <NavigationBar />
-          <Container className='profile-page'>
+          <Container className='profile-page p-0'>
             <Row>
-              <Col><ProfileSidebar activeSidebar={activeSidebar} setActiveSidebar={setActiveSidebar} /></Col>
-              <Col><ProfileContainer activeSidebar={activeSidebar} /></Col >
+              <Col className="profile-sidebar" xs="auto">
+                <ProfileSidebar activeDropdown={activeDropdown} setActiveDropdown={setActiveDropdown} activeSidebar={activeSidebar} setActiveSidebar={setActiveSidebar} />
+              </Col>
+              <Col>
+                <ProfileContainer activeSidebar={activeSidebar} activeDropdown={activeDropdown}/>
+              </Col >
             </Row>
           </Container>
         <Footer />

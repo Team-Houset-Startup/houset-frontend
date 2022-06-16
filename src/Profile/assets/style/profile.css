@@ -1,4 +1,24 @@
 .profile-page {
-    margin-top: 80px;
-    margin-bottom: 40px;
+    margin-top: 72px;
+}
+.profile-container {
+    background-color: #F2F4F7;
+}
+
+/* header */
+.profile-container-header {
+    padding: 24px 44px;
+    border-bottom: 2px solid #E4E7EC;
+}
+.profile-container-header .header-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    color: #012231;
+}
+.profile-container-body {
+    display: flex;
+    gap: 1.5em;
+    padding: 24px 44px;
+    /* justify-content: space-between; */
 }
