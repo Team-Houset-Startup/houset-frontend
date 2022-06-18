@@ -4,6 +4,7 @@
     height: 100%;
     width: 174px;
     padding: 0;
+    margin-right: 1.5em;
 }
 .profile-sidebar>ul {
     display: flex;

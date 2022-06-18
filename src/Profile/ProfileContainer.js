@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 import ProfileAccount from './ProfileAccount'
 import './assets/style/profile-account.css'
 
-export default function ProfileContainer({activeSidebar,activeDropdown}) {
+export default function ProfileContainer({activeSidebar,activeDropdown,userData,setUserData}) {
   // function to return what container should be shown 
 
   switch (activeSidebar) {
@@ -31,8 +31,8 @@ export default function ProfileContainer({activeSidebar,activeDropdown}) {
     default:
       // akun saya akan ditampilkan 
       return (
-        <Container className="profile-container p-0"  >
-          <ProfileAccount activeDropdown={activeDropdown}/>         
+        <Container className="profile-container p-0" >
+          <ProfileAccount activeDropdown={activeDropdown} userData={userData} setUserData={setUserData}/>         
         </Container>
       )
   }

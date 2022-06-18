@@ -2,24 +2,30 @@ import React, { useState } from "react";
 import { EyeIcon } from "./assets/Icon";
 import "./assets/style/profile-update-password.css";
 
-const PasswordInput = ({ placeholder }) => {
-  const [showPassword, setShowPassword] = useState(false);
 
-  const showPasswordHandler = () => {
-    setShowPassword((prev) => !prev);
-  };
-  return (
-    <>
-      <input
-        type={showPassword ? "text" : "password"}
-        placeholder={placeholder}
-      />
-      <EyeIcon clickFunc={showPasswordHandler} />
-    </>
-  );
-};
+export default function UpdatePassword({userData,setUserData}) {
+  const [changePassword,setChangePassword] = useState({oldPassword:"",newPassword:"",confirmPassword:""})
 
-export default function UpdatePassword() {
+  const inputHandler = (e) => {
+    setChangePassword({
+      ...changePassword,
+      [e.target.name] : e.target.value
+    })
+  }
+  const submitHandler = (e) => {
+    e.preventDefault()
+    if (changePassword.oldPassword === userData.password) {
+      if (changePassword.newPassword === changePassword.confirmPassword) {
+        setUserData({...userData,password: changePassword.newPassword})
+        console.log("success change Password")
+      }else {
+        console.log("new Password didn't match")
+      }
+    }else {
+      console.log('old password incorrect')
+    }
+  }
+
   return (
     <>
       <div className="profile-container-header password">
@@ -35,7 +41,7 @@ export default function UpdatePassword() {
             <label>Password Sekarang</label>
             <div className="old-password">
               <span>
-                <PasswordInput placeholder="Masukkan password saat ini" />
+                <PasswordInput name={"oldPassword"} placeholder="Masukkan password saat ini" value={changePassword.oldPassword} onChange={(e) => inputHandler(e)}/>
               </span>
               <button className="forget-password">Lupa Password?</button>
             </div>
@@ -43,20 +49,40 @@ export default function UpdatePassword() {
           <section>
             <label>Password Baru</label>
             <span>
-              <PasswordInput placeholder="Masukkan password baru anda" />
+              <PasswordInput name={"newPassword"} placeholder="Masukkan password baru anda" value={changePassword.newPassword} onChange={(e) => inputHandler(e)}/>
             </span>
           </section>
           <section>
             <label>Konfirmasi Password</label>
             <span>
-              <PasswordInput placeholder="Konfirmasi password baru anda" />
+              <PasswordInput name={"confirmPassword"} placeholder="Konfirmasi password baru anda" value={changePassword.confirmPassword} onChange={(e) => inputHandler(e)}/>
             </span>
           </section>
         </div>
         <div className="submit-field">
-          <button type="submit">Konfirmasi</button>
+          <button type="submit" onClick={(e) => submitHandler(e)}>Konfirmasi</button>
         </div>
       </div>
     </>
   );
 }
+
+const PasswordInput = ({ placeholder,name,value,onChange}) => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const showPasswordHandler = () => {
+    setShowPassword((prev) => !prev);
+  };
+  return (
+    <>
+      <input
+        type={showPassword ? "text" : "password"}
+        placeholder={placeholder}
+        name={name}
+        value={value}
+        onChange={onChange}
+      />
+      <EyeIcon clickFunc={showPasswordHandler} />
+    </>
+  );
+};

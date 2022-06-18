@@ -2,16 +2,16 @@ import ProfileInfo from "./ProfileInfo";
 import ProfileAddress from "./ProfileAddress";
 import UpdatePassword from "./UpdatePassword";
 
-export default function ProfileAccount({ activeDropdown }) {
+export default function ProfileAccount({ activeDropdown,userData,setUserData }) {
   switch (activeDropdown) {
     case 1:
       // Daftar alamat will be shown
-      return  <ProfileAddress />
+      return  <ProfileAddress userData={userData} setUserData={setUserData}/>
     case 2:
       // Ubah Password will be shown
-      return <UpdatePassword />
+      return <UpdatePassword userData={userData} setUserData={setUserData}/>
     default:
       // profil saya will be shown
-      return <ProfileInfo />
+      return <ProfileInfo userData={userData} setUserData={setUserData}/>
   }
 }
