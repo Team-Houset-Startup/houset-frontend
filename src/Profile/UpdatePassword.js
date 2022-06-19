@@ -3,28 +3,40 @@ import { EyeIcon } from "./assets/Icon";
 import "./assets/style/profile-update-password.css";
 
 
-export default function UpdatePassword({userData,setUserData}) {
-  const [changePassword,setChangePassword] = useState({oldPassword:"",newPassword:"",confirmPassword:""})
+export default function UpdatePassword({ userData, setUserData }) {
+  // function to update password
+  const [changePassword, setChangePassword] = useState({
+    oldPassword: "",
+    newPassword: "",
+    confirmPassword: "",
+  });
+  const [errorStatus, setErrorStatus] = useState({
+    oldPassword: "",
+    newPassword: "",
+  });
 
   const inputHandler = (e) => {
+    // function to handle input
     setChangePassword({
       ...changePassword,
-      [e.target.name] : e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
   const submitHandler = (e) => {
-    e.preventDefault()
+    // function to handle when user click the submiut button
+    e.preventDefault();
     if (changePassword.oldPassword === userData.password) {
       if (changePassword.newPassword === changePassword.confirmPassword) {
-        setUserData({...userData,password: changePassword.newPassword})
-        console.log("success change Password")
-      }else {
-        console.log("new Password didn't match")
+        setErrorStatus({oldPassword:"",newPassword:""})
+        setUserData({ ...userData, password: changePassword.newPassword });
+        console.log("success change Password");
+      } else {
+        setErrorStatus({oldPassword:"",newPassword:"new Password didn't match"})
       }
-    }else {
-      console.log('old password incorrect')
+    } else {
+      setErrorStatus({...errorStatus,oldPassword:"old password incorrect"})
     }
-  }
+  };
 
   return (
     <>
@@ -41,33 +53,72 @@ export default function UpdatePassword({userData,setUserData}) {
             <label>Password Sekarang</label>
             <div className="old-password">
               <span>
-                <PasswordInput name={"oldPassword"} placeholder="Masukkan password saat ini" value={changePassword.oldPassword} onChange={(e) => inputHandler(e)}/>
+                <PasswordInput
+                  name={"oldPassword"}
+                  placeholder="Masukkan password saat ini"
+                  value={changePassword.oldPassword}
+                  onChange={(e) => inputHandler(e)}
+                />
               </span>
               <button className="forget-password">Lupa Password?</button>
             </div>
+            <span
+              className={`error-message ${
+                errorStatus.oldPassword !== "" ? "active" : ""
+              }`}
+            >
+              {errorStatus.oldPassword}
+            </span>
           </section>
           <section>
             <label>Password Baru</label>
             <span>
-              <PasswordInput name={"newPassword"} placeholder="Masukkan password baru anda" value={changePassword.newPassword} onChange={(e) => inputHandler(e)}/>
+              <PasswordInput
+                name={"newPassword"}
+                placeholder="Masukkan password baru anda"
+                value={changePassword.newPassword}
+                onChange={(e) => inputHandler(e)}
+              />
+            </span>
+            <span
+              className={`error-message ${
+                errorStatus.newPassword !== "" ? "active" : ""
+              }`}
+            >
+              {errorStatus.newPassword}
             </span>
           </section>
           <section>
             <label>Konfirmasi Password</label>
             <span>
-              <PasswordInput name={"confirmPassword"} placeholder="Konfirmasi password baru anda" value={changePassword.confirmPassword} onChange={(e) => inputHandler(e)}/>
+              <PasswordInput
+                name={"confirmPassword"}
+                placeholder="Konfirmasi password baru anda"
+                value={changePassword.confirmPassword}
+                onChange={(e) => inputHandler(e)}
+              />
+            </span>
+            <span
+              className={`error-message ${
+                errorStatus.newPassword !== "" ? "active" : ""
+              }`}
+            >
+              {errorStatus.newPassword}
             </span>
           </section>
         </div>
         <div className="submit-field">
-          <button type="submit" onClick={(e) => submitHandler(e)}>Konfirmasi</button>
+          <button type="submit" onClick={(e) => submitHandler(e)}>
+            Konfirmasi
+          </button>
         </div>
       </div>
     </>
   );
 }
 
-const PasswordInput = ({ placeholder,name,value,onChange}) => {
+const PasswordInput = ({ placeholder, name, value, onChange }) => {
+  // component for password input to handle the type when eye icon is click
   const [showPassword, setShowPassword] = useState(false);
 
   const showPasswordHandler = () => {

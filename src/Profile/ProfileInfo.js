@@ -3,7 +3,15 @@ import { ArrowBottomIcon } from "./assets/Icon";
 // import profilePict from "./assets/image/Profile.png";
 
 export default function ProfileInfo({ userData, setUserData }) {
+  // component to change user information
   const [futureData, setFutureData] = useState({});
+
+  const [errorStatus, setErrorStatus] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    currLocation: "",
+  });
 
   useEffect(() => {
     setFutureData({
@@ -27,7 +35,52 @@ export default function ProfileInfo({ userData, setUserData }) {
   }
   const submitHandler = (e) => {
     e.preventDefault();
-    setUserData({...userData,...futureData})
+    if (errorCheck()) { 
+      setUserData({ ...userData, ...futureData });
+    }
+  };
+  const errorCheck = () => {
+    return errorStatus.name === "" && errorStatus.phone === "" && errorStatus.email === "" && errorStatus.currLocation === "" 
+  }
+  const inputValidation = (e) => {
+    let type = e.target.name;
+    let value = e.target.value;
+    switch (type) {
+      case "name":
+        if (value.length < 4 || value.length > 40) {
+          setErrorStatus({
+            ...errorStatus,
+            [e.target.name]: "only contain between 4 to 40 character",
+          });
+        } else {
+          setErrorStatus({ ...errorStatus, [e.target.name]: "" });
+        }
+        break;
+      case "email":
+        const mailFormat =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+        if (!mailFormat.test(value)) {
+          setErrorStatus({
+            ...errorStatus,
+            [e.target.name]: "enter the correct email",
+          });
+        }else {
+          setErrorStatus({ ...errorStatus, [e.target.name]: "" });
+        }
+        break;
+        case "phone":
+          const phoneFormat = /^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$/g
+          if (!value.match(phoneFormat)) {
+            setErrorStatus({
+              ...errorStatus,
+              [e.target.name]: "enter the correct number",
+            });
+          }else {
+            setErrorStatus({ ...errorStatus, [e.target.name]: "" });
+          }
+          break;
+      default:
+        break;
+    }
   };
 
   return (
@@ -56,18 +109,26 @@ export default function ProfileInfo({ userData, setUserData }) {
                 <input
                   type="text"
                   name="name"
+                  className={errorStatus.name !== "" ? "error" : ""}
                   value={futureData.name === undefined ? "" : futureData.name}
                   onChange={(e) => handleChange(e)}
+                  onBlur={(e) => inputValidation(e)}
+                  autoComplete="off"
                 />
+                <span className={`error-message ${errorStatus.name !== "" ? "active" :""}`}>{errorStatus.name}</span>
               </div>
               <div className="form-section-email">
                 <label>Email</label>
                 <input
                   type="text"
                   name="email"
+                  className={errorStatus.email !== "" ? "error" : ""}
                   value={futureData.email === undefined ? "" : futureData.email}
                   onChange={(e) => handleChange(e)}
+                  onBlur={(e) => inputValidation(e)}
+                  autoComplete="off"
                 />
+                <span className={`error-message ${errorStatus.email !== "" ? "active" :""}`}>{errorStatus.email}</span>
               </div>
             </section>
             <section>
@@ -76,22 +137,31 @@ export default function ProfileInfo({ userData, setUserData }) {
                 <input
                   type="text"
                   name="phone"
+                  className={errorStatus.phone !== "" ? "error" : ""}
                   value={futureData.phone === undefined ? "" : futureData.phone}
                   onChange={(e) => handleChange(e)}
+                  onBlur={(e) => inputValidation(e)}
+                  autoComplete="off"
                 />
+                <span className={`error-message ${errorStatus.phone !== "" ? "active" :""}`}>{errorStatus.phone}</span>
+
               </div>
               <div className="form-section-address">
                 <label>Alamat</label>
                 <input
                   type="text"
                   name="currLocation"
+                  className={errorStatus.currLocation !== "" ? "error" : ""}
                   value={
                     futureData.currLocation === undefined
                       ? ""
                       : futureData.currLocation
                   }
                   onChange={(e) => handleChange(e)}
+                  onBlur={(e) => inputValidation(e)}
+                  autoComplete="off"
                 />
+                <span className={`error-message ${errorStatus.currLocation !== "" ? "active" :""}`}>{errorStatus.currLocation}</span>
               </div>
             </section>
             <section>
@@ -107,7 +177,9 @@ export default function ProfileInfo({ userData, setUserData }) {
                       }
                       onChange={(e) => handleChange(e)}
                     >
-                      <option value="tanggal" disabled>Tanggal</option>
+                      <option value="tanggal" disabled>
+                        Tanggal
+                      </option>
                       <OptionSelectItem type="tanggal" />
                     </select>
                     <ArrowBottomIcon />
@@ -121,7 +193,9 @@ export default function ProfileInfo({ userData, setUserData }) {
                       }
                       onChange={(e) => handleChange(e)}
                     >
-                      <option value="bulan" disabled>Bulan</option>
+                      <option value="bulan" disabled>
+                        Bulan
+                      </option>
                       <OptionSelectItem type="bulan" />
                     </select>
                     <ArrowBottomIcon />
@@ -135,7 +209,9 @@ export default function ProfileInfo({ userData, setUserData }) {
                       }
                       onChange={(e) => handleChange(e)}
                     >
-                      <option value="tahun" disabled>Tahun</option>
+                      <option value="tahun" disabled>
+                        Tahun
+                      </option>
                       <OptionSelectItem type="tahun" />
                     </select>
                     <ArrowBottomIcon />
@@ -169,8 +245,9 @@ export default function ProfileInfo({ userData, setUserData }) {
               </div>
             </section>
           </form>
+          {console.log(Object.values(errorStatus))}
           <div className="account-form-footer">
-            <button onClick={(e) => submitHandler(e)}>Simpan</button>
+            <button onClick={(e) => submitHandler(e)} disabled={!errorCheck()}>Simpan</button>
           </div>
         </div>
       </div>

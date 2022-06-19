@@ -29,8 +29,15 @@
 .profile-sidebar>ul li.active button {
     background-color: #C8F6E9;
 }
+.profile-sidebar>ul li:hover button {
+    background-color: #C8F6E9;
+}
 
 .profile-sidebar>ul li.active button p {
+    color: #055053;
+}
+
+.profile-sidebar>ul li:hover button p {
     color: #055053;
 }
 
@@ -58,6 +65,10 @@
     cursor: pointer;
 }
 .profile-sidebar>ul li>ul li.active {
+    background-color: #C8F6E9;
+    color: #055053;
+}
+.profile-sidebar>ul li>ul li:hover {
     background-color: #C8F6E9;
     color: #055053;
 }

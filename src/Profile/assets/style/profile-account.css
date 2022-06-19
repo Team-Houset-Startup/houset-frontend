@@ -102,6 +102,7 @@ form section > div input[type = "text"]{
     color: #101828 ;
     outline: none;
 }
+
 form section div.select,
 form section div.select .select-section,
 form section div.radio {
