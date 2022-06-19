@@ -1,0 +1,15 @@
+.profile-container-header.notification {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-container-header.notification .button-read-all {
+    background-color: none;
+    border: none;
+    outline: none;
+    text-decoration: underline;
+    color: #055053;
+    font-weight: 500;
+    font-size: 14px;
+}
