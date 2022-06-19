@@ -3,6 +3,7 @@ import "./assets/style/profile-notification.css";
 
 
 const NotificationBuilderComponent = ({ type, data }) => {
+  // component for notification based on type 
   switch (type) {
     case "Complete Payment":
       return (
@@ -54,7 +55,7 @@ export default function ProfileNotification() {
   const setAllNotificationToRead = () => {
     console.log("all notification is read");
   };
-  
+
   return (
     <>
       <div className="profile-container-header notification">
@@ -64,6 +65,7 @@ export default function ProfileNotification() {
         </button>
       </div>
       <div className="profile-container-body notification">
+        {/* looping from data */}
         <NotificationBuilderComponent type={"Complete Payment"} />
         <NotificationBuilderComponent type={"Give Rating"} />
         <NotificationBuilderComponent type={"Complete Payment"} />

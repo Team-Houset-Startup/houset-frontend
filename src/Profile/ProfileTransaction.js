@@ -10,6 +10,7 @@ const FilterTransactionButton = ({
   filterTransaction,
   setFilterTransaction,
 }) => {
+  // filter component bar based on status
   const availableFilters = [
     "Semua",
     "Belum Bayar",
@@ -100,7 +101,9 @@ const ProductTransaction = ({ transaction }) => {
   );
 };
 const ProductTransactionDetails = ({ product }) => {
+
   function formatRupiah(angka, prefix){
+    // function to format from integer to rupiah format
     let number_string = angka.toString(),
     split   		= number_string.split(','),
     sisa     		= split[0].length % 3,
@@ -114,6 +117,8 @@ const ProductTransactionDetails = ({ product }) => {
     rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
     return prefix === undefined ? rupiah : (rupiah ? 'Rp ' + rupiah : '');
   }
+
+
   return (
     <div className="transaction-product">
       <div className="transaction-product-item">

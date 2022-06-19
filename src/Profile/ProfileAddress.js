@@ -3,6 +3,7 @@ import { AddIcon } from "./assets/Icon";
 import './assets/style/profile-address.css'
 
 const AddressBuilder = ({ main }) => {
+  // component for list address
   return (
     <div className={`address-list ${main ? "main" : ""}`}>
       <div className="address-info">
@@ -33,6 +34,7 @@ const AddressBuilder = ({ main }) => {
 };
 
 export default function ProfileAddress() {
+  // component for showing list of address 
   return (
     <>
       <div className="profile-container-header address">
