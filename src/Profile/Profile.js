@@ -9,12 +9,12 @@ import data from './data.json'
 
 function Profile() {
   // state for set the active sidebar for container
-  const [activeSidebar,setActiveSidebar] = useState(0)
+  const [activeSidebar,setActiveSidebar] = useState(1)
   const [activeDropdown,setActiveDropdown] = useState(0)
   const [userData,setUserData] = useState({})
 
   useEffect(() => {
-    setUserData(data)
+    setUserData(data.user)
   },[])
 
   return (
