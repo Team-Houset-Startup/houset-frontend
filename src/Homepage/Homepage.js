@@ -4,8 +4,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import ProductLists from './ProductLists';
-import RoomLists from './RoomLists';
+import ProductLists from '../Components/ProductLists';
+import RoomLists from '../Components/RoomLists';
 import NavigationBar from '../Components/NavigationBar';
 import Footer from '../Components/Footer';
 import StepDesign from './assets/image/svg/StepConsult';
@@ -48,7 +48,7 @@ function Homepage() {
                         <Button type="primary-button" text="Klik Disini" toPage="/canvas" />
                     </Col>
                     <Col className="homepage-design-pict">
-                        <img src="https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" />
+                        <img src={SampleRoom} alt="" />
                     </Col>
                 </Row>
 

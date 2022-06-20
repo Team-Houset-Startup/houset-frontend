@@ -65,42 +65,42 @@ function Product({ variant }) {
                     <SelectionRoomContainer />
                 </Row>
 
-                <Container className="product-list">
-                    <Row className="product-list-search">
-                        <Search placeHolder="Cari produk, kategori, atau ruangan" />
-                        <ul className="product-list-quick">
-                            <li> <button> Dekorasi </button> </li>
-                            <li> <button> Peralatan Dapur </button> </li>
-                            <li> <button> Perlengkapan Kamar Mandi </button> </li>
-                            <li> <button> Perlengkapan Kantor </button> </li>
-                            <li> <button> Aksesoris Penyimpanan </button> </li>
-                            <li> <button> Aksesoris Kamar Anak </button> </li>
-                            <li> <button> Boneka Bebek </button> </li>
-                        </ul>
-                    </Row>
+                {/* <Row className="product-list"> */}
+                <Row className="product-list-search">
+                    <Search placeHolder="Cari produk, kategori, atau ruangan" />
+                    <ul className="product-list-quick">
+                        <li> <button> Dekorasi </button> </li>
+                        <li> <button> Peralatan Dapur </button> </li>
+                        <li> <button> Perlengkapan Kamar Mandi </button> </li>
+                        <li> <button> Perlengkapan Kantor </button> </li>
+                        <li> <button> Aksesoris Penyimpanan </button> </li>
+                        <li> <button> Aksesoris Kamar Anak </button> </li>
+                        <li> <button> Boneka Bebek </button> </li>
+                    </ul>
+                </Row>
 
-                    <Row>
-                        <Col xl={{ span: "2" }}> <CategorySidebar /> </Col>
+                <Row className="product-list-content">
+                    <Col className="product-list-sidebar"> <CategorySidebar /> </Col>
 
-                        <Col xl={{ span: "10" }}> <ProductCardContainer variant={variant} products={currentProducts} /> </Col>
-                        {/* {CardContainer} */}
-                    </Row>
+                    <Col className="product-list-preview"> <ProductCardContainer variant={variant} products={currentProducts} /> </Col>
+                    {/* {CardContainer} */}
+                </Row>
 
-                    <Row>
-                        <Col>
-                            <ReactPaginate
-                                breaklabel="..."
-                                nextLabel=">"
-                                previousLabel="<"
-                                onPageChange={handlePageClick}
-                                // pageRangeDisplayed={16}
-                                pageCount={pageCount}
-                                renderOnZeroPageCount={null}
-                                containerClassName="product-pagination"
-                            />
-                        </Col>
-                    </Row>
-                </Container>
+                <Row>
+                    <Col>
+                        <ReactPaginate
+                            breaklabel="..."
+                            nextLabel=">"
+                            previousLabel="<"
+                            onPageChange={handlePageClick}
+                            // pageRangeDisplayed={16}
+                            pageCount={pageCount}
+                            renderOnZeroPageCount={null}
+                            containerClassName="product-pagination"
+                        />
+                    </Col>
+                </Row>
+                {/* </Row> */}
             </Container>
             <Footer />
         </>
