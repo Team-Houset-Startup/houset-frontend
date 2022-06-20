@@ -38,12 +38,6 @@ function Product({ variant }) {
         setProductOffset(newOffset);
     };
 
-    // let CardContainer = (<></>)
-    // if (props.variant === "furniture") {
-    //     CardContainer = <ProductCardContainer products={currentProducts} />
-    // } else if (props.variant === "room") {
-    //     CardContainer = <ProductCardContainer products={currentProducts} />
-    // }
     return (
         <>
             <NavigationBar />
@@ -53,8 +47,7 @@ function Product({ variant }) {
                         <Row>
                             <p> Desain ruangan dengan <br /> kreasi mu sekarang juga! </p>
                         </Row>
-                        {/* <Link className="start-design" to="/kanvas"> <button className="reg-button"> Mulai Design </button> </Link> */}
-                        {/* <Button text="Mulai Design" type="secondary-button" toPage="/product"/> */}
+                        
                         <Row className="product-hero-start">
                             <Button text="Mulai Design" type="secondary-button" toPage="/canvas" />
                         </Row>
@@ -65,7 +58,7 @@ function Product({ variant }) {
                     <SelectionRoomContainer />
                 </Row>
 
-                {/* <Row className="product-list"> */}
+                
                 <Row className="product-list-search">
                     <Search placeHolder="Cari produk, kategori, atau ruangan" />
                     <ul className="product-list-quick">
@@ -100,7 +93,6 @@ function Product({ variant }) {
                         />
                     </Col>
                 </Row>
-                {/* </Row> */}
             </Container>
             <Footer />
         </>

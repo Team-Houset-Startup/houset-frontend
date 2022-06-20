@@ -9,11 +9,11 @@ import "./assets/style/selection-room-card.css";
 export default function SelectionRoomCard( {picture, name} ) {
     return (
         <div className="selection-card-scrollable">
-            <Link to="room-page">
+            {/* <div> */}
                 {/* {console.log(picture.path)} */}
                 <img src={picture} alt="" />
                 <p> {name} </p>
-            </Link>
+            {/* </div> */}
         </div>
     )
 }
