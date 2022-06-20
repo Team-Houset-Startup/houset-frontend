@@ -1,9 +1,0 @@
-.head-room {
-	/* Make the element inside div 2 column */
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-
-	margin: 40px 0px 20px 0px;
-}

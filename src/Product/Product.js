@@ -38,12 +38,6 @@ function Product({ variant }) {
         setProductOffset(newOffset);
     };
 
-    // let CardContainer = (<></>)
-    // if (props.variant === "furniture") {
-    //     CardContainer = <ProductCardContainer products={currentProducts} />
-    // } else if (props.variant === "room") {
-    //     CardContainer = <ProductCardContainer products={currentProducts} />
-    // }
     return (
         <>
             <NavigationBar />
@@ -53,8 +47,7 @@ function Product({ variant }) {
                         <Row>
                             <p> Desain ruangan dengan <br /> kreasi mu sekarang juga! </p>
                         </Row>
-                        {/* <Link className="start-design" to="/kanvas"> <button className="reg-button"> Mulai Design </button> </Link> */}
-                        {/* <Button text="Mulai Design" type="secondary-button" toPage="/product"/> */}
+                        
                         <Row className="product-hero-start">
                             <Button text="Mulai Design" type="secondary-button" toPage="/canvas" />
                         </Row>
@@ -65,42 +58,41 @@ function Product({ variant }) {
                     <SelectionRoomContainer />
                 </Row>
 
-                <Container className="product-list">
-                    <Row className="product-list-search">
-                        <Search placeHolder="Cari produk, kategori, atau ruangan" />
-                        <ul className="product-list-quick">
-                            <li> <button> Dekorasi </button> </li>
-                            <li> <button> Peralatan Dapur </button> </li>
-                            <li> <button> Perlengkapan Kamar Mandi </button> </li>
-                            <li> <button> Perlengkapan Kantor </button> </li>
-                            <li> <button> Aksesoris Penyimpanan </button> </li>
-                            <li> <button> Aksesoris Kamar Anak </button> </li>
-                            <li> <button> Boneka Bebek </button> </li>
-                        </ul>
-                    </Row>
+                
+                <Row className="product-list-search">
+                    <Search placeHolder="Cari produk, kategori, atau ruangan" />
+                    <ul className="product-list-quick">
+                        <li> <button> Dekorasi </button> </li>
+                        <li> <button> Peralatan Dapur </button> </li>
+                        <li> <button> Perlengkapan Kamar Mandi </button> </li>
+                        <li> <button> Perlengkapan Kantor </button> </li>
+                        <li> <button> Aksesoris Penyimpanan </button> </li>
+                        <li> <button> Aksesoris Kamar Anak </button> </li>
+                        <li> <button> Boneka Bebek </button> </li>
+                    </ul>
+                </Row>
 
-                    <Row>
-                        <Col xl={{ span: "2" }}> <CategorySidebar /> </Col>
+                <Row className="product-list-content">
+                    <Col className="product-list-sidebar"> <CategorySidebar /> </Col>
 
-                        <Col xl={{ span: "10" }}> <ProductCardContainer variant={variant} products={currentProducts} /> </Col>
-                        {/* {CardContainer} */}
-                    </Row>
+                    <Col className="product-list-preview"> <ProductCardContainer variant={variant} products={currentProducts} /> </Col>
+                    {/* {CardContainer} */}
+                </Row>
 
-                    <Row>
-                        <Col>
-                            <ReactPaginate
-                                breaklabel="..."
-                                nextLabel=">"
-                                previousLabel="<"
-                                onPageChange={handlePageClick}
-                                // pageRangeDisplayed={16}
-                                pageCount={pageCount}
-                                renderOnZeroPageCount={null}
-                                containerClassName="product-pagination"
-                            />
-                        </Col>
-                    </Row>
-                </Container>
+                <Row>
+                    <Col>
+                        <ReactPaginate
+                            breaklabel="..."
+                            nextLabel=">"
+                            previousLabel="<"
+                            onPageChange={handlePageClick}
+                            // pageRangeDisplayed={16}
+                            pageCount={pageCount}
+                            renderOnZeroPageCount={null}
+                            containerClassName="product-pagination"
+                        />
+                    </Col>
+                </Row>
             </Container>
             <Footer />
         </>

@@ -1,8 +1,7 @@
 import React from 'react'
 import Carousel from 'react-multi-carousel'
-import FurnitureCard from '../Components/FurnitureCard';
-import LinkSeeMore from '../Components/LinkSeeMore';
-import RoomCard from '../Components/RoomCard';
+import FurnitureCard from './FurnitureCard';
+import LinkSeeMore from './LinkSeeMore';
 
 import "./assets/style/product-list.css"
 
@@ -36,8 +35,7 @@ export default function ProductLists() {
     };
 
     return (
-        <div className="preview-container">
-
+        <div>
             <LinkSeeMore title="Produk Terbaik" links="/furnitur" text="Lihat Semua" />
             <Carousel
                 responsive={responsive}
@@ -47,14 +45,14 @@ export default function ProductLists() {
                 // centerMode={true}
                 className="product-list-carousel"
             >
-                <RoomCard />
-                <RoomCard />
-                <RoomCard />
-                <RoomCard />
-                <RoomCard />
-                <RoomCard />
-                <RoomCard />
-                <RoomCard />
+                <FurnitureCard product={product} />
+                <FurnitureCard product={product} />
+                <FurnitureCard product={product} />
+                <FurnitureCard product={product} />
+                <FurnitureCard product={product} />
+                <FurnitureCard product={product} />
+                <FurnitureCard product={product} />
+                <FurnitureCard product={product} />
             </Carousel>
         </div>
     )

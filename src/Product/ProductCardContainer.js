@@ -18,7 +18,7 @@ export default function ProductCardContainer( {variant, products} ) {
             // console.log(product);
             item += 1;
             tempList.push(
-                <Col>
+                <Col className="product-card-item">
                     {(variant === "furniture") ? <FurnitureCard product={product} /> : <RoomCard product={product} />}
                 </Col>
             );
@@ -27,10 +27,11 @@ export default function ProductCardContainer( {variant, products} ) {
                 tempList = [];
             }
         });
+        // return tempList;
         return productList;
     }
     return (
-        <Container className="product-container">
+        <Container className="product-card-container">
             {buildProductList()}
         </Container>
     )
