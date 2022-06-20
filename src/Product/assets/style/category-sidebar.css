@@ -10,7 +10,7 @@
 	border-radius: 4px;
 }
 
-.title-border {
+.category-title-border {
 	position: relative;
 	width: 100%;
 	margin: 0;
@@ -25,10 +25,7 @@
 	margin: 0;
 }
 
-.list-choice {
-}
-
-.list-choice ul {
+.category-list-choice ul {
 	position: relative;
 	padding-left: 18px;
 }
@@ -42,7 +39,6 @@
 }
 
 .category-sidebar ul li input[type="checkbox"] {
-	
 }
 
 .category-section {
@@ -53,9 +49,25 @@
 	margin: 0;
 }
 
-.section-border {
+.category-section-border {
 	width: 120px;
 	border: 1px solid #055053;
 	margin-top: 0;
 	margin-left: 0;
+}
+
+.category-price input {
+	width: 123px;
+	height: 28px;
+	background: #f1fffb;
+	border: 1px solid #055053;
+	border-radius: 4px;
+	margin-bottom: 8px;
+
+	/* Font */
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	text-align: right;
+	color: #475467;
 }

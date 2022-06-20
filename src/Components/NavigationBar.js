@@ -7,6 +7,7 @@ import Button from './Button';
 import ProfilePicture from './assets/image/profile-picture.png';
 
 import "./assets/style/navigation-bar.css";
+import Search from './Search';
 
 function NavigationBar() {
     const { token, setToken } = useToken();
@@ -21,7 +22,8 @@ function NavigationBar() {
 
     if (!token) {
         profile = (
-            <div className="login-register">
+            <div className="navbar-login-register">
+                {/* <Search placeHolder="Cari Produk"/> */}
                 <Button text="Register" type="secondary-button" toPage={"/register"} />
                 <Button text="Login" type="primary-button" toPage={"/login"} />
             </div>
@@ -29,6 +31,7 @@ function NavigationBar() {
     } else {
         profile = (
             <div className="navbar-profile">
+                {/* <Search placeHolder="Cari Produk"/> */}
                 <button onClick={handleLogout}>
                     <img src={ProfilePicture} alt="profile-picture" className="profile-picture" />
                 </button>
