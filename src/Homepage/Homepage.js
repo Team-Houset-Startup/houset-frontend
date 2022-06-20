@@ -48,7 +48,7 @@ function Homepage() {
                         <Button type="primary-button" text="Klik Disini" toPage="/canvas" />
                     </Col>
                     <Col className="homepage-design-pict">
-                        <img src={SampleRoom} alt="" />
+                        <img src="https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" />
                     </Col>
                 </Row>
 
