@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import RoomPreview from "./assets/image/room.png";
-import RoomModals from '../RoomDetailed/RoomDetailed';
+import RoomModals from '../Product/RoomDetailed/RoomDetailed';
 
 import Button from '../Components/Button';
 import { Modal } from 'bootstrap';
