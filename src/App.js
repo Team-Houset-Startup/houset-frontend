@@ -17,6 +17,7 @@ import useToken from './context/useToken';
 import ScrollToTop from './Components/ScrollToTop';
 import NavigationBar from './Components/NavigationBar';
 import Footer from './Components/Footer';
+import Profile from './Profile/Profile';
 
 
 export default function App(params) {
@@ -71,7 +72,7 @@ export default function App(params) {
             <Route path="/checkout" element={<Checkout />} />
 
             <Route path="/invoice" element={<Invoice />} />
-            <Route path="/profile" element={<Homepage />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
           {/* <Footer /> */}
         </Router>
