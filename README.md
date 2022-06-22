@@ -47,11 +47,17 @@ React-router-dom (https://www.npmjs.com/package/react-router-dom)
 React-bootstrap (https://www.npmjs.com/package/react-bootstrap)
 ### `npm i react-bootstrap`
 
+React-modals (https://www.npmjs.com/package/react-modal)
+### `npm i react-modal`
+
 React-axios (https://www.npmjs.com/package/axios)
 ### `npm i axios`
 
 React-multi-carousel (https://www.npmjs.com/package/react-multi-carousel)
 ### `npm i react-multi-carousel`
+
+React-paginate (https://www.npmjs.com/package/react-paginate)
+### `npm i react-paginate`
 
 ## One feature in one folder
 
