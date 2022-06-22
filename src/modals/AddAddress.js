@@ -28,7 +28,7 @@ const AddAddress = () => {
     <ReactModal
       isOpen={modalIsOpen}
       shouldCloseOnOverlayClick={true}
-      style={{content:"",overlay:""}}
+      style={{content:{},overlay:{}}}
       onRequestClose={closeModal}
     >
       <form className="add-address">

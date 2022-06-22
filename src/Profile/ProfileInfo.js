@@ -245,7 +245,6 @@ export default function ProfileInfo({ userData, setUserData }) {
               </div>
             </section>
           </form>
-          {console.log(Object.values(errorStatus))}
           <div className="account-form-footer">
             <button onClick={(e) => submitHandler(e)} disabled={!errorCheck()}>Simpan</button>
           </div>
