@@ -12,7 +12,7 @@ import RoomCard from "../Components/RoomCard";
 // import RoomPhoto from "./assets/image/room-photo.png";
 import RoomDetailed from "../RoomDetailed/RoomDetailed";
 // import { Modal } from "bootstrap";
-import "./assets/style/furniture.css";
+import "./assets/style/product.css";
 import "./assets/style/product-card-container.css";
 Modal.setAppElement('#root');
 const modalStyle = {

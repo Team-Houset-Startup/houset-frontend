@@ -2,7 +2,7 @@
 	overflow: hidden;
 	position: fixed;
 	height: 72px;
-	z-index: 100;
+	z-index: 9999;
 	width: 100%;
 
 	background: #ffffff;
@@ -51,7 +51,7 @@
 	cursor: pointer;
 }
 
-.login-register {
+.navbar-login-register {
 	display: flex;
 	flex-direction:row;
 	align-items: flex-start;
@@ -64,7 +64,7 @@
 	top: calc(50% - 40px / 2);
 }
 
-.login-register button {
+.navbar-login-register button {
 	align-items: center;
 	height: 40px;
 	margin-right: 12px;
@@ -85,6 +85,11 @@
 	right: 42px;
 	top: calc(50% - 40px / 2);
 }
+
+/* .navbar-profile input {
+	margin-right: 200px;
+	width: 200px;
+} */
 
 .navbar-profile button {
 	/* remove button style */

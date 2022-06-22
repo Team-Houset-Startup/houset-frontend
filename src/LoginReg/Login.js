@@ -10,7 +10,7 @@ import "./assets/style/login-register.css"
 import "./assets/style/login.css";
 
 async function doLogin(credentials) {
-  return fetch('api/v1/houset/auth/login', {
+  return fetch('https://reqres.in/api/login', {
         // mode: 'no-cors',
         method: 'POST',
         headers: {

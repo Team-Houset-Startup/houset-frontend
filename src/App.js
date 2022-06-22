@@ -17,30 +17,31 @@ import useToken from './context/useToken';
 import ScrollToTop from './Components/ScrollToTop';
 import NavigationBar from './Components/NavigationBar';
 import Footer from './Components/Footer';
+import Profile from './Profile/Profile';
 
 
 export default function App(params) {
   const { token, setToken } = useToken();
-  /* let loginStatus = (<> </>)
+  let loginStatus = (<> </>)
 
-  if (!token) {
-    loginStatus = (
-      <Router>
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login setToken={setToken} />} />
-        </Routes>
-      </Router>
-    )
-  } else {
-    loginStatus = (
-      <Router>
-        <Routes>
-          <Route path="/profile" element={<Register />} />
-        </Routes>
-      </Router>
-    )
-  } */
+  // if (!token) {
+  //   loginStatus = (
+  //     <Router>
+  //       <Routes>
+  //         <Route path="/register" element={<Register />} />
+  //         <Route path="/login" element={<Login setToken={setToken} />} />
+  //       </Routes>
+  //     </Router>
+  //   )
+  // } else {
+  //   loginStatus = (
+  //     <Router>
+  //       <Routes>
+  //         <Route path="/profile" element={<Register />} />
+  //       </Routes>
+  //     </Router>
+  //   )
+  // } 
 
   if (!token) {
     return (
@@ -71,9 +72,11 @@ export default function App(params) {
             <Route path="/checkout" element={<Checkout />} />
 
             <Route path="/invoice" element={<Invoice />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
           {/* <Footer /> */}
         </Router>
+        {/* {loginStatus} */}
       </div>
     );
   }
@@ -84,8 +87,8 @@ export default function App(params) {
         <ScrollToTop />
 
         <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/profile" />
+          <Route path="/" element={<Canvas />} />
+          {/* <Route path="/profile" /> */}
         </Routes>
 
         <Routes>
@@ -104,7 +107,8 @@ export default function App(params) {
 
           <Route path="/invoice" element={<Invoice />} />
         </Routes>
-      </Router>
+      </Router> 
+      {/* {loginStatus} */}
     </div>
   )
 }

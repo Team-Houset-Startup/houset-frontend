@@ -4,8 +4,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import ProductLists from './ProductLists';
-import RoomLists from './RoomLists';
+import ProductLists from '../Components/ProductLists';
+import RoomLists from '../Components/RoomLists';
 import NavigationBar from '../Components/NavigationBar';
 import Footer from '../Components/Footer';
 import StepDesign from './assets/image/svg/StepConsult';
@@ -22,7 +22,6 @@ function Homepage() {
         <>
             <NavigationBar />
             <Container fluid>
-
                 <Row className="homepage-banner">
                     {/* <div id="nav-bar"></div> */}
                     <Col className="homepage-banner-text">
@@ -62,6 +61,8 @@ function Homepage() {
                 <Row className="homepage-product-lists">
                     <ProductLists />
                 </Row>
+                
+                {/* <br /> */}
 
                 <Row className="homepage-room-lists">
                     <RoomLists />
@@ -71,7 +72,5 @@ function Homepage() {
         </>
     )
 }
-
-
 
 export default Homepage;

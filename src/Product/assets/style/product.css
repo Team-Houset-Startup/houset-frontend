@@ -1,9 +1,4 @@
-.product-page {
-  /* div in mid */
-  width: 100%;
-}
-
-.section1 {
+.product-hero {
   margin-top: 65px;
   background-image: url("../image/furniture-header.png");
   background-repeat: no-repeat;
@@ -13,10 +8,8 @@
   width: 100%;
 }
 
-.start-here p {
-  position: relative;
-  top: 60px;
-
+.product-hero-content p {
+  margin-top: 70px;
   font-weight: 800;
   font-size: 48px;
   line-height: 64px;
@@ -24,67 +17,31 @@
   color: #FFFFFF;
 }
 
-.start-design {
-  display: flex;
-  justify-content: center;
-  
-  margin: 0 auto;
-  margin-top: 100px;
-  width: auto;
+.product-hero-start button {
+  margin-top: 36px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/*============================================== SECTION 2 ==================================================== */
-
-.section2 {
+.product-selection {
   margin-top: 42px;
 }
 
-.start-design .reg-button {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 20px;
-  
-  color: #055053;
+/*============================================== PRODUCT LIST SEARCH - ROW ==================================================== */
 
-  align-items: center;
-  padding: 12px 16px;
-  background: #C8F6E9;
-  border-radius: 4px;
-  border: none;
+.product-list-search input {
+    width: 1110px;
 }
 
-.template-container {
-  height: 200px;
-}
-
-.search-form form {
-  margin:auto;
-  width: fit-content;
-}
-
-.search-form form input[type="text"] {
-  width: 1110px;
-  height: 44px;
-  background: #F9F9F9;
-  border: 1px solid #E6E6E6;
-  box-sizing: border-box;
-  border-radius: 30px;
-  padding: 18px;
-}
-
-.search-form form input[type="submit"] {
-  
-}
-
-.search-form .quick-select {
+.product-list-quick {
   display: flex;
   align-items: flex-start;
   padding: 0px;
-  margin: 10px auto 0px auto;
+  margin: 10px auto 40px auto;
   width: fit-content;
 }
 
-.search-form .quick-select button {
+.product-list-quick button {
   margin: 0px 12px;
   align-items: center;
   padding: 4px 8px;
@@ -102,31 +59,46 @@
   color: #055053;
 }
 
+/* ======================================    PRODUCT LIST CONTENT - ROW    =======================================  */
 
-/*
-.search-form .quick-select button:hover {
-  background: #055053;
-  border-radius: 30px;
+.product-list-content {
+  /* display: flex; */
+  /* justify-content: ; */
+  width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  color: #FFFFFF;
-  transition: all 0.5s ease 0s;
+.product-list-sidebar {
+  width: 160px;
+}
+
+.product-list-preview {
+  width: 1200px;
+}
+
+@media screen and (max-width: 1200px) {
+  .product-list-content {
+    width: 1000px;
+  }  
+
+  .product-list-preview {
+    width: 800px;
+  }
+}
+
+/* 
+@media screen and (max-width: 1200px) {
+  
+
+  .product-list-preview {
+    width: 900px;
+  }
 } */
 
-/*============================================== SECTION 3 ==================================================== */
+/* ============================================================ */
 
-/* .section3 {
-  display: flex;
-  justify-content: center;
-
-  width: auto;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  height: auto;
-} */
-
-/* ==============================================    RUANGAN    ==============================================  */
-
-.room-modals {
+/* .room-modals {
   margin-top: 172px;
 }
 
@@ -134,7 +106,7 @@
 	background: none;
 	color: inherit;
 	border: none;
-}
+} */
 
 /* ==============================================    PAGINATION    ==============================================  */
 .product-pagination {
