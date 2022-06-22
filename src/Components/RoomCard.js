@@ -43,6 +43,7 @@ export default function RoomCard() {
                 {/* <LikeIcon /> */}
             {/* </button> */}
         </div>
+        
         {/* <RoomModals showRoom={showRoom} /> */}
         {/* <Modal show={showRoom}>
             <Modal.Header> Modal head </Modal.Header>

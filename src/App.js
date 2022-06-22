@@ -21,26 +21,26 @@ import Footer from './Components/Footer';
 
 export default function App(params) {
   const { token, setToken } = useToken();
-  /* let loginStatus = (<> </>)
+  let loginStatus = (<> </>)
 
-  if (!token) {
-    loginStatus = (
-      <Router>
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login setToken={setToken} />} />
-        </Routes>
-      </Router>
-    )
-  } else {
-    loginStatus = (
-      <Router>
-        <Routes>
-          <Route path="/profile" element={<Register />} />
-        </Routes>
-      </Router>
-    )
-  } */
+  // if (!token) {
+  //   loginStatus = (
+  //     <Router>
+  //       <Routes>
+  //         <Route path="/register" element={<Register />} />
+  //         <Route path="/login" element={<Login setToken={setToken} />} />
+  //       </Routes>
+  //     </Router>
+  //   )
+  // } else {
+  //   loginStatus = (
+  //     <Router>
+  //       <Routes>
+  //         <Route path="/profile" element={<Register />} />
+  //       </Routes>
+  //     </Router>
+  //   )
+  // } 
 
   if (!token) {
     return (
@@ -75,6 +75,7 @@ export default function App(params) {
           </Routes>
           {/* <Footer /> */}
         </Router>
+        {/* {loginStatus} */}
       </div>
     );
   }
@@ -85,8 +86,8 @@ export default function App(params) {
         <ScrollToTop />
 
         <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/profile" />
+          <Route path="/" element={<Canvas />} />
+          {/* <Route path="/profile" /> */}
         </Routes>
 
         <Routes>
@@ -105,7 +106,8 @@ export default function App(params) {
 
           <Route path="/invoice" element={<Invoice />} />
         </Routes>
-      </Router>
+      </Router> 
+      {/* {loginStatus} */}
     </div>
   )
 }
