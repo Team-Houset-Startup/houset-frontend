@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AddIcon } from "./assets/Icon";
-import './assets/style/profile-address.css'
+import "./assets/style/profile-address.css";
+import ModalContext from "../context/modal";
 
 const AddressBuilder = ({ main }) => {
   // component for list address
+
   return (
     <div className={`address-list ${main ? "main" : ""}`}>
       <div className="address-info">
@@ -34,12 +36,13 @@ const AddressBuilder = ({ main }) => {
 };
 
 export default function ProfileAddress() {
-  // component for showing list of address 
+  // component for showing list of address
+  const { activeModal } = useContext(ModalContext);
   return (
     <>
       <div className="profile-container-header address">
         <h1 className="header-title">Daftar Alamat</h1>
-        <button className="header-button">
+        <button className="header-button" onClick={activeModal}>
           <span> Tambah Alamat</span>
           <AddIcon />
         </button>
