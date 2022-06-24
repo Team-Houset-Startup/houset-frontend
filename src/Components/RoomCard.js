@@ -23,10 +23,10 @@ export default function RoomCard({ product,i }) {
     <>
       <div className="product-item" onClick={()=>showModal(product)}>
         <div className="room-pict">
-          <img src={RoomPreview} alt={product.name} />
+          <img src={RoomPreview} alt={product !== undefined ? product.name : ""} />
         </div>
-        <p className="room-type">{product.type}</p>
-        <p className="room-name">{product.name}</p>
+        <p className="room-type">{product !== undefined ? product.type : ""}</p>
+        <p className="room-name">{product !== undefined ? product.name : ""}</p>
         {/* LikeIcon */}
       </div>
     </>

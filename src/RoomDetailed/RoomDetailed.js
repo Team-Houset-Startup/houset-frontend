@@ -3,15 +3,15 @@ import { useState } from 'react';
 import Modal from 'react-modal'
 // import { Modal } from 'bootstrap';
 import { Container, Row, Col, Tabs } from 'react-bootstrap';
-import Button from '../../Components/Button';
+import Button from '../Components/Button';
 
 import RoomPhoto from "./assets/image/room-photo.png";
 
 import "./assets/style/room-detailed.css"
 import { Tab } from 'bootstrap';
-import RecommendationRoom from '../../Components/RecommendationRoom';
-import RoomLastSeen from '../../Components/RoomLastSeen';
-import ProductRelated from '../../Components/ProductRelated';
+import RecommendationRoom from '../Components/RecommendationRoom';
+import RoomLastSeen from '../Components/RoomLastSeen';
+import ProductRelated from '../Components/ProductRelated';
 
 
 const Description = () => {

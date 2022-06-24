@@ -5,12 +5,12 @@ import { useState } from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import NavigationBar from '../../Components/NavigationBar';
-import Footer from '../../Components/Footer';
-import RecommendationProduct from '../../Components/RecommendationProduct';
-import ProductLastSeen from '../../Components/ProductLastSeen';
-import ItemDescription from '../../Components/ItemDescription';
-import Button from '../../Components/Button';
+import NavigationBar from '../Components/NavigationBar';
+import Footer from '../Components/Footer';
+import RecommendationProduct from '../Components/RecommendationProduct';
+import ProductLastSeen from '../Components/ProductLastSeen';
+import ItemDescription from '../Components/ItemDescription';
+import Button from '../Components/Button';
 
 import ProductThumbnail from './ProductThumbnail';
 

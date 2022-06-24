@@ -60,7 +60,6 @@ export function ModalProvider({ children }) {
       {children}
       <AddAddress />
       {currProduct !== {} ? <RoomProductModal product={currProduct} /> : ""}
-
     </ModalContext.Provider>
   );
 }
