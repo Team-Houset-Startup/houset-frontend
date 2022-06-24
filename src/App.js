@@ -8,8 +8,8 @@ import Login from './LoginReg/Login';
 import Product from './Product/Product';
 import Canvas from './Canvas/Canvas';
 import Penawaran from './Offer/Penawaran';
-import ProductDetailed from './Product/ProductDetailed/ProductDetailed';
-import RoomDetailed from './Product/RoomDetailed/RoomDetailed';
+import ProductDetailed from './ProductDetailed/ProductDetailed';
+import RoomDetailed from './RoomDetailed/RoomDetailed';
 import Cart from './Transaction/Cart';
 import Checkout from './Transaction/Checkout';
 import Invoice from './Transaction/Invoice';
@@ -18,6 +18,7 @@ import ScrollToTop from './Components/ScrollToTop';
 import NavigationBar from './Components/NavigationBar';
 import Footer from './Components/Footer';
 import Profile from './Profile/Profile';
+import ForgetPassword from './forgetPassword/ForgetPassword';
 
 
 export default function App(params) {
@@ -73,6 +74,7 @@ export default function App(params) {
 
             <Route path="/invoice" element={<Invoice />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/forget-password" element={<ForgetPassword />} />
           </Routes>
           {/* <Footer /> */}
         </Router>
