@@ -18,6 +18,7 @@ import ScrollToTop from './Components/ScrollToTop';
 import NavigationBar from './Components/NavigationBar';
 import Footer from './Components/Footer';
 import Profile from './Profile/Profile';
+import ForgetPassword from './forgetPassword/ForgetPassword';
 
 
 export default function App(params) {
@@ -73,6 +74,7 @@ export default function App(params) {
 
             <Route path="/invoice" element={<Invoice />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/forget-password" element={<ForgetPassword />} />
           </Routes>
           {/* <Footer /> */}
         </Router>
