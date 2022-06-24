@@ -7,12 +7,13 @@ import Button from "../Components/Button";
 import Footer from '../Components/Footer';
 import NavigationBar from '../Components/NavigationBar';
 import PackageCard from '../Components/PackageCard';
-import StepConsult from './assets/image/svg/StepConsult';
+import SelectionRoomContainer from '../Components/SelectionRoomContainer';
 
 import ConsultOnline from './assets/image/svg/ConsultOnline';
 import ReferenceDesign from "./assets/image/svg/ReferenceDesign"
 import TipsInsight from "./assets/image/svg/TipsInsight"
 import BestPrice from "./assets/image/svg/BestPrice"
+import StepConsult from './assets/image/svg/StepConsult';
 
 import dapur1 from "../assets/image/dapur-1.png";
 import dapur2 from "../assets/image/dapur-2.png";
@@ -178,19 +179,7 @@ export default function Consult() {
                     </Col>
 
                     <Row className="consult-portofolio-scrollable">
-                        <ScrollMenu>
-                            {/* {pictures.map((picture, index) => (
-                               <SelectionRoomCard picture={picture} /> 
-                            ))} */}
-                            <SelectionRoomCard picture={dapur1} name="Ruang Dapur" />
-                            <SelectionRoomCard picture={kamar} name="Kamar Tidur" />
-                            <SelectionRoomCard picture={dapur2} name="Ruang Dapur" />
-                            <SelectionRoomCard picture={ruangtamu} name="Ruang Keluarga" />
-                            <SelectionRoomCard picture={dapur1} name="Ruang Dapur" />
-                            <SelectionRoomCard picture={kamar} name="Kamar Tidur" />
-                            <SelectionRoomCard picture={dapur2} name="Ruang Dapur" />
-                            <SelectionRoomCard picture={ruangtamu} name="Ruang Keluarga" />
-                        </ScrollMenu>
+                        <SelectionRoomContainer />
                     </Row>
                     {/* <SelectionRoomContainer /> */}
                 </Row>
