@@ -1,18 +1,10 @@
-import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
 import RoomPreview from "./assets/image/room.png";
-import RoomModals from '../RoomDetailed/RoomDetailed';
-
-import Button from '../Components/Button';
-import { Modal } from 'bootstrap';
-import { Container, Row, Col } from 'react-bootstrap';
-// import RoomPhoto from "../RoomModals/assets/image/room-photo.png";
 
 import "./assets/style/room-card.css";
-import RoomProductModal from '../modals/RoomProductModal';
 import ModalContext from '../context/modal';
 
-export default function RoomCard({ product,i }) {
+export default function RoomCard({ product}) {
   const {openRoomModal} = useContext(ModalContext)
   
   const showModal = (product) => {
@@ -23,7 +15,7 @@ export default function RoomCard({ product,i }) {
     <>
       <div className="product-item" onClick={()=>showModal(product)}>
         <div className="room-pict">
-          <img src={RoomPreview} alt={product !== undefined ? product.name : ""} />
+          <img src={product !== undefined ? product.image : RoomPreview} alt={product !== undefined ? product.name : ""} />
         </div>
         <p className="room-type">{product !== undefined ? product.type : ""}</p>
         <p className="room-name">{product !== undefined ? product.name : ""}</p>

@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import AddAddress from "../modals/AddAddress";
-import RoomProductModal from "../modals/RoomProductModal";
+import RoomProductModal from "../RoomDetailed/RoomDetailedModal";
 import "../modals/reactModalSettings.js";
 
 const ModalContext = createContext();

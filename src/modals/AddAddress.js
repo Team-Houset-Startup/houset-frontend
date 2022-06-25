@@ -17,6 +17,7 @@ const AddAddress = () => {
       isOpen={addAddressModalIsOpen}
       shouldCloseOnOverlayClick={true}
       onRequestClose={closeAddAddressModal}
+      
     >
       <form className="add-address">
         <div className="form-add-address-header">

@@ -14,9 +14,7 @@ import { ModalProvider } from "./context/modal";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ModalProvider>
-      <App />
-    </ModalProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById("root"),
 );
