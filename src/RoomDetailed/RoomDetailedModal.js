@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-import { Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import ItemDescription from "../Components/ItemDescription";
 import ReactModal from "react-modal";
 import ModalContext from "../context/modal";
 import RecommendationProduct from "../Components/RecommendationProduct";
 import Button from "../Components/Button";
+import RoomItemDescription from "./RoomItemDescription";
 
 export default function RoomDetailedModal({ product }) {
   const { roomModalIsOpen, closeRoomModal } = useContext(ModalContext);
@@ -21,7 +20,10 @@ export default function RoomDetailedModal({ product }) {
       <div className="room-container">
         <div className="room-detailed-heading">
           {product !== undefined ? (
-            <ProductContainerLeft product={product} closeRoomModal={closeRoomModal} />
+            <ProductContainerLeft
+              product={product}
+              closeRoomModal={closeRoomModal}
+            />
           ) : (
             ""
           )}
@@ -31,9 +33,7 @@ export default function RoomDetailedModal({ product }) {
         </div>
 
         <div className="room-product-description">
-          <Col xl={10} className="room-desc-col">
-            <ItemDescription product={product} />
-          </Col>
+          <RoomItemDescription product={product} />
         </div>
         <div className="room-design-recommendation">
           {/* Desain ruangan yang mungkin Anda suka */}
