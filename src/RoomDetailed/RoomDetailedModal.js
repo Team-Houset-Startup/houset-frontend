@@ -6,6 +6,7 @@ import ModalContext from "../context/modal";
 import RecommendationProduct from "../Components/RecommendationProduct";
 import Button from "../Components/Button";
 import RoomItemDescription from "./RoomItemDescription";
+import "./assets/style/item-room-recommendation.css";
 
 export default function RoomDetailedModal({ product }) {
   const { roomModalIsOpen, closeRoomModal } = useContext(ModalContext);
@@ -31,19 +32,20 @@ export default function RoomDetailedModal({ product }) {
             <RoomThumbnail />
           </div>
         </div>
-
-        <div className="room-product-description">
-          <RoomItemDescription product={product} />
-        </div>
-        <div className="room-design-recommendation">
-          {/* Desain ruangan yang mungkin Anda suka */}
-        </div>
-        <div className="room-product-recommendation">
-          <RecommendationProduct count="4" />
-          {/* Produk yang mungkin cocok */}
-        </div>
-        <div className="room-design-latest">
-          {/* Desain ruangan yang terakhir Anda lihat */}
+        <div className="room-detailed-body">
+          <div className="room-product-description">
+            <RoomItemDescription product={product} />
+          </div>
+          <div className="room-design-recommendation">
+            {/* Desain ruangan yang mungkin Anda suka */}
+          </div>
+          <div className="room-product-recommendation">
+            <RecommendationProduct count="4" />
+            {/* Produk yang mungkin cocok */}
+          </div>
+          <div className="room-design-latest">
+            {/* Desain ruangan yang terakhir Anda lihat */}
+          </div>
         </div>
       </div>
     </ReactModal>

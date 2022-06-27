@@ -35,7 +35,7 @@ export default function RoomCard({ product}) {
       <div className="product-room-item" onClick={() => showModal(product)}>
         <div className="room-pict">
           <img
-            src={product !== undefined ? product.image : RoomPreview}
+            src={RoomPreview}
             alt={product !== undefined ? product.name : ""}
           />
         </div>

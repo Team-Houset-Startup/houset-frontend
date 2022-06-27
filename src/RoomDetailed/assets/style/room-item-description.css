@@ -1,6 +1,5 @@
 .room-product-description {
     width: 100%;
-    padding: 56px;
 }
 .room-product-description .nav-tabs{
     margin-bottom: 40px;
@@ -33,6 +32,8 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    min-height: 152px;
+
 }
 .room-product-description .tab-content .tab-content-list .room-related-product,
 .room-product-description .tab-content .tab-content-list .room-gallery {

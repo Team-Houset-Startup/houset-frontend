@@ -16,7 +16,7 @@ const RoomItemDescription = () => {
         <Tab eventKey="gallery" title="Galeri">
           <ItemGallery />
         </Tab>
-        <Tab eventKey="room-interior" title="Interior Ruangan">
+        <Tab eventKey="room-interior" title="Interior Ruangan" >
           <ItemRoomRecommendation />
         </Tab>
       </Tabs>

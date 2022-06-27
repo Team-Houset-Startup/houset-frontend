@@ -42,6 +42,11 @@ export function ModalProvider({ children }) {
     setModalIsOpen(false);
 
   };
+  const closeAllModal = () => {
+    setModalIsOpen(false);
+    setAddAddressModalIsOpen(false);
+    setRoomModalIsOpen(false);
+  }
 
   return (
     <ModalContext.Provider
@@ -55,6 +60,7 @@ export function ModalProvider({ children }) {
         modalIsOpen,
         openAddAddressModal,
         closeAddAddressModal,
+        closeAllModal,
       }}
     >
       {children}

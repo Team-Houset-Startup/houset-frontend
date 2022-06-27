@@ -30,6 +30,7 @@
     padding: 84px 56px 0 56px;
     background-color: #F6FBF8;
 }
+
 .room-info {
     padding-bottom: 42px;
 }
@@ -80,12 +81,6 @@
 .room-col-left {
     background: #F6FBF8;
 }
-.room-product-description {
-    padding-left: 56px;
-}
-
-
-
 
 .room-detail-type {
     font-weight: 400;
@@ -117,4 +112,11 @@
 
 .room-photo {
     width: 830px; 
+}
+.room-detailed-body {
+    padding: 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    width: 100%;
 }
