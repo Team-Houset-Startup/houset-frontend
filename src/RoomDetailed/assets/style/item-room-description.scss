@@ -60,3 +60,40 @@
 .room-product-description .tab-content .tab-content-list.two-col >div > ul {
     padding: 0;
 }
+
+.room-product-description .tab-content .tab-content-list {
+    .tab-item-detail,.tab-item-specs {
+        ul li{
+            display: flex;
+            .detail-key {
+                flex-basis: 30%;
+                font-size: 18px;
+                line-height: 28px;
+            }
+            .detail-val {
+                flex-basis: 70%;
+            }
+        }
+    }
+    .room-gallery {
+        max-width: 100%;
+        flex-wrap: wrap;
+        & > div {
+            border: 1px solid #055053;
+            background-color: white;
+            height: 160px;
+            width: 160px;
+            min-width: 160px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            img {
+                border-radius: 30px;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
