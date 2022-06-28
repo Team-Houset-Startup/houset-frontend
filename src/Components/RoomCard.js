@@ -23,33 +23,33 @@ const LikeIcon = () => {
 };
 
 
-export default function RoomCard({ product}) {
+export default function RoomCard({ room }) {
   const {openRoomModal} = useContext(ModalContext)
   
-  const showModal = (product) => {
-    openRoomModal(product)
+  const showModal = (room) => {
+    openRoomModal(room)
   };
 
   return (
     <>
-      <div className="product-room-item" onClick={() => showModal(product)}>
+      <div className="product-room-item" onClick={() => showModal(room)}>
         <div className="room-pict">
           <img
             src={RoomPreview}
-            alt={product !== undefined ? product.name : ""}
+            alt={room !== undefined ? room.name : ""}
           />
         </div>
         <div className="room-card-info">
           <div className="room-desc">
             <p className="room-type">
-              {product !== undefined ? product.type : ""}
+              {room !== undefined ? room.type : ""}
             </p>
             <p className="room-name">
-              {product !== undefined ? product.name : ""}
+              {room !== undefined ? room.name : ""}
             </p>
           </div>
           <div className="room-action">
-            {/* love icon */}
+            {/* love icon fav status*/}
             <LikeIcon />
           </div>
         </div>

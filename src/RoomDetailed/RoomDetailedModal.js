@@ -7,8 +7,11 @@ import RecommendationProduct from "../Components/RecommendationProduct";
 import Button from "../Components/Button";
 import RoomItemDescription from "./RoomItemDescription";
 import "./assets/style/item-room-recommendation.css";
+import RecommendationRoom from "../Components/RecommendationRoom";
 
-export default function RoomDetailedModal({ product }) {
+
+
+export default function RoomDetailedModal({ room }) {
   const { roomModalIsOpen, closeRoomModal } = useContext(ModalContext);
 
   return (
@@ -20,9 +23,9 @@ export default function RoomDetailedModal({ product }) {
     >
       <div className="room-container">
         <div className="room-detailed-heading">
-          {product !== undefined ? (
+          {room !== undefined ? (
             <ProductContainerLeft
-              product={product}
+              room={room}
               closeRoomModal={closeRoomModal}
             />
           ) : (
@@ -34,10 +37,11 @@ export default function RoomDetailedModal({ product }) {
         </div>
         <div className="room-detailed-body">
           <div className="room-product-description">
-            <RoomItemDescription product={product} />
+            <RoomItemDescription room={room} />
           </div>
           <div className="room-design-recommendation">
             {/* Desain ruangan yang mungkin Anda suka */}
+            <RecommendationRoom count={1} />
           </div>
           <div className="room-product-recommendation">
             <RecommendationProduct count="4" />
@@ -62,19 +66,16 @@ const RoomThumbnail = () => {
   );
 };
 
-const ProductContainerLeft = ({ product,closeRoomModal }) => {
+const ProductContainerLeft = ({ room,closeRoomModal }) => {
 
 
   return (
     <div className="room-heading-left">
       <div className="room-info">
-        <p className="room-info-room">Ruang Keluarga</p>
-        <p className="room-info-name">{product.name}</p>
+        <p className="room-info-room">{room.loc}</p>
+        <p className="room-info-name">{room.name}</p>
         <p className="room-info-description">
-          Desain ruang keluarga minimalis modern dengan detail serta fungsi yang
-          dipikirkan secara matang sehingga terlihat penuh gaya dan fungsional.
-          Selain berperan sebagai ruang keluarga, area ini juga menjadi ruang
-          tamu dan ruang untuk bersantai.
+          {room.desc}
         </p>
       </div>
 

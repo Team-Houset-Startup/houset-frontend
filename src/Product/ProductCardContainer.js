@@ -7,6 +7,8 @@ import "./assets/style/product-card-container.css";
 import FurnitureData from "../db/furniture.json";
 import { Container, Row, Col } from 'react-bootstrap';
 
+import rooms from '../db/room.json'
+
 export default function ProductCardContainer( {variant, products} ) {
     // Fetch furniture product from API
     // show it in a section of product card
@@ -36,18 +38,18 @@ export default function ProductCardContainer( {variant, products} ) {
           buildProductList()
         ) : (
           <Row>
-            <BuildProductListRoom products={products} />
+            <BuildProductListRoom rooms={rooms} />
           </Row>
         )}
       </Container>
     );
 }
-const BuildProductListRoom = ({ products }) => {
+const BuildProductListRoom = ({ rooms }) => {
   return (
     <>
-      {products.map((product) => (
-        <Col className="product-card-item" key={product.id}>
-          <RoomCard product={product} />
+      {rooms.map((room) => (
+        <Col className="product-card-item" key={room.id}>
+          <RoomCard room={room} />
         </Col>
       ))}
     </>
