@@ -8,10 +8,14 @@ import Button from "../Components/Button";
 import RoomItemDescription from "./RoomItemDescription";
 import "./assets/style/item-room-recommendation.css";
 import RecommendationRoom from "../Components/RecommendationRoom";
+import ProductLastSeen from "../Components/RoomLastSeen";
 
 
 
 export default function RoomDetailedModal({ room }) {
+// function to return the room modal that has information related to the room design
+
+  // import room settings modal
   const { roomModalIsOpen, closeRoomModal } = useContext(ModalContext);
 
   return (
@@ -44,11 +48,12 @@ export default function RoomDetailedModal({ room }) {
             <RecommendationRoom count={1} />
           </div>
           <div className="room-product-recommendation">
-            <RecommendationProduct count="4" />
             {/* Produk yang mungkin cocok */}
+            <RecommendationProduct count="4" />
           </div>
           <div className="room-design-latest">
             {/* Desain ruangan yang terakhir Anda lihat */}
+            <ProductLastSeen />
           </div>
         </div>
       </div>
@@ -56,6 +61,7 @@ export default function RoomDetailedModal({ room }) {
   );
 }
 const RoomThumbnail = () => {
+  // function to return the image on the header of room design modal
   return (
     <>
       <img
@@ -67,7 +73,7 @@ const RoomThumbnail = () => {
 };
 
 const ProductContainerLeft = ({ room,closeRoomModal }) => {
-
+  // function to return room design information on the header
 
   return (
     <div className="room-heading-left">

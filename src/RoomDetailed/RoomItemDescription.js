@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Tab, Tabs } from "react-bootstrap";
 import "./assets/style/item-room-description.css";
 
@@ -7,11 +7,12 @@ import FurnitureCard from "../Components/FurnitureCard";
 
 
 const RoomItemDescription = ({ room }) => {
+  // function to return the tabs view of room information
+
   return (
     <>
       <Tabs>
         <Tab eventKey="description" title="Deskripsi">
-          {/* description */}
           <ItemDescription room={room} />
         </Tab>
         <Tab eventKey="detail" title="Detail dan Spesifikasi">
@@ -31,6 +32,7 @@ const RoomItemDescription = ({ room }) => {
 export default RoomItemDescription;
 
 const ItemDescription = ({ room }) => {
+  // function to return "deskripsi" tab
   return (
     <div className="tab-content-list">
       <h4 className="tab-title">Deskripsi Ruangan</h4>
@@ -40,6 +42,8 @@ const ItemDescription = ({ room }) => {
 };
 
 const ItemDetails = ({ room }) => {
+  // function to return "detail and spec" tab
+
   return (
     <div className="tab-content-list two-col">
       <div className="tab-item-detail">
@@ -72,6 +76,8 @@ const ItemDetails = ({ room }) => {
   );
 };
 const ItemGallery = ({ images }) => {
+  // function to return "gallery" tab
+
   return (
     <div className="tab-content-list">
       <h4 className="tab-title">Tampilan Ruangan</h4>
@@ -90,6 +96,8 @@ const ItemGallery = ({ images }) => {
 };
 
 const ItemRoomRecommendation = ({ linkedId }) => {
+  // function to return "Interior Ruangan" tab
+
   return (
     <div className="tab-content-list">
       <h4 className="tab-title">Produk yang melengkapi Ruangan</h4>
@@ -97,6 +105,8 @@ const ItemRoomRecommendation = ({ linkedId }) => {
         {products.map((product) => {
           if (linkedId.includes(product.id)) {
             return <FurnitureCard product={product} key={product.id} />;
+          }else {
+            return null
           }
         })}
       </div>

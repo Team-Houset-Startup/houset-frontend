@@ -11,7 +11,7 @@ export function ModalProvider({ children }) {
   const [roomModalIsOpen, setRoomModalIsOpen] = useState(false);
     const [currProduct,setCurrProduct] = useState({})
 
-  // reusable function to open and close modal
+  // reusable function when modal open and close the body will give a modal effect
   useEffect(() => {
     if (modalIsOpen) {
       document.querySelector("body").style.overflow = "hidden";
@@ -40,8 +40,10 @@ export function ModalProvider({ children }) {
   const closeRoomModal = () => {
     setRoomModalIsOpen(false);
     setModalIsOpen(false);
-
   };
+
+
+  // function to close all modal
   const closeAllModal = () => {
     setModalIsOpen(false);
     setAddAddressModalIsOpen(false);

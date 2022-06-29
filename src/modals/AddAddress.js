@@ -6,11 +6,13 @@ import './assets/style/modal.css'
 
 
 const AddAddress = () => {
+  // function to return the add address modal on the profile page
+
   const { addAddressModalIsOpen, closeAddAddressModal } = useContext(ModalContext);
 
   const labelAddressHandle = (e) => {
+    // function to not re-render when label is click
     e.preventDefault()
-
   }
   return (
     <ReactModal
