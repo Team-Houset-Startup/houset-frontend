@@ -9,14 +9,11 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 
 import './index.css';
-import { ModalProvider } from "./context/modal";
 // import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ModalProvider>
-      <App />
-    </ModalProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById("root"),
 );

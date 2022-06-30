@@ -4,37 +4,27 @@ import ModalContext from "../context/modal";
 import { CloseIcon } from "../Profile/assets/Icon";
 import './assets/style/modal.css'
 
-ReactModal.setAppElement(document.getElementById("root"));
-ReactModal.defaultStyles = {
-    overlay: {
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: 'rgba(0, 0, 0, 0.25)'
-    },
-    content: {}
-  }
+
 const AddAddress = () => {
-  const { modalIsOpen, closeModal } = useContext(ModalContext);
-  
+  // function to return the add address modal on the profile page
+
+  const { addAddressModalIsOpen, closeAddAddressModal } = useContext(ModalContext);
 
   const labelAddressHandle = (e) => {
+    // function to not re-render when label is click
     e.preventDefault()
-
   }
   return (
     <ReactModal
-      isOpen={modalIsOpen}
+      isOpen={addAddressModalIsOpen}
       shouldCloseOnOverlayClick={true}
-      style={{content:{},overlay:{}}}
-      onRequestClose={closeModal}
+      onRequestClose={closeAddAddressModal}
+      
     >
       <form className="add-address">
         <div className="form-add-address-header">
           <h1 className="form-title">Tambah Alamat</h1>
-          <button className="form-close-button" onClick={closeModal}>
+          <button className="form-close-button" onClick={closeAddAddressModal}>
             <CloseIcon />
           </button>
         </div>

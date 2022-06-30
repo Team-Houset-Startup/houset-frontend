@@ -37,12 +37,12 @@ const AddressBuilder = ({ main }) => {
 
 export default function ProfileAddress() {
   // component for showing list of address
-  const { activeModal } = useContext(ModalContext);
+  const { openAddAddressModal } = useContext(ModalContext);
   return (
     <>
       <div className="profile-container-header address">
         <h1 className="header-title">Daftar Alamat</h1>
-        <button className="header-button" onClick={activeModal}>
+        <button className="header-button" onClick={openAddAddressModal}>
           <span> Tambah Alamat</span>
           <AddIcon />
         </button>
