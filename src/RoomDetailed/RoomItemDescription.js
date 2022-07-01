@@ -49,9 +49,9 @@ const ItemDetails = ({ room }) => {
       <div className="tab-item-detail">
         <h4 className="tab-title">Detail</h4>
         <ul>
-          {Object.keys(room.details.detail).map((key) => {
+          {Object.keys(room.details.detail).map((key,indeks) => {
             return (
-              <li>
+              <li key={indeks}>
                 <span className="detail-key">{key}</span>
                 <span className="detail-val">{room.details.detail[key]}</span>
               </li>
@@ -62,9 +62,9 @@ const ItemDetails = ({ room }) => {
       <div className="tab-item-specs">
         <h4 className="tab-title">Spesifikasi</h4>
         <ul>
-          {Object.keys(room.details.spesifikasi).map((key) => {
+          {Object.keys(room.details.spesifikasi).map((key,indeks) => {
             return (
-              <li>
+              <li key={indeks}>
                 <span className="detail-key">{key}</span>
                 <span className="detail-val">{room.details.spesifikasi[key]}</span>
               </li>
