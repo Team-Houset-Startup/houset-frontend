@@ -47,7 +47,7 @@ function NavigationBar() {
                     <li> <Link to="/product"> Furniture </Link> </li>
                     <li> <Link to="/ruangan"> Ruangan </Link> </li>
                     <li> <Link to="/canvas"> Kanvas Desain </Link> </li>
-                    <li> <Link to="/penawaran"> Penawaran </Link> </li>
+                    <li> <Link to="/consult"> Jasa Konsultasi </Link> </li>
                 </ul>
             </div>
             {profile}

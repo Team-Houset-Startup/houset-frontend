@@ -8,7 +8,7 @@ import ProductLists from '../Components/ProductLists';
 import RoomLists from '../Components/RoomLists';
 import NavigationBar from '../Components/NavigationBar';
 import Footer from '../Components/Footer';
-import StepDesign from './assets/image/svg/StepConsult';
+import StepDesign from './assets/image/svg/StepDesign';
 import Button from '../Components/Button';
 
 import SampleRoom from './assets/image/sample-room.png'
