@@ -7,3 +7,7 @@ build/Build/Web.wasm
 build/Build/Web.loader.js
 build/Build/Web.framework.js
 build/Build/Web.data
+build/Build/Houset-web.data
+build/Build/Houset-web.framework.js
+build/Build/Houset-web.loader.js
+build/Build/Houset-web.wasm
