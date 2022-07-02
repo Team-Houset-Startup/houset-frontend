@@ -7,7 +7,3 @@ build/Build/Web.wasm
 build/Build/Web.loader.js
 build/Build/Web.framework.js
 build/Build/Web.data
-build/Build/Web.data
-build/Build/Web.framework.js
-build/Build/Web.loader.js
-build/Build/Web.wasm
