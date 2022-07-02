@@ -73,7 +73,7 @@ export default function App(params) {
 
               {/* <Route path="/furnitur/product-page" element={<RoomPage />} />  */}
               <Route path="/canvas" element={<Canvas />} />
-              <Route path="/penawaran" element={<Penawaran />} />
+              <Route path="/consult" element={<Consult />} />
 
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
