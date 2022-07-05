@@ -5,14 +5,22 @@ import { AuthProvider } from "./context/AuthProvider"
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import "react-multi-carousel/lib/styles.css";
-// import './index.css';
-
 import reportWebVitals from './reportWebVitals';
 
 import App from './App';
 
 import './index.css';
-// import App from './App';
+
+// use cors to avoid cors policy
+// delete on deployment
+// const cors = require('cors');
+// const corsOptions = {
+//   origin: 'http://localhost:3000',
+//   credentials: true,
+//   optionSuccessStatus: 200
+// }
+
+// App.use(cors(corsOptions));
 
 ReactDOM.render(
   <React.StrictMode>

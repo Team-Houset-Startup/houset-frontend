@@ -14,6 +14,7 @@ import "./assets/style/login.css";
 
 const LOGIN_URL = '/login';
 
+
 // async function doLogin(credentials) {
 //     return fetch('https://reqres.in/api/login', {
 //         // mode: 'no-cors',
@@ -49,7 +50,6 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            e.preventDefault();
             // const token = await doLogin({
             //     email,
             //     password
@@ -103,7 +103,7 @@ export default function Login() {
                         <form onSubmit={handleSubmit}>
                             <label className="text-label" htmlFor="email"> Email </label> <br />
                             <input className="box-input"
-                                type="text"
+                                type="email"
                                 name="email"
                                 ref={userRef}
                                 autoComplete="off"
@@ -121,7 +121,7 @@ export default function Login() {
                                 placeholder="Masukkan password anda"
                                 onChange={e => setPassword(e.target.value)}
                                 value={password}
-                                // autoComplete="on"
+                                autoComplete="on"
                                 required 
                             />
                             <br />

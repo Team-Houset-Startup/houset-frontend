@@ -13,7 +13,7 @@ import RoomDetailed from './RoomDetailed/RoomDetailed';
 import Cart from './Transaction/Cart';
 import Checkout from './Transaction/Checkout';
 import Invoice from './Transaction/Invoice';
-import useToken from './context/useToken';
+// import useToken from './context/useToken';
 import ScrollToTop from './Components/ScrollToTop';
 import NavigationBar from './Components/NavigationBar';
 import Footer from './Components/Footer';
@@ -22,7 +22,7 @@ import ForgetPassword from './forgetPassword/ForgetPassword';
 import { ModalProvider } from "./context/modal";
 
 export default function App(params) {
-  const { token, setToken } = useToken();
+  // const { token, setToken } = useToken();
   let loginStatus = <> </>;
 
   // if (!token) {
