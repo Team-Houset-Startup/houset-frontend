@@ -1,5 +1,6 @@
+import React from 'react'
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: 'reqres.in'
+    baseURL: 'https://reqres.in/api'
 });

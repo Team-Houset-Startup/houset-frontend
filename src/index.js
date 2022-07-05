@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import { AuthProvider } from "./context/AuthProvider"
+
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import "react-multi-carousel/lib/styles.css";
 // import './index.css';
@@ -13,7 +16,9 @@ import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById("root"),
 );

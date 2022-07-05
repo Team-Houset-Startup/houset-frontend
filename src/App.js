@@ -44,51 +44,51 @@ export default function App(params) {
   //   )
   // }
 
-  if (!token) {
-    return (
-      <div className="homepage-body">
-        <Router>
-          <ModalProvider>
-            <ScrollToTop />
-            {/* <NavigationBar /> */}
+  // if (!token) {
+  //   return (
+  //     <div className="homepage-body">
+  //       <Router>
+  //         <ModalProvider>
+  //           <ScrollToTop />
+  //           {/* <NavigationBar /> */}
 
-            <Routes>
-              <Route path="/" element={<Homepage />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/login" element={<Login setToken={setToken} />} />
-            </Routes>
+  //           <Routes>
+  //             <Route path="/" element={<Homepage />} />
+  //             <Route path="/register" element={<Register />} />
+  //             <Route path="/login" element={<Login setToken={setToken} />} />
+  //           </Routes>
 
-            <Routes>
-              <Route
-                path="/product"
-                element={<Product variant="furniture" />}
-              />
-              <Route
-                path="/product/product-page"
-                element={<ProductDetailed />}
-              />
-              <Route path="/product/room-page" element={<RoomDetailed />} />
+  //           <Routes>
+  //             <Route
+  //               path="/product"
+  //               element={<Product variant="furniture" />}
+  //             />
+  //             <Route
+  //               path="/product/product-page"
+  //               element={<ProductDetailed />}
+  //             />
+  //             <Route path="/product/room-page" element={<RoomDetailed />} />
 
-              <Route path="/ruangan" element={<Product variant="room" />} />
+  //             <Route path="/ruangan" element={<Product variant="room" />} />
 
-              {/* <Route path="/furnitur/product-page" element={<RoomPage />} />  */}
-              <Route path="/canvas" element={<Canvas />} />
-              <Route path="/consult" element={<Consult />} />
+  //             {/* <Route path="/furnitur/product-page" element={<RoomPage />} />  */}
+  //             <Route path="/canvas" element={<Canvas />} />
+  //             <Route path="/consult" element={<Consult />} />
 
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/checkout" element={<Checkout />} />
+  //             <Route path="/cart" element={<Cart />} />
+  //             <Route path="/checkout" element={<Checkout />} />
 
-              <Route path="/invoice" element={<Invoice />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/forget-password" element={<ForgetPassword />} />
-            </Routes>
-            {/* <Footer /> */}
-          </ModalProvider>
-        </Router>
-        {/* {loginStatus} */}
-      </div>
-    );
-  }
+  //             <Route path="/invoice" element={<Invoice />} />
+  //             <Route path="/profile" element={<Profile />} />
+  //             <Route path="/forget-password" element={<ForgetPassword />} />
+  //           </Routes>
+  //           {/* <Footer /> */}
+  //         </ModalProvider>
+  //       </Router>
+  //       {/* {loginStatus} */}
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="homepage-body">
@@ -97,7 +97,9 @@ export default function App(params) {
           <ScrollToTop />
 
           <Routes>
-            <Route path="/" element={<Canvas />} />
+            <Route path="/" element={<Homepage/>} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login setToken={setToken} />} />
             {/* <Route path="/profile" /> */}
           </Routes>
 
@@ -116,6 +118,7 @@ export default function App(params) {
             <Route path="/checkout" element={<Checkout />} />
 
             <Route path="/invoice" element={<Invoice />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </ModalProvider>
       </Router>
