@@ -7,7 +7,7 @@ import Register from './LoginReg/Register';
 import Login from './LoginReg/Login';
 import Product from './Product/Product';
 import Canvas from './Canvas/Canvas';
-import Penawaran from './Offer/Penawaran';
+import Consult from './Consult/Consult';
 import ProductDetailed from './ProductDetailed/ProductDetailed';
 import RoomDetailed from './RoomDetailed/RoomDetailed';
 import Cart from './Transaction/Cart';
@@ -17,43 +17,88 @@ import useToken from './context/useToken';
 import ScrollToTop from './Components/ScrollToTop';
 import NavigationBar from './Components/NavigationBar';
 import Footer from './Components/Footer';
-
+import Profile from './Profile/Profile';
+import ForgetPassword from './forgetPassword/ForgetPassword';
+import { ModalProvider } from "./context/modal";
 
 export default function App(params) {
   const { token, setToken } = useToken();
-  /* let loginStatus = (<> </>)
+  let loginStatus = <> </>;
 
-  if (!token) {
-    loginStatus = (
-      <Router>
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login setToken={setToken} />} />
-        </Routes>
-      </Router>
-    )
-  } else {
-    loginStatus = (
-      <Router>
-        <Routes>
-          <Route path="/profile" element={<Register />} />
-        </Routes>
-      </Router>
-    )
-  } */
+  // if (!token) {
+  //   loginStatus = (
+  //     <Router>
+  //       <Routes>
+  //         <Route path="/register" element={<Register />} />
+  //         <Route path="/login" element={<Login setToken={setToken} />} />
+  //       </Routes>
+  //     </Router>
+  //   )
+  // } else {
+  //   loginStatus = (
+  //     <Router>
+  //       <Routes>
+  //         <Route path="/profile" element={<Register />} />
+  //       </Routes>
+  //     </Router>
+  //   )
+  // }
 
   if (!token) {
     return (
-
-      <div className='homepage-body'>
+      <div className="homepage-body">
         <Router>
+          <ModalProvider>
+            <ScrollToTop />
+            {/* <NavigationBar /> */}
+
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login setToken={setToken} />} />
+            </Routes>
+
+            <Routes>
+              <Route
+                path="/product"
+                element={<Product variant="furniture" />}
+              />
+              <Route
+                path="/product/product-page"
+                element={<ProductDetailed />}
+              />
+              <Route path="/product/room-page" element={<RoomDetailed />} />
+
+              <Route path="/ruangan" element={<Product variant="room" />} />
+
+              {/* <Route path="/furnitur/product-page" element={<RoomPage />} />  */}
+              <Route path="/canvas" element={<Canvas />} />
+              <Route path="/consult" element={<Consult />} />
+
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
+
+              <Route path="/invoice" element={<Invoice />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/forget-password" element={<ForgetPassword />} />
+            </Routes>
+            {/* <Footer /> */}
+          </ModalProvider>
+        </Router>
+        {/* {loginStatus} */}
+      </div>
+    );
+  }
+
+  return (
+    <div className="homepage-body">
+      <Router>
+        <ModalProvider>
           <ScrollToTop />
-          {/* <NavigationBar /> */}
 
           <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login setToken={setToken} />} />
+            <Route path="/" element={<Canvas />} />
+            {/* <Route path="/profile" /> */}
           </Routes>
 
           <Routes>
@@ -63,49 +108,18 @@ export default function App(params) {
 
             <Route path="/ruangan" element={<Product variant="room" />} />
 
-            {/* <Route path="/furnitur/product-page" element={<RoomPage />} />  */}
+            {/* <Route path="/furnitur/product-page" element={<RoomPage />} /> */}
             <Route path="/canvas" element={<Canvas />} />
-            <Route path="/penawaran" element={<Penawaran />} />
+            <Route path="/consult" element={<Consult />} />
 
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
 
             <Route path="/invoice" element={<Invoice />} />
-            <Route path="/profile" element={<Homepage />} />
           </Routes>
-          {/* <Footer /> */}
-        </Router>
-      </div>
-    );
-  }
-
-  return (
-    <div className='homepage-body'>
-      <Router>
-        <ScrollToTop />
-
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/profile" />
-        </Routes>
-
-        <Routes>
-          <Route path="/product" element={<Product variant="furniture" />} />
-          <Route path="/product/product-page" element={<ProductDetailed />} />
-          <Route path="/product/room-page" element={<RoomDetailed />} />
-
-          <Route path="/ruangan" element={<Product variant="room" />} />
-
-          {/* <Route path="/furnitur/product-page" element={<RoomPage />} /> */}
-          <Route path="/canvas" element={<Canvas />} />
-          <Route path="/penawaran" element={<Penawaran />} />
-
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-
-          <Route path="/invoice" element={<Invoice />} />
-        </Routes>
+        </ModalProvider>
       </Router>
+      {/* {loginStatus} */}
     </div>
-  )
+  );
 }

@@ -39,7 +39,7 @@ const ProductList = (count) => {
     )
 };
 
-export default function Recommendation(props) {
+export default function RecommendationRoom(props) {
     return (
         <Container className="product-auto-suggest">
             <Row>
