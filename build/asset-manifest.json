@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.90e62074.css",
-    "main.js": "/static/js/main.a147169d.js",
+    "main.css": "/static/css/main.898c1b9d.css",
+    "main.js": "/static/js/main.36ad1729.js",
     "static/js/787.c801656d.chunk.js": "/static/js/787.c801656d.chunk.js",
+    "static/media/banner.png": "/static/media/banner.85398763e546bcdd0a98.png",
     "static/media/sample-room.png": "/static/media/sample-room.773b4e1904ae6ed86711.png",
     "static/media/ruang-tamu.png": "/static/media/ruang-tamu.04fe0019610597a7735e.png",
     "static/media/dapur-1.png": "/static/media/dapur-1.f277b7cbf2595a20969a.png",
     "static/media/dapur-2.png": "/static/media/dapur-2.feaff1ce76d8ad5da5d9.png",
     "static/media/room-photo.png": "/static/media/room-photo.527bdf2cb1e84d537572.png",
+    "static/media/bottom-banner.png": "/static/media/bottom-banner.e63124720d39cf05b945.png",
     "static/media/background-login.png": "/static/media/background-login.f0bf5666b4f8004663b0.png",
     "static/media/kamar.png": "/static/media/kamar.611cdb744f41ba9727dd.png",
     "static/media/room-scrollable.png": "/static/media/room-scrollable.ca6892e7b6a1224e05a0.png",
@@ -26,12 +28,12 @@
     "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/index.html",
-    "main.90e62074.css.map": "/static/css/main.90e62074.css.map",
-    "main.a147169d.js.map": "/static/js/main.a147169d.js.map",
+    "main.898c1b9d.css.map": "/static/css/main.898c1b9d.css.map",
+    "main.36ad1729.js.map": "/static/js/main.36ad1729.js.map",
     "787.c801656d.chunk.js.map": "/static/js/787.c801656d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.90e62074.css",
-    "static/js/main.a147169d.js"
+    "static/css/main.898c1b9d.css",
+    "static/js/main.36ad1729.js"
   ]
 }

@@ -99,7 +99,7 @@ export default function App(params) {
           <Routes>
             <Route path="/" element={<Homepage/>} />
             <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login setToken={setToken} />} />
+            <Route path="/login" element={<Login />} />
             {/* <Route path="/profile" /> */}
           </Routes>
 

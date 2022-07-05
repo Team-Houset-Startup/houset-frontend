@@ -37,8 +37,6 @@ export default function Login() {
     const [errMsg, setErrMsg] = useState("");
     const [success, setSuccess] = useState(false);
 
-    const [alertWarning, setAlertWarning] = useState(false);
-
     useEffect(() => {
         userRef.current.focus();
     }, []);
@@ -82,7 +80,6 @@ export default function Login() {
             } else {
                 setErrMsg("Login Failed");
             }
-            setAlertWarning(true);
             errRef.current.focus();
         }
     }
@@ -92,12 +89,7 @@ export default function Login() {
             {success ? navigate('/') : (
                 <div className='login-register-body'>
                     <NavbarLoginRegister />
-                    <div className="container-form">
-                        {/* { errMsg ? alert(errMsg) : null } */}
-                        {/* { alertWarning ? (
-                            alert(errMsg)
-                            ): (null) } */}
-                        
+                    <div className="container-form">                        
                         <p
                             ref={errRef}
                             className={errMsg ? "login-alert-errMsg" : "login-alert-offScreen"}
