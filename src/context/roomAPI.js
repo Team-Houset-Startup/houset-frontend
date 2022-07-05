@@ -1,6 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { createContext } from "react";
+import {createContext, useEffect, useState } from "react";
 
 const GetRoomDataContext = createContext();
 
@@ -16,6 +15,9 @@ export function GetRoomDataProvider({ children }) {
                 .catch((error) => console.log(error));
         };
         getData();
+        return () => {
+            setRooms([])
+        }
     }, []);
 
     const changeWishlist = (type, id, favorite) => {
@@ -35,7 +37,7 @@ export function GetRoomDataProvider({ children }) {
     };
 
     useEffect(() => {
-        console.log(rooms);
+        // console.log(rooms);
     }, [rooms]);
 
     return (

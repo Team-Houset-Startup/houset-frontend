@@ -1,12 +1,13 @@
 import React from 'react'
-import {GetRoomDataProvider} from './roomAPI'
+import { GetProductDataProvider } from "./ProductAPI";
+import { GetRoomDataProvider } from "./roomAPI";
 
-const ApiConsumer = ({children}) => {
-  return (
-    <GetRoomDataProvider>
-        {children}
-    </GetRoomDataProvider>
-  )
-}
+const ApiConsumer = ({ children }) => {
+    return (
+        <GetProductDataProvider>
+            <GetRoomDataProvider>{children}</GetRoomDataProvider>
+        </GetProductDataProvider>
+    );
+};
 
 export default ApiConsumer

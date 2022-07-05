@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Tab, Tabs } from "react-bootstrap";
 import "./assets/style/item-room-description.css";
 
-import products from "../db/furniture.json";
 import FurnitureCard from "../Components/FurnitureCard";
+import GetProductDataContext from "../context/ProductAPI";
 
 
 const RoomItemDescription = ({ room }) => {
@@ -97,7 +97,7 @@ const ItemGallery = ({ images }) => {
 
 const ItemRoomRecommendation = ({ linkedId }) => {
   // function to return "Interior Ruangan" tab
-
+  const {products} = useContext(GetProductDataContext)
   return (
     <div className="tab-content-list">
       <h4 className="tab-title">Produk yang melengkapi Ruangan</h4>
