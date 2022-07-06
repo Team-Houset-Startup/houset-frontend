@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Tab, Tabs } from "react-bootstrap";
 import "./assets/style/item-room-description.css";
 
-import products from "../db/furniture.json";
 import FurnitureCard from "../Components/FurnitureCard";
+import GetProductDataContext from "../context/ProductAPI";
 
 
 const RoomItemDescription = ({ room }) => {
@@ -49,9 +49,9 @@ const ItemDetails = ({ room }) => {
       <div className="tab-item-detail">
         <h4 className="tab-title">Detail</h4>
         <ul>
-          {Object.keys(room.details.detail).map((key) => {
+          {Object.keys(room.details.detail).map((key,indeks) => {
             return (
-              <li>
+              <li key={indeks}>
                 <span className="detail-key">{key}</span>
                 <span className="detail-val">{room.details.detail[key]}</span>
               </li>
@@ -62,9 +62,9 @@ const ItemDetails = ({ room }) => {
       <div className="tab-item-specs">
         <h4 className="tab-title">Spesifikasi</h4>
         <ul>
-          {Object.keys(room.details.spesifikasi).map((key) => {
+          {Object.keys(room.details.spesifikasi).map((key,indeks) => {
             return (
-              <li>
+              <li key={indeks}>
                 <span className="detail-key">{key}</span>
                 <span className="detail-val">{room.details.spesifikasi[key]}</span>
               </li>
@@ -97,7 +97,7 @@ const ItemGallery = ({ images }) => {
 
 const ItemRoomRecommendation = ({ linkedId }) => {
   // function to return "Interior Ruangan" tab
-
+  const {products} = useContext(GetProductDataContext)
   return (
     <div className="tab-content-list">
       <h4 className="tab-title">Produk yang melengkapi Ruangan</h4>
