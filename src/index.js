@@ -9,11 +9,14 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 
 import './index.css';
+import ApiConsumer from "./context/ApiConsumer";
 // import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApiConsumer>
+      <App />
+    </ApiConsumer>
   </React.StrictMode>,
   document.getElementById("root"),
 );
