@@ -9,7 +9,7 @@ import "./assets/style/cart-summary.css"
 export default function CartSummary(props) {
     return (
         <>
-            <input type="text" className="input-promotion-code" placeholder='Masukkan Kode Promo' />
+            {/* <input type="text" className="input-promotion-code" placeholder='Masukkan Kode Promo' /> */}
             <div className="cart-summary">
                 <Container className="cart-container-summary">
                     <Row className="cart-summary-title">
@@ -45,8 +45,10 @@ export default function CartSummary(props) {
                             <p> Rp {props.total} </p>
                         </Col>
                     </Row>
-                    <Row>
-                        <Button type="primary-button" text="Checkout" toPage={props.toPage} />
+                    <Row className="cart-checkout">
+                        <Col>
+                            <Button type="primary-button" text="Checkout" toPage={props.toPage} />
+                        </Col>
                     </Row>
                 </Container>
             </div>

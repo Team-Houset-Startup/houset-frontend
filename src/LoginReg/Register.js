@@ -55,7 +55,7 @@ export default function Register() {
         const v1 = EMAIL_REGEX.test(email);
         const v2 = PASSWORD_REGEX.test(password);
         if (!v1 || !v2) {
-            setErrMsg("Invalid Entry");
+            // setErrMsg("Invalid Entry");
             return;
         }
 
@@ -65,7 +65,7 @@ export default function Register() {
                 JSON.stringify({ email, password }),
                 {
                     headers: { "Content-Type": "application/json" },
-                    withCredentials: true,
+                    withCredentials: false,
                 }
             );
             setSuccess(true);
@@ -102,6 +102,7 @@ export default function Register() {
                     <input className="box-input"
                         type="text"
                         name="name"
+                        ref={userRef}
                         placeholder="Masukkan nama lengkap anda"
                         onChange={e => setName(e.target.value)}
                         required />
@@ -129,7 +130,7 @@ export default function Register() {
                     <button type="submit"> Register </button>
 
                     <div className="login-option">
-                        <AlternateLogin />
+                        {/* <AlternateLogin /> */}
                     </div>
 
                     <div className="form-footer">

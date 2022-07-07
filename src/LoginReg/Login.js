@@ -36,7 +36,8 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errMsg, setErrMsg] = useState("");
-    const [success, setSuccess] = useState(false);
+    const [success, setSuccess] = useState(setAuth);
+    const [alertWarning, setAlertWarning] = useState(false);
 
     useEffect(() => {
         userRef.current.focus();
@@ -46,6 +47,10 @@ export default function Login() {
         setErrMsg("");
         // setAlertWarning(false);
     }, [email, password]);
+
+    // useEffect(() => {
+    //     setSuccess(false);
+    // }, [alertWarning])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -61,7 +66,7 @@ export default function Login() {
                 JSON.stringify({ email, password }),
                 {
                     headers: { "Content-Type": "application/json" },
-                    withCredentials: true,
+                    withCredentials: false,
                 },
             )
             const accessToken = response?.data?.accessToken;
@@ -74,7 +79,7 @@ export default function Login() {
             if (!err?.response) {
                 setErrMsg("No Server Response");
             } else if (err.response?.status === 400) {
-                setErrMsg("Missing Email or Password");
+                setErrMsg("Wrong Email or Password");
             } else if (err.response?.status === 401) {
                 setErrMsg("Unauthorized");
             } else {
@@ -83,18 +88,22 @@ export default function Login() {
             errRef.current.focus();
         }
     }
-
-    return (
-        <>
-            {success ? navigate('/') : (
+    if (success) {
+        // setSuccess(false);
+        // setAlertWarning(!alertWarning);
+        // alert('login succeeded');
+        navigate('/');
+    } else {
+        return (
+            <>
                 <div className='login-register-body'>
                     <NavbarLoginRegister />
-                    <div className="container-form">                        
+                    <div className="container-form">
                         <p
                             ref={errRef}
                             className={errMsg ? "login-alert-errMsg" : "login-alert-offScreen"}
                             aria-live="assertive"
-                        > 
+                        >
                             {errMsg}
                         </p>
 
@@ -120,9 +129,9 @@ export default function Login() {
                                 name="password"
                                 placeholder="Masukkan password anda"
                                 onChange={e => setPassword(e.target.value)}
-                                value={password}
+                                // value={password}
                                 autoComplete="on"
-                                required 
+                                required
                             />
                             <br />
 
@@ -134,7 +143,7 @@ export default function Login() {
                             <button type="submit"> Masuk </button>
 
                             <div className="login-option">
-                                <AlternateLogin />
+                                {/* <AlternateLogin /> */}
                             </div>
 
                             <div className="form-footer">
@@ -143,7 +152,7 @@ export default function Login() {
                         </form>
                     </div>
                 </div>
-            )}
-        </>
-    )
+            </>
+        )
+    }
 }
