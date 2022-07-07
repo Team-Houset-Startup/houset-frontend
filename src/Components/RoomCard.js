@@ -46,7 +46,7 @@ export default function RoomCard({ room }) {
         <>
             <div
                 className="product-room-item"
-                // onClick={() => showModal(room)}
+                onClick={() => showModal(room)}
             >
                 <div className="room-pict">
                     <img

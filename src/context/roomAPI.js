@@ -16,9 +16,9 @@ export function GetRoomDataProvider({ children }) {
         };
         getData();
         return () => {
-            setRooms([])
-        }
-    }, []);
+            setRooms([]);
+        };
+    }, [url]);
 
     const changeWishlist = (type, id, favorite) => {
         // function to change fav through API

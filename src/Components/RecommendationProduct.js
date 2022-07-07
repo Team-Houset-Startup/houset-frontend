@@ -15,10 +15,10 @@ const ProductList = (count) => {
     let col = 4;
     let item = 0;
     let tempList=[];
-    console.log(count);
+    // console.log(count);
     products.slice(0, count).forEach((product) => {
         tempList.push(
-            <Col xl={3}>
+            <Col xl={3} key={product.id}>
                 <ProductCard product={product} />
             </Col>
         )

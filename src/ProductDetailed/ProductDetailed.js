@@ -1,13 +1,13 @@
-import React, { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-import { Tab, Tabs } from "react-bootstrap";
+import React, { useState, useContext, useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+// import { useHistory,useLocation } from "react-router-dom";
+// import { Tab, Tabs } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 
 import NavigationBar from "../Components/NavigationBar";
 import Footer from "../Components/Footer";
 import RecommendationProduct from "../Components/RecommendationProduct";
-import ProductLastSeen from "../Components/ProductLastSeen";
+// import ProductLastSeen from "../Components/ProductLastSeen";
 import ItemDescription from "../Components/ItemDescription";
 import Button from "../Components/Button";
 
@@ -15,6 +15,7 @@ import ProductThumbnail from "./ProductThumbnail";
 import GetProductDataContext from "../context/ProductAPI";
 
 import "./assets/style/product-detailed.css";
+import axios from "axios";
 
 const Minus = () => {
     return (
@@ -98,7 +99,7 @@ const ProductContainerLeft = ({ product }) => {
                         <button
                             className="button-add"
                             onClick={() => setQty(qty - 1)}
-                            disabled={qty == 1}
+                            disabled={qty === 1}
                         >
                             {" "}
                             {<Minus />}{" "}
@@ -135,15 +136,29 @@ const ProductContainerLeft = ({ product }) => {
 };
 
 export default function ProductDetailed() {
-    const { selectedProduct } = useContext(GetProductDataContext);
+    const [selectedProduct, setSelectedProduct] = useState({});
+    const { productId } = useParams();
+    const url = process.env.REACT_APP_URL;
+
+    useEffect(() => {
+        const getData = async () => {
+            await axios
+                .get(`${url}/products/${productId}`, {})
+                .then((res) => setSelectedProduct(res.data))
+                .catch((error) => console.log(error));
+        };
+        getData();
+        return () => {
+            setSelectedProduct({});
+        };
+    }, [url,productId]);
     return (
         <>
             <NavigationBar />
-
             <Container fluid>
                 <Row>
                     <Col xl={5}>
-                        <ProductContainerLeft product={selectedProduct} />
+                            <ProductContainerLeft product={selectedProduct} />
                     </Col>
                     <Col xl={7}>
                         <ProductThumbnail />

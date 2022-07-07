@@ -5,7 +5,6 @@ const GetProductDataContext = createContext();
 
 export const GetProductDataProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
-    const [selectedProduct, setSelectedProduct] = useState({});
     const url = process.env.REACT_APP_URL;
 
     useEffect(() => {
@@ -19,15 +18,12 @@ export const GetProductDataProvider = ({ children }) => {
         return () => {
             setProducts([]);
         };
-    }, []);
-
+    }, [url]);
     return (
         <GetProductDataContext.Provider
             value={{
                 products,
                 setProducts,
-                selectedProduct,
-                setSelectedProduct,
             }}
         >
             {children}

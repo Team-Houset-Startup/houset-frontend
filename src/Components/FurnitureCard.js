@@ -2,18 +2,16 @@ import React, { useContext } from 'react';
 import { propTypes } from 'react-bootstrap/esm/Image';
 import { Link } from 'react-router-dom';
 import ModalContext from '../context/modal';
-import GetProductDataContext from '../context/ProductAPI';
 import KursiPreview from "./assets/image/kursi.png";
 
 import "./assets/style/product-card.css";
 
 export default function FurnitureCard( {product} ) {
     const {closeAllModal} = useContext(ModalContext)
-    const {setSelectedProduct} = useContext(GetProductDataContext)
 
     return (
         <div className="product-item" onClick={closeAllModal}>
-            <Link to="/product/product-page" onClick={() => setSelectedProduct(product)}>
+            <Link to={`/product/${product.id}`} >
                 <div className="product-pict"> <img src={product.image} alt="" /> </div>
                 <p className="item-type"> {product.type} </p>
                 <p className="item-name"> {product.name} </p>
