@@ -17,10 +17,10 @@ import Profile from './Profile/Profile';
 import ScrollToTop from './Components/ScrollToTop';
 import ForgetPassword from './forgetPassword/ForgetPassword';
 import { ModalProvider } from "./context/modal";
-import AuthContext from './context/AuthProvider';
 import useToken from './context/useToken';
 import AuthContext from './context/AuthProvider';
 import GetProductDataContext from "./context/ProductAPI";
+import Error from './Error/Error'
 export default function App(params) {
   const { token, setToken } = useToken();
   // const { auth } = useContext(AuthContext);
@@ -129,8 +129,8 @@ export default function App(params) {
             {/* Check if the requested url error */}
             <Route element={<Error />} />
           </Routes>
-        </Router>
-      </div>
-    )
-  }
+        </ModalProvider>
+      </Router>
+    </div>
+  )
 }

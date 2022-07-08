@@ -17,9 +17,9 @@ import ApiConsumer from "./context/ApiConsumer";
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
-    <ApiConsumer>
-      <App />
-    </ApiConsumer>
+      <ApiConsumer>
+        <App />
+      </ApiConsumer>
     </AuthProvider>
   </React.StrictMode>,
   document.getElementById("root"),
