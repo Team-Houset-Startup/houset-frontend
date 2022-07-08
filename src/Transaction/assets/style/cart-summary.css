@@ -32,6 +32,12 @@
 	margin-top: 32px;
 }
 
+@media only screen and (max-width: 1200px) {
+	.cart-summary {
+		height: 420px;
+	}
+}
+
 .cart-summary-title p {
 	margin-top: 32px;
 	font-weight: 700;
@@ -77,4 +83,8 @@
 
 	margin-top: 44px;
 	margin-bottom: 15px;
+}
+
+.cart-checkout button {
+	width: 100%;
 }

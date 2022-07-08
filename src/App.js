@@ -19,6 +19,7 @@ import ForgetPassword from './forgetPassword/ForgetPassword';
 import { ModalProvider } from "./context/modal";
 import AuthContext from './context/AuthProvider';
 import useToken from './context/useToken';
+import AuthContext from './context/AuthProvider';
 import GetProductDataContext from "./context/ProductAPI";
 export default function App(params) {
   const { token, setToken } = useToken();
@@ -32,7 +33,7 @@ export default function App(params) {
   }
   // console.log(auth)
 
-  if (!token) {
+  if (token === undefined) {
     // console.log(Object.keys(auth).length)
     return (
       <div className="homepage-body">
@@ -90,12 +91,10 @@ export default function App(params) {
       <Router>
         <ModalProvider>
           <ScrollToTop />
-
           <Routes>
             <Route path="/" element={<Homepage />} />
-            {/* <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} /> */}
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login setToken={setToken} />} />
           </Routes>
 
           <Routes>
@@ -127,10 +126,11 @@ export default function App(params) {
             <Route path="/invoice" element={<Invoice />} />
             {/* <Route path="/profile" element={<Profile />} /> */}
 
+            {/* Check if the requested url error */}
+            <Route element={<Error />} />
           </Routes>
-        </ModalProvider>
-      </Router>
-      {/* {loginStatus} */}
-    </div>
-  );
+        </Router>
+      </div>
+    )
+  }
 }

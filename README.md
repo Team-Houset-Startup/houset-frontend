@@ -59,6 +59,9 @@ React-multi-carousel (https://www.npmjs.com/package/react-multi-carousel)
 React-paginate (https://www.npmjs.com/package/react-paginate)
 ### `npm i react-paginate`
 
+React-cors 
+### `npm install cors --save`
+
 ## One feature in one folder
 
 Main feature in this project is:

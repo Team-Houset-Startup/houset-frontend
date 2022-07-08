@@ -39,7 +39,7 @@ function Product({ variant }) {
         const newOffset = (event.selected * productsPerPage) % products.length;
         setProductOffset(newOffset);
     };
-
+    // paginate part
     return (
         <>
             <NavigationBar />

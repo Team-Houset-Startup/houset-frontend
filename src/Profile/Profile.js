@@ -23,10 +23,20 @@ function Profile() {
           <Container className='profile-page p-0'>
             <Row>
               <Col className="profile-sidebar" xs="auto">
-                <ProfileSidebar activeDropdown={activeDropdown} setActiveDropdown={setActiveDropdown} activeSidebar={activeSidebar} setActiveSidebar={setActiveSidebar} />
+                <ProfileSidebar 
+                  activeDropdown={activeDropdown} 
+                  setActiveDropdown={setActiveDropdown} 
+                  activeSidebar={activeSidebar} 
+                  setActiveSidebar={setActiveSidebar} 
+                />
               </Col>
               <Col>
-                <ProfileContainer activeSidebar={activeSidebar} activeDropdown={activeDropdown} userData={userData}setUserData={setUserData}/>
+                <ProfileContainer 
+                  activeSidebar={activeSidebar} 
+                  activeDropdown={activeDropdown} 
+                  userData={userData}
+                  setUserData={setUserData}
+                />
               </Col >
             </Row>
           </Container>
