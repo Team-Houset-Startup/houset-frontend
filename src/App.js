@@ -78,7 +78,9 @@ export default function App(params) {
                 path="/forget-password"
                 element={<ForgetPassword />}
               />
-
+              
+            {/* Check if the requested url error */}
+            <Route element={<Error />} />
             </Routes>
           </ModalProvider>
         </Router>
