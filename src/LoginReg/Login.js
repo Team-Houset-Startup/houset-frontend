@@ -50,7 +50,7 @@ export default function Login( {setToken} ) {
                 )
                 const token = response?.data?.token;
                 setAuth({ email, password, token });
-                setToken(token);
+                // setToken(token);
                 // console.log(auth);
                 setEmail("");
                 setPassword("");
