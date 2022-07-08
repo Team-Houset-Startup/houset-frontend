@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { AuthProvider } from "./context/AuthProvider"
+import { ModalProvider } from './context/modal';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import "react-multi-carousel/lib/styles.css";
@@ -25,7 +26,9 @@ import './index.css';
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
-      <App />
+      <ModalProvider>
+        <App />
+      </ModalProvider>
     </AuthProvider>
   </React.StrictMode>,
   document.getElementById("root"),

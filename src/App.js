@@ -21,46 +21,31 @@ import ScrollToTop from './Components/ScrollToTop';
 // import NavigationBar from './Components/NavigationBar';
 // import Footer from './Components/Footer';
 import ForgetPassword from './forgetPassword/ForgetPassword';
-import { ModalProvider } from "./context/modal";
+// import { ModalProvider } from "./context/modal";
 import AuthContext from './context/AuthProvider';
+import useToken from './context/useToken';
 
 export default function App(params) {
-  // const { token, setToken } = useToken();
-  const { auth, setAuth } = useContext(AuthContext);
+  const { token, setToken } = useToken();
+  // const { auth } = useContext(AuthContext);
+  // console.log(token);
   let loginStatus = <> </>;
+  let logged = false;
+  if (token != undefined) {
+    console.log(token);
+    logged = true;
+  }
   // console.log(auth)
 
-  if (Object.keys(auth).length === 0) {
+  if (token === undefined) {
     // console.log(Object.keys(auth).length)
-    loginStatus = (
-      <Router>
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </Router>
-    )
-  } else {
-    loginStatus = (
-      <Router>
-        <Routes>
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-      </Router>
-    )
-  }
-
-  return (
-    <div className="homepage-body">
-      <Router>
-        <ModalProvider>
-          <ScrollToTop />
-
+    return (
+      <div className="homepage-body">
+        <Router>
           <Routes>
-            <Route path="/" element={<Homepage/>} />
-            {/* <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} /> */}
-            {/* <Route path="/profile" /> */}
+            <Route path="/" element={<Homepage />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login setToken={setToken} />} />
           </Routes>
 
           <Routes>
@@ -81,11 +66,47 @@ export default function App(params) {
             {/* <Route path="/profile" element={<Profile />} /> */}
 
             {/* Check if the requested url error */}
-            <Route path='*' element={<Error />} />
+            <Route element={<Error />} />
           </Routes>
-        </ModalProvider>
+        </Router>
+      </div>
+    )
+  }
+
+  return (
+    <div className="homepage-body">
+      <Router>
+        <ScrollToTop />
+
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          {/* <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} /> */}
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+
+        <Routes>
+          <Route path="/product" element={<Product variant="furniture" />} />
+          <Route path="/product/product-page" element={<ProductDetailed />} />
+          <Route path="/product/room-page" element={<RoomDetailed />} />
+
+          <Route path="/ruangan" element={<Product variant="room" />} />
+
+          {/* <Route path="/furnitur/product-page" element={<RoomPage />} /> */}
+          <Route path="/canvas" element={<Canvas />} />
+          <Route path="/consult" element={<Consult />} />
+
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+
+          <Route path="/invoice" element={<Invoice />} />
+          {/* <Route path="/profile" element={<Profile />} /> */}
+
+          {/* Check if the requested url error */}
+          <Route path='*' element={<Error />} />
+        </Routes>
       </Router>
-      {loginStatus}
+      {/* {loginStatus} */}
     </div>
   );
 }

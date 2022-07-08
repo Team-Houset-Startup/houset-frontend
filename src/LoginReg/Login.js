@@ -14,20 +14,7 @@ import "./assets/style/login.css";
 
 const LOGIN_URL = '/login';
 
-
-// async function doLogin(credentials) {
-//     return fetch('https://reqres.in/api/login', {
-//         // mode: 'no-cors',
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(credentials)
-//     })
-//         .then(data => data.json())
-// }
-
-export default function Login() {
+export default function Login( {setToken} ) {
     const navigate = useNavigate();
     const { setAuth } = useContext(AuthContext);
     const userRef = useRef();
@@ -36,63 +23,55 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errMsg, setErrMsg] = useState("");
-    const [success, setSuccess] = useState(setAuth);
+    const [success, setSuccess] = useState(false);
     const [alertWarning, setAlertWarning] = useState(false);
-
     useEffect(() => {
         userRef.current.focus();
     }, []);
 
     useEffect(() => {
         setErrMsg("");
-        // setAlertWarning(false);
     }, [email, password]);
-
-    // useEffect(() => {
-    //     setSuccess(false);
-    // }, [alertWarning])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            // const token = await doLogin({
-            //     email,
-            //     password
-            // });
-            // setToken(token);
+        if (password.length < 8) {
+            setErrMsg("Password length at least 8 character")
+        } else {
+            try {
 
-            const response = await axios.post(
-                LOGIN_URL,
-                JSON.stringify({ email, password }),
-                {
-                    headers: { "Content-Type": "application/json" },
-                    withCredentials: false,
-                },
-            )
-            const accessToken = response?.data?.accessToken;
-            setAuth({ email, password, accessToken });
-            setEmail("");
-            setPassword("");
-            setSuccess(true);
-        } catch (err) {
-            // console.log(err.response?.status);
-            if (!err?.response) {
-                setErrMsg("No Server Response");
-            } else if (err.response?.status === 400) {
-                setErrMsg("Wrong Email or Password");
-            } else if (err.response?.status === 401) {
-                setErrMsg("Unauthorized");
-            } else {
-                setErrMsg("Login Failed");
+                const response = await axios.post(
+                    LOGIN_URL,
+                    JSON.stringify({ email, password }),
+                    {
+                        headers: { "Content-Type": "application/json" },
+                        withCredentials: false,
+                    },
+                )
+                const token = response?.data?.token;
+                setAuth({ email, password, token });
+                setToken(token);
+                // console.log(auth);
+                setEmail("");
+                setPassword("");
+                setSuccess(true);
+            } catch (err) {
+                if (!err?.response) {
+                    setErrMsg("No Server Response");
+                } else if (err.response?.status === 400) {
+                    setErrMsg("Wrong Email or Password");
+                } else if (err.response?.status === 401) {
+                    setErrMsg("Unauthorized");
+                } else {
+                    setErrMsg("Login Failed");
+                }
+                errRef.current.focus();
             }
-            errRef.current.focus();
         }
     }
     if (success) {
-        // setSuccess(false);
-        // setAlertWarning(!alertWarning);
-        // alert('login succeeded');
-        navigate('/');
+        alert('login succeeded');
+        setSuccess(false);
     } else {
         return (
             <>
@@ -127,6 +106,7 @@ export default function Login() {
                             <input className="box-input"
                                 type="password"
                                 name="password"
+                                ref={userRef}
                                 placeholder="Masukkan password anda"
                                 onChange={e => setPassword(e.target.value)}
                                 // value={password}

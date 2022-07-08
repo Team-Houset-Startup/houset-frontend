@@ -1,5 +1,4 @@
-import React from 'react';
-import { useRef, useState, useEffect, useContext } from "react";
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 // import axios from 'axios';
 
@@ -11,7 +10,7 @@ import "./assets/style/login-register.css"
 import "./assets/style/login.css";
 
 async function doLogin(credentials) {
-    return fetch('https://reqres.in/api/login', {
+  return fetch('https://reqres.in/api/login', {
         // mode: 'no-cors',
         method: 'POST',
         headers: {
@@ -24,36 +23,19 @@ async function doLogin(credentials) {
 
 export default function Login({ setToken }) {
     const navigate = useNavigate();
-    const errRef = useRef();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [errMsg, setErrMsg] = useState("");
-    const [success, setSuccess] = useState(false);
 
     const handleSubmit = async e => {
-        try {
-            e.preventDefault();
-            const token = await doLogin({
-                email,
-                password
-            });
-            // console log status
-            console.log(token)
-            setToken(token);
-            // navigate('/');
-        } catch (err) {
-            console.log(err.response?.status);
-            if (!err?.response) {
-                setErrMsg("No Server Response");
-            } else if (err.response?.status === 400) {
-                setErrMsg("Missing Email or Password");
-            } else if (err.response?.status === 401) {
-                setErrMsg("Unauthorized");
-            } else {
-                setErrMsg("Login Failed");
-            }
-            errRef.current.focus();
-        }
+        e.preventDefault();
+        const token = await doLogin({
+            email,
+            password
+        });
+        // console log status
+        // console.log(token)
+        setToken(token);
+        // navigate('/');
     }
 
     return (

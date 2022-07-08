@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRef, useState, useEffect, useContext } from "react";
 import axios from "../api/axios"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import NavbarLoginRegister from './NavbarLoginRegister';
 import AlternateLogin from './AlternateLogin';
 
@@ -14,12 +14,13 @@ const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
 const REGISTER_URL = '/register';
 
 export default function Register() {
+    const navigate = useNavigate('');
 
     const userRef = useRef();
     const errRef = useRef();
     const [userFocus, setUserFocus] = useState(false);
     const [email, setEmail] = useState("");
-    const [name, setName] = useState(false);
+    const [name, setName] = useState("");
     const [password, setPassword] = useState("");
 
     const [validEmail, setValidEmail] = useState(false);
@@ -31,7 +32,6 @@ export default function Register() {
     const [matchFocus, setMatchFocus] = useState(false);
     const [errMsg, setErrMsg] = useState("");
     const [success, setSuccess] = useState(false);
-    // This will be used with the login
 
     useEffect(() => {
         userRef.current.focus();
@@ -39,7 +39,7 @@ export default function Register() {
 
     useEffect(() => {
         setValidEmail(EMAIL_REGEX.test(email));
-    },[email]);
+    }, [email]);
 
     useEffect(() => {
         setValidPassword(PASSWORD_REGEX.test(password));
@@ -48,15 +48,17 @@ export default function Register() {
 
     useEffect(() => {
         setErrMsg("");
-    }, [email,password,matchPassword]);
+    }, [email, password, matchPassword]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        // REGEX check
         const v1 = EMAIL_REGEX.test(email);
         const v2 = PASSWORD_REGEX.test(password);
         if (!v1 || !v2) {
             // setErrMsg("Invalid Entry");
-            return;
+            // return;
         }
 
         try {
@@ -85,59 +87,69 @@ export default function Register() {
         }
     };
 
-    return (
-        <div className='login-register-body'>
-            <NavbarLoginRegister />
-            <div className="container-form">
-                <p
-                    ref={errRef}
-                    className={errMsg ? "login-alert-errMsg" : "login-alert-offScreen"}
-                    aria-live="assertive"
-                >
-                    {errMsg}
-                </p>
-                <h2 className="header-form"> Register </h2>
-                <form onSubmit={handleSubmit}>
-                    <label className="text-label" for="email"> Nama </label> <br />
-                    <input className="box-input"
-                        type="text"
-                        name="name"
-                        ref={userRef}
-                        placeholder="Masukkan nama lengkap anda"
-                        onChange={e => setName(e.target.value)}
-                        required />
-                    <br />
-                    <label className="text-label" for="email"> Email </label> <br />
-                    <input className="box-input"
-                        type="text"
-                        name="email"
-                        placeholder="Masukkan alamat email anda"
-                        onChange={e => setEmail(e.target.value)}
-                        required />
-                    <br />
-                    <label className="text-label" for="password"> Password </label> <br />
-                    <input className="box-input"
-                        type="password"
-                        name="password"
-                        placeholder="Masukkan password anda"
-                        onChange={e => setPassword(e.target.value)}
-                        required />
-                    <br />
-                    <div className="agreement-box">
-                        <input className="bottom-info" type="checkbox" /> Saya setuju dengan <strong> syarat & ketentuan </strong>
-                        serta <strong>Kebijakan Privasi</strong> di Houset <br />
-                    </div>
-                    <button type="submit"> Register </button>
+    if (success) {
+        navigate('/login');
+        alert("succeeded");
+        setSuccess(false);
+    } else {
+        return (
+            <div className='login-register-body'>
+                <NavbarLoginRegister />
+                <div className="container-form">
+                    <p
+                        ref={errRef}
+                        className={errMsg ? "login-alert-errMsg" : "login-alert-offScreen"}
+                        aria-live="assertive"
+                    >
+                        {errMsg}
+                    </p>
+                    <h2 className="header-form"> Register </h2>
+                    <form onSubmit={handleSubmit}>
+                        <label className="text-label" for="email"> Nama </label> <br />
+                        <input className="box-input"
+                            type="text"
+                            name="name"
+                            ref={userRef}
+                            placeholder="Masukkan nama lengkap anda"
+                            onChange={e => setName(e.target.value)}
+                            value={name}
+                            required
+                            // onFocus={() => setUserFocus(true)}
+                            // onBlur={() => setUserFocus(false)}
+                        />
+                        <br />
+                        <label className="text-label" for="email"> Email </label> <br />
+                        <input className="box-input"
+                            type="text"
+                            name="email"
+                            placeholder="Masukkan alamat email anda"
+                            onChange={e => setEmail(e.target.value)}
+                            required />
+                        <br />
+                        <label className="text-label" for="password"> Password </label> <br />
+                        <input className="box-input"
+                            type="password"
+                            name="password"
+                            placeholder="Masukkan password anda"
+                            onChange={e => setPassword(e.target.value)}
+                            required />
+                        <br />
+                        <div className="agreement-box">
+                            <input className="bottom-info" type="checkbox" /> Saya setuju dengan <strong> syarat & ketentuan </strong>
+                            serta <strong>Kebijakan Privasi</strong> di Houset <br />
+                        </div>
+                        <button type="submit"> Register </button>
 
-                    <div className="login-option">
-                        {/* <AlternateLogin /> */}
-                    </div>
+                        <div className="login-option">
+                            {/* <AlternateLogin /> */}
+                        </div>
 
-                    <div className="form-footer">
-                        <p className="switch-method"> Sudah punya akun? <Link to="/login"> Masuk </Link> </p>
-                    </div>
-                </form>
+                        <div className="form-footer">
+                            <p className="switch-method"> Sudah punya akun? <Link to="/login"> Masuk </Link> </p>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
