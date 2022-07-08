@@ -12,7 +12,6 @@ import RoomDetailed from './RoomDetailed/RoomDetailed';
 import Cart from './Transaction/Cart';
 import Checkout from './Transaction/Checkout';
 import Invoice from './Transaction/Invoice';
-import Error from './Error/Error';
 import Profile from './Profile/Profile';
 
 import ScrollToTop from './Components/ScrollToTop';
@@ -79,8 +78,6 @@ export default function App(params) {
                 element={<ForgetPassword />}
               />
 
-              {/* Check if the requested url error */}
-              <Route element={<Error />} />
             </Routes>
           </ModalProvider>
         </Router>
@@ -130,8 +127,6 @@ export default function App(params) {
             <Route path="/invoice" element={<Invoice />} />
             {/* <Route path="/profile" element={<Profile />} /> */}
 
-            {/* Check if the requested url error */}
-            <Route path='*' element={<Error />} />
           </Routes>
         </ModalProvider>
       </Router>
