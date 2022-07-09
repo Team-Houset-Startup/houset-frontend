@@ -1,9 +1,6 @@
 import React from 'react';
-import { Nav, Navbar, Container } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HousetLogo from "../assets/image/houset-logo2.png";
-// import useToken from '../context/useToken';
 import Button from './Button';
 import ProfilePicture from './assets/image/profile-picture.png';
 
