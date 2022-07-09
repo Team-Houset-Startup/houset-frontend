@@ -9,7 +9,6 @@ import ProfilePicture from './assets/image/profile-picture.png';
 
 import "./assets/style/navigation-bar.css";
 import Search from './Search';
-import useToken from '../hooks/useToken';
 
 function NavigationBar() {
     const token = localStorage.getItem('token')
@@ -30,21 +29,12 @@ function NavigationBar() {
     } else {
         profile = (
             <div className="navbar-profile">
-                {/* <Search placeHolder="Cari Produk"/> */}
                 <button onClick={handleLogout}>
                     Logout
                 </button>
             </div>
         )
     }
-
-    // profile = (
-    //     <div className="navbar-login-register">
-    //         {/* <Search placeHolder="Cari Produk"/> */}
-    //         <Button text="Register" type="secondary-button" toPage={"/register"} />
-    //         <Button text="Login" type="primary-button" toPage={"/login"} />
-    //     </div>
-    // )
 
     return (
         <>
