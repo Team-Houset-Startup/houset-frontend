@@ -13,14 +13,13 @@ import Cart from './Transaction/Cart';
 import Checkout from './Transaction/Checkout';
 import Invoice from './Transaction/Invoice';
 import Profile from './Profile/Profile';
+import Error from './Error/Error'
+import ForgetPassword from './forgetPassword/ForgetPassword';
 
 import ScrollToTop from './Components/ScrollToTop';
-import ForgetPassword from './forgetPassword/ForgetPassword';
 import { ModalProvider } from "./context/modal";
-// import useToken from './hooks/useToken';
-import AuthContext from './context/AuthProvider';
 import GetProductDataContext from "./context/ProductAPI";
-import Error from './Error/Error'
+
 export default function App(params) {
   // const { token, setToken } = useToken();
   const token = localStorage.getItem('token')

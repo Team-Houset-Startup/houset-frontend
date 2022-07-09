@@ -1,15 +1,10 @@
 import React from 'react';
-import { Nav, Navbar, Container } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HousetLogo from "../assets/image/houset-logo2.png";
-// import useToken from '../context/useToken';
 import Button from './Button';
 import ProfilePicture from './assets/image/profile-picture.png';
 
 import "./assets/style/navigation-bar.css";
-import Search from './Search';
-import useToken from '../hooks/useToken';
 
 function NavigationBar() {
     const token = localStorage.getItem('token')
@@ -18,8 +13,6 @@ function NavigationBar() {
 
     const handleLogout = () => {
         localStorage.removeItem('token');
-        // setToken(null);
-        // navigate("/product");
         window.location.reload()
     }
 
@@ -36,19 +29,11 @@ function NavigationBar() {
             <div className="navbar-profile">
                 {/* <Search placeHolder="Cari Produk"/> */}
                 <button onClick={handleLogout}>
-                    <img src={ProfilePicture} alt="profile-picture" className="profile-picture" />
+                    Logout
                 </button>
             </div>
         )
     }
-
-    // profile = (
-    //     <div className="navbar-login-register">
-    //         {/* <Search placeHolder="Cari Produk"/> */}
-    //         <Button text="Register" type="secondary-button" toPage={"/register"} />
-    //         <Button text="Login" type="primary-button" toPage={"/login"} />
-    //     </div>
-    // )
 
     return (
         <>
