@@ -8,7 +8,6 @@ import "./assets/style/navigation-bar.css";
 
 function NavigationBar() {
     const token = localStorage.getItem('token')
-    const navigate = useNavigate();
     let profile = (<> </>)
 
     const handleLogout = () => {
@@ -19,7 +18,6 @@ function NavigationBar() {
     if (!token) {
         profile = (
             <div className="navbar-login-register">
-                {/* <Search placeHolder="Cari Produk"/> */}
                 <Button text="Register" type="secondary-button" toPage={"/register"} />
                 <Button text="Login" type="primary-button" toPage={"/login"} />
             </div>
@@ -27,7 +25,6 @@ function NavigationBar() {
     } else {
         profile = (
             <div className="navbar-profile">
-                {/* <Search placeHolder="Cari Produk"/> */}
                 <button onClick={handleLogout}>
                     Logout
                 </button>
