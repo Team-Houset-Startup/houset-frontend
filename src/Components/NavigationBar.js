@@ -26,7 +26,7 @@ function NavigationBar() {
     } else {
         profile = (
             <div className="navbar-profile">
-                <button onClick={handleLogout}>
+                <button onClick={handleLogout} className="navbar-logout-btn">
                     Logout
                 </button>
             </div>
