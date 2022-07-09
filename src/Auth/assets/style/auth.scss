@@ -132,3 +132,9 @@
 	text-decoration-line: underline;
 	color: #055053;
 }
+
+.auth-input-field {
+	.show-password:hover {
+		cursor: pointer;
+	}
+}

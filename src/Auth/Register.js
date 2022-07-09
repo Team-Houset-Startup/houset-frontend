@@ -5,12 +5,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import NavbarLoginRegister from './NavbarLoginRegister';
 import AlternateLogin from './AlternateLogin';
 
-import "./assets/style/login-register.css"
+import "./assets/style/auth.scss"
 import "./assets/style/register.css";
 import "./assets/style/login.css";
 
-const EMAIL_REGEX = /^\[A-z\][A-z0-9-_]{3,23}$/;
-const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+import EyeIcon from "./assets/image/eye-icon.svg";
+
 const REGISTER_URL = '/register';
 
 export default function Register() {
@@ -22,14 +22,9 @@ export default function Register() {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
 
-    const [validEmail, setValidEmail] = useState(false);
-    const [validName, setValidName] = useState(false);
-    const [validPassword, setValidPassword] = useState(false);
-    const [passwordFocus, setPasswordFocus] = useState(false);
     const [matchPassword, setMatchPassword] = useState("");
-    const [validMatch, setValidMatch] = useState(false);
-    const [matchFocus, setMatchFocus] = useState(false);
     const [errMsg, setErrMsg] = useState("");
     const [success, setSuccess] = useState(false);
 
@@ -38,28 +33,11 @@ export default function Register() {
     }, []);
 
     useEffect(() => {
-        setValidEmail(EMAIL_REGEX.test(email));
-    }, [email]);
-
-    useEffect(() => {
-        setValidPassword(PASSWORD_REGEX.test(password));
-        setValidMatch(password === matchPassword);
-    }, [password, matchPassword]);
-
-    useEffect(() => {
         setErrMsg("");
     }, [email, password, matchPassword]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        // REGEX check
-        const v1 = EMAIL_REGEX.test(email);
-        const v2 = PASSWORD_REGEX.test(password);
-        if (!v1 || !v2) {
-            // setErrMsg("Invalid Entry");
-            // return;
-        }
 
         // check length
         if (password.length < 8) {
@@ -120,10 +98,9 @@ export default function Register() {
                             onChange={e => setName(e.target.value)}
                             value={name}
                             required
-                        // onFocus={() => setUserFocus(true)}
-                        // onBlur={() => setUserFocus(false)}
                         />
                         <br />
+                        
                         <label className="text-label" htmlFor="email"> Email </label> <br />
                         <input className="box-input"
                             type="text"
@@ -132,14 +109,20 @@ export default function Register() {
                             onChange={e => setEmail(e.target.value)}
                             required />
                         <br />
-                        <label className="text-label" htmlFor="password"> Password </label> <br />
-                        <input className="box-input"
-                            type="password"
-                            name="password"
-                            placeholder="Masukkan password anda"
-                            onChange={e => setPassword(e.target.value)}
-                            autoComplete="on"
-                            required />
+
+                        <div className="auth-input-field">
+                            <label className="text-label" htmlFor="password"> Password </label> <br />
+                            <input className="box-input"
+                                type={showPassword ? "text" : "password"}
+                                name="password"
+                                placeholder="Masukkan password anda"
+                                onChange={e => setPassword(e.target.value)}
+                                autoComplete="on"
+                                required />
+                            {/* eye icon can show password if user clicked */}
+                            <img src={EyeIcon} onClick={() => setShowPassword(!showPassword)} className="show-password" />
+                        </div>
+
                         <br />
                         <div className="agreement-box">
                             <input className="bottom-info" type="checkbox" /> Saya setuju dengan <strong> syarat & ketentuan </strong>

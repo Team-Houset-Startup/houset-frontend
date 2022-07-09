@@ -13,20 +13,16 @@ import useToken from '../hooks/useToken';
 
 function NavigationBar() {
     const token = localStorage.getItem('token')
-    const navigate = useNavigate();
     let profile = (<> </>)
 
     const handleLogout = () => {
         localStorage.removeItem('token');
-        // setToken(null);
-        // navigate("/product");
         window.location.reload()
     }
 
     if (!token) {
         profile = (
             <div className="navbar-login-register">
-                {/* <Search placeHolder="Cari Produk"/> */}
                 <Button text="Register" type="secondary-button" toPage={"/register"} />
                 <Button text="Login" type="primary-button" toPage={"/login"} />
             </div>
@@ -36,7 +32,7 @@ function NavigationBar() {
             <div className="navbar-profile">
                 {/* <Search placeHolder="Cari Produk"/> */}
                 <button onClick={handleLogout}>
-                    <img src={ProfilePicture} alt="profile-picture" className="profile-picture" />
+                    Logout
                 </button>
             </div>
         )
