@@ -5,6 +5,7 @@ import Button from './Button';
 import ProfilePicture from './assets/image/profile-picture.png';
 
 import "./assets/style/navigation-bar.css";
+import Search from './Search';
 
 function NavigationBar() {
     const token = localStorage.getItem('token')

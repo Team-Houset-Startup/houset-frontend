@@ -9,7 +9,7 @@ import NavbarLoginRegister from './NavbarLoginRegister';
 import AlternateLogin from './AlternateLogin'
 import useAuth from '../hooks/useAuth';
 
-import "./assets/style/login-register.css"
+import "./assets/style/auth.scss"
 import "./assets/style/login.css";
 
 const LOGIN_URL = '/login';

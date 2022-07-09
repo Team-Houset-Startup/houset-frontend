@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Homepage from './Homepage/Homepage';
-import Register from './LoginReg/Register';
-import Login from './LoginReg/Login';
+import Register from './Auth/Register';
+import Login from './Auth/Login';
 import Product from './Product/Product';
 import Canvas from './Canvas/Canvas';
 import Consult from './Consult/Consult';
