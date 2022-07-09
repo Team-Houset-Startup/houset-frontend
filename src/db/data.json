@@ -1,10 +1,32 @@
 {
+  "users": [
+    {
+      "email": "triangle@gmail.com",
+      "password": "$2a$10$mtDBK8DLe3uAVfMT86.scebgZA.ai11Et7FupPlC.Gry287LzsvVe",
+      "id": "t5kNNPo"
+    },
+    {
+      "email": "circle@gmail.com",
+      "password": "$2a$10$fI2q16wuCoeQCKZ637vfHe/au/LUWBWGHUgRU38nzHQfF/vVQNCk2",
+      "id": "3GcybQo"
+    },
+    {
+      "email": "fuadazizi@gmail.com",
+      "password": "$2a$10$zl3kc6PslQpIjNwK2X6xO.dEvGluDRIPRlMMz7Bz0c89Rj93.Qofi",
+      "id": "z8uotep"
+    },
+    {
+      "email": "hexagon@gmail.com",
+      "password": "$2a$10$.9Is0J59wJZ1lmcypA/hL.ReUCFN5yiLquz9rbzcD0iUZtauFZ9Gy",
+      "id": "LyuQrGN"
+    }
+  ],
   "room": [
     {
       "id": 1,
       "type": "Shabby Chic",
       "name": "Design 1",
-      "fav": false,
+      "fav": true,
       "loc": "Ruang Keluarga",
       "desc": "Desain ruang keluarga minimalis modern dengan detail serta fungsi yang dipikirkan secara matang sehingga terlihat penuh gaya dan fungsional. Selain berperan sebagai ruang keluarga, area ini juga menjadi ruang tamu dan ruang untuk bersantai. ",
       "details": {

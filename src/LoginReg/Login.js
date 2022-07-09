@@ -4,26 +4,30 @@ import PropTypes from 'prop-types';
 // import axios from 'axios';
 import axios from '../api/axios';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import NavbarLoginRegister from './NavbarLoginRegister';
 import AlternateLogin from './AlternateLogin'
-import AuthContext from '../context/AuthProvider';
+import useAuth from '../hooks/useAuth';
 
 import "./assets/style/login-register.css"
 import "./assets/style/login.css";
 
 const LOGIN_URL = '/login';
 
-export default function Login( {setToken} ) {
+export default function Login() {
+    const { setAuth } = useAuth();
+
+    // this will navigate back to homepage after login success
     const navigate = useNavigate();
-    const { setAuth } = useContext(AuthContext);
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
     const userRef = useRef();
     const errRef = useRef();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errMsg, setErrMsg] = useState("");
-    const [success, setSuccess] = useState(false);
     const [alertWarning, setAlertWarning] = useState(false);
     useEffect(() => {
         userRef.current.focus();
@@ -45,16 +49,17 @@ export default function Login( {setToken} ) {
                     JSON.stringify({ email, password }),
                     {
                         headers: { "Content-Type": "application/json" },
-                        withCredentials: false,
+                        withCredentials: true,
                     },
                 )
-                const token = response?.data?.token;
-                setAuth({ email, password, token });
-                // setToken(token);
-                // console.log(auth);
+                const accessToken = response?.data?.accessToken;
+                setAuth({ email, password, accessToken });
+                localStorage.setItem('token', accessToken);
+                // setToken(accessToken);
+                // console.log(accessToken);
                 setEmail("");
                 setPassword("");
-                setSuccess(true);
+                navigate('/');
             } catch (err) {
                 if (!err?.response) {
                     setErrMsg("No Server Response");
@@ -69,70 +74,65 @@ export default function Login( {setToken} ) {
             }
         }
     }
-    if (success) {
-        alert('login succeeded');
-        setSuccess(false);
-    } else {
-        return (
-            <>
-                <div className='login-register-body'>
-                    <NavbarLoginRegister />
-                    <div className="container-form">
-                        <p
-                            ref={errRef}
-                            className={errMsg ? "login-alert-errMsg" : "login-alert-offScreen"}
-                            aria-live="assertive"
-                        >
-                            {errMsg}
+    return (
+        <>
+            <div className='login-register-body'>
+                <NavbarLoginRegister />
+                <div className="container-form">
+                    <p
+                        ref={errRef}
+                        className={errMsg ? "login-alert-errMsg" : "login-alert-offScreen"}
+                        aria-live="assertive"
+                    >
+                        {errMsg}
+                    </p>
+
+                    <h2 className="header-form"> Login </h2>
+
+                    <form onSubmit={handleSubmit}>
+                        <label className="text-label" htmlFor="email"> Email </label> <br />
+                        <input className="box-input"
+                            type="email"
+                            name="email"
+                            ref={userRef}
+                            autoComplete="off"
+                            placeholder="Masukkan alamat email anda"
+                            onChange={e => setEmail(e.target.value)}
+                            value={email}
+                            required
+                        />
+                        <br />
+
+                        <label className="text-label" htmlFor="password"> Password </label> <br />
+                        <input className="box-input"
+                            type="password"
+                            name="password"
+                            ref={userRef}
+                            placeholder="Masukkan password anda"
+                            onChange={e => setPassword(e.target.value)}
+                            // value={password}
+                            autoComplete="on"
+                            required
+                        />
+                        <br />
+
+                        <p>
+                            <input type="checkbox" /> Ingat saya
+                            <Link className="forget-pass" to=""> Lupa password? </Link>
                         </p>
 
-                        <h2 className="header-form"> Login </h2>
+                        <button type="submit"> Masuk </button>
 
-                        <form onSubmit={handleSubmit}>
-                            <label className="text-label" htmlFor="email"> Email </label> <br />
-                            <input className="box-input"
-                                type="email"
-                                name="email"
-                                ref={userRef}
-                                autoComplete="off"
-                                placeholder="Masukkan alamat email anda"
-                                onChange={e => setEmail(e.target.value)}
-                                value={email}
-                                required
-                            />
-                            <br />
+                        <div className="login-option">
+                            {/* <AlternateLogin /> */}
+                        </div>
 
-                            <label className="text-label" htmlFor="password"> Password </label> <br />
-                            <input className="box-input"
-                                type="password"
-                                name="password"
-                                ref={userRef}
-                                placeholder="Masukkan password anda"
-                                onChange={e => setPassword(e.target.value)}
-                                // value={password}
-                                autoComplete="on"
-                                required
-                            />
-                            <br />
-
-                            <p>
-                                <input type="checkbox" /> Ingat saya
-                                <Link className="forget-pass" to=""> Lupa password? </Link>
-                            </p>
-
-                            <button type="submit"> Masuk </button>
-
-                            <div className="login-option">
-                                {/* <AlternateLogin /> */}
-                            </div>
-
-                            <div className="form-footer">
-                                <p className="switch-method"> Belum punya akun? <Link to="/register"> Register </Link> </p>
-                            </div>
-                        </form>
-                    </div>
+                        <div className="form-footer">
+                            <p className="switch-method"> Belum punya akun? <Link to="/register"> Register </Link> </p>
+                        </div>
+                    </form>
                 </div>
-            </>
-        )
-    }
+            </div>
+        </>
+    )
 }
