@@ -61,13 +61,19 @@ export default function Register() {
             // return;
         }
 
+        // check length
+        if (password.length < 8) {
+            setErrMsg("Password must at least 8 character");
+            return;
+        }
+
         try {
             const response = await axios.post(
                 REGISTER_URL,
                 JSON.stringify({ email, password }),
                 {
                     headers: { "Content-Type": "application/json" },
-                    withCredentials: false,
+                    withCredentials: true,
                 }
             );
             setSuccess(true);
@@ -105,7 +111,7 @@ export default function Register() {
                     </p>
                     <h2 className="header-form"> Register </h2>
                     <form onSubmit={handleSubmit}>
-                        <label className="text-label" for="email"> Nama </label> <br />
+                        <label className="text-label" htmlFor="email"> Nama </label> <br />
                         <input className="box-input"
                             type="text"
                             name="name"
@@ -114,11 +120,11 @@ export default function Register() {
                             onChange={e => setName(e.target.value)}
                             value={name}
                             required
-                            // onFocus={() => setUserFocus(true)}
-                            // onBlur={() => setUserFocus(false)}
+                        // onFocus={() => setUserFocus(true)}
+                        // onBlur={() => setUserFocus(false)}
                         />
                         <br />
-                        <label className="text-label" for="email"> Email </label> <br />
+                        <label className="text-label" htmlFor="email"> Email </label> <br />
                         <input className="box-input"
                             type="text"
                             name="email"
@@ -126,12 +132,13 @@ export default function Register() {
                             onChange={e => setEmail(e.target.value)}
                             required />
                         <br />
-                        <label className="text-label" for="password"> Password </label> <br />
+                        <label className="text-label" htmlFor="password"> Password </label> <br />
                         <input className="box-input"
                             type="password"
                             name="password"
                             placeholder="Masukkan password anda"
                             onChange={e => setPassword(e.target.value)}
+                            autoComplete="on"
                             required />
                         <br />
                         <div className="agreement-box">
