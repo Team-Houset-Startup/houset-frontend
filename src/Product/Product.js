@@ -13,6 +13,7 @@ import Button from "../Components/Button";
 import "./assets/style/product.css";
 import Search from "../Components/Search";
 import GetRoomDataContext from "../context/roomAPI";
+import GetProductDataContext from "../context/ProductAPI";
 
 // import dapur1 from "../assets/image/dapur-1.png";
 // import dapur2 from "../assets/image/dapur-2.png";
@@ -21,7 +22,12 @@ import GetRoomDataContext from "../context/roomAPI";
 
 function Product({ variant }) {
     // initiate pagination system
-    const { products } = useContext(GetRoomDataContext);
+    // const { rooms } = useContext(GetRoomDataContext);
+    // const { furnitures } = useContext(GetProductDataContext);
+    // let { products } = {}
+    // variant === "furniture" ? products = furnitures : products = rooms;
+    const { products } = useContext(GetProductDataContext);
+
     const [currentProducts, setCurrentProducts] = useState(products);
     const [pageCount, setPageCount] = useState(0);
     const [productOffset, setProductOffset] = useState(0);
@@ -48,9 +54,8 @@ function Product({ variant }) {
                     <Col className="product-hero-content">
                         <Row>
                             <p>
-                                {" "}
                                 Desain ruangan dengan <br /> kreasi mu sekarang
-                                juga!{" "}
+                                juga!
                             </p>
                         </Row>
 
@@ -72,48 +77,39 @@ function Product({ variant }) {
                     <Search placeHolder="Cari produk, kategori, atau ruangan" />
                     <ul className="product-list-quick">
                         <li>
-                            {" "}
-                            <button> Dekorasi </button>{" "}
+                            <button> Dekorasi </button>
                         </li>
                         <li>
-                            {" "}
-                            <button> Peralatan Dapur </button>{" "}
+                            <button> Peralatan Dapur </button>
                         </li>
                         <li>
-                            {" "}
-                            <button> Perlengkapan Kamar Mandi </button>{" "}
+                            <button> Perlengkapan Kamar Mandi </button>
                         </li>
                         <li>
-                            {" "}
-                            <button> Perlengkapan Kantor </button>{" "}
+                            <button> Perlengkapan Kantor </button>
                         </li>
                         <li>
-                            {" "}
-                            <button> Aksesoris Penyimpanan </button>{" "}
+                            <button> Aksesoris Penyimpanan </button>
                         </li>
                         <li>
-                            {" "}
-                            <button> Aksesoris Kamar Anak </button>{" "}
+                            <button> Aksesoris Kamar Anak </button>
                         </li>
                         <li>
-                            {" "}
-                            <button> Boneka Bebek </button>{" "}
+                            <button> Boneka Bebek </button>
                         </li>
                     </ul>
                 </Row>
 
                 <Row className="product-list-content">
                     <Col className="product-list-sidebar">
-                        {" "}
-                        <CategorySidebar />{" "}
+                        <CategorySidebar />
                     </Col>
 
                     <Col className="product-list-preview">
-                        {" "}
                         <ProductCardContainer
                             variant={variant}
-                            // products={currentProducts}
-                        />{" "}
+                            products={currentProducts}
+                        />
                     </Col>
                     {/* {CardContainer} */}
                 </Row>
