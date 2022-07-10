@@ -21,6 +21,7 @@ import useToken from './context/useToken';
 import AuthContext from './context/AuthProvider';
 import GetProductDataContext from "./context/ProductAPI";
 import Error from './Error/Error'
+import ContactUs from './ContactUs/ContactUs';
 export default function App(params) {
   const { token, setToken } = useToken();
   // const { auth } = useContext(AuthContext);
@@ -137,6 +138,7 @@ export default function App(params) {
             <Route path="/checkout" element={<Checkout />} />
 
             <Route path="/invoice" element={<Invoice />} />
+            <Route path="/contact-us" element={<ContactUs />} />
             {/* <Route path="/profile" element={<Profile />} /> */}
 
             {/* Check if the requested url error */}
