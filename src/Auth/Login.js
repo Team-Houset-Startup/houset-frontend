@@ -12,7 +12,7 @@ import useAuth from '../hooks/useAuth';
 import "./assets/style/auth.scss"
 import "./assets/style/login.css";
 
-const LOGIN_URL = '/login';
+const LOGIN_URL = '/user/login';
 
 export default function Login() {
     const { setAuth } = useAuth();
@@ -49,7 +49,7 @@ export default function Login() {
                     JSON.stringify({ email, password }),
                     {
                         headers: { "Content-Type": "application/json" },
-                        withCredentials: true,
+                        withCredentials: false,
                     },
                 )
                 const accessToken = response?.data?.accessToken;

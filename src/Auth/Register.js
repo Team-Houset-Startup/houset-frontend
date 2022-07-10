@@ -11,7 +11,7 @@ import "./assets/style/login.css";
 
 import EyeIcon from "./assets/image/eye-icon.svg";
 
-const REGISTER_URL = '/register';
+const REGISTER_URL = '/user/register';
 
 export default function Register() {
     const navigate = useNavigate('');
@@ -48,10 +48,10 @@ export default function Register() {
         try {
             const response = await axios.post(
                 REGISTER_URL,
-                JSON.stringify({ email, password }),
+                JSON.stringify({ email, password, name }),
                 {
                     headers: { "Content-Type": "application/json" },
-                    withCredentials: true,
+                    withCredentials: false,
                 }
             );
             setSuccess(true);

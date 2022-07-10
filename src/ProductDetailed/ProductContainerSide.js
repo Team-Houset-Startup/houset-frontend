@@ -36,6 +36,22 @@ export default function ProductContainerSide({ product }) {
         navigate("/cart");
     };
 
+    function productColor(colors) {
+        return colors?.map((color) =>
+            <>
+                <input
+                    type="radio"
+                    name="product-color-radio"
+                    className="product-color-radio"
+                    value={color}
+                    key={color}
+                    style={{ backgroundColor: color }}
+                />
+                <label>  </label>
+            </>
+        )
+    }
+
     return (
         <Container className="product-container-side">
             <Row className="product-info">
@@ -55,7 +71,7 @@ export default function ProductContainerSide({ product }) {
                 <Row className="product-type-color">
                     <Col xl={{ span: "4" }}> Warna </Col>
                     <Col>
-                        <button> abu </button> <button> coklat </button>
+                        {productColor(product.colors)}
                     </Col>
                 </Row>
 
