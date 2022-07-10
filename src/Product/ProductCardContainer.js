@@ -9,9 +9,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import GetRoomDataContext from "../context/roomAPI";
 import GetProductDataContext from "../context/ProductAPI";
 
-export default function ProductCardContainer({ variant }) {
+export default function ProductCardContainer({ variant, products }) {
     const { rooms } = useContext(GetRoomDataContext);
-    const { products } = useContext(GetProductDataContext);
+    // const { products } = useContext(GetProductDataContext);
 
     // Fetch furniture product from API
     // show it in a section of product card
@@ -22,9 +22,9 @@ export default function ProductCardContainer({ variant }) {
     //     products.forEach((product) => {
     //         item += 1;
     //         tempList.push(
-    //             <Col className="product-card-item">
-    //                 <FurnitureCard product={product} />
-    //             </Col>,
+    //             <Col className="product-card-item" key={product.id} >
+    //                 { variant === "furniture" ? <FurnitureCard product={product} /> : <RoomCard room={product} /> }
+    //             </Col>
     //         );
     //         if (item % 4 == 0) {
     //             productList.push(<Row>{tempList}</Row>);
@@ -34,6 +34,30 @@ export default function ProductCardContainer({ variant }) {
     //     // return tempList;
     //     return productList;
     // }
+
+    const BuildProductListRoom = ({ rooms }) => {
+        return (
+            <>
+                {rooms.map((room) => (
+                    <Col className="product-card-item" key={room.id}>
+                        <RoomCard room={room} />
+                    </Col>
+                ))}
+            </>
+        );
+    };
+
+    const BuildProductList = ({ products }) => {
+        return (
+            <>
+                {products.map((product) => (
+                    <Col className="product-card-item" key={product.id}>
+                        <FurnitureCard product={product} />
+                    </Col>
+                ))}
+            </>
+        );
+    };
 
     return (
         <Container className="product-card-container">
@@ -47,28 +71,7 @@ export default function ProductCardContainer({ variant }) {
                     <BuildProductListRoom rooms={rooms} />
                 </Row>
             )}
+            {/* {buildProductList} */}
         </Container>
     );
 }
-const BuildProductListRoom = ({ rooms }) => {
-    return (
-        <>
-            {rooms.map((room) => (
-                <Col className="product-card-item" key={room.id}>
-                    <RoomCard room={room} />
-                </Col>
-            ))}
-        </>
-    );
-};
-const BuildProductList = ({ products }) => {
-    return (
-        <>
-            {products.map((product) => (
-                <Col className="product-card-item" key={product.id}>
-                    <FurnitureCard product={product} />
-                </Col>
-            ))}
-        </>
-    );
-};

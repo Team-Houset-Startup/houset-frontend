@@ -2,7 +2,7 @@
 import React from 'react'
 import { Col, Container, Row, Tabs, Tab } from 'react-bootstrap'
 
-import "./assets/style/item-description.css"
+import "./assets/style/product-description.css"
 
 const Description = () => {
     return (
@@ -81,7 +81,7 @@ const Review = () => {
     )
 }
 
-export default function ItemDescription() {
+export default function ProductDescription() {
     return (
         <div className="product-description">
             <Tabs defaultActiveKey="description" id="uncontrolled-tab-example" className="mb-3">
