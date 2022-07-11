@@ -77,6 +77,8 @@ export default function App(params) {
             <Route path="/checkout" element={<Checkout />} />
 
             <Route path="/invoice" element={<Invoice />} />
+            <Route path="/contact-us" element={<ContactUs />} />
+            {/* <Route path="/profile" element={<Profile />} /> */}
 
             {/* Check if the requested url error */}
             {/* <Route path="*" element={<Error />} /> */}
