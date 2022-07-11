@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Homepage from './Homepage/Homepage';
-import Register from './LoginReg/Register';
-import Login from './LoginReg/Login';
+import Register from './Auth/Register';
+import Login from './Auth/Login';
 import Product from './Product/Product';
 import Canvas from './Canvas/Canvas';
 import Consult from './Consult/Consult';
@@ -13,102 +13,41 @@ import Cart from './Transaction/Cart';
 import Checkout from './Transaction/Checkout';
 import Invoice from './Transaction/Invoice';
 import Profile from './Profile/Profile';
+import Error from './Error/Error'
+import ForgetPassword from './forgetPassword/ForgetPassword';
 
 import ScrollToTop from './Components/ScrollToTop';
-import ForgetPassword from './forgetPassword/ForgetPassword';
 import { ModalProvider } from "./context/modal";
-import useToken from './context/useToken';
-import AuthContext from './context/AuthProvider';
 import GetProductDataContext from "./context/ProductAPI";
-import Error from './Error/Error'
-import ContactUs from './ContactUs/ContactUs';
+
 export default function App(params) {
-  const { token, setToken } = useToken();
-  // const { auth } = useContext(AuthContext);
-  let authRouter = <> </>;
-  if (!token) {
-    authRouter = (
-      <Router>
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login setToken={setToken} />} />
-        </Routes>
-      </Router>
-    )
-  } else {
-    authRouter = (
-      <Router>
-        <Routes>
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-      </Router>
-    )
-  }
-
-  // if (!token) {
-  //   return (
-  //     <div className="homepage-body">
-  //       <Router>
-  //         <ModalProvider>
-  //           <ScrollToTop />
-  //           <Routes>
-  //             <Route path="/" element={<Homepage />} />
-  //             <Route path="/register" element={<Register />} />
-  //             <Route path="/login" element={<Login setToken={setToken} />} />
-  //           </Routes>
-
-  //           <Routes>
-  //             <Route
-  //               path="/product"
-  //               element={<Product variant="furniture" />}
-  //             />
-  //             <Route
-  //               path="/product/:productId"
-  //               element={<ProductDetailed />}
-  //             />
-  //             <Route
-  //               path="/product/room-page"
-  //               element={<RoomDetailed />}
-  //             />
-
-  //             <Route
-  //               path="/ruangan"
-  //               element={<Product variant="room" />}
-  //             />
-
-  //             {/* <Route path="/furnitur/product-page" element={<RoomPage />} />  */}
-  //             <Route path="/canvas" element={<Canvas />} />
-  //             <Route path="/consult" element={<Consult />} />
-
-  //             <Route path="/cart" element={<Cart />} />
-  //             <Route path="/checkout" element={<Checkout />} />
-
-  //             <Route path="/invoice" element={<Invoice />} />
-  //             <Route path="/profile" element={<Profile />} />
-  //             <Route
-  //               path="/forget-password"
-  //               element={<ForgetPassword />}
-  //             />
-
-  //             {/* Check if the requested url error */}
-  //             <Route element={<Error />} />
-  //           </Routes>
-  //         </ModalProvider>
-  //       </Router>
-  //     </div>
-  //   );
-  // }
+  // const { token, setToken } = useToken();
+  const token = localStorage.getItem('token')
 
   return (
     <div className="homepage-body">
-      {authRouter}
+        {token != undefined ? (
+          <Router>
+            <Routes>
+              <Route path="/profile" element={<Profile />} />
+            </Routes>
+          </Router>
+        ) : (
+          <Router>
+            <Routes>
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          </Router>
+        )
+      }
       <Router>
         <ModalProvider>
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login setToken={setToken} />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
 
           <Routes>
@@ -142,7 +81,7 @@ export default function App(params) {
             {/* <Route path="/profile" element={<Profile />} /> */}
 
             {/* Check if the requested url error */}
-            <Route element={<Error />} />
+            {/* <Route path="*" element={<Error />} /> */}
           </Routes>
         </ModalProvider>
       </Router>

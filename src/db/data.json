@@ -1,10 +1,37 @@
 {
+  "users": [
+    {
+      "email": "triangle@gmail.com",
+      "password": "$2a$10$mtDBK8DLe3uAVfMT86.scebgZA.ai11Et7FupPlC.Gry287LzsvVe",
+      "id": "t5kNNPo"
+    },
+    {
+      "email": "circle@gmail.com",
+      "password": "$2a$10$fI2q16wuCoeQCKZ637vfHe/au/LUWBWGHUgRU38nzHQfF/vVQNCk2",
+      "id": "3GcybQo"
+    },
+    {
+      "email": "fuadazizi@gmail.com",
+      "password": "$2a$10$zl3kc6PslQpIjNwK2X6xO.dEvGluDRIPRlMMz7Bz0c89Rj93.Qofi",
+      "id": "z8uotep"
+    },
+    {
+      "email": "hexagon@gmail.com",
+      "password": "$2a$10$.9Is0J59wJZ1lmcypA/hL.ReUCFN5yiLquz9rbzcD0iUZtauFZ9Gy",
+      "id": "LyuQrGN"
+    },
+    {
+      "email": "jaja@gmail.com",
+      "password": "$2a$10$D9E9nCkecLDjAutZCUJmA.U2ecMxSWfo31UcpQ2EUekcXI2IzMY2O",
+      "id": "Qx50fKh"
+    }
+  ],
   "room": [
     {
       "id": 1,
       "type": "Shabby Chic",
       "name": "Design 1",
-      "fav": false,
+      "fav": true,
       "loc": "Ruang Keluarga",
       "desc": "Desain ruang keluarga minimalis modern dengan detail serta fungsi yang dipikirkan secara matang sehingga terlihat penuh gaya dan fungsional. Selain berperan sebagai ruang keluarga, area ini juga menjadi ruang tamu dan ruang untuk bersantai. ",
       "details": {
@@ -351,7 +378,13 @@
       "price": "Rp. 1.500.000",
       "priceDiscounted": "Rp 1.099.000",
       "image": "https://lh3.google.com/u/0/d/1mUqARFX3NcfhaWNQVwWV_EnfSKo1oFeQ=w1298-h892-iv1",
-      "description": "Kursi komputer"
+      "description": "Kursi komputer",
+      "reviewqty": "200",
+      "colors": [
+        "#B4CBC5",
+        "#8D7867",
+        "#8D7867"
+      ]
     },
     {
       "id": 2,
@@ -360,7 +393,12 @@
       "price": "Rp. 1.500.000",
       "priceDiscounted": "Rp 1.099.000",
       "image": "https://lh3.google.com/u/0/d/1xbQsX9ONC6V_TUGFr0o5bNo3rRaynw3M=w1920-h892-iv1",
-      "description": "Kursi komputer"
+      "description": "Kursi komputer",
+      "reviewqty": "200",
+      "colors": [
+        "#B4CBC5",
+        "#8D7867"
+      ]
     },
     {
       "id": 3,
@@ -369,7 +407,12 @@
       "price": "Rp. 1.500.000",
       "priceDiscounted": "Rp 1.099.000",
       "image": "https://lh3.google.com/u/0/d/1H_oQi9ExXX_3W_UggDqc6y2thPLFzTiX=w1298-h892-iv1",
-      "description": "Kursi komputer"
+      "description": "Kursi komputer",
+      "reviewqty": "200",
+      "colors": [
+        "#B4CBC5",
+        "#8D7867"
+      ]
     },
     {
       "id": 4,
@@ -378,7 +421,12 @@
       "price": "Rp. 1.500.000",
       "priceDiscounted": "Rp 1.099.000",
       "image": "https://lh3.google.com/u/0/d/14mP3iCK6718t3srBPwW7QteWErJw6L6a=w1298-h892-iv1",
-      "description": "Kursi komputer"
+      "description": "Kursi komputer",
+      "reviewqty": "200",
+      "colors": [
+        "#B4CBC5",
+        "#8D7867"
+      ]
     },
     {
       "id": 5,
@@ -387,7 +435,12 @@
       "price": "Rp. 500.000",
       "priceDiscounted": "Rp 400.000",
       "image": "https://lh3.google.com/u/0/d/1Fb22syOnWgIA43Vl0AskhsZPZmaPmpsA=w1920-h892-iv1",
-      "description": "Kursi komputer"
+      "description": "Kursi komputer",
+      "reviewqty": "200",
+      "colors": [
+        "#B4CBC5",
+        "#8D7867"
+      ]
     },
     {
       "id": 6,
@@ -396,7 +449,12 @@
       "price": "Rp. 200.000",
       "priceDiscounted": "Rp 199.000",
       "image": "https://lh3.google.com/u/0/d/1VGO777ENWB_6ybj4WdnkSLUaVH2SncR1=w1297-h892-iv1",
-      "description": "Kursi komputer"
+      "description": "Kursi komputer",
+      "reviewqty": "200",
+      "colors": [
+        "#B4CBC5",
+        "#8D7867"
+      ]
     },
     {
       "id": 7,
@@ -405,7 +463,12 @@
       "price": "Rp. 2.00.000",
       "priceDiscounted": "Rp 1.800.000",
       "image": "https://lh3.google.com/u/0/d/1VGO777ENWB_6ybj4WdnkSLUaVH2SncR1=w1297-h892-iv1",
-      "description": "Kursi komputer"
+      "description": "Kursi komputer",
+      "reviewqty": "200",
+      "colors": [
+        "#B4CBC5",
+        "#8D7867"
+      ]
     },
     {
       "id": 8,
@@ -414,7 +477,12 @@
       "price": "Rp. 3.200.000",
       "priceDiscounted": "Rp 2.999.000",
       "image": "https://lh3.google.com/u/0/d/1zuufOZ1HhVecfk4IGj8TBO_xn_z6541k=w1297-h892-iv1",
-      "description": "Kursi komputer"
+      "description": "Kursi komputer",
+      "reviewqty": "200",
+      "colors": [
+        "#B4CBC5",
+        "#8D7867"
+      ]
     },
     {
       "id": 9,
@@ -423,7 +491,12 @@
       "price": "Rp. 4.500.000",
       "priceDiscounted": "Rp 3.700.000",
       "image": "https://lh3.google.com/u/0/d/15E10fxeQ2KEm0Y46aDhRAWNRZc0GwvZv=w1297-h892-iv1",
-      "description": "Kursi komputer"
+      "description": "Kursi komputer",
+      "reviewqty": "200",
+      "colors": [
+        "#B4CBC5",
+        "#8D7867"
+      ]
     },
     {
       "id": 10,
@@ -432,7 +505,12 @@
       "price": "Rp. 6.200.000",
       "priceDiscounted": "Rp 6.000.000",
       "image": "https://lh3.google.com/u/0/d/1ueMEG6l9t2ce65vsuGInvgtg9RBD8VXI=w1297-h892-iv1",
-      "description": "Kursi komputer"
+      "description": "Kursi komputer",
+      "reviewqty": "200",
+      "colors": [
+        "#B4CBC5",
+        "#8D7867"
+      ]
     },
     {
       "id": 11,
@@ -441,7 +519,12 @@
       "price": "Rp. 6.200.000",
       "priceDiscounted": "Rp 6.000.000",
       "image": "https://lh3.google.com/u/0/d/1ueMEG6l9t2ce65vsuGInvgtg9RBD8VXI=w1297-h892-iv1",
-      "description": "Kursi komputer"
+      "description": "Kursi komputer",
+      "reviewqty": "200",
+      "colors": [
+        "#B4CBC5",
+        "#8D7867"
+      ]
     },
     {
       "id": 12,
@@ -450,7 +533,12 @@
       "price": "Rp. 6.200.000",
       "priceDiscounted": "Rp 6.000.000",
       "image": "https://lh3.google.com/u/0/d/1ueMEG6l9t2ce65vsuGInvgtg9RBD8VXI=w1297-h892-iv1",
-      "description": "Kursi komputer"
+      "description": "Kursi komputer",
+      "reviewqty": "200",
+      "colors": [
+        "#B4CBC5",
+        "#8D7867"
+      ]
     }
   ]
 }

@@ -26,7 +26,7 @@
 	top: 41px;
 	margin-left: 15px;
 
-	width: auto;
+	width: fit-content;
 	height: 28px;
 	text-align: center;
 	padding-inline: 16px;

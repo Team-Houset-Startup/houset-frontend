@@ -92,10 +92,14 @@
 } */
 
 .navbar-profile button {
-	/* remove button style */
-	background: none;
+	/* button style */
+	background-color: rgb(220, 231, 242);
 	border: none;
-	border-radius: 30px;
+	border-radius: 10px;
+
+	padding: 10px;
+	margin-right: 30px;
+	padding-inline: 20px;
 }
 
 .profile-picture {
