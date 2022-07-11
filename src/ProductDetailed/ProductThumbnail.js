@@ -7,7 +7,7 @@ import Kursi3 from "./assets/image/kursi3.png"
 import Kursi4 from "./assets/image/kursi4.png"
 
 
-import "./assets/style/product-thumbnail.css"
+import "./assets/style/product-thumbnail.scss"
 
 export default function ProductThumbnail() {
     return (
