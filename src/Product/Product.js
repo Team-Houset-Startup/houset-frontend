@@ -44,10 +44,10 @@ const nextPageIcon = () => {
 
 function Product({ variant }) {
     // initiate pagination system
+    // const [ products, setProducts ] = useState({});
     // const { rooms } = useContext(GetRoomDataContext);
     // const { furnitures } = useContext(GetProductDataContext);
-    // let { products } = {}
-    // variant === "furniture" ? products = furnitures : products = rooms;
+    // variant === "furniture" ? setProducts(furnitures) : setProducts(rooms);
     const { products } = useContext(GetProductDataContext);
 
     const [currentProducts, setCurrentProducts] = useState(products);
