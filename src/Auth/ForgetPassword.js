@@ -1,13 +1,15 @@
 import React from "react";
 import NavbarLoginRegister from "./NavbarLoginRegister";
 import { Container } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./assets/style/forget-password.css";
 import { EyeIcon } from "../Profile/assets/Icon";
 import { PasswordInput } from "../Profile/UpdatePassword";
 import { useInRouterContext } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "../api/axios";
+import { useContext } from "react";
+import ModalContext from "../context/modal";
 
 const REQUEST_OTP_URL = "/user/create-otp";
 
@@ -16,7 +18,7 @@ const ForgetPassword = () => {
     const [inputVal, setInputVal] = useState("");
     const [otpFromServer, setOtpFromServer] = useState(null);
 
-    const sendCode = async () => {
+    const sendCode = async (email) => {
         // send code to user
         try {
             const response = await axios.post(
@@ -50,6 +52,7 @@ const ForgetPassword = () => {
                         inputVal={inputVal}
                         setInputVal={setInputVal}
                         setStatus={setStatus}
+                        status={status}
                         sendCode={sendCode}
                     />
                 );
@@ -59,13 +62,17 @@ const ForgetPassword = () => {
                         inputVal={inputVal}
                         setInputVal={setInputVal}
                         setStatus={setStatus}
+                        status={status}
                         sendCode={sendCode}
                         otpFromServer={otpFromServer}
                     />
                 );
             case "set-new-password":
                 return (
-                    <SetNewPassword inputVal={inputVal} setStatus={setStatus} />
+                    <SetNewPassword inputVal={inputVal} setStatus={setStatus} 
+                    status={status}
+                    
+                    />
                 );
             default:
                 break;
@@ -86,9 +93,16 @@ const ForgetPassword = () => {
 
 export default ForgetPassword;
 
-const ChangePassword = ({ inputVal, setInputVal, setStatus, sendCode }) => {
+const ChangePassword = ({
+    inputVal,
+    setInputVal,
+    status,
+    setStatus,
+    sendCode,
+}) => {
     const [errorStatus, setErrorStatus] = useState(true);
     const [errMsg, setErrMsg] = useState("");
+    const btnRefChangePassword = useRef(null);
 
     const inputValidation = (inputVal) => {
         const phoneFormat = /^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$/g;
@@ -102,9 +116,25 @@ const ChangePassword = ({ inputVal, setInputVal, setStatus, sendCode }) => {
         }
     };
 
+    useEffect(() => {
+        const enterHandle = (e) => {
+            if (e.key === "Enter") {
+                if (
+                    status === "change-password" &&
+                    btnRefChangePassword.current !== null
+                ) {
+                    btnRefChangePassword.current.click();
+                }
+            } else {
+                return;
+            }
+        };
+        window.addEventListener("keypress", (e) => enterHandle(e));
+        return window.removeEventListener("keypress", (e) => enterHandle(e));
+    }, []);
+
     const submitHandler = () => {
-        // send code to user
-        sendCode();
+        sendCode(inputVal);
         setStatus("code-verification");
     };
     const changeHandler = (value) => {
@@ -151,6 +181,7 @@ const ChangePassword = ({ inputVal, setInputVal, setStatus, sendCode }) => {
                     className="primary-button"
                     disabled={errorStatus}
                     onClick={submitHandler}
+                    ref={btnRefChangePassword}
                 >
                     Lanjut
                 </button>
@@ -158,18 +189,25 @@ const ChangePassword = ({ inputVal, setInputVal, setStatus, sendCode }) => {
         </>
     );
 };
-const VerificationStep = ({ inputVal, setStatus, sendCode, otpFromServer }) => {
+const VerificationStep = ({
+    inputVal,
+    setStatus,
+    status,
+    sendCode,
+    otpFromServer,
+}) => {
     const [code, setCode] = useState(new Array(4).fill(""));
     const [resendTime, setResendTime] = useState(0);
     const [otpExpiredTime, setOtpExpiredTime] = useState(300);
     const [errMsg, setErrMsg] = useState("");
+    const btnRefVerification = useRef(null);
 
     const submitHandler = () => {
         // check code is valid
         if (otpFromServer === Number(code.join(""))) {
             setStatus("set-new-password");
         } else {
-            setErrMsg("OTP code is wrong")
+            setErrMsg("OTP code is wrong");
         }
     };
 
@@ -180,15 +218,32 @@ const VerificationStep = ({ inputVal, setStatus, sendCode, otpFromServer }) => {
 
         if (element.nextSibling) {
             element.nextSibling.focus();
-            setErrMsg("")
+            setErrMsg("");
         }
     };
 
     const resendCode = () => {
         setResendTime(60);
         setOtpExpiredTime(300);
-        sendCode();
+        sendCode(inputVal);
     };
+
+    useEffect(() => {
+        const enterHandler = (e) => {
+            if (e.key === "Enter") {
+                if (
+                    status === "code-verification" &&
+                    btnRefVerification.current !== null
+                ) {
+                    btnRefVerification.current.click();
+                }
+            } else {
+                return;
+            }
+        };
+        window.addEventListener("keypress", (e) => enterHandler(e));
+        return window.removeEventListener("keypress", (e) => enterHandler(e));
+    }, []);
 
     return (
         <>
@@ -257,8 +312,11 @@ const VerificationStep = ({ inputVal, setStatus, sendCode, otpFromServer }) => {
             <div className="card-action">
                 <button
                     className="primary-button"
-                    disabled={otpExpiredTime === 0 || code.includes("") || errMsg}
+                    disabled={
+                        otpExpiredTime === 0 || code.includes("") || errMsg
+                    }
                     onClick={submitHandler}
+                    ref={btnRefVerification}
                 >
                     Verifikasi
                 </button>
@@ -317,17 +375,19 @@ const ExpiredOtpTime = ({ otpExpiredTime, setOtpExpiredTime }) => {
     );
 };
 
-const SetNewPassword = ({ inputVal }) => {
+const SetNewPassword = ({ inputVal ,status}) => {
     const [newPassword, setNewPassword] = useState("");
     const [confirmNewPassword, setConfirmNewPassword] = useState("");
-
+    const { openChangePasswordSuccesModal } = useContext(ModalContext);
+    const btnNewPasswordRef = useRef(null);
+    const [errMsg,setErrMsg] = useState("")
     const submitHandler = () => {
         // check password is sam
-        if (newPassword !== confirmNewPassword) {
-            alert("Password tidak sama");
-            return;
+        if (newPassword === confirmNewPassword) {
+            openChangePasswordSuccesModal();
+            setErrMsg("");
         } else {
-            alert("Password berhasil diubah");
+            setErrMsg("Password tidak sama");
         }
         // check password is valid
         // check password is same
@@ -335,6 +395,22 @@ const SetNewPassword = ({ inputVal }) => {
         // redirect to login page
     };
 
+    useEffect(() => {
+        const enterHandler = (e) => {
+            if (e.key === "Enter") {
+                if (
+                    status === "set-new-password" &&
+                    btnNewPasswordRef.current !== null
+                ) {
+                    btnNewPasswordRef.current.click();
+                }
+            } else {
+                return;
+            }
+        };
+        window.addEventListener("keypress", (e) => enterHandler(e));
+        return window.removeEventListener("keypress", (e) => enterHandler(e));
+    }, []);
     return (
         <>
             <div className="card-information">
@@ -346,20 +422,23 @@ const SetNewPassword = ({ inputVal }) => {
             <div className="card-input">
                 <div className="input-password">
                     <label htmlFor="password">Password Baru</label>
-                    <div className="input-wrapper">
+                    <div className={`input-wrapper ${errMsg !== "" ?"err" :""}`}>
                         <PasswordInput
                             name="password"
                             placeholder={""}
                             // value={newPassword}
                             onChange={(e) => setNewPassword(e.target.value)}
                         />
+                        {errMsg !== "" ? (
+                            <div className="error-message active">{errMsg}</div>
+                        ):null}
                     </div>
                 </div>
                 <div className="input-confirm-password">
                     <label htmlFor="confirm-password">
                         Konfirmasi Password
                     </label>
-                    <div className="input-wrapper">
+                    <div className={`input-wrapper ${errMsg !== "" ?"err" :""}`}>
                         <PasswordInput
                             name="confirm-password"
                             placeholder={""}
@@ -368,6 +447,9 @@ const SetNewPassword = ({ inputVal }) => {
                                 setConfirmNewPassword(e.target.value)
                             }
                         />
+                        {errMsg !== "" ? (
+                            <div className="error-message active">{errMsg}</div>
+                        ):null}
                     </div>
                 </div>
             </div>
@@ -376,6 +458,7 @@ const SetNewPassword = ({ inputVal }) => {
                     className="primary-button"
                     // disabled={}
                     onClick={submitHandler}
+                    ref={btnNewPasswordRef}
                 >
                     Buat Password
                 </button>
