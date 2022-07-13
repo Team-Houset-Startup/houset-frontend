@@ -117,7 +117,7 @@ export default function UpdatePassword({ userData, setUserData }) {
   );
 }
 
-const PasswordInput = ({ placeholder, name, value, onChange }) => {
+export const PasswordInput = ({ placeholder, name,  onChange }) => {
   // component for password input to handle the type when eye icon is click
   const [showPassword, setShowPassword] = useState(false);
 
@@ -130,7 +130,6 @@ const PasswordInput = ({ placeholder, name, value, onChange }) => {
         type={showPassword ? "text" : "password"}
         placeholder={placeholder}
         name={name}
-        value={value}
         onChange={onChange}
       />
       <EyeIcon clickFunc={showPasswordHandler} />
