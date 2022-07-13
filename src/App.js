@@ -14,11 +14,12 @@ import Checkout from './Transaction/Checkout';
 import Invoice from './Transaction/Invoice';
 import Profile from './Profile/Profile';
 import Error from './Error/Error'
-import ForgetPassword from './forgetPassword/ForgetPassword';
 
 import ScrollToTop from './Components/ScrollToTop';
 import { ModalProvider } from "./context/modal";
 import GetProductDataContext from "./context/ProductAPI";
+import ContactUs from './ContactUs/ContactUs';
+import ForgetPassword from './Auth/ForgetPassword';
 
 export default function App(params) {
   // const { token, setToken } = useToken();
@@ -37,6 +38,7 @@ export default function App(params) {
             <Routes>
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/forget-password" element={<ForgetPassword />} />
             </Routes>
           </Router>
         )
@@ -48,6 +50,7 @@ export default function App(params) {
             <Route path="/" element={<Homepage />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/forget-password" element={<ForgetPassword />} />
           </Routes>
 
           <Routes>

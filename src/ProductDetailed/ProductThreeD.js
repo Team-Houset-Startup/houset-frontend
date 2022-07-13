@@ -1,4 +1,4 @@
-import ReactThreeFbxViewer from 'react-three-fbx-viewer'
+// import ReactThreeFbxViewer from 'react-three-fbx-viewer'
 import Kursi from "./assets/image/kursi.png"
 
 export default function ProductThreeD(assetFbx) {
@@ -12,10 +12,10 @@ export default function ProductThreeD(assetFbx) {
     return (
         <>
             {/* <img src={Kursi} alt="kursi" /> */}
-            <ReactThreeFbxViewer
+            {/* <ReactThreeFbxViewer
                 cameraPosition={cameraPosition}
                 url={assetFbx}
-            />
+            /> */}
         </>
     )
 }
