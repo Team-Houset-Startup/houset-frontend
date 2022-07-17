@@ -382,15 +382,17 @@ const SetNewPassword = ({ inputVal ,status}) => {
     const btnNewPasswordRef = useRef(null);
     const [errMsg,setErrMsg] = useState("")
     const submitHandler = () => {
-        // check password is sam
+        // check password is same
         if (newPassword === confirmNewPassword) {
-            openChangePasswordSuccesModal();
-            setErrMsg("");
+            if (newPassword.length >= 8) {
+                openChangePasswordSuccesModal();
+                setErrMsg("");
+            }else {
+                setErrMsg("Password harus lebih dari 8 karakter");
+            }
         } else {
             setErrMsg("Password tidak sama");
         }
-        // check password is valid
-        // check password is same
         // send new password to server
         // redirect to login page
     };
@@ -426,7 +428,6 @@ const SetNewPassword = ({ inputVal ,status}) => {
                         <PasswordInput
                             name="password"
                             placeholder={""}
-                            // value={newPassword}
                             onChange={(e) => setNewPassword(e.target.value)}
                         />
                         {errMsg !== "" ? (
@@ -442,7 +443,6 @@ const SetNewPassword = ({ inputVal ,status}) => {
                         <PasswordInput
                             name="confirm-password"
                             placeholder={""}
-                            // value={confirmNewPassword}
                             onChange={(e) =>
                                 setConfirmNewPassword(e.target.value)
                             }
