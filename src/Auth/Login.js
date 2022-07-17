@@ -118,7 +118,7 @@ export default function Login() {
 
                         <p>
                             <input type="checkbox" /> Ingat saya
-                            <Link className="forget-pass" to=""> Lupa password? </Link>
+                            <Link className="forget-pass" to="/forget-password" > Lupa password? </Link>
                         </p>
 
                         <button type="submit"> Masuk </button>

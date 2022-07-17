@@ -14,6 +14,7 @@ const AddAddress = () => {
     // function to not re-render when label is click
     e.preventDefault()
   }
+  
   return (
     <ReactModal
       isOpen={addAddressModalIsOpen}

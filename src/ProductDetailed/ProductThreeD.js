@@ -11,7 +11,7 @@ export default function ProductThreeD(assetFbx) {
 
     return (
         <>
-            {/* <img src={Kursi} alt="kursi" /> */}
+            <img src={Kursi} alt="kursi" />
             <ReactThreeFbxViewer
                 cameraPosition={cameraPosition}
                 url={assetFbx}

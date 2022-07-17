@@ -14,6 +14,7 @@ import Button from '../Components/Button';
 import SampleRoom from './assets/image/sample-room.png'
 import PromoPict from './assets/image/promo-pict.png'
 import "./assets/style/homepage.css";
+import RecommendationProduct from '../Components/RecommendationProduct';
 
 // import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
@@ -59,9 +60,9 @@ function Homepage() {
                 {/* </Row> */}
 
                 <Row className="homepage-product-lists">
-                    <ProductLists />
+                    <ProductLists count="4" />
                 </Row>
-                
+
                 {/* <br /> */}
 
                 <Row className="homepage-room-lists">
