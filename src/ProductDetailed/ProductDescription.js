@@ -25,7 +25,7 @@ const detailSpecs = (product) => {
                     <p className="product-tab-subtitle"> Detail </p>
                     <Container className="product-tab-information">
                         {/* <Row> <Col> Brand </Col> <Col> {detail["brand"]} </Col> </Row> */}
-                        <Row> <Col> Warna </Col> <Col> {product.color} </Col> </Row>
+                        {/* <Row> <Col> Warna </Col> <Col> {product.color} </Col> </Row> */}
                         <Row> <Col> Kondisi Produk </Col> <Col> {product.condition} </Col> </Row>
                         <Row> <Col> style </Col> <Col> {product.style} </Col> </Row>
                         <Row> <Col> Material Dudukan </Col> <Col> {product.material_1} </Col> </Row>

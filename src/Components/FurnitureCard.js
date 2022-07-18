@@ -15,7 +15,7 @@ export default function FurnitureCard( {product} ) {
                 <div className="product-pict"> <img src={product.image} alt="" /> </div>
                 <p className="item-type"> {product.type} </p>
                 <p className="item-name"> {product.name} </p>
-                <p className="item-price"> {product.price} </p>
+                <p className="item-price-discounted"> Rp {product.price} </p>
                 <p className="item-price-discounted"> {product.priceDiscounted} </p>
             </Link>
         </div>

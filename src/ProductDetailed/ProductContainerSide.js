@@ -58,13 +58,13 @@ export default function ProductContainerSide({ product }) {
             <Row className="product-info">
                 <p className="product-info-category"> {product.type} </p>
                 <p className="product-info-name"> {product.name} </p>
-                <p className="product-info-review">
+                {/* <p className="product-info-review">
                     {product.reviewqty} Ulasan <span> star here </span>
-                </p>
+                </p> */}
             </Row>
 
             <Row className="product-price">
-                <p className="product-price-normal"> {product.price} </p>
+                <p className="product-price-disc"> Rp {product.price} </p>
                 <p className="product-price-disc">{product.priceDiscounted} </p>
             </Row>
 
