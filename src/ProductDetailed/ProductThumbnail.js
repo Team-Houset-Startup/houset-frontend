@@ -12,7 +12,9 @@ import ProductThreeD from './ProductThreeD';
 
 const assetFbx = require('./assets/3d/sofa-2.fbx');
 
-export default function ProductThumbnail() {
+export default function ProductThumbnail({product}) {
+    const image = product.image_gallery;
+    console.log(product);
 
     return (
         <Container className="thumbnail-container">

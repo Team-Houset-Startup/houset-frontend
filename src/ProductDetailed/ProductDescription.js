@@ -15,8 +15,8 @@ const description = (desc) => {
 }
 
 const detailSpecs = (product) => {
-    const detail = product.details;
-    const specification = product.specifications;
+    // const detail = product.details;
+    // const specification = product.specifications;
 
     return (
         <>
@@ -24,22 +24,22 @@ const detailSpecs = (product) => {
                 <Col>
                     <p className="product-tab-subtitle"> Detail </p>
                     <Container className="product-tab-information">
-                        <Row> <Col> Brand </Col> <Col> {detail["brand"]} </Col> </Row>
-                        <Row> <Col> Warna </Col> <Col> {detail["color"]} </Col> </Row>
-                        <Row> <Col> Kondisi Produk </Col> <Col> {detail["condition"]} </Col> </Row>
-                        <Row> <Col> style </Col> <Col> {detail["style"]} </Col> </Row>
-                        <Row> <Col> Material Dudukan </Col> <Col> {detail["material-dudukan"]} </Col> </Row>
-                        <Row> <Col> Material Frame </Col> <Col> {detail["material-frame"]} </Col> </Row>
-                        <Row> <Col> Tipe Produk </Col> <Col> {detail["product-type"]} </Col> </Row>
-                        <Row> <Col> Material </Col> <Col> {detail["material"]} </Col> </Row>
+                        {/* <Row> <Col> Brand </Col> <Col> {detail["brand"]} </Col> </Row> */}
+                        <Row> <Col> Warna </Col> <Col> {product.color} </Col> </Row>
+                        <Row> <Col> Kondisi Produk </Col> <Col> {product.condition} </Col> </Row>
+                        <Row> <Col> style </Col> <Col> {product.style} </Col> </Row>
+                        <Row> <Col> Material Dudukan </Col> <Col> {product.material_1} </Col> </Row>
+                        <Row> <Col> Material Frame </Col> <Col> {product.material_2} </Col> </Row>
+                        {/* <Row> <Col> Tipe Produk </Col> <Col> {product.product-te"]} </Col> </Row> */}
+                        <Row> <Col> Material </Col> <Col> {product.material_3} </Col> </Row>
                     </Container>
                 </Col>
                 <Col>
                     <p className="product-tab-subtitle"> Spesifikasi </p>
                     <Container className="product-tab-information">
-                        <Row> <Col> Ukuran Kemasan </Col> <Col> {specification["packing-size"]} </Col> </Row>
-                        <Row> <Col> Ukuran Barang </Col> <Col> {specification["item-size"]} </Col> </Row>
-                        <Row> <Col> Berat </Col> <Col> {specification["weight"]} </Col> </Row>
+                        {/* <Row> <Col> Ukuran Kemasan </Col> <Col> {product["packing-size"]} </Col> </Row> */}
+                        <Row> <Col> Ukuran Barang </Col> <Col> {product.length}cm x {product.width}cm x {product.height}cm </Col> </Row>
+                        {/* <Row> <Col> Berat </Col> <Col> {product.weight} </Col> </Row> */}
                     </Container>
                 </Col>
             </Row>
@@ -70,8 +70,8 @@ const review = () => {
     )
 }
 
-export default function ProductDescription() {
-    const product = {
+export default function ProductDescription({product}) {
+    const products = {
         "desc": "Nestudio Kursi dapat membuat ruangan Anda tampil cantik. Kerangkanya yang terbuat dari kayu serta desain yang unik dan warna cerah akan memberikan aksen pada ruangan tanpa perlu banyak dekorasi. Letakkan kursi ini di dekat jendela atau berhimpitan dengan tembok dan lihat bagaimana ruangan akan terasa lebih hidup! Bantalan dengan busa empuk dan lapisan per membuat Anda tetap nyaman meski telah duduk berjam-jam. Finishing produk menggunakan veneer berbahan natural sehingga mempertahankan keindahan tekstur serat alami. Didesain ergonomis dengan kemiringan sudut (untuk sofa & kursi) dan dimensi yang telah disesuaikan dengan tinggi dan postur tubuh konsumen Asia.Telah melalui proses pengujian dan tersertifikasi sehingga kualitas dan ketahanannya terjamin.",
         "details": {
             "brand": "Nestudio",
@@ -94,7 +94,7 @@ export default function ProductDescription() {
         <div className="product-description">
             <Tabs defaultActiveKey="description" id="uncontrolled-tab-example" className="product-tab-header">
                 <Tab className="product-desc-tab" eventKey="description" title="Deskripsi">
-                    {description(product.desc)}
+                    {description(product.description)}
                 </Tab>
                 <Tab className="product-desc-tab" eventKey="detail" title="Detail dan Spesifikasi">
                     {detailSpecs(product)}

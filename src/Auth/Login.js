@@ -52,8 +52,8 @@ export default function Login() {
                         withCredentials: false,
                     },
                 )
-                const accessToken = response?.data?.accessToken;
-                setAuth({ email, password, accessToken });
+                const accessToken = response?.data?.data?.token;
+                setAuth({ email, accessToken });
                 localStorage.setItem('token', accessToken);
                 // setToken(accessToken);
                 // console.log(accessToken);

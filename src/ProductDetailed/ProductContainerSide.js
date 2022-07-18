@@ -36,8 +36,9 @@ export default function ProductContainerSide({ product }) {
         navigate("/cart");
     };
 
-    function productColor(colors) {
-        return colors?.map((color) =>
+    function productColor(color) {
+        // return colors?.map((color) =>
+        return (
             <>
                 <input
                     type="radio"
@@ -71,7 +72,7 @@ export default function ProductContainerSide({ product }) {
                 <Row className="product-type-color">
                     <Col xl={{ span: "4" }}> Warna </Col>
                     <Col>
-                        {productColor(product.colors)}
+                        {productColor(product.color)}
                     </Col>
                 </Row>
 

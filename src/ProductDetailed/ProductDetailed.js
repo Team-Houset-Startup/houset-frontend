@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import axios from "../api/axios";
 // import { useHistory,useLocation } from "react-router-dom";
 // import { Tab, Tabs } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
@@ -21,20 +21,19 @@ import "./assets/style/product-detailed.css";
 export default function ProductDetailed() {
     const [selectedProduct, setSelectedProduct] = useState({});
     const { productId } = useParams();
-    const url = process.env.REACT_APP_URL;
 
     useEffect(() => {
         const getData = async () => {
             await axios
-                .get(`${url}/products/${productId}`, {})
-                .then((res) => setSelectedProduct(res.data))
+                .get(`/product/${productId}`, {})
+                .then((res) => setSelectedProduct(res.data?.data))
                 .catch((error) => console.log(error));
         };
         getData();
         return () => {
             setSelectedProduct({});
         };
-    }, [url, productId]);
+    }, [productId]);
     return (
         <>
             <NavigationBar />
@@ -44,13 +43,13 @@ export default function ProductDetailed() {
                         <ProductContainerSide product={selectedProduct} />
                     </Col>
                     <Col xl={7}>
-                        <ProductThumbnail />
+                        <ProductThumbnail product={selectedProduct} />
                     </Col>
                 </Row>
 
                 <Row xl={12}>
                     <Col xl={10} className="product-desc-col">
-                        <ProductDescription />
+                        <ProductDescription product={selectedProduct} />
                     </Col>
                 </Row>
 
