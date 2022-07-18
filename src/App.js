@@ -20,10 +20,12 @@ import { ModalProvider } from "./context/modal";
 import GetProductDataContext from "./context/ProductAPI";
 import ContactUs from './ContactUs/ContactUs';
 import ForgetPassword from './Auth/ForgetPassword';
+import useAuth from './hooks/useAuth';
 
 export default function App(params) {
   // const { token, setToken } = useToken();
   const token = localStorage.getItem('token')
+  console.log(token);
 
   return (
     <div className="homepage-body">

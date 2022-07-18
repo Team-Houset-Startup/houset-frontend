@@ -49,6 +49,7 @@ function Product({ variant }) {
     // const { furnitures } = useContext(GetProductDataContext);
     // variant === "furniture" ? setProducts(furnitures) : setProducts(rooms);
     const { products } = useContext(GetProductDataContext);
+    console.log(products);
 
     const [currentProducts, setCurrentProducts] = useState(products);
     const [pageCount, setPageCount] = useState(0);
