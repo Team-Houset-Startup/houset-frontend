@@ -17,6 +17,8 @@ import ContactUs from './ContactUs/ContactUs';
 import ForgetPassword from './Auth/ForgetPassword';
 
 import ScrollToTop from './Components/ScrollToTop';
+import { ModalProvider } from './context/modal';
+import { CheckoutProvider } from './context/CheckoutProvider';
 
 function App(params) {
   // const { token, setToken } = useToken();
@@ -27,37 +29,41 @@ function App(params) {
     return (
       <div className="homepage-body">
         <Router>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/forget-password" element={<ForgetPassword />} />
-          </Routes>
+          <CheckoutProvider>
+            <ModalProvider>
+              <ScrollToTop />
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/forget-password" element={<ForgetPassword />} />
+              </Routes>
 
-          <Routes>
-            <Route
-              path="/product"
-              element={<Product variant="furniture" />}
-            />
-            <Route
-              path="/product/:productId"
-              element={<ProductDetailed />}
-            />
+              <Routes>
+                <Route
+                  path="/product"
+                  element={<Product variant="furniture" />}
+                />
+                <Route
+                  path="/product/:productId"
+                  element={<ProductDetailed />}
+                />
 
-            <Route
-              path="/ruangan"
-              element={<Product variant="room" />}
-            />
+                <Route
+                  path="/ruangan"
+                  element={<Product variant="room" />}
+                />
 
-            <Route path="/canvas" element={<Canvas />} />
-            <Route path="/consult" element={<Consult />} />
+                <Route path="/canvas" element={<Canvas />} />
+                <Route path="/consult" element={<Consult />} />
 
-            <Route path="/contact-us" element={<ContactUs />} />
+                <Route path="/contact-us" element={<ContactUs />} />
 
-            {/* Check if the requested url error */}
-            {/* <Route path="*" element={<Error />} /> */}
-          </Routes>
+                {/* Check if the requested url error */}
+                {/* <Route path="*" element={<Error />} /> */}
+              </Routes>
+            </ModalProvider>
+          </CheckoutProvider>
         </Router>
       </div>
     )
@@ -65,41 +71,45 @@ function App(params) {
     return (
       <div className="homepage-body">
         <Router>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
+          <CheckoutProvider>
+            <ModalProvider>
+              <ScrollToTop />
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/profile" element={<Profile />} />
+              </Routes>
 
-          <Routes>
-            <Route
-              path="/product"
-              element={<Product variant="furniture" />}
-            />
-            <Route
-              path="/product/:productId"
-              element={<ProductDetailed />}
-            />
+              <Routes>
+                <Route
+                  path="/product"
+                  element={<Product variant="furniture" />}
+                />
+                <Route
+                  path="/product/:productId"
+                  element={<ProductDetailed />}
+                />
 
-            <Route
-              path="/ruangan"
-              element={<Product variant="room" />}
-            />
+                <Route
+                  path="/ruangan"
+                  element={<Product variant="room" />}
+                />
 
-            {/* <Route path="/furnitur/product-page" element={<RoomPage />} /> */}
-            <Route path="/canvas" element={<Canvas />} />
-            <Route path="/consult" element={<Consult />} />
+                {/* <Route path="/furnitur/product-page" element={<RoomPage />} /> */}
+                <Route path="/canvas" element={<Canvas />} />
+                <Route path="/consult" element={<Consult />} />
 
-            {/* <Route path="/cart" element={<Cart />} /> */}
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/invoice" element={<Invoice />} />
+                {/* <Route path="/cart" element={<Cart />} /> 
+                <Route path="/checkout" element={<Checkout />} /> */}
+                <Route path="/invoice" element={<Invoice />} />
 
-            <Route path="/contact-us" element={<ContactUs />} />
-            {/* <Route path="/profile" element={<Profile />} /> */}
+                <Route path="/contact-us" element={<ContactUs />} />
+                {/* <Route path="/profile" element={<Profile />} /> */}
 
-            {/* Check if the requested url error */}
-            {/* <Route path="*" element={<Error />} /> */}
-          </Routes>
+                {/* Check if the requested url error */}
+                {/* <Route path="*" element={<Error />} /> */}
+              </Routes>
+            </ModalProvider>
+          </CheckoutProvider>
         </Router>
         {/* {authRoute} */}
       </div>

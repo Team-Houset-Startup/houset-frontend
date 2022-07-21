@@ -98,9 +98,7 @@ export default function ProductContainerSide({ product }) {
                 </Col> */}
                 {/* <button onClick={() => {history.push('/cart')}}>ss </button> */}
                 <Col>
-                    <Link to="/checkout">
-                        <Button text="Beli Sekarang" type="primary-button" />
-                    </Link>
+                    <Button text="Beli Sekarang" type="primary-button" toPage="/checkout" />
                 </Col>
             </Row>
         </Container>

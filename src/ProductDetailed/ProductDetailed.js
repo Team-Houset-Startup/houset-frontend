@@ -23,25 +23,24 @@ import useCheckout from "../hooks/useCheckout";
 export default function ProductDetailed() {
     const [selectedProduct, setSelectedProduct] = useState({});
     const { productId } = useParams();
-    const { checkoutItem, setCheckoutCart } = useContext(CheckoutContext);
-    
+    const { setCheckoutCart } = useCheckout();
+
     useEffect(() => {
         const getData = async () => {
             await axios
                 .get(`/product/${productId}`, {})
-                .then((res) => setSelectedProduct(res.data?.data))
+                .then((res) => {
+                    setSelectedProduct(res.data?.data);
+                    setCheckoutCart(res.data?.data);
+                })
                 .catch((error) => console.log(error));
         };
         getData();
         return () => {
             setSelectedProduct({});
-            setCheckoutCart(selectedProduct);
+            setCheckoutCart({});
         };
-    }, [productId]);
-
-    useEffect(() => {
-        console.log(checkoutItem)
-    }, []);
+    }, [productId])
 
     return (
         <>

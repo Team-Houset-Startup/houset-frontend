@@ -8,8 +8,8 @@ import CartItem from './CartItem'
 import "./assets/style/cart-container.css"
 
 export default function CheckoutContainer({ product }) {
-    // const [qty, setQty] = useState(1);
-    // const [subPrice, setSubPrice] = useState();
+    const [qty, setQty] = useState(1);
+    const [subPrice, setSubPrice] = useState(0);
 
     return (
         <Container className="cart-container">
@@ -17,7 +17,7 @@ export default function CheckoutContainer({ product }) {
                 <Col xl={{ order: 1, span: 5 }} style={{ width: "300px", textAlign: "left" }} > Produk </Col>
                 <Col xl={{ order: 2 }}> Harga </Col>
                 <Col xl={{ order: 3 }}> Jumlah </Col>
-                {/* <Col xl={{ order: 4 }}> Total </Col> */}
+                <Col xl={{ order: 4 }}> Total </Col>
             </Row>
             <Row className="cart-container-elm">
                 <Col xl={{ order: 1, span: 5 }} lg={{ order: 1, span: 6 }} style={{ width: "300px" }} >
@@ -25,21 +25,19 @@ export default function CheckoutContainer({ product }) {
                 </Col>
 
                 <Col xl={{ order: 2 }} lg={{ order: 2 }} className="cart-container-info">
-                    <p> Rp {product.price} </p>
+                    <p> Rp {product?.price} </p>
                 </Col>
 
                 <Col xl={{ order: 3 }} lg={{ order: 3 }} className="cart-container-info">
-                    1
+                    <p> {qty}</p>
                 </Col>
 
-                {/* <Col xl={{ order: 4 }} lg={{ order: 4 }} className="cart-container-info">
-                    <Row xl={2}>
-                        Rp {}
-                    </Row>
-                </Col> */}
+                <Col xl={{ order: 4 }} lg={{ order: 4 }} className="cart-container-info">
+                    <p> Rp {subPrice} </p>
+                </Col>
             </Row>
             <Row>
-                <p className="cart-subtotal"> Total bayar Rp {product.price} </p>
+                <p className="cart-subtotal"> Total bayar Rp {product?.price} </p>
             </Row>
         </Container>
     )

@@ -6,11 +6,11 @@ import ModalContext from "../context/modal";
 import RecommendationProduct from "../Components/RecommendationProduct";
 import Button from "../Components/Button";
 import RoomItemDescription from "./RoomItemDescription";
-import "./assets/style/item-room-recommendation.css";
 import RecommendationRoom from "../Components/RecommendationRoom";
 import ProductLastSeen from "../Components/RoomLastSeen";
 
-
+import "./assets/style/item-room-recommendation.css";
+import "./assets/style/room-detailed.css";
 
 export default function RoomDetailedModal({ room }) {
 // function to return the room modal that has information related to the room design

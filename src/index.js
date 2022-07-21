@@ -19,11 +19,7 @@ ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
       <ApiConsumer>
-        <CheckoutProvider>
-          <ModalProvider>
-            <App />
-          </ModalProvider>
-        </CheckoutProvider>
+        <App />
       </ApiConsumer>
     </AuthProvider>
   </React.StrictMode>,

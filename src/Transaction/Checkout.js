@@ -14,9 +14,13 @@ import CheckoutContext from '../context/CheckoutProvider'
 import axios from '../api/axios'
 import useCheckout from '../hooks/useCheckout'
 
-export default function Checkout() {
-    const { checkoutItem } = useCheckout();
+export default function Checkout({ checkoutItem }) {
+    // const { checkoutItem } = useCheckout();
     const [productBought, setProductBought] = useState({});
+    // const productBought = checkoutItem;
+    useEffect(() => {
+        setProductBought(checkoutItem);
+    }, [])
     // useEffect(() => {
     //     const getDataCheckout = async () => {
     //         await axios
@@ -25,7 +29,10 @@ export default function Checkout() {
     //             .catch((err) => console.log(err));
     //     };
     //     getDataCheckout();
-    // }, [checkoutItem]);
+    //     return () => {
+    //         setProductBought({});
+    //     };
+    // }, []);
 
     return (
         <>
@@ -56,11 +63,6 @@ export default function Checkout() {
                         </Row>
                         <Row>
                             <CheckoutContainer product={productBought} />
-                        </Row>
-                        <Row>
-                            <Col xl={{ offset: 10, span: "auto" }} style={{ marginTop: 10 }}>
-                                <Button type="primary-button" text="Pilih Kurir" toPage="/" />
-                            </Col>
                         </Row>
                     </Col>
 
