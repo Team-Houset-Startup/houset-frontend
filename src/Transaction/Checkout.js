@@ -12,23 +12,20 @@ import { product } from "../db/product"
 import "./assets/style/checkout.css"
 import CheckoutContext from '../context/CheckoutProvider'
 import axios from '../api/axios'
+import useCheckout from '../hooks/useCheckout'
 
 export default function Checkout() {
-    const { checkoutItem } = useContext(CheckoutContext);
+    const { checkoutItem } = useCheckout();
     const [productBought, setProductBought] = useState({});
-
-    useEffect(() => {
-        const getDataCheckout = async () => {
-            await axios
-                .get(`/product/${checkoutItem}`, {})
-                .then((res) => setProductBought(res.data?.data))
-                .catch((err) => console.log(err));
-        };
-        getDataCheckout();
-        return () => {
-            setProductBought({});
-        }
-    }, [checkoutItem]);
+    // useEffect(() => {
+    //     const getDataCheckout = async () => {
+    //         await axios
+    //             .get(`/product/${checkoutItem}`, {})
+    //             .then((res) => setProductBought(res.data?.data))
+    //             .catch((err) => console.log(err));
+    //     };
+    //     getDataCheckout();
+    // }, [checkoutItem]);
 
     return (
         <>

@@ -20,7 +20,9 @@ ReactDOM.render(
     <AuthProvider>
       <ApiConsumer>
         <CheckoutProvider>
-          <App />
+          <ModalProvider>
+            <App />
+          </ModalProvider>
         </CheckoutProvider>
       </ApiConsumer>
     </AuthProvider>

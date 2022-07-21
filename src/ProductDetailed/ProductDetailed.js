@@ -18,11 +18,12 @@ import GetProductDataContext from "../context/ProductAPI";
 
 import "./assets/style/product-detailed.css";
 import CheckoutContext from "../context/CheckoutProvider";
+import useCheckout from "../hooks/useCheckout";
 
 export default function ProductDetailed() {
     const [selectedProduct, setSelectedProduct] = useState({});
     const { productId } = useParams();
-    const { setCheckoutCart } = useContext(CheckoutContext);
+    const { checkoutItem, setCheckoutCart } = useContext(CheckoutContext);
     
     useEffect(() => {
         const getData = async () => {
@@ -34,9 +35,14 @@ export default function ProductDetailed() {
         getData();
         return () => {
             setSelectedProduct({});
-            setCheckoutCart(productId);
+            setCheckoutCart(selectedProduct);
         };
     }, [productId]);
+
+    useEffect(() => {
+        console.log(checkoutItem)
+    }, []);
+
     return (
         <>
             <NavigationBar />
