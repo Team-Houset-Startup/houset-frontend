@@ -5,8 +5,12 @@ const CheckoutContext = createContext({});
 export const CheckoutProvider = ({ children, items}) => {
     const [ checkoutItem, setCheckoutItem ] = useState(items || null);
 
+    function setCheckoutCart(item) {
+        setCheckoutItem(item);
+    }
+
     return (
-        <CheckoutContext.Provider value={{ checkoutItem, setCheckoutItem }}>
+        <CheckoutContext.Provider value={{ checkoutItem, setCheckoutCart }}>
             {children}
         </CheckoutContext.Provider>
     )

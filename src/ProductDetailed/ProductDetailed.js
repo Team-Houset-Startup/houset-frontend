@@ -22,7 +22,7 @@ import CheckoutContext from "../context/CheckoutProvider";
 export default function ProductDetailed() {
     const [selectedProduct, setSelectedProduct] = useState({});
     const { productId } = useParams();
-    const { setCheckoutItem } = useContext(CheckoutContext);
+    const { setCheckoutCart } = useContext(CheckoutContext);
     
     useEffect(() => {
         const getData = async () => {
@@ -34,7 +34,7 @@ export default function ProductDetailed() {
         getData();
         return () => {
             setSelectedProduct({});
-            setCheckoutItem(productId);
+            setCheckoutCart(productId);
         };
     }, [productId]);
     return (
