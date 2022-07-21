@@ -1,5 +1,5 @@
 import React from "react";
-import NavbarLoginRegister from "./NavbarLoginRegister";
+import NavbarAuth from "./NavbarAuth";
 import { Container } from "react-bootstrap";
 import { useState, useRef } from "react";
 import "./assets/style/forget-password.css";
@@ -81,7 +81,7 @@ const ForgetPassword = () => {
 
     return (
         <>
-            <NavbarLoginRegister />
+            <NavbarAuth />
             <Container fluid className="forget-password-body">
                 <div className="forget-password-card">
                     {renderComponent(status)}

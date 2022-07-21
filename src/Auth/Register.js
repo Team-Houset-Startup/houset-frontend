@@ -2,7 +2,7 @@ import React from 'react'
 import { useRef, useState, useEffect, useContext } from "react";
 import axios from "../api/axios"
 import { Link, useNavigate } from 'react-router-dom';
-import NavbarLoginRegister from './NavbarLoginRegister';
+import NavbarAuth from './NavbarAuth';
 import AlternateLogin from './AlternateLogin';
 
 import "./assets/style/auth.scss"
@@ -78,7 +78,7 @@ export default function Register() {
     } else {
         return (
             <div className='login-register-body'>
-                <NavbarLoginRegister />
+                <NavbarAuth />
                 <div className="container-form">
                     <p
                         ref={errRef}

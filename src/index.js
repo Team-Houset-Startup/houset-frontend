@@ -12,13 +12,16 @@ import App from './App';
 
 import './index.css';
 import ApiConsumer from "./context/ApiConsumer";
+import { CheckoutProvider } from './context/CheckoutProvider';
 // import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
       <ApiConsumer>
-        <App />
+        <CheckoutProvider>
+          <App />
+        </CheckoutProvider>
       </ApiConsumer>
     </AuthProvider>
   </React.StrictMode>,

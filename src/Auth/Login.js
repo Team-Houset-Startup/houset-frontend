@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import axios from '../api/axios';
 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import NavbarLoginRegister from './NavbarLoginRegister';
+import NavbarAuth from './NavbarAuth';
 import AlternateLogin from './AlternateLogin'
 import useAuth from '../hooks/useAuth';
 
@@ -77,7 +77,7 @@ export default function Login() {
     return (
         <>
             <div className='login-register-body'>
-                <NavbarLoginRegister />
+                <NavbarAuth />
                 <div className="container-form">
                     <p
                         ref={errRef}

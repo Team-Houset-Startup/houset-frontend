@@ -17,11 +17,13 @@ import ProductThumbnail from "./ProductThumbnail";
 import GetProductDataContext from "../context/ProductAPI";
 
 import "./assets/style/product-detailed.css";
+import CheckoutContext from "../context/CheckoutProvider";
 
 export default function ProductDetailed() {
     const [selectedProduct, setSelectedProduct] = useState({});
     const { productId } = useParams();
-
+    const { setCheckoutItem } = useContext(CheckoutContext);
+    
     useEffect(() => {
         const getData = async () => {
             await axios
@@ -32,6 +34,7 @@ export default function ProductDetailed() {
         getData();
         return () => {
             setSelectedProduct({});
+            setCheckoutItem(productId);
         };
     }, [productId]);
     return (

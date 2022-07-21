@@ -1,23 +1,21 @@
 import React from 'react'
 import { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import { product } from "../db/product"
+// import { product } from "../db/product"
 import { Plus, Minus } from '../Components/Element'
 import CartItem from './CartItem'
 
 import "./assets/style/cart-container.css"
 
-let totalPrice = 0;
+// export function countPrice() {
+//     let price
+//     product.map((item, key) => {
+//         price += item.subPrice
+//     })
+//     return price;
+// }
 
-export function countPrice() {
-    let price
-    product.map((item, key) => {
-        price += item.subPrice
-    })
-    return price;
-}
-
-export default function CartContainer(props) {
+export default function CartContainer( {feature, product} ) {
     const [qty, setQty] = useState(1);
     const [subPrice, setSubPrice] = useState();
 
@@ -50,10 +48,9 @@ export default function CartContainer(props) {
 
             {product.map((item, key) => {
 
-                return (props.feature == "cart") ? (
+                return (feature == "cart") ? (
                     <Row className="cart-container-elm">
                         <Col xl={{ order: 1, span: 5 }} lg={{ order: 1, span: 6 }} style={{ width: "300px" }} >
-
                             <CartItem type={item.type} name={item.name} />
                         </Col>
 
@@ -76,10 +73,9 @@ export default function CartContainer(props) {
                             </Row>
                         </Col>
                     </Row>
-                ) : (props.feature == "checkout") ? (
+                ) : (feature == "checkout") ? (
                     <Row className="cart-container-elm">
                         <Col xl={{ order: 1, span: 5 }} lg={{ order: 1, span: 6 }} style={{ width: "300px" }} >
-
                             <CartItem type={item.type} name={item.name} />
                         </Col>
 

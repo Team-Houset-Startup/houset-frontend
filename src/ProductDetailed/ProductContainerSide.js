@@ -91,14 +91,14 @@ export default function ProductContainerSide({ product }) {
             </Row>
 
             <Row className="product-checkout">
-                <Col>
+                {/* <Col>
                     <Link to="/cart">
                         <Button text="Masukkan Keranjang" type="secondary-button" onClick={ButtonDidClick} />
                     </Link>
-                </Col>
+                </Col> */}
                 {/* <button onClick={() => {history.push('/cart')}}>ss </button> */}
                 <Col>
-                    <Link to="/">
+                    <Link to="/checkout">
                         <Button text="Beli Sekarang" type="primary-button" />
                     </Link>
                 </Col>

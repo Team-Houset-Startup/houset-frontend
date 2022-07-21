@@ -14,7 +14,8 @@ const assetFbx = require('./assets/3d/sofa-2.fbx');
 
 export default function ProductThumbnail({product}) {
     const image = product.image_gallery;
-    console.log(product);
+    // const baseURL= "https://houset.my.id/public/api/";
+    // console.log(baseURL + image[0].location);
 
     return (
         <Container className="thumbnail-container">
