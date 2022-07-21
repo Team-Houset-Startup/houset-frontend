@@ -6,11 +6,13 @@ import "./assets/style/product-card-container.css";
 
 import { Container, Row, Col } from "react-bootstrap";
 
+import rooms from '../db/rooms.json';
+
 import GetRoomDataContext from "../context/roomAPI";
 import GetProductDataContext from "../context/ProductAPI";
 
 export default function ProductCardContainer({ variant, products }) {
-    const { rooms } = useContext(GetRoomDataContext);
+    // const { rooms } = useContext(GetRoomDataContext);
     // const { products } = useContext(GetProductDataContext);
 
     // Fetch furniture product from API
