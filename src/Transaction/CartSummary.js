@@ -5,7 +5,7 @@ import Button from '../Components/Button'
 
 import "./assets/style/cart-summary.css"
 
-export default function CartSummary({ product }) {
+export default function CartSummary({ product, total }) {
     return (
         <>
             {/* <input type="text" className="input-promotion-code" placeholder='Masukkan Kode Promo' /> */}
@@ -19,7 +19,7 @@ export default function CartSummary({ product }) {
                         {product.name}
                     </Col>
                     <Col xl className="cart-summary-price">
-                        <p> Rp {` `} {product.price} </p>
+                        <p> Rp {total} </p>
                     </Col>
                 </Row>
                 {/* <Row className="cart-summary-disc">
@@ -36,7 +36,7 @@ export default function CartSummary({ product }) {
                         <p> Total </p>
                     </Col>
                     <Col xl style={{ textAlign: "right" }}>
-                        <p> Rp {product.price} </p>
+                        <p> Rp {total} </p>
                     </Col>
                 </Row>
                 <Row className="cart-checkout">

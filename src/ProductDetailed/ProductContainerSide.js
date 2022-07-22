@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
 import Button from '../Components/Button';
@@ -27,16 +27,19 @@ const Plus = () => {
     );
 };
 
-export default function ProductContainerSide({ product }) {
+export default function ProductContainerSide({ product, qty, setQty, color, setColor }) {
     {/* left side panel */ }
-    const [qty, setQty] = useState(1);
 
     const navigate = useNavigate();
     const ButtonDidClick = () => {
         navigate("/cart");
     };
 
-    function productColor(color) {
+    const chooseColor = e => {
+        setColor(e.target);
+    }
+    
+    const productColor = (color) => {
         // return colors?.map((color) =>
         return (
             <>
@@ -47,6 +50,8 @@ export default function ProductContainerSide({ product }) {
                     value={color}
                     key={color}
                     style={{ backgroundColor: color }}
+                    onChange={chooseColor}
+                    checked={true}
                 />
                 <label>  </label>
             </>

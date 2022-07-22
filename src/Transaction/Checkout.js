@@ -18,9 +18,11 @@ export default function Checkout({ checkoutItem }) {
     // const { checkoutItem } = useCheckout();
     const [productBought, setProductBought] = useState({});
     // const productBought = checkoutItem;
-    useEffect(() => {
-        setProductBought(checkoutItem);
-    }, [])
+
+    // useEffect(() => {
+    //     setProductBought(checkoutItem);
+    // }, [])
+
     // useEffect(() => {
     //     const getDataCheckout = async () => {
     //         await axios
@@ -33,6 +35,8 @@ export default function Checkout({ checkoutItem }) {
     //         setProductBought({});
     //     };
     // }, []);
+
+    const totalPrice = checkoutItem.qty * checkoutItem.price;
 
     return (
         <>
@@ -62,12 +66,12 @@ export default function Checkout({ checkoutItem }) {
                             </Col>
                         </Row>
                         <Row>
-                            <CheckoutContainer product={productBought} />
+                            <CheckoutContainer product={checkoutItem} total={totalPrice} />
                         </Row>
                     </Col>
 
                     <Col xl={{ span: 3, offset: 1 }} sm={{ span: 10 }}>
-                        <CartSummary product={productBought} />
+                        <CartSummary product={checkoutItem} total={totalPrice} />
                     </Col>
                     {/* <hr /> */}
                 </Row>

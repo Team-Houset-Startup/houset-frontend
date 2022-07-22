@@ -7,10 +7,7 @@ import CartItem from './CartItem'
 
 import "./assets/style/cart-container.css"
 
-export default function CheckoutContainer({ product }) {
-    const [qty, setQty] = useState(1);
-    const [subPrice, setSubPrice] = useState(0);
-
+export default function CheckoutContainer({ product, total }) {
     return (
         <Container className="cart-container">
             <Row className="cart-container-header">
@@ -29,15 +26,15 @@ export default function CheckoutContainer({ product }) {
                 </Col>
 
                 <Col xl={{ order: 3 }} lg={{ order: 3 }} className="cart-container-info">
-                    <p> {qty}</p>
+                    <p> {product?.qty} </p>
                 </Col>
 
                 <Col xl={{ order: 4 }} lg={{ order: 4 }} className="cart-container-info">
-                    <p> Rp {subPrice} </p>
+                    <p> Rp {total} </p>
                 </Col>
             </Row>
             <Row>
-                <p className="cart-subtotal"> Total bayar Rp {product?.price} </p>
+                <p className="cart-subtotal"> Total bayar Rp {total} </p>
             </Row>
         </Container>
     )
