@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from '../api/axios'
 
 import Button, { ButtonWithHandle } from '../Components/Button'
+import useCheckout from '../hooks/useCheckout'
 
 import "./assets/style/cart-summary.css"
 
@@ -11,8 +12,9 @@ const TRANSACTION_URL = '/public/api/transaction/create'
 
 export default function CartSummary({ product, total }) {
     const [transDetails, settransDetails] = useState([]);
+    const { saveInvData } = useCheckout();
     const navigate = useNavigate();
-    
+
     useEffect(() => {
         settransDetails(transDetails.concat({ "product_id": product.id, "quantity": product.qty }))
     }, [])
@@ -33,8 +35,9 @@ export default function CartSummary({ product, total }) {
                     }
                 }
             )
-            const transCode = response?.data?.data?.transaction_code;
-            navigate('/invoice')
+            const invData = response?.data?.data;
+            saveInvData(invData);
+            navigate('/invoice');
         } catch (err) {
             console.log(err?.response?.status);
         }

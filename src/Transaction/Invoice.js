@@ -6,10 +6,13 @@ import Footer from '../Components/Footer'
 import NavigationBar from '../Components/NavigationBar'
 import Dropdown from '../Components/Dropdown'
 
+import Mandiri from './assets/image/logo-mandiri.png'
+
 import "./assets/style/invoice.css"
 
 export default function Invoice({ invData }) {
     const [deadline, setDeadline] = useState(new Date().toLocaleString())
+    console.log(invData)
     return (
         <>
             <NavigationBar />
@@ -29,41 +32,50 @@ export default function Invoice({ invData }) {
 
                 <Row className="invoice-payment">
                     <Row>
-                        <Col className="inv-part-title"> BNI Virtual Account </Col>
-                        <Col className="inv-payment-logo"> BNI Virtual Account </Col>
+                        <Col className="inv-part-title"> Transfer Pembayaran </Col>
                     </Row>
 
                     <hr />
 
                     <Row>
                         <Col>
-                            <p classname="inv-part-subtitle"> Nomor Virtual Account </p>
-                            <p className="inv-part-content"> 08080213123123103123 </p>
+                            <p classname="inv-part-subtitle"> Fakhrurezi Maindra </p>
+                            <p className="inv-part-content"> 1300020939909 </p>
                         </Col>
-                        <Col className="inv-payment-action"> Salin </Col>
+                        <Col className="inv-payment-action"> <img src={Mandiri} alt="logo-bank" /> </Col>
                     </Row>
 
                     <Row>
                         <Col>
                             <p classname="inv-part-subtitle"> Total Pembayaran </p>
-                            <p className="inv-part-content"> Rp 1.050.000 </p>
+                            <p className="inv-part-content"> {invData.total_amount} </p>
                         </Col>
                         <Col className="inv-payment-action"> Lihat Detail </Col>
                     </Row>
                 </Row>
 
                 <Row md={8} sm={12} className="invoice-button-col">
-                    <Col md={4} sm={6}>
+                    <div className="invoice-button-confirm">
                         <Button type="primary-button" text="Konfirmasi Pembayaran" />
-                    </Col>
+                    </div>
                 </Row>
 
-                <Row className="invoice-guide">
-                    <p className="inv-part-title"> Cara Pembayaran </p>
+                <Row className="invoice-info">
+                    <p className="inv-part-title" style={{marginTop:"32px"}}> Informasi Penting </p>
                     <hr />
-                    <p className="inv-guide-subtitle"> PANDUAN PEMBAYARAN </p>
+                    <p className="inv-info-subtitle"> Proses konfirmasi pembayaran kelas akan membutuhkan waktu sekitar 20 menit (dari pesan WhatsApp dikirim). Mohon menunggu dengan sabar dan terima kasih. </p>
 
+                    <p className="inv-part-title"> Butuh bantuan? Hubungi kami </p>
+                        <hr />
                     <Row>
+                        <Col className="inv-info-subtitle" style={{marginBottom:"32px"}}> Admin </Col>
+                        <Col className="inv-info-subtitle" style={{ textAlign: "right" }}> Rexy Regina </Col>
+                    </Row>
+                    <Row style={{marginBottom:"32px"}}>
+                        <Col className="inv-info-subtitle" style={{marginBottom:"32px"}}> No. WhatsApp </Col>
+                        <Col className="inv-info-subtitle-alt" style={{ textAlign: "right" }}> 082218585101 </Col>
+                    </Row>
+                    {/* <Row>
                         <Col className="inv-part-content"> ATM BNI </Col>
                         <Col style={ {textAlign:"right"} }> <Dropdown /> </Col>
                     </Row>
@@ -74,7 +86,7 @@ export default function Invoice({ invData }) {
                     <Row>
                         <Col className="inv-part-content"> Internet Banking BNI </Col>
                         <Col style={ {textAlign:"right"} }> <Dropdown /> </Col>
-                    </Row>
+                    </Row> */}
                 </Row>
             </Container>
 

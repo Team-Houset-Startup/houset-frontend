@@ -26,8 +26,8 @@ export const CheckoutProvider = ({ children }) => {
         updateCheckoutItem(dataForUpdate)
     }
 
-    const saveInvData = (transCode) => {
-        setInvData(transCode)
+    const saveInvData = (data) => {
+        setInvData(data)
     }
 
     return (
