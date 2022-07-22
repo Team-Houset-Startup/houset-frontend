@@ -12,7 +12,7 @@ import useAuth from '../hooks/useAuth';
 import "./assets/style/auth.scss"
 import "./assets/style/login.css";
 
-const LOGIN_URL = '/user/login';
+const LOGIN_URL = '/public/api/user/login';
 
 export default function Login() {
     const { setAuth } = useAuth();

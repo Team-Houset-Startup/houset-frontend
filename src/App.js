@@ -8,9 +8,6 @@ import Product from './Product/Product';
 import Canvas from './Canvas/Canvas';
 import Consult from './Consult/Consult';
 import ProductDetailed from './ProductDetailed/ProductDetailed';
-import Cart from './Transaction/Cart';
-import Checkout from './Transaction/Checkout';
-import Invoice from './Transaction/Invoice';
 import Profile from './Profile/Profile';
 import Error from './Error/Error'
 import ContactUs from './ContactUs/ContactUs';
@@ -99,8 +96,8 @@ function App(params) {
                 <Route path="/consult" element={<Consult />} />
 
                 {/* <Route path="/cart" element={<Cart />} /> 
-                <Route path="/checkout" element={<Checkout />} /> */}
-                <Route path="/invoice" element={<Invoice />} />
+                <Route path="/checkout" element={<Checkout />} /> 
+                <Route path="/invoice" element={<Invoice />} />*/}
 
                 <Route path="/contact-us" element={<ContactUs />} />
                 {/* <Route path="/profile" element={<Profile />} /> */}

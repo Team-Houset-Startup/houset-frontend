@@ -1,7 +1,8 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { createContext } from "react"
 import { Route, Routes } from "react-router-dom";
 import Checkout from "../Transaction/Checkout";
+import Invoice from "../Transaction/Invoice";
 
 const CheckoutContext = createContext({});
 
@@ -19,17 +20,23 @@ export const CheckoutProvider = ({ children }) => {
             image_gallery: ""
         }
     )
+    const [invData, setInvData] = useState();
 
     const updateCheckoutCart = (dataForUpdate) => {
         updateCheckoutItem(dataForUpdate)
     }
 
+    const saveInvData = (transCode) => {
+        setInvData(transCode)
+    }
+
     return (
-        <CheckoutContext.Provider value={{ updateCheckoutCart }}>
+        <CheckoutContext.Provider value={{ updateCheckoutCart, saveInvData }}>
             {children}
             <Routes>
                 {/* {checkoutItem !== {} ? <Route path="/checkout" element={<Checkout checkoutItem={checkoutItem} />} /> : ""} */}
                 <Route path="/checkout" element={<Checkout checkoutItem={checkoutItem} />} />
+                <Route path="/invoice" element={<Invoice invData={invData} />} />
             </Routes>
         </CheckoutContext.Provider>
     )

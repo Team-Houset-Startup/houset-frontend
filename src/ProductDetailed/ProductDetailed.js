@@ -28,7 +28,7 @@ export default function ProductDetailed() {
     const { updateCheckoutCart } = useCheckout();
 
     const doUpdateCheckout = (data) => {
-        updateCheckoutCart({ id: "22" });
+        updateCheckoutCart({ id: data.id });
         updateCheckoutCart({ name: data.name });
         updateCheckoutCart({ type: data.type });
         updateCheckoutCart({ price: data.price });
@@ -47,7 +47,7 @@ export default function ProductDetailed() {
     useEffect(() => {
         const getData = async () => {
             await axios
-                .get(`/product/${productId}`, {})
+                .get(`/public/api/product/${productId}`, {})
                 .then((res) => {
                     setSelectedProduct(res.data?.data);
                     doUpdateCheckout(res.data?.data);
@@ -72,7 +72,7 @@ export default function ProductDetailed() {
                             product={selectedProduct}
                             qty={qty}
                             setQty={setQty}
-                            color={color}
+                            maxQty={selectedProduct.quantity}
                             setColor={setColor}
                         />
                     </Col>

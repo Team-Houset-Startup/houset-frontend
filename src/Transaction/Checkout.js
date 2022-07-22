@@ -16,7 +16,7 @@ import useCheckout from '../hooks/useCheckout'
 
 export default function Checkout({ checkoutItem }) {
     // const { checkoutItem } = useCheckout();
-    const [productBought, setProductBought] = useState({});
+    // const [productBought, setProductBought] = useState({});
     // const productBought = checkoutItem;
 
     // useEffect(() => {

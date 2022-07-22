@@ -8,7 +8,7 @@ import Dropdown from '../Components/Dropdown'
 
 import "./assets/style/invoice.css"
 
-export default function Invoice() {
+export default function Invoice({ invData }) {
     const [deadline, setDeadline] = useState(new Date().toLocaleString())
     return (
         <>
@@ -53,12 +53,8 @@ export default function Invoice() {
                 </Row>
 
                 <Row md={8} sm={12} className="invoice-button-col">
-                    <Col md sm={6}>
-                        <Button type="action-button" text="Belanja Lagi" />
-                    </Col>
-
-                    <Col md sm={6}>
-                        <Button type="primary-button" text="Cek Status Pembayaran" />
+                    <Col md={4} sm={6}>
+                        <Button type="primary-button" text="Konfirmasi Pembayaran" />
                     </Col>
                 </Row>
 

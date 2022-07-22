@@ -27,7 +27,7 @@ const Plus = () => {
     );
 };
 
-export default function ProductContainerSide({ product, qty, setQty, color, setColor }) {
+export default function ProductContainerSide({ product, qty, setQty, maxQty, setColor }) {
     {/* left side panel */ }
 
     const navigate = useNavigate();
@@ -88,7 +88,7 @@ export default function ProductContainerSide({ product, qty, setQty, color, setC
                             {<Minus />}
                         </button>
                         <span className="product-qty-val"> {qty} </span>
-                        <button className="button-sub" onClick={() => setQty(qty + 1)}>
+                        <button className="button-sub" onClick={() => setQty(qty + 1)} disabled={qty === maxQty}>
                             {<Plus />}
                         </button>
                     </Col>

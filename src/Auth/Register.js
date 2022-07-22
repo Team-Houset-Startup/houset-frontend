@@ -11,7 +11,7 @@ import "./assets/style/login.css";
 
 import EyeIcon from "./assets/image/eye-icon.svg";
 
-const REGISTER_URL = '/user/register';
+const REGISTER_URL = '/public/api/user/register';
 
 export default function Register() {
     const navigate = useNavigate('');

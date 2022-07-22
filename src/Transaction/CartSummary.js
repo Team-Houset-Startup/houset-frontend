@@ -1,11 +1,45 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
+import axios from '../api/axios'
 
-import Button from '../Components/Button'
+import Button, { ButtonWithHandle } from '../Components/Button'
 
 import "./assets/style/cart-summary.css"
 
+const TRANSACTION_URL = '/public/api/transaction/create'
+
 export default function CartSummary({ product, total }) {
+    const [transDetails, settransDetails] = useState([]);
+    const navigate = useNavigate();
+    
+    useEffect(() => {
+        settransDetails(transDetails.concat({ "product_id": product.id, "quantity": product.qty }))
+    }, [])
+    
+    const goToCheckout = async (e) => {
+        // this will send checkout summary to database and 
+        // return transaction code that needed for verify
+        e.preventDefault();
+        const bToken = localStorage.getItem('token');
+        try {
+            const response = await axios.post(
+                TRANSACTION_URL,
+                JSON.stringify({ total_amount: total, transaction_details: transDetails, }),
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${bToken}`
+                    }
+                }
+            )
+            const transCode = response?.data?.data?.transaction_code;
+            navigate('/invoice')
+        } catch (err) {
+            console.log(err?.response?.status);
+        }
+    }
+
     return (
         <>
             {/* <input type="text" className="input-promotion-code" placeholder='Masukkan Kode Promo' /> */}
@@ -41,7 +75,7 @@ export default function CartSummary({ product, total }) {
                 </Row>
                 <Row className="cart-checkout">
                     <Col>
-                        <Button type="primary-button" text="Checkout" toPage="/invoice" />
+                        <ButtonWithHandle type="primary-button" text="Checkout" onClick={goToCheckout} />
                     </Col>
                 </Row>
             </Container>

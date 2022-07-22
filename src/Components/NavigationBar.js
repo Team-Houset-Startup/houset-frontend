@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import HousetLogo from "../assets/image/houset-logo2.png";
 import Button from './Button';
 import ProfilePicture from './assets/image/profile-picture.png';
@@ -10,10 +10,11 @@ import Search from './Search';
 function NavigationBar() {
     const token = localStorage.getItem('token')
     let profile = (<> </>)
+    const navigate = useNavigate()
 
     const handleLogout = () => {
         localStorage.removeItem('token');
-        window.location.reload()
+        navigate('/login')
     }
 
     if (!token) {
