@@ -58,7 +58,8 @@ export default function Login() {
                 // setAuth({ email, accessToken });
                 // localStorage.setItem('token', accessToken);
                 saveToken(accessToken);
-                navigate('/');
+                navigate(-1);
+                // window.location.reload();
             } catch (err) {
                 if (!err?.response) {
                     setErrMsg("No Server Response");
