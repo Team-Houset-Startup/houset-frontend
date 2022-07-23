@@ -12,7 +12,7 @@ const ProductList = (count) => {
     let Products = [];
     products?.slice(0, count)?.forEach((product) => {
         Products.push(
-            <FurnitureCard product={product} />
+            <FurnitureCard product={product} key={product.id}/>
         )
     })
     return (

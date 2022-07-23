@@ -2,6 +2,6 @@ import { useContext, useDebugValue } from "react";
 import AuthContext from "../context/AuthProvider";
 
 export default function useAuth() {
-    const { auth } = useContext(AuthContext);
-    return useContext(AuthContext);
+    const authContext = useContext(AuthContext);
+    return authContext;
 }

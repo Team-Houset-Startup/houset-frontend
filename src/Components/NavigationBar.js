@@ -7,17 +7,22 @@ import ProfilePicture from './assets/image/profile-picture.png';
 import "./assets/style/navigation-bar.css";
 import Search from './Search';
 
+import useAuth from '../hooks/useAuth';
+
 function NavigationBar() {
-    const token = localStorage.getItem('token')
-    let profile = (<> </>)
-    const navigate = useNavigate()
+    const { getToken, removeToken } = useAuth();
+    // const token = localStorage.getItem('token')
+    let profile = (<> </>);
+    const navigate = useNavigate();
 
     const handleLogout = () => {
-        localStorage.removeItem('token');
-        navigate('/login')
+        // localStorage.removeItem('token');
+        const logout = removeToken();
+        navigate('/login');
+        // window.location.reload();
     }
 
-    if (!token) {
+    if (!getToken()) {
         profile = (
             <div className="navbar-login-register">
                 <Button text="Register" type="secondary-button" toPage={"/register"} />

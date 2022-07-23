@@ -17,12 +17,18 @@ import ScrollToTop from './Components/ScrollToTop';
 import { ModalProvider } from './context/modal';
 import { CheckoutProvider } from './context/CheckoutProvider';
 
+import useToken from './hooks/useToken';
+import useAuth from './hooks/useAuth';
+
 function App(params) {
   // const { token, setToken } = useToken();
-  const token = localStorage.getItem('token');
+  // const token = localStorage.getItem('token');
   // const [authRoute, setAuthRoute] = useState([]);
+  const { getToken } = useAuth();
+  // const token = getToken;
 
-  if (token === null) {
+  // check if there is no token stored
+  if (!getToken()) {
     return (
       <div className="homepage-body">
         <Router>
