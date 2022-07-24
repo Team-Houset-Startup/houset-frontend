@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from '../api/axios'
 
 import Button, { ButtonWithHandle } from '../Components/Button'
+import useAuth from '../hooks/useAuth'
 import useCheckout from '../hooks/useCheckout'
 
 import "./assets/style/cart-summary.css"
@@ -14,6 +15,7 @@ export default function CartSummary({ product, total }) {
     const [transDetails, settransDetails] = useState([]);
     const { saveInvData } = useCheckout();
     const navigate = useNavigate();
+    const { getToken } = useAuth();
 
     useEffect(() => {
         settransDetails(transDetails.concat({ "product_id": product.id, "quantity": product.qty }))
@@ -23,7 +25,7 @@ export default function CartSummary({ product, total }) {
         // this will send checkout summary to database and 
         // return transaction code that needed for verify
         e.preventDefault();
-        const bToken = localStorage.getItem('token');
+        const bToken = getToken();
         try {
             const response = await axios.post(
                 TRANSACTION_URL,

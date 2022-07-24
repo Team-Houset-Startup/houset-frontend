@@ -3,7 +3,7 @@
 }
 
 .thumbnail-360 {
-    margin: 40px 100px 0px 0px;
+	margin: 40px 100px 0px 0px;
 
 	img {
 		width: 400px;
@@ -12,19 +12,24 @@
 	canvas {
 		width: 100px;
 	}
-
 }
 
 .thumbnail-list {
-	
-
-	.thumbnail-list-item img {
-		margin-top: 15px;
+	.thumbnail-list-item {
 		width: 130px;
+		height: 130px;
 
-		border: 1px solid #055053;
-		box-sizing: border-box;
-		border-radius: 30px;
+		img {
+			object-fit: contain;
+			margin-top: 15px;
+
+			border: 1px solid #055053;
+			box-sizing: border-box;
+			border-radius: 30px;
+		}
+
+		img:hover {
+			cursor: pointer;
+		}
 	}
-
 }

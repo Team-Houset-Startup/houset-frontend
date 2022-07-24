@@ -61,7 +61,7 @@ function Product({ variant }) {
             setCurrentProducts(products.slice(productOffset, endOffset));
             setPageCount(Math.ceil(products.length / productsPerPage));
         }
-    }, [productOffset, productsPerPage]);
+    }, [productOffset, productsPerPage, products]);
 
     const handlePageClick = (event) => {
         const newOffset = (event.selected * productsPerPage) % products.length;

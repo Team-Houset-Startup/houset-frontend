@@ -70,25 +70,7 @@ const review = () => {
     )
 }
 
-export default function ProductDescription({product}) {
-    const products = {
-        "desc": "Nestudio Kursi dapat membuat ruangan Anda tampil cantik. Kerangkanya yang terbuat dari kayu serta desain yang unik dan warna cerah akan memberikan aksen pada ruangan tanpa perlu banyak dekorasi. Letakkan kursi ini di dekat jendela atau berhimpitan dengan tembok dan lihat bagaimana ruangan akan terasa lebih hidup! Bantalan dengan busa empuk dan lapisan per membuat Anda tetap nyaman meski telah duduk berjam-jam. Finishing produk menggunakan veneer berbahan natural sehingga mempertahankan keindahan tekstur serat alami. Didesain ergonomis dengan kemiringan sudut (untuk sofa & kursi) dan dimensi yang telah disesuaikan dengan tinggi dan postur tubuh konsumen Asia.Telah melalui proses pengujian dan tersertifikasi sehingga kualitas dan ketahanannya terjamin.",
-        "details": {
-            "brand": "Nestudio",
-            "color": "Tosca dan Cokelat",
-            "condition": "Tidak butuh perakitan",
-            "style": "Scandinavian",
-            "material-dudukan": "Kayu",
-            "material-frame": "Kayu",
-            "product-type": "Upholstery",
-            "material": "Kayu, Kain Woven, dan Busa"
-        },
-        "specifications": {
-            "packing-size": ["79cm", "80cm", "82cm"],
-            "item-size": ["72cm", "73cm", "75cm"],
-            "weight": "14kg"
-        }
-    }
+export default function ProductDescription({ product }) {
 
     return (
         <div className="product-description">

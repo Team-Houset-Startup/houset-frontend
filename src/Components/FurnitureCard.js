@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { propTypes } from 'react-bootstrap/esm/Image';
 import { Link } from 'react-router-dom';
 import ModalContext from '../context/modal';
@@ -8,11 +8,19 @@ import "./assets/style/product-card.css";
 
 export default function FurnitureCard( {product} ) {
     const {closeAllModal} = useContext(ModalContext)
+    const baseImage = "https://houset.my.id/storage/app/public/";
+    const [productImage, setProductImage] = useState();
+
+    useEffect(() => {
+        if (Object.keys(product).length !== 0 ) {
+            setProductImage(product.image_gallery[0].location);
+        }
+    })
 
     return (
         <div className="product-item" onClick={closeAllModal}>
             <Link to={`/product/${product.id}`} >
-                <div className="product-pict"> <img src={product.image} alt="" /> </div>
+                <div className="product-pict"> <img src={baseImage + productImage} alt="" /> </div>
                 <p className="item-type"> {product.type} </p>
                 <p className="item-name"> {product.name} </p>
                 <p className="item-price-discounted"> Rp {product.price} </p>

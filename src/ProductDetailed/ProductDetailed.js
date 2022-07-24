@@ -77,7 +77,7 @@ export default function ProductDetailed() {
                         />
                     </Col>
                     <Col xl={7}>
-                        <ProductThumbnail product={selectedProduct} />
+                        <ProductThumbnail images={selectedProduct.image_gallery} />
                     </Col>
                 </Row>
 

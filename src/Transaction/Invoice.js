@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import Button from '../Components/Button'
+import Button, { ButtonWithHandle } from '../Components/Button'
 
 import Footer from '../Components/Footer'
 import NavigationBar from '../Components/NavigationBar'
@@ -12,7 +12,6 @@ import "./assets/style/invoice.css"
 
 export default function Invoice({ invData }) {
     const [deadline, setDeadline] = useState(new Date().toLocaleString())
-    console.log(invData)
     return (
         <>
             <NavigationBar />
@@ -56,14 +55,14 @@ export default function Invoice({ invData }) {
 
                 <Row md={8} sm={12} className="invoice-button-col">
                     <div className="invoice-button-confirm">
-                        <Button type="primary-button" text="Konfirmasi Pembayaran" />
+                    <ButtonWithHandle type="primary-button" text="Konfirmasi Pembayaran" onClick={() => window.open('http://wa.me/6282218585101', '_blank')}/>
                     </div>
                 </Row>
 
                 <Row className="invoice-info">
                     <p className="inv-part-title" style={{marginTop:"32px"}}> Informasi Penting </p>
                     <hr />
-                    <p className="inv-info-subtitle"> Proses konfirmasi pembayaran kelas akan membutuhkan waktu sekitar 20 menit (dari pesan WhatsApp dikirim). Mohon menunggu dengan sabar dan terima kasih. </p>
+                    <p className="inv-info-subtitle"> Proses konfirmasi pembayaran akan membutuhkan waktu sekitar 20 menit (dari pesan WhatsApp dikirim). Mohon menunggu dengan sabar dan terima kasih. </p>
 
                     <p className="inv-part-title"> Butuh bantuan? Hubungi kami </p>
                         <hr />
