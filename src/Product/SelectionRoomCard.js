@@ -1,6 +1,4 @@
 import React from 'react';
-import RoomPreview from "./assets/image/room-scrollable.png";
-import { Link } from 'react-router-dom';
 
 import "./assets/style/selection-room-card.css";
 

@@ -1,5 +1,5 @@
-import React, { useState, useEffect, } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "../api/axios";
 // import { useHistory,useLocation } from "react-router-dom";
 // import { Tab, Tabs } from "react-bootstrap";
@@ -11,14 +11,12 @@ import RecommendationProduct from "../Components/RecommendationProduct";
 // import ProductLastSeen from "../Components/ProductLastSeen";
 import ProductDescription from "./ProductDescription";
 import ProductContainerSide from "./ProductContainerSide";
-import Button from "../Components/Button";
 
 import ProductThumbnail from "./ProductThumbnail";
-import GetProductDataContext from "../context/ProductAPI";
 
 import "./assets/style/product-detailed.css";
-import CheckoutContext from "../context/CheckoutProvider";
 import useCheckout from "../hooks/useCheckout";
+import BorderLine from "../Components/BorderLine";
 
 export default function ProductDetailed() {
     // initialize data needed for checkout
@@ -87,11 +85,9 @@ export default function ProductDetailed() {
                     </Col>
                 </Row>
 
-                <hr />
-                {/* error below */}
-                <RecommendationProduct count="4" />
+                <BorderLine />
 
-                {/* <ProductLastSeen /> */}
+                <RecommendationProduct count="4" />
             </Container>
             <Footer />
         </>

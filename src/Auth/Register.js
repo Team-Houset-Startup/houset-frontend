@@ -123,7 +123,6 @@ export default function Register() {
                             <img src={EyeIcon} onClick={() => setShowPassword(!showPassword)} className="show-password" />
                         </div>
 
-                        <br />
                         <div className="agreement-box">
                             <input className="bottom-info" type="checkbox" /> Saya setuju dengan <strong> syarat & ketentuan </strong>
                             serta <strong>Kebijakan Privasi</strong> di Houset <br />

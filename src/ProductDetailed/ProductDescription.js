@@ -1,7 +1,6 @@
 // import { Tab } from 'bootstrap'
 import React from 'react'
 import { Col, Container, Row, Tabs, Tab } from 'react-bootstrap'
-import Product from '../Product/Product'
 
 import "./assets/style/product-description.scss"
 

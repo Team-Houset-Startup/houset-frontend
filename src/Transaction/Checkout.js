@@ -1,43 +1,29 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useState, useReducer } from 'react'
 import { Container, Col, Row } from 'react-bootstrap'
 
 import NavigationBar from '../Components/NavigationBar'
 import Footer from '../Components/Footer'
-import Button from '../Components/Button'
+import { ButtonWithHandle } from '../Components/Button'
 import CheckoutContainer from './CheckoutContainer'
-import CartItem from './CartItem'
+// import CartItem from './CartItem'
 import CartSummary from "./CartSummary.js"
-import { product } from "../db/product"
 
 import "./assets/style/checkout.css"
-import CheckoutContext from '../context/CheckoutProvider'
-import axios from '../api/axios'
-import useCheckout from '../hooks/useCheckout'
 
 export default function Checkout({ checkoutItem }) {
-    // const { checkoutItem } = useCheckout();
-    // const [productBought, setProductBought] = useState({});
-    // const productBought = checkoutItem;
-
-    // useEffect(() => {
-    //     setProductBought(checkoutItem);
-    // }, [])
-
-    // useEffect(() => {
-    //     const getDataCheckout = async () => {
-    //         await axios
-    //             .get(`/product/${checkoutItem}`, {})
-    //             .then((res) => setProductBought(res.data?.data))
-    //             .catch((err) => console.log(err));
-    //     };
-    //     getDataCheckout();
-    //     return () => {
-    //         setProductBought({});
-    //     };
-    // }, []);
-
     const totalPrice = checkoutItem.qty * checkoutItem.price;
+    const [editAdr, setEditAdr] = useState(false);
+    const initAdr = {
+        adrName: "Muhammad Juno",
+        adrNumber: "082249128412",
+        adrDetail: "Perumahan Permata Buah Batu, Blok. C, No. 146, Lengkong, Bojongsoang, Bandung,40287"
+    }
 
+    const [address, updateAddress] = useReducer(
+        (state, updates) => ({ ...state, ...updates }),
+        initAdr
+    );
+    
     return (
         <>
             <NavigationBar />
@@ -56,13 +42,63 @@ export default function Checkout({ checkoutItem }) {
                     <Col xl={{ span: 7 }} sm={{ span: 10 }}>
                         <Row className="checkout-details">
                             <Col>
-                                <p className="checkout-details-text"> Muhammad Juno <span> (Rumah) </span> </p>
-                                <p className="checkout-details-text"> 082249128412 </p>
-                                <p className="checkout-details-text"> Perumahan Permata Buah Batu, Blok. C, No. 146, Lengkong, Bojongsoang, Bandung,40287 </p>
+                                {editAdr ? (
+                                    <table>
+                                        <tr>
+                                            <td> <label className="checkout-details-text">Nama</label> </td>
+                                            <td>
+                                                <input
+                                                    type="text"
+                                                    className="checkout-details-input"
+                                                    // onChange={(e) => (updateAddress({ type: 'name', value: e.target.value }))}
+                                                    onChange={(e) => (updateAddress({ adrName: e.target.value }))}
+                                                    value={address.adrName}
+                                                />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label className="checkout-details-text">Nomor Telepon</label> </td>
+                                            <td>
+                                                <input
+                                                    type="text"
+                                                    className="checkout-details-input"
+                                                    // onChange={(e) => (updateAddress({ type: 'number', value: e.target.value }))}
+                                                    onChange={(e) => (updateAddress({ adrNumber: e.target.value }))}
+                                                    value={address.adrNumber}
+                                                />
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td> <label className="checkout-details-text">Detail Alamat</label> </td>
+                                            <td>
+                                                <textarea
+                                                    type="text"
+                                                    className="checkout-details-input"
+                                                    // onChange={(e) => (updateAddress({ type: 'detail', value: e.target.value }))}
+                                                    onChange={(e) => (updateAddress({ adrDetail: e.target.value }))}
+                                                    value={address.adrDetail}
+                                                    style={{ height: "100px" }}
+                                                />
+                                            </td>
+                                            <br />
+                                        </tr>
+                                    </table>
+                                ) : (
+                                    <>
+                                        <p className="checkout-details-text"> {address.adrName} <span> (Rumah) </span> </p>
+                                        <p className="checkout-details-text"> {address.adrNumber} </p>
+                                        <p className="checkout-details-text"> {address.adrDetail} </p>
+                                    </>
+                                )}
                             </Col>
 
                             <Col xl={{ span: 1 }} sm={{ span: 1 }} className="checkout-details-edit justify-content-end">
-                                <Button type="action-button" text="Edit" />
+                                {editAdr ?
+                                    <ButtonWithHandle type="primary-button" text="Save" onClick={() => (setEditAdr(!editAdr))} />
+                                    :
+                                    <ButtonWithHandle type="action-button" text="Edit" onClick={() => (setEditAdr(!editAdr))} />
+                                }
                             </Col>
                         </Row>
                         <Row>

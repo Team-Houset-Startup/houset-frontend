@@ -11,7 +11,8 @@ export const GetProductDataProvider = ({ children }) => {
             await axios
                 .get(`/public/api/product/all`, {})
                 .then((res) => setProducts(res.data?.data?.data
-                    .filter(product => product.quantity > 0)))
+                    .filter(product => product.quantity > 0)
+                ))
                 .catch((error) => console.log(error));
         };
         getData();

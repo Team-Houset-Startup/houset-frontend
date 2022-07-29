@@ -21,6 +21,8 @@
 .product-pict img {
 	width: 167px;
 	height: 167px;
+	padding-top: auto;
+	padding-bottom: auto;
 }
 
 .product-item a {

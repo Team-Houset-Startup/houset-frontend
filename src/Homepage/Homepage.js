@@ -2,7 +2,7 @@ import React from 'react';
 // import { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ProductLists from '../Components/ProductLists';
 import RoomLists from '../Components/RoomLists';
@@ -19,6 +19,7 @@ import RecommendationProduct from '../Components/RecommendationProduct';
 // import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
 function Homepage() {
+
     return (
         <>
             <NavigationBar />
@@ -43,6 +44,7 @@ function Homepage() {
                 <Row className="homepage-design-container">
                     <Col className="homepage-design-text">
                         <h2> Mulai dekorasi dengan 3D </h2>
+                        
                         <p>
                             Inovasi teknologi 3D Modeling kini telah hadir di Houset untuk memudahkan visualisasi setiap interior pada ruangan dan menyajikan kesan lebih nyata.
                         </p>
@@ -60,7 +62,7 @@ function Homepage() {
                 {/* </Row> */}
 
                 <Row className="homepage-product-lists">
-                    <ProductLists count="4" />
+                    <ProductLists />
                 </Row>
 
                 {/* <br /> */}
