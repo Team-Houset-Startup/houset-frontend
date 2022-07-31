@@ -1,6 +1,9 @@
 import React from 'react'
 
 export default function DateFormatter({ dayAddition }) {
+    // return a new format date from today
+    // dayAddition add day from today
+
     const today = new Date();
     const date = today.getDate() + dayAddition;
     const year = today.getFullYear();

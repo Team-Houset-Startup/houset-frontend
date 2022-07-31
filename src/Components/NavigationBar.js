@@ -16,7 +16,6 @@ function NavigationBar() {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        // localStorage.removeItem('token');
         const logout = removeToken();
         navigate('/login');
         // window.location.reload();

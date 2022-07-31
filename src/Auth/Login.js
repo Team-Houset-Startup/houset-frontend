@@ -29,7 +29,7 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errMsg, setErrMsg] = useState("");
-    const [alertWarning, setAlertWarning] = useState(false);
+    
     useEffect(() => {
         userRef.current.focus();
     }, []);
@@ -54,11 +54,8 @@ export default function Login() {
                     },
                 )
                 const accessToken = response?.data?.data?.token;
-                // setAuth({ email, accessToken });
-                // localStorage.setItem('token', accessToken);
                 saveToken(accessToken);
                 navigate(-1);
-                // window.location.reload();
             } catch (err) {
                 if (!err?.response) {
                     setErrMsg("No Server Response");

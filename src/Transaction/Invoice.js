@@ -17,7 +17,6 @@ export default function Invoice({ invData }) {
             <NavigationBar />
 
             <Container className="invoice-container">
-
                 <Row className="invoice-deadline">
                     <Col className="invoice-deadline-container">
                         <p className="inv-deadline-text"> Selesaikan pembayaran dalam </p>
@@ -46,7 +45,7 @@ export default function Invoice({ invData }) {
 
                     <Row>
                         <Col>
-                            <p classname="inv-part-subtitle" style={{ marginBottom: "2px" }}> Total Pembayaran </p>
+                            <p className="inv-part-subtitle" style={{ marginBottom: "2px" }}> Total Pembayaran </p>
                             <p className="inv-part-content"> {invData.total_amount} </p>
                         </Col>
                         <Col className="inv-payment-action"> Lihat Detail </Col>
@@ -54,8 +53,8 @@ export default function Invoice({ invData }) {
 
                     <Row>
                         <Col>
-                            <p classname="inv-part-subtitle" style={{ marginBottom: "2px" }}> Berita Transfer </p>
-                            <p className="inv-part-content"> {invData.transaction_code} </p>
+                            <p className="inv-part-subtitle" style={{ marginBottom: "2px" }}> Berita Transfer </p>
+                            <p className="inv-part-content">  </p>
                         </Col>
                     </Row>
                 </Row>
@@ -81,18 +80,6 @@ export default function Invoice({ invData }) {
                         <Col className="inv-info-subtitle" style={{ marginBottom: "32px" }}> No. WhatsApp </Col>
                         <Col className="inv-info-subtitle-alt" style={{ textAlign: "right" }}> 082218585101 </Col>
                     </Row>
-                    {/* <Row>
-                        <Col className="inv-part-content"> ATM BNI </Col>
-                        <Col style={ {textAlign:"right"} }> <Dropdown /> </Col>
-                    </Row>
-                    <Row>
-                        <Col className="inv-part-content"> Mobile Banking BNI </Col>
-                        <Col style={ {textAlign:"right"} }> <Dropdown /> </Col>
-                    </Row>
-                    <Row>
-                        <Col className="inv-part-content"> Internet Banking BNI </Col>
-                        <Col style={ {textAlign:"right"} }> <Dropdown /> </Col>
-                    </Row> */}
                 </Row>
             </Container>
 

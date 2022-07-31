@@ -18,13 +18,11 @@ export default function Register() {
 
     const userRef = useRef();
     const errRef = useRef();
-    const [userFocus, setUserFocus] = useState(false);
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
 
-    const [matchPassword, setMatchPassword] = useState("");
     const [errMsg, setErrMsg] = useState("");
     const [success, setSuccess] = useState(false);
 
@@ -34,7 +32,7 @@ export default function Register() {
 
     useEffect(() => {
         setErrMsg("");
-    }, [email, password, matchPassword]);
+    }, [email, password]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -55,10 +53,6 @@ export default function Register() {
                 }
             );
             setSuccess(true);
-            //clear state
-            setEmail("");
-            setPassword("");
-            setMatchPassword("");
         } catch (err) {
             if (!err?.response) {
                 setErrMsg("No Server Response");
