@@ -44,7 +44,7 @@ function Canvas() {
             <Container className="canvas-container">
                 <Row>
                     <Col>
-                        <p className="canvas-loader-progression"> Loading Application... {Math.floor(state.progression * 100)}% </p>
+                        <p className="canvas-loader-progression"> Loading Application... {(state.progression * 100).toFixed(1)}% </p>
                         <Unity unityContext={unityContext} className="canvas-houset" />
                     </Col>
                 </Row>
