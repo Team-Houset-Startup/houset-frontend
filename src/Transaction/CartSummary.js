@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import axios from '../api/axios'
 
-import Button, { ButtonWithHandle } from '../Components/Button'
+import { ButtonWithHandle } from '../Components/Button'
 import useAuth from '../hooks/useAuth'
 import useCheckout from '../hooks/useCheckout'
 
@@ -12,14 +12,10 @@ import "./assets/style/cart-summary.css"
 const TRANSACTION_URL = '/public/api/transaction/create'
 
 export default function CartSummary({ product, total }) {
-    const [transDetails, settransDetails] = useState([]);
+    const transDetails = [{ "product_id": product.id, "quantity": product.qty }];
     const { saveInvData } = useCheckout();
     const navigate = useNavigate();
     const { getToken } = useAuth();
-
-    useEffect(() => {
-        settransDetails(transDetails.concat({ "product_id": product.id, "quantity": product.qty }))
-    }, [])
     
     const goToCheckout = async (e) => {
         // this will send checkout summary to database and 
@@ -41,7 +37,12 @@ export default function CartSummary({ product, total }) {
             saveInvData(invData);
             navigate('/invoice');
         } catch (err) {
-            console.log(err?.response?.status);
+            if (!err?.response) {
+                console.log("No Server Response");
+            } else if (err.response?.status === 401) {
+                alert("Anda belum login, atau session anda telah berakhir");
+                // navigate('/login');
+            }
         }
     }
 

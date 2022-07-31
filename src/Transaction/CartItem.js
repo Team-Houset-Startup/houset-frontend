@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Lampu from "./assets/image/lampu.png"
 import { Col, Container, Row } from 'react-bootstrap';
 
 import "./assets/style/cart-item.css";
@@ -9,18 +8,18 @@ export default function CartItem({ product }) {
     const [productImage, setProductImage] = useState();
 
     useEffect(() => {
-        if (Object.keys(product).length !== 0 ) {
+        if (Object.keys(product).length !== 0 && product.image_gallery.length !== 0) {
             setProductImage(product.image_gallery[0].location);
         }
-    })
+    }, [product])
 
     return (
         <Container className="cart-item-container">
-            <Row xl={4, "auto"}>
+            <Row xl={4,"auto"} >
                 <input type="checkbox" />
                 <Col className="cart-item-col-1">
                     {/* <img className="cart-item-pict" src={Lampu} alt="cart-item-pict" /> */}
-                    <img className="cart-item-pict" src={baseImage + productImage} alt="product-image" />
+                    <img className="cart-item-pict" src={baseImage + productImage} alt="product" />
                 </Col>
                 <Col className="cart-item-col-2">
                     <p className="cart-item-type"> {product.type} </p>

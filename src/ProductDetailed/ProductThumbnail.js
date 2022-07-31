@@ -4,12 +4,10 @@ import { Col, Container, Row } from 'react-bootstrap'
 import "./assets/style/product-thumbnail.scss"
 import ProductThreeD from './ProductThreeD';
 
-const assetFbx = require('./assets/3d/sofa-2.fbx');
-
+import assetFbx from "./assets/3d/nakas-1.fbx"
 
 function MakeThumbnail({ thumbnails }) {
     const [nowPreview, setNowPreview] = useState(thumbnails[0]);
-    console.log(nowPreview);
 
     return (
         <>

@@ -1,10 +1,12 @@
-import React from 'react'
+import { Col } from 'react-bootstrap'
 import Carousel from 'react-multi-carousel'
 import FurnitureCard from './FurnitureCard';
 import LinkSeeMore from './LinkSeeMore';
 import RoomCard from './RoomCard';
 
 import "./assets/style/product-list.css"
+
+import rooms from '../db/rooms.json';
 
 export default function RoomLists() {
     let product =
@@ -15,7 +17,7 @@ export default function RoomLists() {
         priceDiscounted: "Rp. 1.000.000",
         image: "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
     };
-    
+
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -38,7 +40,7 @@ export default function RoomLists() {
     return (
         <div>
 
-            <LinkSeeMore title="Produk Terbaik" links="/furnitur" text="Lihat Semua" />
+            <LinkSeeMore title="Ruangan Terbaik" links="/ruangan" text="Lihat Semua" />
             <Carousel
                 responsive={responsive}
                 draggable={false}
@@ -47,14 +49,9 @@ export default function RoomLists() {
                 // centerMode={true}
                 className="product-list-carousel"
             >
-                <RoomCard />
-                <RoomCard />
-                <RoomCard />
-                <RoomCard />
-                <RoomCard />
-                <RoomCard />
-                <RoomCard />
-                <RoomCard />
+                {rooms.slice(0, 8).map((room) => (
+                    <RoomCard room={room} />
+                ))}
             </Carousel>
         </div>
     )

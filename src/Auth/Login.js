@@ -8,7 +8,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import NavbarAuth from './NavbarAuth';
 import AlternateLogin from './AlternateLogin'
 import useAuth from '../hooks/useAuth';
-import useToken from '../hooks/useToken';
 
 import "./assets/style/auth.scss"
 import "./assets/style/login.css";
@@ -16,7 +15,7 @@ import "./assets/style/login.css";
 const LOGIN_URL = '/public/api/user/login';
 
 export default function Login() {
-    const { saveToken, getToken } = useAuth();
+    const { saveToken } = useAuth();
     // const { token, setToken } = useToken();
 
     // this will navigate back to homepage after login success
@@ -30,7 +29,7 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errMsg, setErrMsg] = useState("");
-    const [alertWarning, setAlertWarning] = useState(false);
+    
     useEffect(() => {
         userRef.current.focus();
     }, []);
@@ -55,11 +54,8 @@ export default function Login() {
                     },
                 )
                 const accessToken = response?.data?.data?.token;
-                // setAuth({ email, accessToken });
-                // localStorage.setItem('token', accessToken);
                 saveToken(accessToken);
                 navigate(-1);
-                // window.location.reload();
             } catch (err) {
                 if (!err?.response) {
                     setErrMsg("No Server Response");

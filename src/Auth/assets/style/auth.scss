@@ -134,6 +134,12 @@
 }
 
 .auth-input-field {
+	.show-password {
+		position:relative;
+		left: 90%;
+		bottom: 33px;
+	}
+	
 	.show-password:hover {
 		cursor: pointer;
 	}

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import FurnitureCard from './FurnitureCard';
 import LinkSeeMore from './LinkSeeMore';
@@ -29,11 +28,7 @@ export default function RecommendationProduct(props) {
 
     const productList = (count) => {
         let Products = [];
-        let row = count;
-        let col = 4;
-        let item = 0;
         let tempList=[];
-        // console.log(count);
         products.slice(0, count).map((product) => {
             tempList.push(
                 <Col xl={3} key={product.id}>
@@ -52,7 +47,7 @@ export default function RecommendationProduct(props) {
     };
 
     return (
-        <Container className="product-auto-suggest">
+        <Container className="product-auto-suggest" style={{marginBottom: "60px"}}>
             <Row>
                 <LinkSeeMore title="Produk yang mungkin Anda suka" links="/furnitur" text="Lihat Semua" />
             </Row>

@@ -21,6 +21,8 @@
 .product-pict img {
 	width: 167px;
 	height: 167px;
+	padding-top: auto;
+	padding-bottom: auto;
 }
 
 .product-item a {
@@ -44,7 +46,7 @@
 
 .item-name {
 	margin-bottom: 9px;
-	width: 255px;
+	width: 190px;
 
 	font-weight: bold;
 	font-size: 18px;

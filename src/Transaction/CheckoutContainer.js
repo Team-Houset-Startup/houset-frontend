@@ -1,8 +1,6 @@
-import React from 'react'
-import { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 // import { product } from "../db/product"
-import { Plus, Minus } from '../Components/Element'
+// import { Plus, Minus } from '../Components/Element'
 import CartItem from './CartItem'
 
 import "./assets/style/cart-container.css"
