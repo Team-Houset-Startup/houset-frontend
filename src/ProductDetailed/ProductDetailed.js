@@ -21,7 +21,7 @@ import BorderLine from "../Components/BorderLine";
 export default function ProductDetailed() {
     // initialize data needed for checkout
     const [qty, setQty] = useState(1);
-    const [color, setColor] = useState();
+    // const [color, setColor] = useState();
 
     const { updateCheckoutCart } = useCheckout();
 
@@ -36,7 +36,7 @@ export default function ProductDetailed() {
 
     useEffect(() => {
         updateCheckoutCart({ qty: qty });
-    }, [qty, color])
+    }, [qty])
     // end fetch data for checkout
 
     const [selectedProduct, setSelectedProduct] = useState({});
@@ -81,7 +81,7 @@ export default function ProductDetailed() {
 
                 <Row xl={12}>
                     <Col xl={10} className="product-desc-col">
-                        <ProductDescription product={selectedProduct} />
+                        <ProductDescription product={selectedProduct} images={imageList} />
                     </Col>
                 </Row>
 
