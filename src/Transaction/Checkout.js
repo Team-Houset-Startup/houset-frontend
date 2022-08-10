@@ -5,7 +5,6 @@ import NavigationBar from '../Components/NavigationBar'
 import Footer from '../Components/Footer'
 import { ButtonWithHandle } from '../Components/Button'
 import CheckoutContainer from './CheckoutContainer'
-// import CartItem from './CartItem'
 import CartSummary from "./CartSummary.js"
 
 import "./assets/style/checkout.css"

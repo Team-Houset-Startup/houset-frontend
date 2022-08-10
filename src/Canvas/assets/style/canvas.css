@@ -2,14 +2,14 @@
 .canvas-container p {
 	margin: 0;
 	position: absolute;
-	top: 55%;
+	top: 63%;
 	left: 50%;
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
 
 .canvas-houset {
-	width: 1300px;
+	width: 1510px;
 	height: auto;
 }
 

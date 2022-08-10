@@ -30,7 +30,8 @@ export default function ProductDetailed() {
         updateCheckoutCart({ name: data.name });
         updateCheckoutCart({ type: data.type });
         updateCheckoutCart({ price: data.price });
-        updateCheckoutCart({ image_gallery: data.image_gallery });
+        updateCheckoutCart({ image_gallery: data.variant[0].image_gallery });
+        updateCheckoutCart({ color: data.variant[0].color });
     }
 
     useEffect(() => {
@@ -40,6 +41,7 @@ export default function ProductDetailed() {
     // end fetch data for checkout
 
     const [selectedProduct, setSelectedProduct] = useState({});
+    const [imageList, setImageList] = useState(null);
     const { productId } = useParams();
 
     useEffect(() => {
@@ -49,7 +51,8 @@ export default function ProductDetailed() {
                 .then((res) => {
                     setSelectedProduct(res.data?.data);
                     doUpdateCheckout(res.data?.data);
-                    updateCheckoutCart({ color: res.data?.data?.color });
+                    // updateCheckoutCart({ color: res.data?.data?.color });
+                    setImageList(res.data?.data?.variant[0].image_gallery);
                 })
                 .catch((error) => console.log(error));
         };
@@ -70,12 +73,13 @@ export default function ProductDetailed() {
                             product={selectedProduct}
                             qty={qty}
                             setQty={setQty}
-                            maxQty={selectedProduct.quantity}
+                            color={color}
                             setColor={setColor}
+                            setImageList={setImageList}
                         />
                     </Col>
                     <Col xl={7}>
-                        <ProductThumbnail images={selectedProduct.image_gallery} />
+                        <ProductThumbnail images={imageList} />
                     </Col>
                 </Row>
 

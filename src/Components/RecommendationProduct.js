@@ -31,7 +31,7 @@ export default function RecommendationProduct(props) {
         let tempList=[];
         products.slice(0, count).map((product) => {
             tempList.push(
-                <Col xl={3} key={product.id}>
+                <Col xl={3}>
                     <FurnitureCard product={product} />
                 </Col>
             )

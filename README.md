@@ -56,6 +56,9 @@ full command below
 React-cors 
 ### `npm install cors --save`
 
+React-number-format (https://bestofreactjs.com/repo/s-yadav-react-number-format--react-miscellaneous)
+### `npm install react-number-format --save`
+
 ## One feature in one folder
 
 Main feature in this project is:

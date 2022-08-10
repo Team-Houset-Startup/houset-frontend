@@ -7,6 +7,7 @@ import Unity, { UnityContext } from "react-unity-webgl";
 import "./assets/style/canvas.css";
 
 function Canvas() {
+    const [activeCanvas, setActiveCanvas] = useState(true);
     const [state, setState] = useState({
         progression: 0,
         isLoaded: false
@@ -40,13 +41,17 @@ function Canvas() {
 
     return (
         <>
-            <NavbarCanvas />
+            <NavbarCanvas activeCanvas={activeCanvas} setActiveCanvas={setActiveCanvas} />
             <Container className="canvas-container">
                 <Row>
-                    <Col>
-                        <p className="canvas-loader-progression"> Loading Application... {(state.progression * 100).toFixed(1)}% </p>
-                        <Unity unityContext={unityContext} className="canvas-houset" />
-                    </Col>
+                    {
+                        activeCanvas ? (
+                            <Col>
+                                <p className="canvas-loader-progression"> Loading Application... {(state.progression * 100).toFixed(1)}% </p>
+                                <Unity unityContext={unityContext} className="canvas-houset" />
+                            </Col>
+                        ) : ""
+                    }
                 </Row>
             </Container>
             {/* <Unity unityContext={unityContext} className="canvas-houset" /> */}

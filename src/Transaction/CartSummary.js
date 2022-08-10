@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from '../api/axios'
 
 import { ButtonWithHandle } from '../Components/Button'
+import PriceFormatter from '../Components/PriceFormatter'
 import useAuth from '../hooks/useAuth'
 import useCheckout from '../hooks/useCheckout'
 
@@ -59,7 +60,7 @@ export default function CartSummary({ product, total }) {
                         {product.name}
                     </Col>
                     <Col xl className="cart-summary-price">
-                        <p> Rp {total} </p>
+                        <p> <PriceFormatter value={total} /> </p>
                     </Col>
                 </Row>
                 {/* <Row className="cart-summary-disc">
@@ -76,7 +77,7 @@ export default function CartSummary({ product, total }) {
                         <p> Total </p>
                     </Col>
                     <Col xl style={{ textAlign: "right" }}>
-                        <p> Rp {total} </p>
+                        <p> <PriceFormatter value={total} /> </p>
                     </Col>
                 </Row>
                 <Row className="cart-checkout">

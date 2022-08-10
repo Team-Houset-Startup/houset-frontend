@@ -18,10 +18,10 @@
 	.thumbnail-list-item {
 		width: 130px;
 		height: 130px;
+		margin-top: 15px;
 
 		img {
 			object-fit: contain;
-			margin-top: 15px;
 
 			border: 1px solid #055053;
 			box-sizing: border-box;
@@ -30,6 +30,33 @@
 
 		img:hover {
 			cursor: pointer;
+		}
+	}
+	.thumbnail-list-expand {
+		background: linear-gradient(
+			0deg,
+			rgba(29, 41, 57, 0.42),
+			rgba(29, 41, 57, 0.42)
+		);
+		border-radius: 30px;
+		backdrop-filter: blur(4px);
+
+		p {
+			position: absolute;
+			top: 50%;
+			left: 58%;
+			transform: translate(-50%, -50%);
+		}
+	}
+}
+
+.thumbnail-modal-expand {
+	.modal-content {
+		background-color: transparent;
+		border-style: none;
+
+		img {
+			width: 500px;
 		}
 	}
 }

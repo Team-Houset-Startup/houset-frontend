@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
 import Button from '../Components/Button';
+import PriceFormatter from '../Components/PriceFormatter';
+import useCheckout from '../hooks/useCheckout';
 
 import './assets/style/product-container-side.scss'
 
@@ -27,8 +29,11 @@ const Plus = () => {
     );
 };
 
-export default function ProductContainerSide({ product, qty, setQty, maxQty, setColor }) {
+export default function ProductContainerSide({ product, qty, setQty, color, setColor, setImageList }) {
     {/* left side panel */ }
+    // set max quantity based on selected variant color
+    const [maxQty, setMaxQty] = useState(0)
+    const { updateCheckoutCart } = useCheckout();
 
     const navigate = useNavigate();
     const ButtonDidClick = () => {
@@ -36,26 +41,38 @@ export default function ProductContainerSide({ product, qty, setQty, maxQty, set
     };
 
     const chooseColor = e => {
-        setColor(e.target);
+        // console.log(product.variant[product.variant.map(object => object.color).indexOf(e.target.value)].quantity);
+        const currentIndex = product.variant.map(object => object.color).indexOf(e.target.value);
+        setColor(e.target.value);
+        setImageList(product.variant[currentIndex].image_gallery);
+
+        setMaxQty(product.variant[currentIndex].quantity);
+        setQty(1); // reset quantity after every change on color
+
+        // do update for checkout
+        updateCheckoutCart({ color: e.target.value });
+        updateCheckoutCart({ image_gallery: product.variant[currentIndex].image_gallery });
     }
-    
-    const productColor = (color) => {
+
+    const productColor = (variantColor) => {
         // return colors?.map((color) =>
-        return (
-            <>
-                <input
-                    type="radio"
-                    name="product-color-radio"
-                    className="product-color-radio"
-                    value={color}
-                    key={color}
-                    style={{ backgroundColor: color }}
-                    onChange={chooseColor}
-                    checked={true}
-                />
-                <label>  </label>
-            </>
-        )
+        if (variantColor) {
+            return variantColor.map((varColor) =>
+                <>
+                    <input
+                        type="radio"
+                        name="color-radio"
+                        className="product-color-radio"
+                        value={varColor.color}
+                        key={varColor.color}
+                        style={{ backgroundColor: varColor.color }}
+                        onChange={chooseColor}
+                        required
+                    />
+                    <label>  </label>
+                </>
+            )
+        }
     }
 
     return (
@@ -69,17 +86,19 @@ export default function ProductContainerSide({ product, qty, setQty, maxQty, set
             </Row>
 
             <Row className="product-price">
-                <p className="product-price-disc"> Rp {product.price} </p>
-                <p className="product-price-disc">{product.priceDiscounted} </p>
+                <p className="product-price-disc"> <PriceFormatter value={product.price} /> </p>
+                {/* <p className="product-price-disc"> {product.priceDiscounted} </p> */}
             </Row>
 
             <Row className="product-type">
                 <Row className="product-type-color">
                     <Col xl={{ span: "4" }}> Warna </Col>
                     <Col>
-                        {productColor(product.color)}
+                        {productColor(product.variant)}
                     </Col>
+
                 </Row>
+                
 
                 <Row className="product-type-qty">
                     <Col xl={{ span: "4" }}> Jumlah </Col>

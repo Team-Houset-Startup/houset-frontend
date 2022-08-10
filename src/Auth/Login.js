@@ -15,7 +15,7 @@ import "./assets/style/login.css";
 const LOGIN_URL = '/public/api/user/login';
 
 export default function Login() {
-    const { saveToken } = useAuth();
+    const { saveToken, rememberLogin } = useAuth();
     // const { token, setToken } = useToken();
 
     // this will navigate back to homepage after login success
@@ -24,15 +24,17 @@ export default function Login() {
     const from = location.state?.from?.pathname || '/';
 
     const userRef = useRef();
+    const rememberRef = useRef(null);
     const errRef = useRef();
+
+    useEffect(() => {
+        userRef.current.focus();
+    }, []);
+
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errMsg, setErrMsg] = useState("");
-    
-    useEffect(() => {
-        userRef.current.focus();
-    }, []);
 
     useEffect(() => {
         setErrMsg("");
@@ -44,16 +46,17 @@ export default function Login() {
             setErrMsg("Password length at least 8 character")
         } else {
             try {
-
                 const response = await axios.post(
                     LOGIN_URL,
                     JSON.stringify({ email, password }),
                     {
-                        headers: { "Content-Type": "application/json" },
-                        withCredentials: false,
+                        headers: { "Content-Type": "application/json" }
                     },
                 )
                 const accessToken = response?.data?.data?.token;
+                if (rememberRef.current.checked) {
+                    rememberLogin(email,password);
+                }
                 saveToken(accessToken);
                 navigate(-1);
             } catch (err) {
@@ -113,7 +116,7 @@ export default function Login() {
                         <br />
 
                         <p>
-                            <input type="checkbox" /> Ingat saya
+                            <input type="checkbox" ref={rememberRef} name="rememberMe" /> Ingat saya
                             <Link className="forget-pass" to="/forget-password" > Lupa password? </Link>
                         </p>
 
