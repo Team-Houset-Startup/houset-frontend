@@ -5,304 +5,254 @@
 		"name": "Design 1",
 		"fav": true,
 		"loc": "Ruang Keluarga",
-		"desc": "Desain ruang keluarga minimalis modern dengan detail serta fungsi yang dipikirkan secara matang sehingga terlihat penuh gaya dan fungsional. Selain berperan sebagai ruang keluarga, area ini juga menjadi ruang tamu dan ruang untuk bersantai. ",
+		"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 		"details": {
-			"desc": "Hanya diri Anda lah yang mengerti apa yang dapat membuat Anda merasa nyaman di rumah. Mari lihat contoh tata ruang keluarga minimalis modern yang dibuat khusus untuk Anda. Ruang tamu di mana Anda dapat menunjukkan apa yang Anda sukai dengan kabinet pintu kaca atau menyimpan sisa sisanya dengan cerdas di tempat yang tak terlihat, seperti di sebuah penyimpanan laci. Karena rumah tidak hanya mencerminkan Anda - tetapi juga mendukung Anda.",
+			"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 			"detail": {
 				"Brand": "Nestudio",
-				"Warna": "Tosca dan Cokelat",
-				"Kondisi Produk": "Tidak Butuh Perakitan",
+				"Nama Ruangan": "Rustic Boho",
+				"Jenis Ruangan": "Ruang Keluarga",
 				"Style": "Scandinavian",
-				"Material Dudukan": "Kain",
-				"Material Frame": "Kayu",
-				"Tipe Produk": "Upholstery",
-				"Material": "Kayu, Kain Woven dan Busa"
+				"Tone Warna": "Hijau dan Coklat",
+				"Kondisi Ruangan": "Bisa Dicustom"
 			},
 			"spesifikasi": {
-				"Ukuran Kemasan": "79cm x 80cm x82cm",
-				"Ukuran Barang": "72cm x 73cm x 75cm",
-				"Berat": "14kg"
+				"Ukuran Ruangan": "4m x 6m",
+				"Kategori Ruangan": "Sedang",
+				"Kapasitas": "4-5 orang",
+				"Kisaran Harga": "Rp 10.000.000 - Rp 12.500.000"
 			},
 			"gallery": [
-				"https://lh3.google.com/u/0/d/1mUqARFX3NcfhaWNQVwWV_EnfSKo1oFeQ=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1xbQsX9ONC6V_TUGFr0o5bNo3rRaynw3M=w1920-h892-iv1",
-				"https://lh3.google.com/u/0/d/1H_oQi9ExXX_3W_UggDqc6y2thPLFzTiX=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/14mP3iCK6718t3srBPwW7QteWErJw6L6a=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1Fb22syOnWgIA43Vl0AskhsZPZmaPmpsA=w1920-h892-iv1"
+				"https://drive.google.com/uc?id=1-3s7iBKfUoYLGM7QCoa5dX_r0avYLhsK",
+				"https://drive.google.com/uc?id=1YGTl1fe46wb98iTHy_Kf7Qw8B0VFjHkS",
+				"https://drive.google.com/uc?id=1KO8pvBYn3Wh7zyv5AFeoDDxuRKjApM4A",
+				"https://drive.google.com/uc?id=1JZroz9MVx_k9aX-Ia566U9rIHXroD_6m"
 			],
-			"interior": [1, 2, 5]
+			"interior": [1, 4, 6]
 		}
 	},
 	{
 		"id": 2,
-		"type": "Scandinavian",
+		"type": "Shabby Chic",
 		"name": "Design 2",
 		"fav": true,
 		"loc": "Ruang Keluarga",
-		"desc": "Desain ruang keluarga minimalis modern dengan detail serta fungsi yang dipikirkan secara matang sehingga terlihat penuh gaya dan fungsional. Selain berperan sebagai ruang keluarga, area ini juga menjadi ruang tamu dan ruang untuk bersantai. ",
+		"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 		"details": {
-			"desc": "Hanya diri Anda lah yang mengerti apa yang dapat membuat Anda merasa nyaman di rumah. Mari lihat contoh tata ruang keluarga minimalis modern yang dibuat khusus untuk Anda. Ruang tamu di mana Anda dapat menunjukkan apa yang Anda sukai dengan kabinet pintu kaca atau menyimpan sisa sisanya dengan cerdas di tempat yang tak terlihat, seperti di sebuah penyimpanan laci. Karena rumah tidak hanya mencerminkan Anda - tetapi juga mendukung Anda.",
+			"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 			"detail": {
 				"Brand": "Nestudio",
-				"Warna": "Tosca dan Cokelat",
-				"Kondisi Produk": "Tidak Butuh Perakitan",
+				"Nama Ruangan": "Rustic Boho",
+				"Jenis Ruangan": "Ruang Keluarga",
 				"Style": "Scandinavian",
-				"Material Dudukan": "Kain",
-				"Material Frame": "Kayu",
-				"Tipe Produk": "Upholstery",
-				"Material": "Kayu, Kain Woven dan Busa"
+				"Tone Warna": "Hijau dan Coklat",
+				"Kondisi Ruangan": "Bisa Dicustom"
 			},
 			"spesifikasi": {
-				"Ukuran Kemasan": "79cm x 80cm x82cm",
-				"Ukuran Barang": "72cm x 73cm x 75cm",
-				"Berat": "14kg"
+				"Ukuran Ruangan": "4m x 6m",
+				"Kategori Ruangan": "Sedang",
+				"Kapasitas": "4-5 orang",
+				"Kisaran Harga": "Rp 10.000.000 - Rp 12.500.000"
 			},
 			"gallery": [
-				"https://lh3.google.com/u/0/d/1mUqARFX3NcfhaWNQVwWV_EnfSKo1oFeQ=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1xbQsX9ONC6V_TUGFr0o5bNo3rRaynw3M=w1920-h892-iv1",
-				"https://lh3.google.com/u/0/d/1H_oQi9ExXX_3W_UggDqc6y2thPLFzTiX=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/14mP3iCK6718t3srBPwW7QteWErJw6L6a=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1Fb22syOnWgIA43Vl0AskhsZPZmaPmpsA=w1920-h892-iv1"
+				"https://drive.google.com/uc?id=1-3s7iBKfUoYLGM7QCoa5dX_r0avYLhsK",
+				"https://drive.google.com/uc?id=1YGTl1fe46wb98iTHy_Kf7Qw8B0VFjHkS",
+				"https://drive.google.com/uc?id=1KO8pvBYn3Wh7zyv5AFeoDDxuRKjApM4A",
+				"https://drive.google.com/uc?id=1JZroz9MVx_k9aX-Ia566U9rIHXroD_6m"
 			],
-			"interior": [1, 2, 5]
+			"interior": [1, 4, 6]
 		}
 	},
 	{
 		"id": 3,
-		"type": "kontemporer",
+		"type": "Shabby Chic",
 		"name": "Design 3",
-		"fav": false,
+		"fav": true,
 		"loc": "Ruang Keluarga",
-		"desc": "Desain ruang keluarga minimalis modern dengan detail serta fungsi yang dipikirkan secara matang sehingga terlihat penuh gaya dan fungsional. Selain berperan sebagai ruang keluarga, area ini juga menjadi ruang tamu dan ruang untuk bersantai. ",
+		"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 		"details": {
-			"desc": "Hanya diri Anda lah yang mengerti apa yang dapat membuat Anda merasa nyaman di rumah. Mari lihat contoh tata ruang keluarga minimalis modern yang dibuat khusus untuk Anda. Ruang tamu di mana Anda dapat menunjukkan apa yang Anda sukai dengan kabinet pintu kaca atau menyimpan sisa sisanya dengan cerdas di tempat yang tak terlihat, seperti di sebuah penyimpanan laci. Karena rumah tidak hanya mencerminkan Anda - tetapi juga mendukung Anda.",
+			"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 			"detail": {
 				"Brand": "Nestudio",
-				"Warna": "Tosca dan Cokelat",
-				"Kondisi Produk": "Tidak Butuh Perakitan",
+				"Nama Ruangan": "Rustic Boho",
+				"Jenis Ruangan": "Ruang Keluarga",
 				"Style": "Scandinavian",
-				"Material Dudukan": "Kain",
-				"Material Frame": "Kayu",
-				"Tipe Produk": "Upholstery",
-				"Material": "Kayu, Kain Woven dan Busa"
+				"Tone Warna": "Hijau dan Coklat",
+				"Kondisi Ruangan": "Bisa Dicustom"
 			},
 			"spesifikasi": {
-				"Ukuran Kemasan": "79cm x 80cm x82cm",
-				"Ukuran Barang": "72cm x 73cm x 75cm",
-				"Berat": "14kg"
+				"Ukuran Ruangan": "4m x 6m",
+				"Kategori Ruangan": "Sedang",
+				"Kapasitas": "4-5 orang",
+				"Kisaran Harga": "Rp 10.000.000 - Rp 12.500.000"
 			},
 			"gallery": [
-				"https://lh3.google.com/u/0/d/1mUqARFX3NcfhaWNQVwWV_EnfSKo1oFeQ=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1xbQsX9ONC6V_TUGFr0o5bNo3rRaynw3M=w1920-h892-iv1",
-				"https://lh3.google.com/u/0/d/1H_oQi9ExXX_3W_UggDqc6y2thPLFzTiX=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/14mP3iCK6718t3srBPwW7QteWErJw6L6a=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1Fb22syOnWgIA43Vl0AskhsZPZmaPmpsA=w1920-h892-iv1"
+				"https://drive.google.com/uc?id=1-3s7iBKfUoYLGM7QCoa5dX_r0avYLhsK",
+				"https://drive.google.com/uc?id=1YGTl1fe46wb98iTHy_Kf7Qw8B0VFjHkS",
+				"https://drive.google.com/uc?id=1KO8pvBYn3Wh7zyv5AFeoDDxuRKjApM4A",
+				"https://drive.google.com/uc?id=1JZroz9MVx_k9aX-Ia566U9rIHXroD_6m"
 			],
-			"interior": [1, 2, 5]
+			"interior": [1, 4, 6]
 		}
 	},
 	{
 		"id": 4,
-		"type": "Vintage",
+		"type": "Shabby Chic",
 		"name": "Design 4",
-		"fav": false,
+		"fav": true,
 		"loc": "Ruang Keluarga",
-		"desc": "Desain ruang keluarga minimalis modern dengan detail serta fungsi yang dipikirkan secara matang sehingga terlihat penuh gaya dan fungsional. Selain berperan sebagai ruang keluarga, area ini juga menjadi ruang tamu dan ruang untuk bersantai. ",
+		"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 		"details": {
-			"desc": "Hanya diri Anda lah yang mengerti apa yang dapat membuat Anda merasa nyaman di rumah. Mari lihat contoh tata ruang keluarga minimalis modern yang dibuat khusus untuk Anda. Ruang tamu di mana Anda dapat menunjukkan apa yang Anda sukai dengan kabinet pintu kaca atau menyimpan sisa sisanya dengan cerdas di tempat yang tak terlihat, seperti di sebuah penyimpanan laci. Karena rumah tidak hanya mencerminkan Anda - tetapi juga mendukung Anda.",
+			"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 			"detail": {
 				"Brand": "Nestudio",
-				"Warna": "Tosca dan Cokelat",
-				"Kondisi Produk": "Tidak Butuh Perakitan",
+				"Nama Ruangan": "Rustic Boho",
+				"Jenis Ruangan": "Ruang Keluarga",
 				"Style": "Scandinavian",
-				"Material Dudukan": "Kain",
-				"Material Frame": "Kayu",
-				"Tipe Produk": "Upholstery",
-				"Material": "Kayu, Kain Woven dan Busa"
+				"Tone Warna": "Hijau dan Coklat",
+				"Kondisi Ruangan": "Bisa Dicustom"
 			},
 			"spesifikasi": {
-				"Ukuran Kemasan": "79cm x 80cm x82cm",
-				"Ukuran Barang": "72cm x 73cm x 75cm",
-				"Berat": "14kg"
+				"Ukuran Ruangan": "4m x 6m",
+				"Kategori Ruangan": "Sedang",
+				"Kapasitas": "4-5 orang",
+				"Kisaran Harga": "Rp 10.000.000 - Rp 12.500.000"
 			},
 			"gallery": [
-				"https://lh3.google.com/u/0/d/1mUqARFX3NcfhaWNQVwWV_EnfSKo1oFeQ=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1xbQsX9ONC6V_TUGFr0o5bNo3rRaynw3M=w1920-h892-iv1",
-				"https://lh3.google.com/u/0/d/1H_oQi9ExXX_3W_UggDqc6y2thPLFzTiX=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/14mP3iCK6718t3srBPwW7QteWErJw6L6a=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1Fb22syOnWgIA43Vl0AskhsZPZmaPmpsA=w1920-h892-iv1"
+				"https://drive.google.com/uc?id=1-3s7iBKfUoYLGM7QCoa5dX_r0avYLhsK",
+				"https://drive.google.com/uc?id=1YGTl1fe46wb98iTHy_Kf7Qw8B0VFjHkS",
+				"https://drive.google.com/uc?id=1KO8pvBYn3Wh7zyv5AFeoDDxuRKjApM4A",
+				"https://drive.google.com/uc?id=1JZroz9MVx_k9aX-Ia566U9rIHXroD_6m"
 			],
-			"interior": [1, 2, 5]
+			"interior": [1, 4, 6]
 		}
 	},
 	{
 		"id": 5,
-		"type": "Industrial",
+		"type": "Shabby Chic",
 		"name": "Design 5",
 		"fav": true,
 		"loc": "Ruang Keluarga",
-		"desc": "Desain ruang keluarga minimalis modern dengan detail serta fungsi yang dipikirkan secara matang sehingga terlihat penuh gaya dan fungsional. Selain berperan sebagai ruang keluarga, area ini juga menjadi ruang tamu dan ruang untuk bersantai. ",
+		"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 		"details": {
-			"desc": "Hanya diri Anda lah yang mengerti apa yang dapat membuat Anda merasa nyaman di rumah. Mari lihat contoh tata ruang keluarga minimalis modern yang dibuat khusus untuk Anda. Ruang tamu di mana Anda dapat menunjukkan apa yang Anda sukai dengan kabinet pintu kaca atau menyimpan sisa sisanya dengan cerdas di tempat yang tak terlihat, seperti di sebuah penyimpanan laci. Karena rumah tidak hanya mencerminkan Anda - tetapi juga mendukung Anda.",
+			"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 			"detail": {
 				"Brand": "Nestudio",
-				"Warna": "Tosca dan Cokelat",
-				"Kondisi Produk": "Tidak Butuh Perakitan",
+				"Nama Ruangan": "Rustic Boho",
+				"Jenis Ruangan": "Ruang Keluarga",
 				"Style": "Scandinavian",
-				"Material Dudukan": "Kain",
-				"Material Frame": "Kayu",
-				"Tipe Produk": "Upholstery",
-				"Material": "Kayu, Kain Woven dan Busa"
+				"Tone Warna": "Hijau dan Coklat",
+				"Kondisi Ruangan": "Bisa Dicustom"
 			},
 			"spesifikasi": {
-				"Ukuran Kemasan": "79cm x 80cm x82cm",
-				"Ukuran Barang": "72cm x 73cm x 75cm",
-				"Berat": "14kg"
+				"Ukuran Ruangan": "4m x 6m",
+				"Kategori Ruangan": "Sedang",
+				"Kapasitas": "4-5 orang",
+				"Kisaran Harga": "Rp 10.000.000 - Rp 12.500.000"
 			},
 			"gallery": [
-				"https://lh3.google.com/u/0/d/1mUqARFX3NcfhaWNQVwWV_EnfSKo1oFeQ=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1xbQsX9ONC6V_TUGFr0o5bNo3rRaynw3M=w1920-h892-iv1",
-				"https://lh3.google.com/u/0/d/1H_oQi9ExXX_3W_UggDqc6y2thPLFzTiX=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/14mP3iCK6718t3srBPwW7QteWErJw6L6a=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1Fb22syOnWgIA43Vl0AskhsZPZmaPmpsA=w1920-h892-iv1"
+				"https://drive.google.com/uc?id=1-3s7iBKfUoYLGM7QCoa5dX_r0avYLhsK",
+				"https://drive.google.com/uc?id=1YGTl1fe46wb98iTHy_Kf7Qw8B0VFjHkS",
+				"https://drive.google.com/uc?id=1KO8pvBYn3Wh7zyv5AFeoDDxuRKjApM4A",
+				"https://drive.google.com/uc?id=1JZroz9MVx_k9aX-Ia566U9rIHXroD_6m"
 			],
-			"interior": [1, 2, 5]
+			"interior": [1, 4, 6]
 		}
 	},
 	{
 		"id": 6,
-		"type": "Bohemian",
-		"name": "Design 5",
-		"fav": false,
-		"loc": "Ruang Tamu",
-		"desc": "Desain ruang keluarga minimalis modern dengan detail serta fungsi yang dipikirkan secara matang sehingga terlihat penuh gaya dan fungsional. Selain berperan sebagai ruang keluarga, area ini juga menjadi ruang tamu dan ruang untuk bersantai. ",
+		"type": "Shabby Chic",
+		"name": "Design 6",
+		"fav": true,
+		"loc": "Ruang Keluarga",
+		"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 		"details": {
-			"desc": "Hanya diri Anda lah yang mengerti apa yang dapat membuat Anda merasa nyaman di rumah. Mari lihat contoh tata ruang keluarga minimalis modern yang dibuat khusus untuk Anda. Ruang tamu di mana Anda dapat menunjukkan apa yang Anda sukai dengan kabinet pintu kaca atau menyimpan sisa sisanya dengan cerdas di tempat yang tak terlihat, seperti di sebuah penyimpanan laci. Karena rumah tidak hanya mencerminkan Anda - tetapi juga mendukung Anda.",
+			"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 			"detail": {
 				"Brand": "Nestudio",
-				"Warna": "Tosca dan Cokelat",
-				"Kondisi Produk": "Tidak Butuh Perakitan",
+				"Nama Ruangan": "Rustic Boho",
+				"Jenis Ruangan": "Ruang Keluarga",
 				"Style": "Scandinavian",
-				"Material Dudukan": "Kain",
-				"Material Frame": "Kayu",
-				"Tipe Produk": "Upholstery",
-				"Material": "Kayu, Kain Woven dan Busa"
+				"Tone Warna": "Hijau dan Coklat",
+				"Kondisi Ruangan": "Bisa Dicustom"
 			},
 			"spesifikasi": {
-				"Ukuran Kemasan": "79cm x 80cm x82cm",
-				"Ukuran Barang": "72cm x 73cm x 75cm",
-				"Berat": "14kg"
+				"Ukuran Ruangan": "4m x 6m",
+				"Kategori Ruangan": "Sedang",
+				"Kapasitas": "4-5 orang",
+				"Kisaran Harga": "Rp 10.000.000 - Rp 12.500.000"
 			},
 			"gallery": [
-				"https://lh3.google.com/u/0/d/1mUqARFX3NcfhaWNQVwWV_EnfSKo1oFeQ=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1xbQsX9ONC6V_TUGFr0o5bNo3rRaynw3M=w1920-h892-iv1",
-				"https://lh3.google.com/u/0/d/1H_oQi9ExXX_3W_UggDqc6y2thPLFzTiX=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/14mP3iCK6718t3srBPwW7QteWErJw6L6a=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1Fb22syOnWgIA43Vl0AskhsZPZmaPmpsA=w1920-h892-iv1"
+				"https://drive.google.com/uc?id=1-3s7iBKfUoYLGM7QCoa5dX_r0avYLhsK",
+				"https://drive.google.com/uc?id=1YGTl1fe46wb98iTHy_Kf7Qw8B0VFjHkS",
+				"https://drive.google.com/uc?id=1KO8pvBYn3Wh7zyv5AFeoDDxuRKjApM4A",
+				"https://drive.google.com/uc?id=1JZroz9MVx_k9aX-Ia566U9rIHXroD_6m"
 			],
-			"interior": [1, 2, 5]
+			"interior": [1, 4, 6]
 		}
 	},
 	{
 		"id": 7,
-		"type": "Victorian",
-		"name": "Design 6",
+		"type": "Shabby Chic",
+		"name": "Design 7",
 		"fav": true,
-		"loc": "Ruang Tamu",
-		"desc": "Desain ruang keluarga minimalis modern dengan detail serta fungsi yang dipikirkan secara matang sehingga terlihat penuh gaya dan fungsional. Selain berperan sebagai ruang keluarga, area ini juga menjadi ruang tamu dan ruang untuk bersantai. ",
+		"loc": "Ruang Keluarga",
+		"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 		"details": {
-			"desc": "Hanya diri Anda lah yang mengerti apa yang dapat membuat Anda merasa nyaman di rumah. Mari lihat contoh tata ruang keluarga minimalis modern yang dibuat khusus untuk Anda. Ruang tamu di mana Anda dapat menunjukkan apa yang Anda sukai dengan kabinet pintu kaca atau menyimpan sisa sisanya dengan cerdas di tempat yang tak terlihat, seperti di sebuah penyimpanan laci. Karena rumah tidak hanya mencerminkan Anda - tetapi juga mendukung Anda.",
+			"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 			"detail": {
 				"Brand": "Nestudio",
-				"Warna": "Tosca dan Cokelat",
-				"Kondisi Produk": "Tidak Butuh Perakitan",
+				"Nama Ruangan": "Rustic Boho",
+				"Jenis Ruangan": "Ruang Keluarga",
 				"Style": "Scandinavian",
-				"Material Dudukan": "Kain",
-				"Material Frame": "Kayu",
-				"Tipe Produk": "Upholstery",
-				"Material": "Kayu, Kain Woven dan Busa"
+				"Tone Warna": "Hijau dan Coklat",
+				"Kondisi Ruangan": "Bisa Dicustom"
 			},
 			"spesifikasi": {
-				"Ukuran Kemasan": "79cm x 80cm x82cm",
-				"Ukuran Barang": "72cm x 73cm x 75cm",
-				"Berat": "14kg"
+				"Ukuran Ruangan": "4m x 6m",
+				"Kategori Ruangan": "Sedang",
+				"Kapasitas": "4-5 orang",
+				"Kisaran Harga": "Rp 10.000.000 - Rp 12.500.000"
 			},
 			"gallery": [
-				"https://lh3.google.com/u/0/d/1mUqARFX3NcfhaWNQVwWV_EnfSKo1oFeQ=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1xbQsX9ONC6V_TUGFr0o5bNo3rRaynw3M=w1920-h892-iv1",
-				"https://lh3.google.com/u/0/d/1H_oQi9ExXX_3W_UggDqc6y2thPLFzTiX=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/14mP3iCK6718t3srBPwW7QteWErJw6L6a=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1Fb22syOnWgIA43Vl0AskhsZPZmaPmpsA=w1920-h892-iv1"
+				"https://drive.google.com/uc?id=1-3s7iBKfUoYLGM7QCoa5dX_r0avYLhsK",
+				"https://drive.google.com/uc?id=1YGTl1fe46wb98iTHy_Kf7Qw8B0VFjHkS",
+				"https://drive.google.com/uc?id=1KO8pvBYn3Wh7zyv5AFeoDDxuRKjApM4A",
+				"https://drive.google.com/uc?id=1JZroz9MVx_k9aX-Ia566U9rIHXroD_6m"
 			],
-			"interior": [1, 2, 5]
+			"interior": [1, 4, 6]
 		}
 	},
 	{
 		"id": 8,
-		"type": "Rustic",
-		"name": "Design 7",
-		"fav": true,
-		"loc": "Ruang Tamu",
-		"desc": "Desain ruang keluarga minimalis modern dengan detail serta fungsi yang dipikirkan secara matang sehingga terlihat penuh gaya dan fungsional. Selain berperan sebagai ruang keluarga, area ini juga menjadi ruang tamu dan ruang untuk bersantai. ",
-		"details": {
-			"desc": "Hanya diri Anda lah yang mengerti apa yang dapat membuat Anda merasa nyaman di rumah. Mari lihat contoh tata ruang keluarga minimalis modern yang dibuat khusus untuk Anda. Ruang tamu di mana Anda dapat menunjukkan apa yang Anda sukai dengan kabinet pintu kaca atau menyimpan sisa sisanya dengan cerdas di tempat yang tak terlihat, seperti di sebuah penyimpanan laci. Karena rumah tidak hanya mencerminkan Anda - tetapi juga mendukung Anda.",
-			"detail": {
-				"Brand": "Nestudio",
-				"Warna": "Tosca dan Cokelat",
-				"Kondisi Produk": "Tidak Butuh Perakitan",
-				"Style": "Scandinavian",
-				"Material Dudukan": "Kain",
-				"Material Frame": "Kayu",
-				"Tipe Produk": "Upholstery",
-				"Material": "Kayu, Kain Woven dan Busa"
-			},
-			"spesifikasi": {
-				"Ukuran Kemasan": "79cm x 80cm x82cm",
-				"Ukuran Barang": "72cm x 73cm x 75cm",
-				"Berat": "14kg"
-			},
-			"gallery": [
-				"https://lh3.google.com/u/0/d/1mUqARFX3NcfhaWNQVwWV_EnfSKo1oFeQ=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1xbQsX9ONC6V_TUGFr0o5bNo3rRaynw3M=w1920-h892-iv1",
-				"https://lh3.google.com/u/0/d/1H_oQi9ExXX_3W_UggDqc6y2thPLFzTiX=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/14mP3iCK6718t3srBPwW7QteWErJw6L6a=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1Fb22syOnWgIA43Vl0AskhsZPZmaPmpsA=w1920-h892-iv1"
-			],
-			"interior": [1, 2, 5]
-		}
-	},
-	{
-		"id": 10,
-		"type": "Modern",
+		"type": "Shabby Chic",
 		"name": "Design 8",
 		"fav": true,
-		"loc": "Ruang Tamu",
-		"desc": "Desain ruang keluarga minimalis modern dengan detail serta fungsi yang dipikirkan secara matang sehingga terlihat penuh gaya dan fungsional. Selain berperan sebagai ruang keluarga, area ini juga menjadi ruang tamu dan ruang untuk bersantai. ",
+		"loc": "Ruang Keluarga",
+		"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 		"details": {
-			"desc": "Hanya diri Anda lah yang mengerti apa yang dapat membuat Anda merasa nyaman di rumah. Mari lihat contoh tata ruang keluarga minimalis modern yang dibuat khusus untuk Anda. Ruang tamu di mana Anda dapat menunjukkan apa yang Anda sukai dengan kabinet pintu kaca atau menyimpan sisa sisanya dengan cerdas di tempat yang tak terlihat, seperti di sebuah penyimpanan laci. Karena rumah tidak hanya mencerminkan Anda - tetapi juga mendukung Anda.",
+			"desc": "Kehangatan keluarga ialah hal yang utama dikala lelahnya aktivitas diluar seperti bekerja ataupun sekolah. Hangatnya ruang kumpul keluarga ini diterapkan pada warna hangat yang digunakan pada ruangan. Serta adanya tanaman didalam ruangan membuat ruang lebih asri dan sejuk ditambah dengan adanya jendela yang besar membuat seperti tanpa batas pada area luar ruangan.",
 			"detail": {
 				"Brand": "Nestudio",
-				"Warna": "Tosca dan Cokelat",
-				"Kondisi Produk": "Tidak Butuh Perakitan",
+				"Nama Ruangan": "Rustic Boho",
+				"Jenis Ruangan": "Ruang Keluarga",
 				"Style": "Scandinavian",
-				"Material Dudukan": "Kain",
-				"Material Frame": "Kayu",
-				"Tipe Produk": "Upholstery",
-				"Material": "Kayu, Kain Woven dan Busa"
+				"Tone Warna": "Hijau dan Coklat",
+				"Kondisi Ruangan": "Bisa Dicustom"
 			},
 			"spesifikasi": {
-				"Ukuran Kemasan": "79cm x 80cm x82cm",
-				"Ukuran Barang": "72cm x 73cm x 75cm",
-				"Berat": "14kg"
+				"Ukuran Ruangan": "4m x 6m",
+				"Kategori Ruangan": "Sedang",
+				"Kapasitas": "4-5 orang",
+				"Kisaran Harga": "Rp 10.000.000 - Rp 12.500.000"
 			},
 			"gallery": [
-				"https://lh3.google.com/u/0/d/1mUqARFX3NcfhaWNQVwWV_EnfSKo1oFeQ=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1xbQsX9ONC6V_TUGFr0o5bNo3rRaynw3M=w1920-h892-iv1",
-				"https://lh3.google.com/u/0/d/1H_oQi9ExXX_3W_UggDqc6y2thPLFzTiX=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/14mP3iCK6718t3srBPwW7QteWErJw6L6a=w1298-h892-iv1",
-				"https://lh3.google.com/u/0/d/1Fb22syOnWgIA43Vl0AskhsZPZmaPmpsA=w1920-h892-iv1"
+				"https://drive.google.com/uc?id=1-3s7iBKfUoYLGM7QCoa5dX_r0avYLhsK",
+				"https://drive.google.com/uc?id=1YGTl1fe46wb98iTHy_Kf7Qw8B0VFjHkS",
+				"https://drive.google.com/uc?id=1KO8pvBYn3Wh7zyv5AFeoDDxuRKjApM4A",
+				"https://drive.google.com/uc?id=1JZroz9MVx_k9aX-Ia566U9rIHXroD_6m"
 			],
-			"interior": [1, 2, 5]
+			"interior": [1, 4, 6]
 		}
 	}
 ]

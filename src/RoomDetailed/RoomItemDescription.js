@@ -5,32 +5,6 @@ import "./assets/style/item-room-description.css";
 import FurnitureCard from "../Components/FurnitureCard";
 import GetProductDataContext from "../context/ProductAPI";
 
-
-const RoomItemDescription = ({ room }) => {
-  // function to return the tabs view of room information
-
-  return (
-    <>
-      <Tabs>
-        <Tab eventKey="description" title="Deskripsi">
-          <ItemDescription room={room} />
-        </Tab>
-        <Tab eventKey="detail" title="Detail dan Spesifikasi">
-          <ItemDetails room={room} />
-        </Tab>
-        <Tab eventKey="gallery" title="Galeri">
-          <ItemGallery images={room.details.gallery} />
-        </Tab>
-        <Tab eventKey="room-interior" title="Interior Ruangan">
-          <ItemRoomRecommendation linkedId={room.details.interior} />
-        </Tab>
-      </Tabs>
-    </>
-  );
-};
-
-export default RoomItemDescription;
-
 const ItemDescription = ({ room }) => {
   // function to return "deskripsi" tab
   return (
@@ -113,3 +87,28 @@ const ItemRoomRecommendation = ({ linkedId }) => {
     </div>
   );
 };
+
+const RoomItemDescription = ({ room }) => {
+  // function to return the tabs view of room information
+
+  return (
+    <>
+      <Tabs>
+        <Tab eventKey="description" title="Deskripsi">
+          <ItemDescription room={room} />
+        </Tab>
+        <Tab eventKey="detail" title="Detail dan Spesifikasi">
+          <ItemDetails room={room} />
+        </Tab>
+        <Tab eventKey="gallery" title="Galeri">
+          <ItemGallery images={room.details.gallery} />
+        </Tab>
+        <Tab eventKey="room-interior" title="Interior Ruangan">
+          <ItemRoomRecommendation linkedId={room.details.interior} />
+        </Tab>
+      </Tabs>
+    </>
+  );
+};
+
+export default RoomItemDescription;

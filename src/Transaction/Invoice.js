@@ -53,8 +53,8 @@ export default function Invoice({ invData }) {
 
                     <Row>
                         <Col>
-                            <p className="inv-part-subtitle" style={{ marginBottom: "2px" }}> Berita Transfer </p>
-                            <p className="inv-part-content">  </p>
+                            {/* <p className="inv-part-subtitle" style={{ marginBottom: "2px" }}> Berita Transfer </p>
+                            <p className="inv-part-content">  </p> */}
                         </Col>
                     </Row>
                 </Row>

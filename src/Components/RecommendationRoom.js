@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import RoomCard from './RoomCard';
-import ProductRelated from './ProductRelated';
+// import ProductRelated from './ProductRelated';
 
 import "./assets/style/auto-suggest-item.css";
 import LinkSeeMore from './LinkSeeMore';
+
+import rooms from '../db/rooms.json';
 
 const ProductList = (count) => {
     let Products = [];
@@ -15,10 +16,10 @@ const ProductList = (count) => {
         Products.push(
             <Row key={i}>
                 {
-                    [...Array(col)].map((e, index) => {
+                    rooms.slice(0,col).map((room, index) => {
                         return (
                             <Col xl={3} key={index}>
-                                <RoomCard />
+                                <RoomCard room={room} />
                             </Col>
                         )
                     })

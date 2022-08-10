@@ -1,16 +1,16 @@
-import axios from "axios";
+import axios from "../api/axios";
 import {createContext, useEffect, useState } from "react";
 
 const GetRoomDataContext = createContext();
 
 export function GetRoomDataProvider({ children }) {
     const [rooms, setRooms] = useState([]);
-    const url = process.env.REACT_APP_URL;
+    // const url = process.env.REACT_APP_URL;
 
     useEffect(() => {
         const getData = async () => {
             await axios
-                .get(`${url}/room`, {})
+                .get(`/room`, {})
                 .then((res) => setRooms(res.data))
                 .catch((error) => console.log(error));
         };
@@ -18,14 +18,14 @@ export function GetRoomDataProvider({ children }) {
         return () => {
             setRooms([]);
         };
-    }, [url]);
+    }, []);
 
     const changeWishlist = (type, id, favorite) => {
         // function to change fav through API
         switch (type) {
             case "room":
                 const editWishlist = () => {
-                    axios.patch(`${url}/room/${id}`, { fav: !favorite });
+                    axios.patch(`/room/${id}`, { fav: !favorite });
                 };
                 editWishlist();
                 break;

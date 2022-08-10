@@ -7,7 +7,7 @@ import RecommendationProduct from "../Components/RecommendationProduct";
 import Button from "../Components/Button";
 import RoomItemDescription from "./RoomItemDescription";
 import RecommendationRoom from "../Components/RecommendationRoom";
-import ProductLastSeen from "../Components/RoomLastSeen";
+// import ProductLastSeen from "../Components/RoomLastSeen";
 
 import "./assets/style/item-room-recommendation.css";
 import "./assets/style/room-detailed.css";
@@ -45,7 +45,7 @@ export default function RoomDetailedModal({ room }) {
           </div>
           <div className="room-design-recommendation">
             {/* Desain ruangan yang mungkin Anda suka */}
-            <RecommendationRoom count={1} />
+            <RecommendationRoom count="1" />
           </div>
           <div className="room-product-recommendation">
             {/* Produk yang mungkin cocok */}
@@ -53,7 +53,7 @@ export default function RoomDetailedModal({ room }) {
           </div>
           <div className="room-design-latest">
             {/* Desain ruangan yang terakhir Anda lihat */}
-            <ProductLastSeen />
+            {/* <ProductLastSeen /> */}
           </div>
         </div>
       </div>

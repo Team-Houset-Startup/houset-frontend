@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import axios from '../api/axios'
@@ -13,7 +13,7 @@ import "./assets/style/cart-summary.css"
 const TRANSACTION_URL = '/public/api/transaction/create'
 
 export default function CartSummary({ product, total }) {
-    const transDetails = [{ "product_id": product.id, "quantity": product.qty }];
+    const transDetails = [{ "product_id": product.id, "quantity": product.qty, "color": product.color }];
     const { saveInvData } = useCheckout();
     const navigate = useNavigate();
     const { getToken } = useAuth();

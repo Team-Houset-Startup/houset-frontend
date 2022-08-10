@@ -29,23 +29,22 @@ const Plus = () => {
     );
 };
 
-export default function ProductContainerSide({ product, qty, setQty, color, setColor, setImageList }) {
+export default function ProductContainerSide({ product, qty, setQty, setColor, setImageList }) {
     {/* left side panel */ }
     // set max quantity based on selected variant color
     const [maxQty, setMaxQty] = useState(0)
     const { updateCheckoutCart } = useCheckout();
+    // const [activeColor, setActiveColor] = useState("");
 
-    const navigate = useNavigate();
-    const ButtonDidClick = () => {
-        navigate("/cart");
-    };
+    // const navigate = useNavigate();
+    // const ButtonDidClick = () => {
+    //     navigate("/cart");
+    // };
 
     const chooseColor = e => {
         // console.log(product.variant[product.variant.map(object => object.color).indexOf(e.target.value)].quantity);
         const currentIndex = product.variant.map(object => object.color).indexOf(e.target.value);
-        setColor(e.target.value);
         setImageList(product.variant[currentIndex].image_gallery);
-
         setMaxQty(product.variant[currentIndex].quantity);
         setQty(1); // reset quantity after every change on color
 

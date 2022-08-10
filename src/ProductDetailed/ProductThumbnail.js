@@ -23,13 +23,23 @@ function MakeThumbnail({ thumbnails, setShowExpand }) {
                     </Row>
                 )
             }
+
+            // check if the product contains exact 4 photos
+            if (indexPhoto == 3 && thumbnails.length == 4) {
+                photoList.push(
+                    <Row className="thumbnail-list-item">
+                        <img src={thumbnail} alt="product-mini-thumbnail" onClick={() => setNowPreview(thumbnail)} />
+                    </Row>
+                )
+            }
             indexPhoto++;
         })
-        if (indexPhoto >= 3) {
+
+        if (thumbnails.length != 4 && indexPhoto > 3) {
             photoList.push(
                 <Row className="thumbnail-list-item thumbnail-list-expand">
                     <img src={thumbnails[3]} alt="product-mini-thumbnail" onClick={() => setShowExpand(true)} />
-                    <p> +{nPhoto - 3} Photos </p>
+                    <p onClick={() => setShowExpand(true)} > +{nPhoto - 3} Photos </p>
                 </Row>
             )
         }
@@ -68,7 +78,6 @@ export default function ProductThumbnail({ images }) {
         const photoList = [];
 
         thumbnails.slice(3, thumbnails.length).map((thumbnail) => {
-            console.log(thumbnail)
             photoList.push(
                 <Col>
                     <img src={thumbnail} alt="image not found" />

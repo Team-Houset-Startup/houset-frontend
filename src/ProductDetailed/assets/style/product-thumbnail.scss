@@ -44,8 +44,18 @@
 		p {
 			position: absolute;
 			top: 50%;
-			left: 58%;
+			left: 48%;
 			transform: translate(-50%, -50%);
+
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 20px;
+			text-align: center;
+			color: #FCFCFD;			
+		}
+
+		p:hover {
+			cursor: pointer;
 		}
 	}
 }

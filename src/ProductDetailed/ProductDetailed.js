@@ -36,7 +36,6 @@ export default function ProductDetailed() {
 
     useEffect(() => {
         updateCheckoutCart({ qty: qty });
-        updateCheckoutCart({ color: color });
     }, [qty, color])
     // end fetch data for checkout
 
@@ -51,7 +50,6 @@ export default function ProductDetailed() {
                 .then((res) => {
                     setSelectedProduct(res.data?.data);
                     doUpdateCheckout(res.data?.data);
-                    // updateCheckoutCart({ color: res.data?.data?.color });
                     setImageList(res.data?.data?.variant[0].image_gallery);
                 })
                 .catch((error) => console.log(error));
@@ -73,8 +71,6 @@ export default function ProductDetailed() {
                             product={selectedProduct}
                             qty={qty}
                             setQty={setQty}
-                            color={color}
-                            setColor={setColor}
                             setImageList={setImageList}
                         />
                     </Col>
