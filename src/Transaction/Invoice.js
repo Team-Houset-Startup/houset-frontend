@@ -9,6 +9,7 @@ import Mandiri from './assets/image/logo-mandiri.png'
 
 import "./assets/style/invoice.css"
 import DateFormatter from '../Components/DateFormatter'
+import PriceFormatter from '../Components/PriceFormatter';
 
 export default function Invoice({ invData }) {
 
@@ -46,7 +47,7 @@ export default function Invoice({ invData }) {
                     <Row>
                         <Col>
                             <p className="inv-part-subtitle" style={{ marginBottom: "2px" }}> Total Pembayaran </p>
-                            <p className="inv-part-content"> {invData.total_amount} </p>
+                            <p className="inv-part-content"> <PriceFormatter value={invData.total_amount} /> </p>
                         </Col>
                         <Col className="inv-payment-action"> Lihat Detail </Col>
                     </Row>

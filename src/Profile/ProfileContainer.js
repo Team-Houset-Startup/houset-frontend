@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import ProfileAccount from './ProfileAccount'
-import './assets/style/profile-account.css'
-import ProfileTransaction from './ProfileTransaction'
-import ProfileNotification from './ProfileNotification'
+import ProfileAccount from './ProfileAccount/ProfileAccount'
+// import './assets/style/profile-account.css'
+import ProfileTransaction from './ProfileTransactions/ProfileTransaction'
+import ProfileNotification from './ProfileNotification/ProfileNotification'
 
 export default function ProfileContainer({activeSidebar,activeDropdown,userData,setUserData}) {
   // function to return what container should be shown 

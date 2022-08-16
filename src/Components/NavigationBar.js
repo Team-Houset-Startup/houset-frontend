@@ -17,8 +17,8 @@ function NavigationBar() {
 
     const handleLogout = () => {
         const logout = removeToken();
-        navigate('/login');
-        // window.location.reload();
+        // navigate('/');
+        window.location.reload();
     }
 
     if (!getToken()) {

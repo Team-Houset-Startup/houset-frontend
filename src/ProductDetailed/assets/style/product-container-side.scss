@@ -41,7 +41,6 @@
 		font-size: 18px;
 		line-height: 22px;
 		text-decoration-line: line-through;
-
 		color: #e13b11;
 	}
 
@@ -65,18 +64,22 @@
 	color: #055053;
 
 	.product-type-color {
+		.product-color-wrapper {
+
+		}
+		
 		input[type="radio"] {
 			-webkit-appearance: none;
 			appearance: none;
 
-			background-color: #fff;
 			margin: 0;
 			width: 30px;
 			height: 30px;
 			margin-right: 15px;
 			border-radius: 50%;
-			border: #e13b11;
 			transform: translateY(-0.075em);
+			border: 2px double rgb(178, 178, 178) ;
+			box-sizing: border-box;
 		}
 
 		input[type="radio"]::before {
@@ -91,8 +94,8 @@
 		}
 
 		input[type="radio"]:checked {
-			// background-color: #bfb;
-			border: 3px  solid #389c1a;
+			border: 3px solid #389c1a;
+			padding: 10px;
 		}
 	}
 

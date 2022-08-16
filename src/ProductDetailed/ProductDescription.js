@@ -28,7 +28,7 @@ export default function ProductDescription({ product, images }) {
                             {/* <Row> <Col> Brand </Col> <Col> {detail["brand"]} </Col> </Row> */}
                             {/* <Row> <Col> Warna </Col> <Col> {product.color} </Col> </Row> */}
                             <Row> <Col> Kondisi Produk </Col> <Col> {product.condition} </Col> </Row>
-                            <Row> <Col> style </Col> <Col> {product.style} </Col> </Row>
+                            <Row> <Col> Style </Col> <Col> {product.style} </Col> </Row>
                             <Row> <Col> Material Dudukan </Col> <Col> {product.material_1} </Col> </Row>
                             <Row> <Col> Material Frame </Col> <Col> {product.material_2} </Col> </Row>
                             {/* <Row> <Col> Tipe Produk </Col> <Col> {product.product-te"]} </Col> </Row> */}
@@ -38,8 +38,8 @@ export default function ProductDescription({ product, images }) {
                     <Col>
                         <p className="product-tab-subtitle"> Spesifikasi </p>
                         <Container className="product-tab-information">
-                            {/* <Row> <Col> Ukuran Kemasan </Col> <Col> {product["packing-size"]} </Col> </Row> */}
                             <Row> <Col> Ukuran Barang </Col> <Col> {product.length}cm x {product.width}cm x {product.height}cm </Col> </Row>
+                            <Row> <Col> Ukuran Kemasan </Col> <Col> {parseInt(product.length,10) + 5}cm x {parseInt(product.width,10) + 5}cm x {parseInt(product.height,10) + 5}cm </Col> </Row>
                             {/* <Row> <Col> Berat </Col> <Col> {product.weight} </Col> </Row> */}
                         </Container>
                     </Col>

@@ -54,9 +54,9 @@ export default function ProductContainerSide({ product, qty, setQty, setColor, s
     }
 
     const productColor = (variantColor) => {
-        // return colors?.map((color) =>
+        // console.log(variantColor)
         if (variantColor) {
-            return variantColor.map((varColor) =>
+            return variantColor.map((varColor, i) =>
                 <>
                     <input
                         type="radio"
@@ -68,6 +68,8 @@ export default function ProductContainerSide({ product, qty, setQty, setColor, s
                         onChange={chooseColor}
                         required
                     />
+                    {/* <div className="product-color-wrapper">
+                    </div> */}
                     <label>  </label>
                 </>
             )
@@ -97,7 +99,7 @@ export default function ProductContainerSide({ product, qty, setQty, setColor, s
                     </Col>
 
                 </Row>
-                
+
 
                 <Row className="product-type-qty">
                     <Col xl={{ span: "4" }}> Jumlah </Col>

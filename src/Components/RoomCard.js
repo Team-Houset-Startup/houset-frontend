@@ -3,17 +3,17 @@ import RoomPreview from "./assets/image/room.png";
 
 import "./assets/style/room-card.css";
 import ModalContext from '../context/modal';
-import GetRoomDataContext from "../context/roomAPI";
+// import GetRoomDataContext from "../context/roomAPI";
 
 const Wishlist = ({ stroke = "black", fill = "none", id ,fav}) => {
-    const { changeWishlist } = useContext(GetRoomDataContext);
+    // const { changeWishlist } = useContext(GetRoomDataContext);
     return (
         <div
-            onClick={() => {
-                id
-                    ? changeWishlist("room", id, fav )
-                    : alert("Please login to add to wishlist");
-            }}
+            // onClick={() => {
+            //     id
+            //         ? changeWishlist("room", id, fav )
+            //         : alert("Please login to add to wishlist");
+            // }}
         >
             <svg
                 width="20"

@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import { useState, useRef } from "react";
 import "./assets/style/forget-password.css";
 import { EyeIcon } from "../Profile/assets/Icon";
-import { PasswordInput } from "../Profile/UpdatePassword";
+import { PasswordInput } from "../Profile/ProfileAccount/UpdatePassword";
 import { useInRouterContext } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "../api/axios";

@@ -12,6 +12,8 @@ import useAuth from '../hooks/useAuth';
 import "./assets/style/auth.scss"
 import "./assets/style/login.css";
 
+import EyeIcon from "./assets/image/eye-icon.svg";
+
 const LOGIN_URL = '/public/api/user/login';
 
 export default function Login() {
@@ -34,6 +36,7 @@ export default function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const [errMsg, setErrMsg] = useState("");
 
     useEffect(() => {
@@ -55,10 +58,10 @@ export default function Login() {
                 )
                 const accessToken = response?.data?.data?.token;
                 if (rememberRef.current.checked) {
-                    rememberLogin(email,password);
+                    rememberLogin(email, password);
                 }
                 saveToken(accessToken);
-                navigate(-1);
+                navigate("/");
             } catch (err) {
                 if (!err?.response) {
                     setErrMsg("No Server Response");
@@ -66,6 +69,8 @@ export default function Login() {
                     setErrMsg("Wrong Email or Password");
                 } else if (err.response?.status === 401) {
                     setErrMsg("Unauthorized");
+                } else if (err.response?.status === 429) {
+                    setErrMsg("Too many request attempt. Try again later.");
                 } else {
                     setErrMsg("Login Failed");
                 }
@@ -102,18 +107,21 @@ export default function Login() {
                         />
                         <br />
 
-                        <label className="text-label" htmlFor="password"> Password </label> <br />
-                        <input className="box-input"
-                            type="password"
-                            name="password"
-                            ref={userRef}
-                            placeholder="Masukkan password anda"
-                            onChange={e => setPassword(e.target.value)}
-                            // value={password}
-                            autoComplete="on"
-                            required
-                        />
-                        <br />
+                        <div className="auth-input-field">
+                            <label className="text-label" htmlFor="password"> Password </label> <br />
+                            <input className="box-input"
+                                type={showPassword ? "text" : "password"}
+                                name="password"
+                                ref={userRef}
+                                placeholder="Masukkan password anda"
+                                onChange={e => setPassword(e.target.value)}
+                                // value={password}
+                                autoComplete="on"
+                                required
+                            />
+                            <img src={EyeIcon} onClick={() => setShowPassword(!showPassword)} className="show-password" />
+                            <br />
+                        </div>
 
                         <p>
                             <input type="checkbox" ref={rememberRef} name="rememberMe" /> Ingat saya

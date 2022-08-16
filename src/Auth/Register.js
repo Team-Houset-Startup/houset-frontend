@@ -118,7 +118,7 @@ export default function Register() {
                         </div>
 
                         <div className="agreement-box">
-                            <input className="bottom-info" type="checkbox" /> Saya setuju dengan <strong> syarat & ketentuan </strong>
+                            <input className="bottom-info" type="checkbox" required/> Saya setuju dengan <strong> syarat & ketentuan </strong>
                             serta <strong>Kebijakan Privasi</strong> di Houset <br />
                         </div>
                         <button type="submit"> Register </button>
