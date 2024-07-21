@@ -8,9 +8,9 @@ import KursiPreview from "./assets/image/kursi.png";
 import "./assets/style/furniture-card.css";
 import PriceFormatter from './PriceFormatter';
 
-export default function FurnitureCard({ product }) {
+export default function FurnitureCard({ className = "", product }) {
     const { closeAllModal } = useContext(ModalContext)
-    const baseImage = "https://houset.my.id/storage/app/public/";
+    // const baseImage = "https://houset.my.id/storage/app/public/";
     const productImage = product.variant[0].image_gallery[0].location;
     // console.log(Object.keys(product).length)
 
@@ -46,18 +46,18 @@ export default function FurnitureCard({ product }) {
     }
 
     return (
-        <div className="product-item" onClick={closeAllModal}>
+        <div className={`product-item ${className}`} onClick={closeAllModal}>
             <Link to={`/product/${product.id}`} >
-                <Row>
-                    <div className="product-pict"> <img src={baseImage + productImage} alt="Image not found" /> </div>
+                <Row className='m-auto'>
+                    <div className="product-pict"> <img src={ productImage} alt="Image not found" /> </div>
                 </Row>
                 <Row>
                     <Col>
                         <p className="item-type"> {product.type} </p>
                         <p className="item-name"> {product.name} </p>
-                        <p className="item-price-discounted"> <PriceFormatter value={product.price} /> </p>
+                        <p className="item-price"> <PriceFormatter value={product.price} /> </p>
 
-                        {/* <p className="item-price-discounted"> {product.priceDiscounted} </p> */}
+                        <p className="item-price-discounted">  <PriceFormatter value={product.priceDiscounted} /> </p>
                     </Col>
                     <Col>
                         <ProductColor variants={product.variant} />

@@ -32,14 +32,9 @@ const Plus = () => {
 export default function ProductContainerSide({ product, qty, setQty, setColor, setImageList }) {
     {/* left side panel */ }
     // set max quantity based on selected variant color
-    const [maxQty, setMaxQty] = useState(0)
+    const [maxQty, setMaxQty] = useState(qty)
     const { updateCheckoutCart } = useCheckout();
     // const [activeColor, setActiveColor] = useState("");
-
-    // const navigate = useNavigate();
-    // const ButtonDidClick = () => {
-    //     navigate("/cart");
-    // };
 
     const chooseColor = e => {
         // console.log(product.variant[product.variant.map(object => object.color).indexOf(e.target.value)].quantity);
@@ -81,14 +76,14 @@ export default function ProductContainerSide({ product, qty, setQty, setColor, s
             <Row className="product-info">
                 <p className="product-info-category"> {product.type} </p>
                 <p className="product-info-name"> {product.name} </p>
-                {/* <p className="product-info-review">
-                    {product.reviewqty} Ulasan <span> star here </span>
-                </p> */}
+                <p className="product-info-review">
+                    {product.reviewqty} Ulasan
+                </p>
             </Row>
 
             <Row className="product-price">
-                <p className="product-price-disc"> <PriceFormatter value={product.price} /> </p>
-                {/* <p className="product-price-disc"> {product.priceDiscounted} </p> */}
+                <p className="product-price-normal"> <PriceFormatter value={product.price} /> </p>
+                <p className="product-price-disc"> <PriceFormatter value={product.priceDiscounted} /> </p>
             </Row>
 
             <Row className="product-type">
@@ -116,15 +111,11 @@ export default function ProductContainerSide({ product, qty, setQty, setColor, s
             </Row>
 
             <Row className="product-checkout">
-                {/* <Col>
-                    <Link to="/cart">
-                        <Button text="Masukkan Keranjang" type="secondary-button" onClick={ButtonDidClick} />
-                    </Link>
-                </Col> */}
+                    {/* <Link to="/cart">
+                        <Button text="Masukkan Keranjang" type="secondary-button" />
+                    </Link> */}
                 {/* <button onClick={() => {history.push('/cart')}}>ss </button> */}
-                <Col>
                     <Button text="Beli Sekarang" type="primary-button" toPage="/checkout" />
-                </Col>
             </Row>
         </Container>
     );

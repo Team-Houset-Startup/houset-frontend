@@ -9,34 +9,36 @@ import LinkSeeMore from './LinkSeeMore';
 import "./assets/style/product-list.css"
 import axios from '../api/axios';
 
+import products from "../db/products.json";
+
 export default function ProductLists() {
-    const [ products, setProducts ] = useState([]);
+    // const [ products, setProducts ] = useState([]);
 
-    useEffect(()=> {
-        const getData = async () => {
-            await axios
-                .get(`/public/api/product/all`, {})
-                .then((res) => setProducts(res.data?.data?.data
-                    .filter(product => product.quantity > 0)))
-                .catch((error) => console.log(error));
-        };
-        getData();
-        return () => {
-            setProducts([]);
-        };
-    }, [])
+    // useEffect(()=> {
+    //     const getData = async () => {
+    //         await axios
+    //             .get(`/public/api/product/all`, {})
+    //             .then((res) => setProducts(res.data?.data?.data
+    //                 .filter(product => product.quantity > 0)))
+    //             .catch((error) => console.log(error));
+    //     };
+    //     getData();
+    //     return () => {
+    //         setProducts([]);
+    //     };
+    // }, [])
 
-    const productList = (count) => {
-        let ProductsCard = [];
-        products.slice(0, count)?.map((product) => {
-            ProductsCard.push(
-                <FurnitureCard product={product} key={product.id}/>
-            )
-        })
-        return (
-            ProductsCard
-        )
-    };
+    // const productList = (count) => {
+    //     let ProductsCard = [];
+    //     products.slice(0, count)?.map((product) => {
+    //         ProductsCard.push(
+    //             <FurnitureCard product={product} key={product.id}/>
+    //         )
+    //     })
+    //     return (
+    //         ProductsCard
+    //     )
+    // };
 
     const responsive = {
         desktop: {
@@ -58,18 +60,24 @@ export default function ProductLists() {
     };
 
     return (
-        <div>
-            <LinkSeeMore title="Produk Terbaik" links="/furnitur" text="Lihat Semua" />
-            <Carousel
-                responsive={responsive}
-                draggable={false}
-                ssr
-                partialVisible={true}
-                // centerMode={true}
-                className="product-list-carousel"
-            >
-                {productList(6)}
-            </Carousel>
-        </div>
-    )
+			<div>
+				<LinkSeeMore
+					title="Produk Terbaik"
+					links="/furnitur"
+					text="Lihat Semua"
+				/>
+				<Carousel
+					responsive={responsive}
+					draggable={false}
+					ssr
+					partialVisible={true}
+					// centerMode={true}
+					className="product-list-carousel"
+				>
+					{products.slice(0, 8).map((product) => (
+						<FurnitureCard product={product} key={product.id} className="m-auto"/>
+					))}
+				</Carousel>
+			</div>
+		);
 }

@@ -50,7 +50,7 @@ export default function RoomLists() {
                 className="product-list-carousel"
             >
                 {rooms.slice(0, 8).map((room) => (
-                    <RoomCard room={room} />
+                    <RoomCard room={room} key={room.id} />
                 ))}
             </Carousel>
         </div>

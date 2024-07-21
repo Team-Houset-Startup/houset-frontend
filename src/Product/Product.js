@@ -12,7 +12,9 @@ import Button from "../Components/Button";
 import "./assets/style/product.scss";
 import Search from "../Components/Search";
 // import GetRoomDataContext from "../context/roomAPI";
-import GetProductDataContext from "../context/ProductAPI";
+// import GetProductDataContext from "../context/ProductAPI";
+
+import products from "../db/products.json";
 
 const prevPageIcon = () => {
     return (
@@ -32,7 +34,22 @@ const nextPageIcon = () => {
 
 function Product({ variant }) {
     // initiate pagination system
-    const { products } = useContext(GetProductDataContext);
+    // const { products } = useContext(GetProductDataContext);
+    // const products = [
+	// 		{
+	// 			id: "1",
+	// 			variant: [{
+    //                 id: "1",
+	// 				color: "red",
+	// 				image_gallery: [{
+    //                     location: ["../assets/image/kamar.png"],
+    //                 }]
+	// 			}],
+	// 			type: "Classic",
+	// 			name: "Shabby Chic",
+	// 			price: "1000000",
+	// 		},
+	// 	];
 
     const [currentProducts, setCurrentProducts] = useState(products);
     const [pageCount, setPageCount] = useState(0);

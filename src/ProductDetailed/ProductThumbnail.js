@@ -60,7 +60,7 @@ function MakeThumbnail({ thumbnails, setShowExpand }) {
 }
 
 export default function ProductThumbnail({ images }) {
-    const baseImage = "https://houset.my.id/storage/app/public/";
+    const baseImage = process.env.REACT_APP_URL +'/';
     const [thumbnails, setThumbnails] = useState([]);
 
     useEffect(() => {

@@ -15,32 +15,31 @@ export default function ProductDescription({ product, images }) {
         )
     }
 
-    const detailSpecs = () => {
+    const detailSpecs = (specs) => {
         // const detail = product.details;
         // const specification = product.specifications;
-
         return (
             <>
                 <Row xs={1} sm={2}>
                     <Col>
                         <p className="product-tab-subtitle"> Detail </p>
                         <Container className="product-tab-information">
-                            {/* <Row> <Col> Brand </Col> <Col> {detail["brand"]} </Col> </Row> */}
-                            {/* <Row> <Col> Warna </Col> <Col> {product.color} </Col> </Row> */}
-                            <Row> <Col> Kondisi Produk </Col> <Col> {product.condition} </Col> </Row>
-                            <Row> <Col> Style </Col> <Col> {product.style} </Col> </Row>
-                            <Row> <Col> Material Dudukan </Col> <Col> {product.material_1} </Col> </Row>
-                            <Row> <Col> Material Frame </Col> <Col> {product.material_2} </Col> </Row>
-                            {/* <Row> <Col> Tipe Produk </Col> <Col> {product.product-te"]} </Col> </Row> */}
-                            <Row> <Col> Material </Col> <Col> {product.material_3} </Col> </Row>
+                            <Row> <Col> Brand </Col> <Col> {specs.brand} </Col> </Row>
+                            <Row> <Col> Warna </Col> <Col> {specs.color} </Col> </Row>
+                            <Row> <Col> Kondisi Produk </Col> <Col> {specs.condition} </Col> </Row>
+                            <Row> <Col> Style </Col> <Col> {specs.style} </Col> </Row>
+                            <Row> <Col> Material Dudukan </Col> <Col> {specs.material_1} </Col> </Row>
+                            <Row> <Col> Material Frame </Col> <Col> {specs.material_2} </Col> </Row>
+                            <Row> <Col> Tipe Produk </Col> <Col> {specs.type} </Col> </Row>
+                            <Row> <Col> Material </Col> <Col> {specs.material_3} </Col> </Row>
                         </Container>
                     </Col>
                     <Col>
                         <p className="product-tab-subtitle"> Spesifikasi </p>
                         <Container className="product-tab-information">
-                            <Row> <Col> Ukuran Barang </Col> <Col> {product.length}cm x {product.width}cm x {product.height}cm </Col> </Row>
-                            <Row> <Col> Ukuran Kemasan </Col> <Col> {parseInt(product.length,10) + 5}cm x {parseInt(product.width,10) + 5}cm x {parseInt(product.height,10) + 5}cm </Col> </Row>
-                            {/* <Row> <Col> Berat </Col> <Col> {product.weight} </Col> </Row> */}
+                            <Row> <Col> Ukuran Barang </Col> <Col> {specs.length}cm x {specs.width}cm x {specs.height}cm </Col> </Row>
+                            <Row> <Col> Ukuran Kemasan </Col> <Col> {parseInt(specs.length,10) + 5}cm x {parseInt(specs.width,10) + 5}cm x {parseInt(specs.height,10) + 5}cm </Col> </Row>
+                            <Row> <Col> Berat </Col> <Col> {specs.weight} Kg </Col> </Row>
                         </Container>
                     </Col>
                 </Row>
@@ -49,7 +48,7 @@ export default function ProductDescription({ product, images }) {
     }
 
     const [thumbnails, setThumbnails] = useState([]);
-    const baseImage = "https://houset.my.id/storage/app/public/";
+    const baseImage = process.env.REACT_APP_URL + "/";
     useEffect(() => {
         if (images !== null) {
             setThumbnails(
@@ -59,27 +58,29 @@ export default function ProductDescription({ product, images }) {
     }, [images])
 
     const gallery = (thumbnails) => {
-        const galleryList = () => {
-            let photoList = [];
+			const galleryList = () => {
+				let photoList = [];
 
-            thumbnails.map((thumbnail) => {
-                photoList.push(
-                    <div className="product-gallery-card">
-                        <img src={thumbnail} alt="product-mini-thumbnail" />
-                    </div>
-                )
-            });
-            return photoList
-        }
-        return (
-            <>
-                <p className="product-tab-subtitle"> Tampilan Produk </p>
-                <div className="product-tab-gallery">
-                    {galleryList()}
-                </div>
-            </>
-        )
-    }
+				thumbnails.map((image) => {
+					const baseImage = process.env.REACT_APP_URL + "/";
+					photoList.push(
+						<div className="product-gallery-card">
+							<img
+								src={image}
+								alt="product-mini-thumbnail"
+							/>
+						</div>
+					);
+				});
+				return photoList;
+			};
+			return (
+				<>
+					<p className="product-tab-subtitle"> Tampilan Produk </p>
+					<div className="product-tab-gallery">{galleryList()}</div>
+				</>
+			);
+		};
 
     const review = () => {
         return (
@@ -96,7 +97,6 @@ export default function ProductDescription({ product, images }) {
         )
     }
 
-
     return (
         <div className="product-description">
             <Tabs defaultActiveKey="description" id="uncontrolled-tab-example" className="product-tab-header">
@@ -104,7 +104,7 @@ export default function ProductDescription({ product, images }) {
                     {description(product.description)}
                 </Tab>
                 <Tab className="product-desc-tab" eventKey="detail" title="Detail dan Spesifikasi">
-                    {detailSpecs()}
+                    {detailSpecs(product.specification[0])}
                 </Tab>
                 <Tab className="product-desc-tab" eventKey="gallery" title="Galeri">
                     {gallery(thumbnails)}
