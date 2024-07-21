@@ -4,7 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import "./assets/style/cart-picture-product.css";
 
 export default function CartPictureProduct({ product }) {
-    const baseImage = "https://houset.my.id/storage/app/public/";
+    const baseImage = process.env.REACT_APP_URL + "/";
     // const [productImage, setProductImage] = useState();
     const productImage = product.image_gallery[0].location;
 
